@@ -3,9 +3,296 @@
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
+/* Navigation Styles */
+.main-navigation {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.nav-brand:hover {
+  color: #667eea;
+}
+
+.brand-icon {
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #666;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.nav-link.active {
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.15);
+  font-weight: 600;
+}
+
+/* Homepage Styles */
+.homepage-container {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
+              url('./league-photo.jpg') center/cover;
+  padding: 80px 20px;
+  color: white;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.3);
+}
+
+.hero-content {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.league-title h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.league-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 40px;
+}
+
+.season-progress {
+  max-width: 400px;
+  margin: 0 auto 40px;
+}
+
+.progress-label {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #8BC34A);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.progress-text {
+  font-size: 0.8rem;
+  margin-top: 8px;
+  opacity: 0.7;
+}
+
+.league-stats-quick {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Homepage Content */
+.homepage-content {
+  max-width: 1400px;
+  margin: -60px auto 0;
+  padding: 0 20px 40px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Component Containers */
+.weekly-matchups-container,
+.activity-feed-container,
+.league-stats-container,
+.compact-standings-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  padding: 30px;
+}
+
+.compact-standings-container h3 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Compact Standings */
+.ai-feature-notice {
+  text-align: center;
+  margin-bottom: 15px;
+  padding: 12px;
+  background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+  color: white;
+  border-radius: 8px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.ai-notice-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.claude-logo {
+  flex-shrink: 0;
+}
+
+.compact-standings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.compact-standing-row {
+  display: grid;
+  grid-template-columns: 30px 1fr 50px;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  background: #f8f9fa;
+  transition: all 0.3s;
+}
+
+.compact-standing-row:hover {
+  background: #e9ecef;
+}
+
+.compact-standing-row .rank {
+  font-weight: 700;
+  text-align: center;
+  color: #007bff;
+}
+
+.team-info {
+  min-width: 0;
+}
+
+.compact-standing-row .team-name {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.compact-standing-row .team-record {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.compact-standing-row .points {
+  text-align: center;
+  font-weight: 600;
+  color: #007bff;
+  font-size: 0.9rem;
+}
+
+.standings-footer {
+  margin-top: 15px;
+  text-align: center;
+  opacity: 0.7;
+}
+
+/* Loading and Error States */
 .loading {
   text-align: center;
   padding: 40px;
+  color: #666;
+}
+
+.loading-hero {
   color: white;
 }
 
@@ -17,4 +304,47 @@
   border: 1px solid #f5c6cb;
   border-radius: 6px;
   margin: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .homepage-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .league-stats-quick {
+    gap: 20px;
+  }
+  
+  .hero-content .league-title h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 60px 15px;
+  }
+  
+  .hero-content .league-title h1 {
+    font-size: 2rem;
+  }
+  
+  .league-stats-quick {
+    gap: 15px;
+  }
+  
+  .stat-value {
+    font-size: 1.4rem;
+  }
+  
+  .homepage-content {
+    margin-top: -40px;
+    padding: 0 15px 30px;
+  }
+  
+  .compact-standings-container {
+    padding: 20px;
+  }
 }
