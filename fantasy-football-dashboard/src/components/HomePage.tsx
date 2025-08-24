@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { sleeperApi } from '../services/sleeperApi';
+import { claudeApi } from '../services/claudeApi';
 import { League, Roster, User, TeamStanding } from '../types/sleeper';
 import LeagueHero from './LeagueHero';
 import Navigation from './Navigation';
+import TeamAnalysisModal from './TeamAnalysisModal';
 
 interface HomePageProps {
   username?: string;
@@ -20,6 +22,12 @@ const HomePage: React.FC<HomePageProps> = ({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string>('');
   const [currentWeek, setCurrentWeek] = useState(1);
+  
+  // Team analysis modal states
+  const [showAnalysisModal, setShowAnalysisModal] = useState(false);
+  const [analysisLoading, setAnalysisLoading] = useState(false);
+  const [analysisError, setAnalysisError] = useState<string | null>(null);
+  const [currentAnalysis, setCurrentAnalysis] = useState<any>(null);
 
   const calculateStandings = (rosters: Roster[], users: User[]): TeamStanding[] => {
     const userMap = new Map(users.map(user => [user.user_id, user]));
@@ -86,6 +94,34 @@ const HomePage: React.FC<HomePageProps> = ({
     }
   };
 
+  const analyzeTeam = async (team: TeamStanding) => {
+    setShowAnalysisModal(true);
+    setAnalysisLoading(true);
+    setAnalysisError(null);
+    setCurrentAnalysis(null);
+
+    try {
+      const analysis = await claudeApi.analyzeTeam(
+        team, 
+        standings, 
+        league?.name || 'Fantasy League',
+        currentWeek
+      );
+      setCurrentAnalysis(analysis);
+    } catch (err) {
+      setAnalysisError(err instanceof Error ? err.message : 'Failed to analyze team');
+      console.error('Team analysis error:', err);
+    } finally {
+      setAnalysisLoading(false);
+    }
+  };
+
+  const closeModal = () => {
+    setShowAnalysisModal(false);
+    setCurrentAnalysis(null);
+    setAnalysisError(null);
+  };
+
   useEffect(() => {
     if (leagueId) {
       fetchLeagueData(leagueId);
@@ -136,20 +172,39 @@ const HomePage: React.FC<HomePageProps> = ({
             <h2 style={{ color: '#333', marginBottom: '25px', fontSize: '1.5rem' }}>League Standings</h2>
             <div>
               {standings.map((team, index) => (
-                <div key={team.roster_id} style={{ 
-                  display: 'flex', 
-                  justifyContent: 'space-between', 
-                  padding: '15px', 
-                  borderBottom: index < standings.length - 1 ? '1px solid #eee' : 'none',
-                  borderRadius: '6px',
-                  background: '#fff',
-                  marginBottom: '5px',
-                  border: '1px solid #eee'
-                }}>
-                  <span style={{ fontWeight: '500', color: '#333' }}>
+                <div 
+                  key={team.roster_id} 
+                  onClick={() => analyzeTeam(team)}
+                  style={{ 
+                    display: 'flex', 
+                    justifyContent: 'space-between', 
+                    padding: '15px', 
+                    borderBottom: index < standings.length - 1 ? '1px solid #eee' : 'none',
+                    borderRadius: '6px',
+                    background: '#fff',
+                    marginBottom: '5px',
+                    border: '1px solid #eee',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'linear-gradient(135deg, #FF6B35, #F7931E)';
+                    e.currentTarget.style.color = 'white';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                    e.currentTarget.style.boxShadow = '0 4px 15px rgba(255, 107, 53, 0.3)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = '#fff';
+                    e.currentTarget.style.color = 'inherit';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
+                  title="Click for AI analysis"
+                >
+                  <span style={{ fontWeight: '500', color: 'inherit' }}>
                     {index + 1}. {team.display_name}
                   </span>
-                  <span style={{ color: '#666' }}>
+                  <span style={{ color: 'inherit', opacity: 0.8 }}>
                     {team.wins}-{team.losses} • {team.points_for.toFixed(1)} PF
                   </span>
                 </div>
@@ -179,7 +234,12 @@ const HomePage: React.FC<HomePageProps> = ({
             </div>
             <div className="compact-standings-list">
               {standings.map((team, index) => (
-                <div key={team.roster_id} className="compact-standing-row">
+                <div 
+                  key={team.roster_id} 
+                  className="compact-standing-row clickable"
+                  onClick={() => analyzeTeam(team)}
+                  title="Click for AI analysis"
+                >
                   <div className="rank">{index + 1}</div>
                   <div className="team-info">
                     <div className="team-name">{team.display_name}</div>
@@ -198,6 +258,14 @@ const HomePage: React.FC<HomePageProps> = ({
           </div>
         </div>
       </div>
+
+      <TeamAnalysisModal
+        isOpen={showAnalysisModal}
+        onClose={closeModal}
+        analysis={currentAnalysis}
+        loading={analysisLoading}
+        error={analysisError}
+      />
     </div>
   );
 };
