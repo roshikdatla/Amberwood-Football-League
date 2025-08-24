@@ -226,7 +226,7 @@ const HomePage: React.FC<HomePageProps> = ({
             <h3>League Standings</h3>
             <div className="ai-feature-notice">
               <div className="ai-notice-content">
-                <img src="/claude-logo.png" alt="Claude" className="claude-logo" width="48" height="48" />
+                <img src="./claude-logo-png_seeklogo-554540.png" alt="Claude" className="claude-logo" width="48" height="48" />
                 <small>Click any team for AI analysis (Sonnet-4)</small>
               </div>
             </div>
