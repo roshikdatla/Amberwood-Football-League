@@ -4,6 +4,8 @@ import { claudeApi } from '../services/claudeApi';
 import { League, Roster, User, TeamStanding } from '../types/sleeper';
 import LeagueHero from './LeagueHero';
 import TeamAnalysisModal from './TeamAnalysisModal';
+import ActivityFeed from './ActivityFeed';
+import WeeklyMatchups from './WeeklyMatchups';
 
 interface HomePageProps {
   username?: string;
@@ -18,6 +20,7 @@ const HomePage: React.FC<HomePageProps> = ({
 }) => {
   const [league, setLeague] = useState<League | null>(null);
   const [standings, setStandings] = useState<TeamStanding[]>([]);
+  const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string>('');
   const [currentWeek, setCurrentWeek] = useState(1);
@@ -83,6 +86,7 @@ const HomePage: React.FC<HomePageProps> = ({
 
       setLeague(leagueData);
       setCurrentWeek(week);
+      setUsers(users);
       const calculatedStandings = calculateStandings(rosters, users);
       setStandings(calculatedStandings);
     } catch (err) {
@@ -160,65 +164,14 @@ const HomePage: React.FC<HomePageProps> = ({
             </div>
           </div>
 
-          <div style={{ 
-            background: 'white', 
-            borderRadius: '12px', 
-            boxShadow: '0 4px 20px rgba(0,0,0,0.1)', 
-            padding: '30px',
-            marginBottom: '30px'
-          }}>
-            <h2 style={{ color: '#333', marginBottom: '25px', fontSize: '1.5rem' }}>League Standings</h2>
-            <div>
-              {standings.map((team, index) => (
-                <div 
-                  key={team.roster_id} 
-                  onClick={() => analyzeTeam(team)}
-                  style={{ 
-                    display: 'flex', 
-                    justifyContent: 'space-between', 
-                    padding: '15px', 
-                    borderBottom: index < standings.length - 1 ? '1px solid #eee' : 'none',
-                    borderRadius: '6px',
-                    background: '#fff',
-                    marginBottom: '5px',
-                    border: '1px solid #eee',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s ease'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = 'linear-gradient(135deg, #FF6B35, #F7931E)';
-                    e.currentTarget.style.color = 'white';
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                    e.currentTarget.style.boxShadow = '0 4px 15px rgba(255, 107, 53, 0.3)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = '#fff';
-                    e.currentTarget.style.color = 'inherit';
-                    e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = 'none';
-                  }}
-                  title="Click for AI analysis"
-                >
-                  <span style={{ fontWeight: '500', color: 'inherit' }}>
-                    {index + 1}. {team.display_name}
-                  </span>
-                  <span style={{ color: 'inherit', opacity: 0.8 }}>
-                    {team.wins}-{team.losses} • {team.points_for.toFixed(1)} PF
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
+          <WeeklyMatchups 
+            leagueId={leagueId} 
+            currentWeek={currentWeek} 
+            users={users} 
+            standings={standings} 
+          />
           
-          <div style={{ 
-            background: 'white', 
-            borderRadius: '12px', 
-            boxShadow: '0 4px 20px rgba(0,0,0,0.1)', 
-            padding: '30px',
-            textAlign: 'center'
-          }}>
-            <p style={{ color: '#666', margin: 0 }}>🤖 Claude AI team analysis coming soon!</p>
-          </div>
+          <ActivityFeed leagueId={leagueId} />
         </div>
         
         <div className="sidebar">

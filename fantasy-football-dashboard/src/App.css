@@ -600,6 +600,163 @@
   opacity: 1;
 }
 
+/* Activity Feed Styles */
+.activity-feed-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  padding: 30px;
+}
+
+.activity-feed-container h3 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.activity-item:hover {
+  background: #e9ecef;
+}
+
+.activity-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.activity-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.activity-description {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 5px;
+}
+
+.activity-status {
+  font-size: 0.8rem;
+  color: #666;
+  text-transform: capitalize;
+}
+
+.no-activity {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+}
+
+/* Weekly Matchups Styles */
+.weekly-matchups-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  padding: 30px;
+}
+
+.weekly-matchups-container h3 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.matchups-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.matchup-card {
+  display: flex;
+  align-items: center;
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+  gap: 20px;
+}
+
+.team-matchup {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.team-matchup.winning {
+  background: linear-gradient(135deg, #4CAF50, #8BC34A);
+  color: white;
+  transform: scale(1.02);
+}
+
+.team-matchup.losing {
+  background: #fff;
+  border: 2px solid #f0f0f0;
+}
+
+.team-matchup.tied {
+  background: linear-gradient(135deg, #FF9800, #FFC107);
+  color: white;
+}
+
+.team-info {
+  flex: 1;
+}
+
+.team-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.team-record {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.team-points {
+  font-size: 1.4rem;
+  font-weight: 700;
+  min-width: 60px;
+  text-align: right;
+}
+
+.matchup-vs {
+  font-weight: 700;
+  color: #666;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.no-matchups {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
   .homepage-content {
