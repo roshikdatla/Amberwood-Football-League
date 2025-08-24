@@ -103,11 +103,10 @@ const WeeklyMatchups: React.FC<WeeklyMatchupsProps> = ({
             const [team1, team2] = matchupPair;
             const team1Winning = team1.points > team2.points;
             const team2Winning = team2.points > team1.points;
-            const isTied = team1.points === team2.points;
 
             return (
               <div key={index} className="matchup-card">
-                <div className={`team-matchup ${team1Winning ? 'winning' : team2Winning ? 'losing' : 'tied'}`}>
+                <div className={`team-matchup ${team1Winning ? 'winning' : 'losing'}`}>
                   <div className="team-info">
                     <div className="team-name">{getTeamName(team1.roster_id)}</div>
                     <div className="team-record">{getTeamRecord(team1.roster_id)}</div>
@@ -117,9 +116,9 @@ const WeeklyMatchups: React.FC<WeeklyMatchupsProps> = ({
                   </div>
                 </div>
                 
-                <div className="matchup-vs">VS</div>
+                <div className="matchup-vs">vs</div>
                 
-                <div className={`team-matchup ${team2Winning ? 'winning' : team1Winning ? 'losing' : 'tied'}`}>
+                <div className={`team-matchup ${team2Winning ? 'winning' : 'losing'}`}>
                   <div className="team-info">
                     <div className="team-name">{getTeamName(team2.roster_id)}</div>
                     <div className="team-record">{getTeamRecord(team2.roster_id)}</div>

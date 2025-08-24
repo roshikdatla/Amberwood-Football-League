@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { sleeperApi } from '../services/sleeperApi';
+import { TeamStanding } from '../types/sleeper';
 
 interface Transaction {
   transaction_id: string;
@@ -14,9 +15,10 @@ interface Transaction {
 
 interface ActivityFeedProps {
   leagueId: string;
+  standings: TeamStanding[];
 }
 
-const ActivityFeed: React.FC<ActivityFeedProps> = ({ leagueId }) => {
+const ActivityFeed: React.FC<ActivityFeedProps> = ({ leagueId, standings }) => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string>('');
@@ -52,33 +54,38 @@ const ActivityFeed: React.FC<ActivityFeedProps> = ({ leagueId }) => {
     return `${player.first_name || ''} ${player.last_name || ''}`.trim() || player.full_name || `Player ${playerId}`;
   };
 
+  const getTeamName = (rosterId: number): string => {
+    const team = standings.find(s => s.roster_id === rosterId);
+    return team?.display_name || `Team ${rosterId}`;
+  };
+
   const getTransactionDescription = (transaction: Transaction): string => {
-    const timeAgo = Math.floor((Date.now() - transaction.created) / (1000 * 60 * 60 * 24));
-    const timeText = timeAgo === 0 ? 'Today' : `${timeAgo}d ago`;
+    const rosterId = transaction.roster_ids[0];
+    const teamName = getTeamName(rosterId);
 
     if (transaction.type === 'waiver') {
       if (transaction.adds && transaction.drops) {
         const addedPlayers = Object.keys(transaction.adds).map(getPlayerName);
         const droppedPlayers = Object.keys(transaction.drops).map(getPlayerName);
-        return `Waiver: Added ${addedPlayers.join(', ')} • Dropped ${droppedPlayers.join(', ')} (${timeText})`;
+        return `${teamName} added ${addedPlayers.join(', ')}, dropped ${droppedPlayers.join(', ')}`;
       } else if (transaction.adds) {
         const addedPlayers = Object.keys(transaction.adds).map(getPlayerName);
-        return `Waiver: Added ${addedPlayers.join(', ')} (${timeText})`;
+        return `${teamName} added ${addedPlayers.join(', ')}`;
       }
     } else if (transaction.type === 'free_agent') {
       if (transaction.adds && transaction.drops) {
         const addedPlayers = Object.keys(transaction.adds).map(getPlayerName);
         const droppedPlayers = Object.keys(transaction.drops).map(getPlayerName);
-        return `Free Agent: Added ${addedPlayers.join(', ')} • Dropped ${droppedPlayers.join(', ')} (${timeText})`;
+        return `${teamName} added ${addedPlayers.join(', ')}, dropped ${droppedPlayers.join(', ')}`;
       } else if (transaction.adds) {
         const addedPlayers = Object.keys(transaction.adds).map(getPlayerName);
-        return `Free Agent: Added ${addedPlayers.join(', ')} (${timeText})`;
+        return `${teamName} added ${addedPlayers.join(', ')}`;
       }
     } else if (transaction.type === 'trade') {
-      return `Trade completed (${timeText})`;
+      return `${teamName} completed a trade`;
     }
 
-    return `${transaction.type} transaction (${timeText})`;
+    return `${teamName} made a ${transaction.type} move`;
   };
 
   const getTransactionIcon = (transaction: Transaction): string => {
@@ -123,7 +130,7 @@ const ActivityFeed: React.FC<ActivityFeedProps> = ({ leagueId }) => {
         <div className="activity-list">
           {transactions.map((transaction) => {
             const timeAgo = Math.floor((Date.now() - transaction.created) / (1000 * 60 * 60 * 24));
-            const timeText = timeAgo === 0 ? 'Today' : `${timeAgo}d`;
+            const timeText = timeAgo === 0 ? 'Today' : `${timeAgo}d ago`;
             
             return (
               <div key={transaction.transaction_id} className="activity-item">
@@ -132,14 +139,11 @@ const ActivityFeed: React.FC<ActivityFeedProps> = ({ leagueId }) => {
                 </div>
                 <div className="activity-content">
                   <div className="activity-description">
-                    {getTransactionDescription(transaction).replace(/ \(\d+d ago\)|\(Today\)/g, '')}
+                    {getTransactionDescription(transaction)}
                   </div>
                   <div className="activity-status">
-                    {transaction.status}
+                    {transaction.status === 'complete' ? timeText : transaction.status}
                   </div>
-                </div>
-                <div className="activity-time">
-                  {timeText}
                 </div>
               </div>
             );

@@ -623,7 +623,7 @@
 
 .activity-item {
   display: grid;
-  grid-template-columns: 30px 1fr 60px;
+  grid-template-columns: 30px 1fr;
   align-items: center;
   gap: 10px;
   padding: 10px;
@@ -715,19 +715,15 @@
 }
 
 .team-matchup.winning {
-  background: linear-gradient(135deg, #4CAF50, #8BC34A);
-  color: white;
-  transform: scale(1.02);
+  background: #f8f9fa;
+  border: 2px solid #007bff;
+  color: #333;
 }
 
 .team-matchup.losing {
   background: #fff;
   border: 2px solid #f0f0f0;
-}
-
-.team-matchup.tied {
-  background: linear-gradient(135deg, #FF9800, #FFC107);
-  color: white;
+  color: #666;
 }
 
 .team-info {

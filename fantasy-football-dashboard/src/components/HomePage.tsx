@@ -171,7 +171,7 @@ const HomePage: React.FC<HomePageProps> = ({
             standings={standings} 
           />
           
-          <ActivityFeed leagueId={leagueId} />
+          <ActivityFeed leagueId={leagueId} standings={standings} />
         </div>
         
         <div className="sidebar">
