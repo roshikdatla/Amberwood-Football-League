@@ -486,7 +486,7 @@
   border-bottom: 2px solid #f0f0f0;
 }
 
-.analysis-header h3 {
+.team-info h3 {
   margin: 0;
   font-size: 1.8rem;
   font-weight: 700;
@@ -496,10 +496,49 @@
 .team-record {
   background: linear-gradient(135deg, #4CAF50, #8BC34A);
   color: white;
-  padding: 8px 16px;
-  border-radius: 20px;
+  padding: 6px 12px;
+  border-radius: 15px;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.team-grade {
+  text-align: center;
+  background: linear-gradient(135deg, #FF6B35, #F7931E);
+  color: white;
+  padding: 15px;
+  border-radius: 12px;
+  min-width: 80px;
+}
+
+.grade-value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.grade-label {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.grade-explanation {
+  background: #f8f9ff;
+  border: 1px solid #e1e5ff;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.grade-explanation p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #333;
+  font-style: italic;
 }
 
 .analysis-section {
@@ -561,6 +600,97 @@
   padding-top: 20px;
   border-top: 1px solid #eee;
   color: #666;
+}
+
+/* Upcoming Matchup Styles */
+.matchup-preview {
+  background: #f0f8ff;
+  border: 2px solid #007bff;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.matchup-opponent {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.matchup-prediction {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.matchup-confidence {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.key-factors ul {
+  margin: 8px 0 0 0;
+  padding-left: 20px;
+}
+
+.key-factors li {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+/* Roster Analysis Styles */
+.roster-breakdown {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.position-analysis {
+  background: #f8f9fa;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border-left: 4px solid #007bff;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.position-analysis strong {
+  color: #007bff;
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+/* Recent Trends Styles */
+.trends li {
+  background: #fff8e7;
+  border-left-color: #ffc107;
+  color: #856404;
+}
+
+/* Responsive Design for Modal */
+@media (max-width: 600px) {
+  .roster-breakdown {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .analysis-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .team-grade {
+    align-self: flex-end;
+  }
+  
+  .modal-content {
+    margin: 10px;
+    max-height: 95vh;
+  }
 }
 
 /* Clickable team cards */

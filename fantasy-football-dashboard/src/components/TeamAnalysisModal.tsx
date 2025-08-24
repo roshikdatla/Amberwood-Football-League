@@ -3,10 +3,27 @@ import React from 'react';
 interface TeamAnalysis {
   teamName: string;
   record: string;
+  overallGrade: string;
+  gradeExplanation: string;
   strengths: string[];
   weaknesses: string[];
   advice: string;
   outlook: string;
+  upcomingMatchup: {
+    opponent: string;
+    prediction: string;
+    keyFactors: string[];
+    confidence: string;
+  };
+  rosterAnalysis: {
+    qb: string;
+    rb: string;
+    wr: string;
+    te: string;
+    flex: string;
+    defense: string;
+  };
+  recentTrends: string[];
 }
 
 interface TeamAnalysisModalProps {
@@ -55,8 +72,58 @@ const TeamAnalysisModal: React.FC<TeamAnalysisModalProps> = ({
           {analysis && !loading && (
             <div className="team-analysis">
               <div className="analysis-header">
-                <h3>{analysis.teamName}</h3>
-                <span className="team-record">{analysis.record}</span>
+                <div className="team-info">
+                  <h3>{analysis.teamName}</h3>
+                  <span className="team-record">{analysis.record}</span>
+                </div>
+                <div className="team-grade">
+                  <div className="grade-value">{analysis.overallGrade}</div>
+                  <div className="grade-label">Overall Grade</div>
+                </div>
+              </div>
+
+              <div className="analysis-section">
+                <div className="grade-explanation">
+                  <p>{analysis.gradeExplanation}</p>
+                </div>
+              </div>
+
+              <div className="analysis-section">
+                <h4>🎯 Upcoming Matchup</h4>
+                <div className="matchup-preview">
+                  <div className="matchup-opponent">vs {analysis.upcomingMatchup.opponent}</div>
+                  <div className="matchup-prediction">{analysis.upcomingMatchup.prediction}</div>
+                  <div className="matchup-confidence">Confidence: {analysis.upcomingMatchup.confidence}</div>
+                  <div className="key-factors">
+                    <strong>Key Factors:</strong>
+                    <ul>
+                      {analysis.upcomingMatchup.keyFactors.map((factor, index) => (
+                        <li key={index}>{factor}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className="analysis-section">
+                <h4>📊 Roster Analysis by Position</h4>
+                <div className="roster-breakdown">
+                  <div className="position-analysis"><strong>QB:</strong> {analysis.rosterAnalysis.qb}</div>
+                  <div className="position-analysis"><strong>RB:</strong> {analysis.rosterAnalysis.rb}</div>
+                  <div className="position-analysis"><strong>WR:</strong> {analysis.rosterAnalysis.wr}</div>
+                  <div className="position-analysis"><strong>TE:</strong> {analysis.rosterAnalysis.te}</div>
+                  <div className="position-analysis"><strong>Flex:</strong> {analysis.rosterAnalysis.flex}</div>
+                  <div className="position-analysis"><strong>K/DST:</strong> {analysis.rosterAnalysis.defense}</div>
+                </div>
+              </div>
+
+              <div className="analysis-section">
+                <h4>📈 Recent Trends</h4>
+                <ul className="analysis-list trends">
+                  {analysis.recentTrends.map((trend, index) => (
+                    <li key={index}>{trend}</li>
+                  ))}
+                </ul>
               </div>
 
               <div className="analysis-section">
@@ -92,7 +159,7 @@ const TeamAnalysisModal: React.FC<TeamAnalysisModalProps> = ({
               </div>
 
               <div className="analysis-footer">
-                <small>🤖 Analysis powered by Claude (Sonnet-4)</small>
+                <small>🤖 Deep analysis powered by Claude (Sonnet-4)</small>
               </div>
             </div>
           )}
