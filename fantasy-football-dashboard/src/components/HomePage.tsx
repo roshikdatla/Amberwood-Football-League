@@ -3,7 +3,6 @@ import { sleeperApi } from '../services/sleeperApi';
 import { claudeApi } from '../services/claudeApi';
 import { League, Roster, User, TeamStanding } from '../types/sleeper';
 import LeagueHero from './LeagueHero';
-import Navigation from './Navigation';
 import TeamAnalysisModal from './TeamAnalysisModal';
 
 interface HomePageProps {
@@ -141,7 +140,6 @@ const HomePage: React.FC<HomePageProps> = ({
 
   return (
     <div className="homepage-container">
-      <Navigation currentPage="home" />
       <LeagueHero league={league} currentWeek={currentWeek} loading={loading} />
       
       <div className="homepage-content">
