@@ -13,30 +13,6 @@ const NewsletterArchive: React.FC = () => {
   // Mock newsletter data - this would come from your API/database
   const newsletters: Newsletter[] = [
     {
-      id: 'week-4-2025',
-      week: 4,
-      title: 'Week 4 Recap: Chaos and Comebacks',
-      date: '2025-01-15',
-      excerpt: 'Another wild week in the books! From miracle Monday night comebacks to devastating injuries, Week 4 had it all. Plus, who\'s emerging as this season\'s sleeper pick?',
-      published: true
-    },
-    {
-      id: 'week-3-2025',
-      week: 3,
-      title: 'Week 3 Analysis: The Rise of the Underdogs',
-      date: '2025-01-08',
-      excerpt: 'The league standings got a major shake-up this week. Find out which teams are quietly climbing the ranks and which "sure things" are falling apart.',
-      published: true
-    },
-    {
-      id: 'week-2-2025',
-      week: 2,
-      title: 'Week 2 Roundup: Early Season Surprises',
-      date: '2025-01-01',
-      excerpt: 'Just two weeks in and we\'re already seeing some shocking performances. Who\'s the early favorite for league champion, and who might be in for a long season?',
-      published: true
-    },
-    {
       id: 'week-1-2025',
       week: 1,
       title: 'Season Kickoff: 2025 Predictions and Power Rankings',
