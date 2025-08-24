@@ -121,21 +121,29 @@ const ActivityFeed: React.FC<ActivityFeedProps> = ({ leagueId }) => {
         </div>
       ) : (
         <div className="activity-list">
-          {transactions.map((transaction) => (
-            <div key={transaction.transaction_id} className="activity-item">
-              <div className="activity-icon">
-                {getTransactionIcon(transaction)}
-              </div>
-              <div className="activity-content">
-                <div className="activity-description">
-                  {getTransactionDescription(transaction)}
+          {transactions.map((transaction) => {
+            const timeAgo = Math.floor((Date.now() - transaction.created) / (1000 * 60 * 60 * 24));
+            const timeText = timeAgo === 0 ? 'Today' : `${timeAgo}d`;
+            
+            return (
+              <div key={transaction.transaction_id} className="activity-item">
+                <div className="activity-icon">
+                  {getTransactionIcon(transaction)}
                 </div>
-                <div className="activity-status">
-                  Status: {transaction.status}
+                <div className="activity-content">
+                  <div className="activity-description">
+                    {getTransactionDescription(transaction).replace(/ \(\d+d ago\)|\(Today\)/g, '')}
+                  </div>
+                  <div className="activity-status">
+                    {transaction.status}
+                  </div>
+                </div>
+                <div className="activity-time">
+                  {timeText}
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       )}
     </div>
