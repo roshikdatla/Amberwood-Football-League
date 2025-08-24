@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { sleeperApi } from '../services/sleeperApi';
 import { League, Roster, User, TeamStanding } from '../types/sleeper';
+import LeagueHero from './LeagueHero';
+import Navigation from './Navigation';
 
 interface HomePageProps {
   username?: string;
@@ -62,75 +64,138 @@ const HomePage: React.FC<HomePageProps> = ({
     return standings;
   };
 
+  const fetchLeagueData = async (leagueId: string) => {
+    try {
+      setLoading(true);
+      const [leagueData, rosters, users, week] = await Promise.all([
+        sleeperApi.getLeague(leagueId),
+        sleeperApi.getLeagueRosters(leagueId),
+        sleeperApi.getLeagueUsers(leagueId),
+        sleeperApi.getCurrentWeek()
+      ]);
+
+      setLeague(leagueData);
+      setCurrentWeek(week);
+      const calculatedStandings = calculateStandings(rosters, users);
+      setStandings(calculatedStandings);
+    } catch (err) {
+      setError('Failed to fetch league data');
+      console.error('Error fetching league data:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    const fetchLeagueData = async () => {
-      if (!leagueId) return;
-      
-      try {
-        setLoading(true);
-        const [leagueData, rosters, users, week] = await Promise.all([
-          sleeperApi.getLeague(leagueId),
-          sleeperApi.getLeagueRosters(leagueId),
-          sleeperApi.getLeagueUsers(leagueId),
-          sleeperApi.getCurrentWeek()
-        ]);
-
-        setLeague(leagueData);
-        setCurrentWeek(week);
-        const calculatedStandings = calculateStandings(rosters, users);
-        setStandings(calculatedStandings);
-      } catch (err) {
-        setError('Failed to fetch league data');
-        console.error('Error fetching league data:', err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchLeagueData();
+    if (leagueId) {
+      fetchLeagueData(leagueId);
+    } else {
+      setLoading(false);
+      setError('Please provide league ID');
+    }
   }, [leagueId, season]);
-
-  if (loading) {
-    return (
-      <div style={{ padding: '40px', textAlign: 'center', color: 'white' }}>
-        <h2>Loading your league data...</h2>
-      </div>
-    );
-  }
 
   if (error) {
     return (
-      <div style={{ padding: '40px', textAlign: 'center', color: 'white' }}>
-        <h2>Error: {error}</h2>
+      <div className="homepage-container">
+        <div className="error">{error}</div>
       </div>
     );
   }
 
   return (
-    <div style={{ padding: '40px', color: 'white' }}>
-      <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-        <h1>{league?.name || 'Fantasy Football League'}</h1>
-        <p>Season {season} • Week {currentWeek}</p>
-      </div>
-
-      <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-        <h2>League Standings</h2>
-        <div style={{ background: 'rgba(255,255,255,0.1)', padding: '20px', borderRadius: '10px' }}>
-          {standings.map((team, index) => (
-            <div key={team.roster_id} style={{ 
-              display: 'flex', 
-              justifyContent: 'space-between', 
-              padding: '10px', 
-              borderBottom: index < standings.length - 1 ? '1px solid rgba(255,255,255,0.2)' : 'none'
-            }}>
-              <span>{index + 1}. {team.display_name}</span>
-              <span>{team.wins}-{team.losses} ({team.points_for.toFixed(1)} PF)</span>
+    <div className="homepage-container">
+      <Navigation currentPage="home" />
+      <LeagueHero league={league} currentWeek={currentWeek} loading={loading} />
+      
+      <div className="homepage-content">
+        <div className="main-content">
+          <div className="newsletter-cta">
+            <div className="cta-content">
+              <div className="cta-icon">📰</div>
+              <div className="cta-text">
+                <h2>Weekly Newsletter</h2>
+                <p>Get the inside scoop on league drama, player analysis, and hot takes delivered weekly!</p>
+              </div>
+              <div className="cta-actions">
+                <a href="/newsletters" className="cta-primary-btn">
+                  View All Newsletters →
+                </a>
+                <div className="cta-latest">Latest: Week {currentWeek > 1 ? currentWeek - 1 : 1} Recap</div>
+              </div>
             </div>
-          ))}
+          </div>
+
+          <div style={{ 
+            background: 'white', 
+            borderRadius: '12px', 
+            boxShadow: '0 4px 20px rgba(0,0,0,0.1)', 
+            padding: '30px',
+            marginBottom: '30px'
+          }}>
+            <h2 style={{ color: '#333', marginBottom: '25px', fontSize: '1.5rem' }}>League Standings</h2>
+            <div>
+              {standings.map((team, index) => (
+                <div key={team.roster_id} style={{ 
+                  display: 'flex', 
+                  justifyContent: 'space-between', 
+                  padding: '15px', 
+                  borderBottom: index < standings.length - 1 ? '1px solid #eee' : 'none',
+                  borderRadius: '6px',
+                  background: '#fff',
+                  marginBottom: '5px',
+                  border: '1px solid #eee'
+                }}>
+                  <span style={{ fontWeight: '500', color: '#333' }}>
+                    {index + 1}. {team.display_name}
+                  </span>
+                  <span style={{ color: '#666' }}>
+                    {team.wins}-{team.losses} • {team.points_for.toFixed(1)} PF
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <div style={{ 
+            background: 'white', 
+            borderRadius: '12px', 
+            boxShadow: '0 4px 20px rgba(0,0,0,0.1)', 
+            padding: '30px',
+            textAlign: 'center'
+          }}>
+            <p style={{ color: '#666', margin: 0 }}>🤖 Claude AI team analysis coming soon!</p>
+          </div>
         </div>
         
-        <div style={{ marginTop: '40px', textAlign: 'center' }}>
-          <p>🤖 Claude AI team analysis coming soon!</p>
+        <div className="sidebar">
+          <div className="compact-standings-container">
+            <h3>League Standings</h3>
+            <div className="ai-feature-notice">
+              <div className="ai-notice-content">
+                <img src="/claude-logo.png" alt="Claude" className="claude-logo" width="48" height="48" />
+                <small>Click any team for AI analysis (Sonnet-4)</small>
+              </div>
+            </div>
+            <div className="compact-standings-list">
+              {standings.map((team, index) => (
+                <div key={team.roster_id} className="compact-standing-row">
+                  <div className="rank">{index + 1}</div>
+                  <div className="team-info">
+                    <div className="team-name">{team.display_name}</div>
+                    <div className="team-record">
+                      {team.wins}-{team.losses}
+                      {team.ties > 0 && `-${team.ties}`}
+                    </div>
+                  </div>
+                  <div className="points">{team.points_for.toFixed(0)}</div>
+                </div>
+              ))}
+            </div>
+            <div className="standings-footer">
+              <small>PF = Points For</small>
+            </div>
+          </div>
         </div>
       </div>
     </div>
