@@ -6,7 +6,7 @@ WORKDIR /app
 COPY fantasy-football-dashboard/MCP/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application files
+# Copy MCP application files
 COPY fantasy-football-dashboard/MCP/ ./
 
 # Expose port
