@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const NewsletterArchive: React.FC = () => {
+  const [showContent, setShowContent] = useState(false);
+
   return (
     <div className="newsletter-archive">
-      <div className="newspaper-container">
+      {!showContent ? (
+        <div className="coming-soon-container">
+          <div className="coming-soon-content">
+            <h1>📰 Newsletter Archive</h1>
+            <h2>Coming Soon!</h2>
+            <p>Our weekly fantasy football newsletter will be available here soon.</p>
+            <p>Stay tuned for in-depth analysis, trade recommendations, and league drama!</p>
+          </div>
+        </div>
+      ) : (
+        <div className="newspaper-container">
         <div className="newspaper-header">
           <div className="newspaper-masthead">
             <h1 className="newspaper-title">AMBERWOOD FANTASY TIMES</h1>
@@ -95,7 +107,16 @@ const NewsletterArchive: React.FC = () => {
             </div>
           </div>
         </div>
+        <div className="back-to-coming-soon">
+          <button 
+            className="back-btn"
+            onClick={() => setShowContent(false)}
+          >
+            ← Back to Coming Soon
+          </button>
+        </div>
       </div>
+      )}
     </div>
   );
 };
