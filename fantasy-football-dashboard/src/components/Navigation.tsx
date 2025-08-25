@@ -39,10 +39,10 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage = 'home' }) => {
             Newsletter
           </a>
           <a 
-            href="/analysis" 
-            className={`nav-link ${currentPage === 'analysis' ? 'active' : ''}`}
+            href="/chat" 
+            className={`nav-link ${currentPage === 'chat' ? 'active' : ''}`}
           >
-            AI Analysis
+            League Chat
           </a>
         </div>
       </div>

@@ -1,24 +1,37 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 import HomePage from './components/HomePage';
 import NewsletterArchive from './components/NewsletterArchive';
+import LeagueChat from './components/LeagueChat';
+import Navigation from './components/Navigation';
+
+function AppContent() {
+  const location = useLocation();
+  const currentPage = location.pathname === '/' ? 'home' : location.pathname.slice(1);
+
+  return (
+    <div className="App">
+      <Navigation currentPage={currentPage} />
+      <Routes>
+        <Route path="/" element={
+          <HomePage 
+            username="roshik" 
+            leagueId="1240124901977759744" 
+            season="2025" 
+          />
+        } />
+        <Route path="/newsletters" element={<NewsletterArchive />} />
+        <Route path="/chat" element={<LeagueChat />} />
+      </Routes>
+    </div>
+  );
+}
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={
-            <HomePage 
-              username="roshik" 
-              leagueId="1240124901977759744" 
-              season="2025" 
-            />
-          } />
-          <Route path="/newsletters" element={<NewsletterArchive />} />
-        </Routes>
-      </div>
+      <AppContent />
     </Router>
   );
 }
