@@ -48,7 +48,7 @@ const TeamAnalysisModal: React.FC<TeamAnalysisModalProps> = ({
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <div className="modal-title">
-            <img src="/claude-logo-png_seeklogo-554540.png" alt="Claude" width="32" height="32" />
+            <img src="/claude-logo-png_seeklogo-554540.png" alt="Claude" width="40" height="40" />
             <h2>AI Team Analysis</h2>
           </div>
           <button className="modal-close" onClick={onClose}>×</button>
@@ -83,47 +83,11 @@ const TeamAnalysisModal: React.FC<TeamAnalysisModalProps> = ({
               </div>
 
               <div className="analysis-section">
-                <div className="grade-explanation">
+                <h4>📊 Team Summary</h4>
+                <div className="team-summary">
                   <p>{analysis.gradeExplanation}</p>
+                  <p>{analysis.outlook}</p>
                 </div>
-              </div>
-
-              <div className="analysis-section">
-                <h4>🎯 Upcoming Matchup</h4>
-                <div className="matchup-preview">
-                  <div className="matchup-opponent">vs {analysis.upcomingMatchup.opponent}</div>
-                  <div className="matchup-prediction">{analysis.upcomingMatchup.prediction}</div>
-                  <div className="matchup-confidence">Confidence: {analysis.upcomingMatchup.confidence}</div>
-                  <div className="key-factors">
-                    <strong>Key Factors:</strong>
-                    <ul>
-                      {analysis.upcomingMatchup.keyFactors.map((factor, index) => (
-                        <li key={index}>{factor}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div className="analysis-section">
-                <h4>📊 Roster Analysis by Position</h4>
-                <div className="roster-breakdown">
-                  <div className="position-analysis"><strong>QB:</strong> {analysis.rosterAnalysis.qb}</div>
-                  <div className="position-analysis"><strong>RB:</strong> {analysis.rosterAnalysis.rb}</div>
-                  <div className="position-analysis"><strong>WR:</strong> {analysis.rosterAnalysis.wr}</div>
-                  <div className="position-analysis"><strong>TE:</strong> {analysis.rosterAnalysis.te}</div>
-                  <div className="position-analysis"><strong>Flex:</strong> {analysis.rosterAnalysis.flex}</div>
-                  <div className="position-analysis"><strong>K/DST:</strong> {analysis.rosterAnalysis.defense}</div>
-                </div>
-              </div>
-
-              <div className="analysis-section">
-                <h4>📈 Recent Trends</h4>
-                <ul className="analysis-list trends">
-                  {analysis.recentTrends.map((trend, index) => (
-                    <li key={index}>{trend}</li>
-                  ))}
-                </ul>
               </div>
 
               <div className="analysis-section">
@@ -144,22 +108,8 @@ const TeamAnalysisModal: React.FC<TeamAnalysisModalProps> = ({
                 </ul>
               </div>
 
-              <div className="analysis-section">
-                <h4>💡 Strategic Advice</h4>
-                <div className="analysis-advice">
-                  <p>{analysis.advice}</p>
-                </div>
-              </div>
-
-              <div className="analysis-section">
-                <h4>🔮 Season Outlook</h4>
-                <div className="analysis-outlook">
-                  <p>{analysis.outlook}</p>
-                </div>
-              </div>
-
               <div className="analysis-footer">
-                <small>🤖 Deep analysis powered by Claude (Sonnet-4)</small>
+                <small>🤖 Analysis powered by Claude (Sonnet-4)</small>
               </div>
             </div>
           )}
