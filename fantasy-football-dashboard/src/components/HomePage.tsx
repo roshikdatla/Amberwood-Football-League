@@ -132,7 +132,7 @@ const HomePage: React.FC<HomePageProps> = ({
       setLoading(false);
       setError('Please provide league ID');
     }
-  }, [leagueId, season]);
+  }, [leagueId, season, fetchLeagueData]);
 
   if (error) {
     return (

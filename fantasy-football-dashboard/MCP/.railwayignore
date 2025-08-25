@@ -1,0 +1,19 @@
+# Ignore everything except MCP server files
+../fantasy-football-dashboard/
+../api-server/
+../.git/
+../node_modules/
+../build/
+../dist/
+../.env
+../package.json
+../yarn.lock
+../package-lock.json
+
+# Keep only MCP files
+!*.py
+!requirements.txt
+!railway.toml
+!Procfile
+!config.py
+!README.md
