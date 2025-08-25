@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { sleeperApi } from '../services/sleeperApi';
 import { claudeApi } from '../services/claudeApi';
 import { League, Roster, User, TeamStanding } from '../types/sleeper';
@@ -74,7 +74,7 @@ const HomePage: React.FC<HomePageProps> = ({
     return standings;
   };
 
-  const fetchLeagueData = async (leagueId: string) => {
+  const fetchLeagueData = useCallback(async (leagueId: string) => {
     try {
       setLoading(true);
       const [leagueData, rosters, users, week] = await Promise.all([
@@ -95,7 +95,7 @@ const HomePage: React.FC<HomePageProps> = ({
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   const analyzeTeam = async (team: TeamStanding) => {
     setShowAnalysisModal(true);
