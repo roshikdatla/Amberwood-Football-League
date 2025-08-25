@@ -1,0 +1,2 @@
+# This file tells Railway this is a Python project
+# Actual requirements are in fantasy-football-dashboard/MCP/requirements.txt
