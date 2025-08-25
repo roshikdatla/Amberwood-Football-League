@@ -1,0 +1,71 @@
+import React from 'react';
+import { League } from '../types/sleeper';
+
+interface LeagueHeroProps {
+  league: League | null;
+  currentWeek: number;
+  loading: boolean;
+}
+
+const LeagueHero: React.FC<LeagueHeroProps> = ({ league, currentWeek, loading }) => {
+  const totalWeeks = 17; // Standard NFL season weeks
+  const progressPercentage = (currentWeek / totalWeeks) * 100;
+
+  if (loading) {
+    return (
+      <div className="hero-section">
+        <div className="hero-overlay"></div>
+        <div className="hero-content">
+          <div className="league-title">
+            <h1>Loading...</h1>
+          </div>
+          <p className="league-subtitle loading-hero">Getting your league data...</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="hero-section">
+      <div className="hero-overlay"></div>
+      <div className="hero-content">
+        <div className="league-title">
+          <h1>{league?.name || 'Amberwood Football League'}</h1>
+        </div>
+        <p className="league-subtitle">
+          Fantasy Football • {league?.season || '2025'} Season
+        </p>
+        
+        <div className="season-progress">
+          <div className="progress-label">Season Progress</div>
+          <div className="progress-bar">
+            <div 
+              className="progress-fill"
+              style={{ width: `${progressPercentage}%` }}
+            ></div>
+          </div>
+          <div className="progress-text">
+            Week {currentWeek} of {totalWeeks}
+          </div>
+        </div>
+
+        <div className="league-stats-quick">
+          <div className="stat-item">
+            <div className="stat-value">{league?.total_rosters || 12}</div>
+            <div className="stat-label">Teams</div>
+          </div>
+          <div className="stat-item">
+            <div className="stat-value">{currentWeek}</div>
+            <div className="stat-label">Current Week</div>
+          </div>
+          <div className="stat-item">
+            <div className="stat-value">{league?.settings?.playoff_teams || 6}</div>
+            <div className="stat-label">Playoff Teams</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default LeagueHero;
