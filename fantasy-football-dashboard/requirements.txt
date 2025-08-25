@@ -1,2 +1,5 @@
-# This file tells Railway this is a Python project
-# Actual requirements are in fantasy-football-dashboard/MCP/requirements.txt
+httpx>=0.24.0
+mcp==1.9.4
+fastapi>=0.104.0
+uvicorn>=0.24.0
+python-dotenv
