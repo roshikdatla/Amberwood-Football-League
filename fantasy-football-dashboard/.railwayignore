@@ -1,16 +1,18 @@
-# Ignore Node.js files to prevent auto-detection
-package.json.bak
-package-lock.json.bak
-fantasy-football-dashboard/src/
-fantasy-football-dashboard/public/
-fantasy-football-dashboard/build/
-fantasy-football-dashboard/node_modules/
-fantasy-football-dashboard/api-server/
+# Force Railway to ignore React files and use Python
+package.json
+package-lock.json  
+tsconfig.json
+temp_react_files/
+src/
+public/
+build/
+node_modules/
+api-server/
+api/
 .git/
-.gitignore
 
-# Only include files needed for MCP deployment
-!Dockerfile
-!railway.toml
+# Include Python files only
+!main.py
 !requirements.txt
-!fantasy-football-dashboard/MCP/
+!railway.toml
+!MCP/
