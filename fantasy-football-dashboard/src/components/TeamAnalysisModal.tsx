@@ -48,7 +48,7 @@ const TeamAnalysisModal: React.FC<TeamAnalysisModalProps> = ({
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <div className="modal-title">
-            <img src="./claude-logo-png_seeklogo-554540.png" alt="Claude" width="32" height="32" />
+            <img src="/claude-logo-png_seeklogo-554540.png" alt="Claude" width="32" height="32" />
             <h2>AI Team Analysis</h2>
           </div>
           <button className="modal-close" onClick={onClose}>×</button>
