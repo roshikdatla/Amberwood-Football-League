@@ -142,6 +142,8 @@ async function callClaudeAPI(prompt) {
     throw new Error('Claude API key not configured');
   }
   
+  console.log('🤖 Calling Claude API with key:', CLAUDE_API_KEY ? 'Present' : 'Missing');
+  
   try {
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
@@ -157,15 +159,22 @@ async function callClaudeAPI(prompt) {
       })
     });
     
+    console.log('🤖 Claude API Response Status:', response.status);
+    
     if (!response.ok) {
-      throw new Error(`Claude API error: ${response.status}`);
+      const errorText = await response.text();
+      console.error('🤖 Claude API Error Response:', errorText);
+      throw new Error(`Claude API error: ${response.status} - ${errorText}`);
     }
     
     const data = await response.json();
+    console.log('🤖 Claude API Success:', data.content[0]?.text?.substring(0, 100) + '...');
     return data.content[0]?.text || 'No response from Claude';
   } catch (error) {
-    console.error('Claude API error:', error);
-    return `AI analysis unavailable: ${error.message}`;
+    console.error('🤖 Claude API error:', error);
+    
+    // Fallback to basic analysis without AI
+    return `Based on your team's current record and league position, here are some general recommendations:\n\n• Focus on consistent performers over boom-or-bust players\n• Check matchup difficulty and weather conditions\n• Consider recent target share and snap count trends\n• Monitor injury reports before game time\n\n(Note: Advanced AI analysis temporarily unavailable)`;
   }
 }
 
@@ -568,11 +577,27 @@ async function processLeagueQuestion(question) {
       return response;
     }
     
-    // Draft results - "Show me the draft" or "Draft results" or "Who was drafted first"
+    // Draft results - "Show me the draft" or "Draft results" or "Who was drafted first" or "When was [player] drafted"
     if (lowerQuestion.includes('draft')) {
       const draft = await getDraftResults();
       if (!draft) {
         return `❌ **No draft data available.** The league might not have drafted yet or data is unavailable.`;
+      }
+      
+      // Check for specific player draft lookup - "When was [player] drafted?"
+      const whenMatch = lowerQuestion.match(/(?:when was|was)\s+(.+?)\s+drafted/);
+      if (whenMatch) {
+        const playerSearchName = whenMatch[1].toLowerCase();
+        const playerPick = draft.find(pick => 
+          pick.player.toLowerCase().includes(playerSearchName) ||
+          playerSearchName.includes(pick.player.toLowerCase().split(' ')[1] || '') // Last name match
+        );
+        
+        if (playerPick) {
+          return `🎯 **${playerPick.player} Draft Info:**\n\n📍 **Pick:** ${playerPick.overall} overall (Round ${playerPick.round}, Pick ${playerPick.pick})\n👤 **Drafted by:** ${playerPick.draftedBy}\n🏈 **Position:** ${playerPick.position}\n🏟️ **NFL Team:** ${playerPick.team}`;
+        } else {
+          return `❓ **"${whenMatch[1]}" not found in draft results.** Try using the player's full name or check spelling.\n\n💡 You can also try "Search for ${whenMatch[1]}" to see if they're in the league.`;
+        }
       }
       
       if (lowerQuestion.includes('first round') || lowerQuestion.includes('round 1')) {
@@ -600,7 +625,7 @@ async function processLeagueQuestion(question) {
         draft.slice(0, 5).forEach(pick => {
           response += `${pick.overall}. ${pick.player} (${pick.position}) - ${pick.draftedBy}\n`;
         });
-        response += `\n💡 Ask for "first round draft" or "top 10 picks" for more details!`;
+        response += `\n💡 Ask "When was [player] drafted?" or "first round draft" for more details!`;
         return response;
       }
     }
