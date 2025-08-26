@@ -153,7 +153,7 @@ async function callClaudeAPI(prompt) {
         'anthropic-version': '2023-06-01'
       },
       body: JSON.stringify({
-        model: 'claude-3-5-sonnet-20240620',
+        model: 'claude-opus-4-1',
         max_tokens: 500,
         messages: [{ role: 'user', content: prompt }]
       })
