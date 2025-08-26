@@ -409,19 +409,12 @@ async function processLeagueQuestion(question) {
       transactions: transactions
     };
     
-    // Create a concise summary instead of sending all raw data
-    const leagueSummary = `League: ${leagueInfo.league?.name || 'Fantasy League'}
-Teams: ${standings?.length || 0}
-Top 3 Teams: ${standings?.slice(0, 3).map(t => `${t.team_name} (${t.wins}-${t.losses})`).join(', ') || 'N/A'}
-Total Draft Picks: ${draftResults?.length || 0}
-Recent Activity: ${transactions?.length || 0} transactions`;
+    const aiPrompt = `You are an expert fantasy football analyst with access to comprehensive league data. The user asked: "${question}"
 
-    const aiPrompt = `You are a fantasy football expert. User question: "${question}"
+Here is the complete league data:
+${JSON.stringify(comprehensiveData, null, 2)}
 
-League Summary:
-${leagueSummary}
-
-Based on this league context, provide a helpful, specific answer. Be concise but insightful. Focus on actionable fantasy football advice.`;
+Please analyze this data and provide a detailed, insightful answer to their question. Use actual player names, team names, and specific data from above. Don't use placeholders like [player name] - use the real names and numbers from the data. Be specific and accurate.`;
 
     const aiResponse = await callClaudeAPI(aiPrompt);
     return aiResponse;
