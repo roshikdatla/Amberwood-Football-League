@@ -1481,3 +1481,19 @@
     padding: 20px;
   }
 }
+
+/* Typing cursor animation for chat */
+.typing-cursor {
+  animation: blink 1s infinite;
+  color: #007bff;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}

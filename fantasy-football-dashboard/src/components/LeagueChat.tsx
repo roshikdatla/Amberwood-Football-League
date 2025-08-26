@@ -7,6 +7,8 @@ interface Message {
   sender: 'user' | 'assistant';
   timestamp: Date;
   isLoading?: boolean;
+  isTyping?: boolean;
+  displayText?: string;
 }
 
 const LeagueChat: React.FC = () => {
@@ -29,6 +31,40 @@ const LeagueChat: React.FC = () => {
 
   useEffect(() => {
     scrollToBottom();
+  }, [messages]);
+
+  // Typewriter effect for assistant messages
+  useEffect(() => {
+    const intervals: NodeJS.Timeout[] = [];
+
+    messages.forEach((message) => {
+      if (message.sender === 'assistant' && message.isTyping && !message.isLoading) {
+        const fullText = message.text;
+        const currentDisplayText = message.displayText || '';
+        
+        if (currentDisplayText.length < fullText.length) {
+          const intervalId = setInterval(() => {
+            setMessages(prevMessages => 
+              prevMessages.map(msg => {
+                if (msg.id === message.id && msg.displayText && msg.displayText.length < fullText.length) {
+                  const nextChar = fullText.charAt(msg.displayText.length);
+                  return { ...msg, displayText: msg.displayText + nextChar };
+                } else if (msg.id === message.id && msg.displayText && msg.displayText.length >= fullText.length) {
+                  return { ...msg, isTyping: false };
+                }
+                return msg;
+              })
+            );
+          }, 20); // Typing speed: 20ms per character
+
+          intervals.push(intervalId);
+        }
+      }
+    });
+
+    return () => {
+      intervals.forEach(clearInterval);
+    };
   }, [messages]);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -60,10 +96,10 @@ const LeagueChat: React.FC = () => {
       // Call the MCP server through the API
       const response = await mcpApi.sendChatMessage(inputText.trim());
       
-      // Replace loading message with actual response
+      // Replace loading message with typewriter effect
       setMessages(prev => prev.map(msg => 
         msg.id === loadingMessage.id 
-          ? { ...msg, text: response, isLoading: false }
+          ? { ...msg, text: response, isLoading: false, isTyping: true, displayText: '' }
           : msg
       ));
     } catch (error) {
@@ -107,6 +143,8 @@ const LeagueChat: React.FC = () => {
                     <span></span>
                     <span></span>
                   </div>
+                ) : message.isTyping ? (
+                  <pre>{message.displayText}<span className="typing-cursor">|</span></pre>
                 ) : (
                   <pre>{message.text}</pre>
                 )}
