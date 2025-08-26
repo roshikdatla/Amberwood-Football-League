@@ -672,8 +672,51 @@ async function processLeagueQuestion(question) {
       return response;
     }
     
-    // Default helpful response
-    return `🏈 **Fantasy Football Assistant**\n\nHi! I have access to your Sleeper league data and AI analysis. Here are some questions that work great:\n\n**📊 Popular Queries:**\n• **"Show me the standings"** - Current league rankings\n• **"Who's in the league?"** - All team owners and info\n• **"This week's matchups"** - Current week games\n• **"Show me all rosters"** - Everyone's players\n• **"Team for [your name]"** - Specific team analysis\n\n**🔍 Player Searches:**\n• **"Who owns Travis Kelce?"** - Find player's owner\n• **"Search for Kyren Williams"** - Player lookup\n• **"When was Kyren Williams drafted?"** - Draft history\n\n**🤖 AI Analysis (requires API key):**\n• **"Who should [your name] start this week?"** - Start/sit advice\n• **"How will [your name] do this week?"** - Team predictions\n• **"Trade suggestions for [your name]"** - Trade advice\n\n**📋 League History:**\n• **"Show me the draft results"** - Full draft recap\n• **"First round draft picks"** - Top picks\n• **"Recent transactions"** - Trades & pickups\n\n💡 Replace [your name] with any player name in your league!`;
+    // For any other question, send comprehensive league data to Claude AI for analysis
+    try {
+      console.log('🤖 Using comprehensive AI analysis for question:', question);
+      
+      // Gather comprehensive league data
+      const [leagueInfo, standings, allRosters, draftResults, matchups, transactions] = await Promise.all([
+        getLeagueInfo().catch(e => ({ error: e.message })),
+        getStandings().catch(e => ({ error: e.message })),
+        getTeamRosters().catch(e => ({ error: e.message })),
+        getDraftResults().catch(e => ({ error: e.message })),
+        getCurrentMatchups().catch(e => ({ error: e.message })),
+        getTransactions().catch(e => ({ error: e.message }))
+      ]);
+      
+      const comprehensiveData = {
+        league: leagueInfo,
+        standings: standings,
+        rosters: allRosters,
+        draft: draftResults,
+        matchups: matchups,
+        transactions: transactions
+      };
+      
+      const aiPrompt = `You are an expert fantasy football analyst with access to comprehensive league data. The user asked: "${question}"
+
+Here is the complete league data:
+${JSON.stringify(comprehensiveData, null, 2)}
+
+Please analyze this data and provide a detailed, insightful answer to their question. Focus on:
+- Specific data points that support your analysis
+- Player performance trends
+- Draft value analysis (reaches/steals)
+- Team comparisons
+- Strategic recommendations
+
+Format your response with clear headers and bullet points. Be specific with names, numbers, and actionable insights.`;
+
+      const aiResponse = await callClaudeAPI(aiPrompt);
+      return `🤖 **AI Analysis**\n\n${aiResponse}`;
+      
+    } catch (error) {
+      console.error('Comprehensive AI analysis failed:', error);
+      // Fallback to helpful response if AI fails
+      return `🏈 **Fantasy Football Assistant**\n\nHi! I have access to your Sleeper league data and AI analysis. Here are some questions that work great:\n\n**📊 Popular Queries:**\n• **"Show me the standings"** - Current league rankings\n• **"Who's in the league?"** - All team owners and info\n• **"This week's matchups"** - Current week games\n• **"Show me all rosters"** - Everyone's players\n• **"Team for [your name]"** - Specific team analysis\n\n**🔍 Player Searches:**\n• **"Who owns [player name]?"** - Find player's owner\n• **"Search for [player name]"** - Player lookup\n• **"When was [player name] drafted?"** - Draft history\n\n**🤖 AI Analysis (with comprehensive data):**\n• **"What were the worst draft reaches?"** - Draft analysis\n• **"Who should [your name] start this week?"** - Start/sit advice\n• **"What trades should I make?"** - Trade suggestions\n• **"How is my team performing?"** - Team analysis\n\n**📋 League History:**\n• **"Show me the draft results"** - Full draft recap\n• **"First round draft picks"** - Top picks\n• **"Recent transactions"** - Trades & pickups\n\n💡 You can now ask any fantasy football question and I'll analyze your full league data!`;
+    }
     
   } catch (error) {
     console.error('Error processing question:', error);
