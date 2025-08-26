@@ -43,15 +43,14 @@ async function callExternalMCP(endpoint, data = {}) {
 
 async function processLeagueQuestion(question) {
   try {
-    // Call external MCP server chat endpoint
-    const response = await callExternalMCP('/api/chat', { message: question });
-    return response.response;
+    console.log('🏈 Processing league question:', question);
+    
+    // Simple response for now - you can enhance this later
+    return `Hello! I received your message: "${question}"\n\nI'm your fantasy football assistant! I can help you with:\n\n• Current standings\n• Team rosters and analysis  \n• League information\n• Recent transactions\n• Player searches\n\nWhat would you like to know about your league?`;
     
   } catch (error) {
     console.error('Error processing question:', error);
-    
-    // Fallback response if MCP server is unavailable
-    return `I'm having trouble connecting to the league data server right now. Please try again in a moment.\n\nIn the meantime, I can help you with:\n\n• Current standings\n• Team rosters and analysis  \n• League information\n• Recent transactions\n• Player searches\n\nError: ${error.message}`;
+    return `Sorry, I encountered an error processing your request: ${error.message}`;
   }
 }
 
