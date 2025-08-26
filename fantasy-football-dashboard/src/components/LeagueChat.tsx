@@ -15,7 +15,7 @@ const LeagueChat: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: "🏈 **Fantasy Football Assistant**\n\nHi! I have access to your Sleeper league data and AI analysis. Here are some questions that work great:\n\n**📊 Popular Queries:**\n• **\"Show me the standings\"** - Current league rankings\n• **\"Who's in the league?\"** - All team owners and info\n• **\"This week's matchups\"** - Current week games\n• **\"Show me all rosters\"** - Everyone's players\n• **\"Team for [your name]\"** - Specific team analysis\n\n**🔍 Player Searches:**\n• **\"Who owns [player name]?\"** - Find player's owner\n• **\"Search for [player name]\"** - Player lookup\n• **\"When was [player name] drafted?\"** - Draft history\n\n**🤖 AI Analysis (requires API key):**\n• **\"Who should [your name] start this week?\"** - Start/sit advice\n• **\"How will [your name] do this week?\"** - Team predictions\n• **\"Trade suggestions for [your name]\"** - Trade advice\n\n**📋 League History:**\n• **\"Show me the draft results\"** - Full draft recap\n• **\"First round draft picks\"** - Top picks\n• **\"Recent transactions\"** - Trades & pickups\n\n💡 Replace [your name] and [player name] with actual names in your league!",
+      text: "Hi! I'm your fantasy football assistant. I can help you analyze your Amberwood Fantasy Football League using AI and real-time data from Sleeper.\n\nTry asking me about standings, rosters, trades, draft analysis, or any other fantasy football questions!",
       sender: 'assistant',
       timestamp: new Date()
     }

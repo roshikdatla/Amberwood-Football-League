@@ -418,7 +418,7 @@ Please analyze this data and provide a detailed, insightful answer to their ques
 Format your response with clear headers and bullet points. Be specific with names, numbers, and actionable insights.`;
 
     const aiResponse = await callClaudeAPI(aiPrompt);
-    return `🤖 **AI Analysis**\n\n${aiResponse}`;
+    return aiResponse;
     
   } catch (error) {
     console.error('Comprehensive AI analysis failed:', error);
