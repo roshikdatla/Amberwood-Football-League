@@ -63,7 +63,7 @@ const LeagueChat: React.FC = () => {
         }
         return msg;
       }));
-    }, 50); // 50ms per character
+    }, 10); // 10ms per character - much faster
 
     return () => clearTimeout(timeoutId);
   }, [messages]);
