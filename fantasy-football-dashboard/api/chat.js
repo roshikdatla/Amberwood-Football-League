@@ -425,6 +425,17 @@ async function processLeagueQuestion(question) {
         teamName = teamMatches[1];
       }
       
+      // If they just say "my team" without specifying, ask them which team
+      if ((lowerQuestion.includes('my team') || lowerQuestion.includes('my roster')) && !teamName) {
+        const { users } = await getLeagueInfo();
+        let response = `❓ **Which team is yours?**\n\n👥 **League Members:**\n\n`;
+        users.forEach((user, index) => {
+          response += `${index + 1}. **${user.display_name || user.username}**\n`;
+        });
+        response += `\n💡 Say "Team for [your name]" or "My team is [your name]"`;
+        return response;
+      }
+      
       const teamData = await getTeamRoster(teamName);
       if (teamData) {
         return `👤 **${teamData.user.display_name || teamData.user.username}'s Team**\n\n📊 **Record:** ${teamData.record}\n📈 **Points For:** ${teamData.pointsFor.toFixed(1)}\n📉 **Points Against:** ${teamData.pointsAgainst.toFixed(1)}\n\n💡 Ask me: "Who should [team name] start this week?" or "Trade suggestions for [team name]"`;
@@ -433,21 +444,35 @@ async function processLeagueQuestion(question) {
       if (teamName) {
         return `❓ I couldn't find a team with the name "${teamName}". Try asking "Who's in the league?" to see all team names.`;
       }
-      return `❓ **Which team would you like to analyze?**\n\nTry asking:\n• "My team" (for your default team)\n• "Team for [name]" (for any player)\n• "Who's in the league?" (to see all teams)`;
+      return `❓ **Which team would you like to analyze?**\n\nTry asking:\n• "Team for [name]" (for any player)\n• "Who's in the league?" (to see all teams)`;
     }
     
     // Start/sit recommendations with AI
     if (lowerQuestion.includes('start') || lowerQuestion.includes('sit') || lowerQuestion.includes('lineup')) {
       // Extract team name if mentioned
       let teamName = null;
-      const teamMatches = lowerQuestion.match(/(?:for|team)\s+([a-zA-Z]+)/);
+      const teamMatches = lowerQuestion.match(/(?:for|team)\s+([a-zA-Z]+)|should\s+([a-zA-Z]+)\s+(?:start|sit)/);
       if (teamMatches) {
-        teamName = teamMatches[1];
+        teamName = teamMatches[1] || teamMatches[2];
+        if (teamName === 'i' || teamName === 'should') {
+          teamName = null;
+        }
+      }
+      
+      // If they say "who should I start" without specifying team, ask which team
+      if (!teamName && (lowerQuestion.includes('should i') || lowerQuestion.includes('my lineup'))) {
+        const { users } = await getLeagueInfo();
+        let response = `❓ **Which team needs start/sit advice?**\n\n👥 **League Members:**\n\n`;
+        users.forEach((user, index) => {
+          response += `${index + 1}. **${user.display_name || user.username}**\n`;
+        });
+        response += `\n💡 Say "Who should [your name] start this week?"`;
+        return response;
       }
       
       const teamData = await getTeamRoster(teamName);
       if (!teamData) {
-        return `❓ **Which team needs start/sit advice?**\n\nTry asking:\n• "Who should I start this week?"\n• "Who should [team name] start this week?"\n• "Lineup help for [team name]"`;
+        return `❓ **Which team needs start/sit advice?**\n\nTry asking:\n• "Who should [team name] start this week?"\n• "Lineup help for [team name]"`;
       }
       
       const aiPrompt = `You are a fantasy football expert. Provide start/sit advice for ${teamData.user.display_name || teamData.user.username}'s team in week ${new Date().getWeek() || 'current'}. Their record is ${teamData.record} with ${teamData.pointsFor.toFixed(1)} points for. Give specific, actionable advice in 2-3 sentences focusing on this week's matchups and recent player performance.`;
