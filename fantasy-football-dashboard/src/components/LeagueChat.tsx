@@ -35,36 +35,37 @@ const LeagueChat: React.FC = () => {
 
   // Typewriter effect for assistant messages
   useEffect(() => {
-    const intervals: NodeJS.Timeout[] = [];
+    const typingMessage = messages.find(msg => 
+      msg.sender === 'assistant' && msg.isTyping && !msg.isLoading
+    );
+    
+    if (!typingMessage) return;
 
-    messages.forEach((message) => {
-      if (message.sender === 'assistant' && message.isTyping && !message.isLoading) {
-        const fullText = message.text;
-        const currentDisplayText = message.displayText || '';
-        
-        if (currentDisplayText.length < fullText.length) {
-          const intervalId = setInterval(() => {
-            setMessages(prevMessages => 
-              prevMessages.map(msg => {
-                if (msg.id === message.id && msg.displayText && msg.displayText.length < fullText.length) {
-                  const nextChar = fullText.charAt(msg.displayText.length);
-                  return { ...msg, displayText: msg.displayText + nextChar };
-                } else if (msg.id === message.id && msg.displayText && msg.displayText.length >= fullText.length) {
-                  return { ...msg, isTyping: false };
-                }
-                return msg;
-              })
-            );
-          }, 20); // Typing speed: 20ms per character
+    const fullText = typingMessage.text;
+    const currentLength = (typingMessage.displayText || '').length;
+    
+    if (currentLength >= fullText.length) {
+      // Typing is complete
+      setMessages(prev => prev.map(msg => 
+        msg.id === typingMessage.id 
+          ? { ...msg, isTyping: false }
+          : msg
+      ));
+      return;
+    }
 
-          intervals.push(intervalId);
+    const timeoutId = setTimeout(() => {
+      setMessages(prev => prev.map(msg => {
+        if (msg.id === typingMessage.id) {
+          const currentDisplay = msg.displayText || '';
+          const nextChar = fullText.charAt(currentDisplay.length);
+          return { ...msg, displayText: currentDisplay + nextChar };
         }
-      }
-    });
+        return msg;
+      }));
+    }, 50); // 50ms per character
 
-    return () => {
-      intervals.forEach(clearInterval);
-    };
+    return () => clearTimeout(timeoutId);
   }, [messages]);
 
   const handleSubmit = async (e: React.FormEvent) => {
