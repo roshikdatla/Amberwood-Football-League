@@ -209,6 +209,163 @@ async function getCurrentMatchups() {
   }
 }
 
+// Get all players data
+async function getPlayersData() {
+  try {
+    return await getSleeperData('/players/nfl');
+  } catch (error) {
+    console.error('Players data error:', error);
+    return {};
+  }
+}
+
+// Get team rosters with player names
+async function getTeamRosters() {
+  try {
+    const { users, rosters } = await getLeagueInfo();
+    const players = await getPlayersData();
+    
+    const teamRosters = rosters.map(roster => {
+      const user = users.find(u => u.user_id === roster.owner_id);
+      const playerNames = (roster.players || []).map(playerId => {
+        const player = players[playerId];
+        return player ? `${player.first_name} ${player.last_name} (${player.position})` : `Player ${playerId}`;
+      }).slice(0, 16); // Limit to starting roster
+      
+      return {
+        teamName: user?.display_name || user?.username || 'Unknown',
+        record: `${roster.settings.wins || 0}-${roster.settings.losses || 0}`,
+        points: roster.settings.fpts || 0,
+        players: playerNames
+      };
+    });
+    
+    return teamRosters;
+  } catch (error) {
+    console.error('Rosters error:', error);
+    return [];
+  }
+}
+
+// Search for specific players
+async function searchPlayer(playerName) {
+  try {
+    const players = await getPlayersData();
+    const { users, rosters } = await getLeagueInfo();
+    
+    const searchTerm = playerName.toLowerCase();
+    const foundPlayers = [];
+    
+    Object.entries(players).forEach(([playerId, player]) => {
+      const fullName = `${player.first_name || ''} ${player.last_name || ''}`.toLowerCase();
+      if (fullName.includes(searchTerm) || player.last_name?.toLowerCase().includes(searchTerm)) {
+        // Check if player is owned
+        let owner = null;
+        rosters.forEach(roster => {
+          if (roster.players?.includes(playerId)) {
+            const user = users.find(u => u.user_id === roster.owner_id);
+            owner = user?.display_name || user?.username;
+          }
+        });
+        
+        foundPlayers.push({
+          name: `${player.first_name} ${player.last_name}`,
+          position: player.position,
+          team: player.team,
+          owner: owner || 'Free Agent'
+        });
+      }
+    });
+    
+    return foundPlayers.slice(0, 10); // Limit results
+  } catch (error) {
+    console.error('Player search error:', error);
+    return [];
+  }
+}
+
+// Get draft results
+async function getDraftResults() {
+  try {
+    const { league, users } = await getLeagueInfo();
+    const drafts = await getSleeperData(`/league/${SLEEPER_LEAGUE_ID}/drafts`);
+    
+    if (!drafts || drafts.length === 0) {
+      return null;
+    }
+    
+    const draftId = drafts[0].draft_id;
+    const picks = await getSleeperData(`/draft/${draftId}/picks`);
+    const players = await getPlayersData();
+    
+    const draftResults = picks.map(pick => {
+      const user = users.find(u => u.user_id === pick.picked_by);
+      const player = players[pick.player_id];
+      return {
+        round: pick.round,
+        pick: pick.draft_slot,
+        overall: pick.pick_no,
+        player: player ? `${player.first_name} ${player.last_name}` : 'Unknown Player',
+        position: player?.position || 'N/A',
+        team: player?.team || 'N/A',
+        draftedBy: user?.display_name || user?.username || 'Unknown'
+      };
+    });
+    
+    return draftResults;
+  } catch (error) {
+    console.error('Draft results error:', error);
+    return null;
+  }
+}
+
+// Get recent transactions
+async function getTransactions() {
+  try {
+    const { users } = await getLeagueInfo();
+    const players = await getPlayersData();
+    
+    // Get transactions from current week
+    const nflState = await getSleeperData('/state/nfl');
+    const currentWeek = Math.max(1, nflState.week - 1); // Look at previous week if current hasn't finished
+    
+    const transactions = await getSleeperData(`/league/${SLEEPER_LEAGUE_ID}/transactions/${currentWeek}`);
+    
+    const recentTransactions = transactions.slice(0, 20).map(transaction => {
+      const user = users.find(u => u.user_id === transaction.creator);
+      const type = transaction.type; // 'trade', 'waiver', 'free_agent'
+      
+      let description = '';
+      if (transaction.adds) {
+        Object.entries(transaction.adds).forEach(([playerId, rosterId]) => {
+          const player = players[playerId];
+          const playerName = player ? `${player.first_name} ${player.last_name}` : 'Unknown Player';
+          description += `Added: ${playerName} `;
+        });
+      }
+      if (transaction.drops) {
+        Object.entries(transaction.drops).forEach(([playerId, rosterId]) => {
+          const player = players[playerId];
+          const playerName = player ? `${player.first_name} ${player.last_name}` : 'Unknown Player';
+          description += `Dropped: ${playerName} `;
+        });
+      }
+      
+      return {
+        type: type,
+        user: user?.display_name || user?.username || 'Unknown',
+        description: description.trim(),
+        timestamp: new Date(transaction.created).toLocaleDateString()
+      };
+    });
+    
+    return recentTransactions;
+  } catch (error) {
+    console.error('Transactions error:', error);
+    return [];
+  }
+}
+
 async function processLeagueQuestion(question) {
   try {
     console.log('🏈 Processing league question:', question);
@@ -341,8 +498,132 @@ async function processLeagueQuestion(question) {
       return response;
     }
     
+    // Team rosters - "Show me all rosters" or "What players are on [name]'s team?"
+    if (lowerQuestion.includes('roster') || lowerQuestion.includes('players')) {
+      if (lowerQuestion.includes('all')) {
+        // Show all rosters
+        const rosters = await getTeamRosters();
+        if (rosters.length === 0) {
+          return `❌ **Couldn't load team rosters.** There might be an API issue.`;
+        }
+        
+        let response = `🏈 **All Team Rosters:**\n\n`;
+        rosters.slice(0, 3).forEach(team => { // Limit to 3 teams to avoid long response
+          response += `**${team.teamName}** (${team.record}) - ${team.points.toFixed(1)} PF\n`;
+          response += `Top Players: ${team.players.slice(0, 5).join(', ')}\n\n`;
+        });
+        response += `💡 Ask "What players are on [name]'s team?" for full roster details!`;
+        return response;
+      } else {
+        // Specific team roster
+        const teamMatches = lowerQuestion.match(/(?:on|are)\s+([a-zA-Z]+)/);
+        let teamName = teamMatches ? teamMatches[1] : null;
+        
+        if (!teamName) {
+          return `❓ **Which team's roster would you like to see?**\n\nTry: "What players are on [name]'s team?"`;
+        }
+        
+        const rosters = await getTeamRosters();
+        const team = rosters.find(r => r.teamName.toLowerCase().includes(teamName.toLowerCase()));
+        
+        if (team) {
+          let response = `🏈 **${team.teamName}'s Roster** (${team.record})\n\n`;
+          team.players.forEach((player, index) => {
+            response += `${index + 1}. ${player}\n`;
+          });
+          response += `\n📊 **Total Points:** ${team.points.toFixed(1)}`;
+          return response;
+        } else {
+          return `❓ I couldn't find a team for "${teamName}". Try "Who's in the league?" to see all team names.`;
+        }
+      }
+    }
+    
+    // Player search - "Search for [player]" or "Find [player]" or "Who owns [player]"
+    if (lowerQuestion.includes('search') || lowerQuestion.includes('find') || lowerQuestion.includes('owns') || lowerQuestion.includes('who has')) {
+      let playerName = '';
+      
+      // Extract player name from various patterns
+      const searchMatch = lowerQuestion.match(/(?:search|find|for)\s+(.+)/);
+      const ownsMatch = lowerQuestion.match(/(?:owns|has)\s+(.+)/);
+      
+      if (searchMatch) playerName = searchMatch[1];
+      else if (ownsMatch) playerName = ownsMatch[1];
+      
+      if (!playerName) {
+        return `❓ **Which player would you like to search for?**\n\nTry: "Search for Josh Allen" or "Who owns Travis Kelce?"`;
+      }
+      
+      const players = await searchPlayer(playerName);
+      if (players.length === 0) {
+        return `❌ **No players found matching "${playerName}".** Try using full names or check spelling.`;
+      }
+      
+      let response = `🔍 **Search Results for "${playerName}":**\n\n`;
+      players.forEach((player, index) => {
+        response += `${index + 1}. **${player.name}** (${player.position} - ${player.team})\n`;
+        response += `   Owner: ${player.owner}\n\n`;
+      });
+      
+      return response;
+    }
+    
+    // Draft results - "Show me the draft" or "Draft results" or "Who was drafted first"
+    if (lowerQuestion.includes('draft')) {
+      const draft = await getDraftResults();
+      if (!draft) {
+        return `❌ **No draft data available.** The league might not have drafted yet or data is unavailable.`;
+      }
+      
+      if (lowerQuestion.includes('first round') || lowerQuestion.includes('round 1')) {
+        const firstRound = draft.filter(pick => pick.round === 1);
+        let response = `🥇 **First Round Draft Results:**\n\n`;
+        firstRound.forEach(pick => {
+          response += `${pick.pick}. **${pick.player}** (${pick.position}) - ${pick.draftedBy}\n`;
+        });
+        return response;
+      } else if (lowerQuestion.includes('top 10')) {
+        const topTen = draft.slice(0, 10);
+        let response = `🔝 **Top 10 Draft Picks:**\n\n`;
+        topTen.forEach(pick => {
+          response += `${pick.overall}. **${pick.player}** (${pick.position}) - ${pick.draftedBy}\n`;
+        });
+        return response;
+      } else {
+        // Show draft summary
+        const totalPicks = draft.length;
+        const rounds = Math.max(...draft.map(p => p.round));
+        let response = `📋 **Draft Summary:**\n\n`;
+        response += `**Total Picks:** ${totalPicks}\n`;
+        response += `**Rounds:** ${rounds}\n\n`;
+        response += `**First 5 Picks:**\n`;
+        draft.slice(0, 5).forEach(pick => {
+          response += `${pick.overall}. ${pick.player} (${pick.position}) - ${pick.draftedBy}\n`;
+        });
+        response += `\n💡 Ask for "first round draft" or "top 10 picks" for more details!`;
+        return response;
+      }
+    }
+    
+    // Transactions - "Show me transactions" or "Recent trades" or "Waiver pickups"
+    if (lowerQuestion.includes('transaction') || lowerQuestion.includes('trade') || lowerQuestion.includes('waiver') || lowerQuestion.includes('pickup') || lowerQuestion.includes('added') || lowerQuestion.includes('dropped')) {
+      const transactions = await getTransactions();
+      if (transactions.length === 0) {
+        return `❌ **No recent transactions found.** The league might not be active or data is unavailable.`;
+      }
+      
+      let response = `💼 **Recent League Transactions:**\n\n`;
+      transactions.slice(0, 10).forEach((transaction, index) => {
+        const typeEmoji = transaction.type === 'trade' ? '🤝' : transaction.type === 'waiver' ? '📋' : '🆓';
+        response += `${typeEmoji} **${transaction.user}** - ${transaction.description}\n`;
+        response += `   ${transaction.timestamp}\n\n`;
+      });
+      
+      return response;
+    }
+    
     // Default helpful response
-    return `🏈 **Fantasy Football Assistant**\n\nI have access to your Sleeper league data and AI analysis! Try asking:\n\n**📊 League Info:**\n• "Show me the standings"\n• "League info" or "Who's in the league?"\n• "This week's matchups"\n\n**👤 Team Analysis:**\n• "My team" or "Team for [name]"\n• "Who should I start this week?"\n• "Who should [name] start?"\n\n**🤝 Advanced Features:**\n• "Trade suggestions for [name]"\n• "How will [name] do this week?"\n\n💡 **Your League:** ${SLEEPER_LEAGUE_ID.slice(0, 8)}... | **AI Powered:** ✅`;
+    return `🏈 **Fantasy Football Assistant**\n\nI have access to your Sleeper league data and AI analysis! Try asking:\n\n**📊 League & Standings:**\n• "Show me the standings"\n• "League info" or "Who's in the league?"\n• "This week's matchups"\n\n**👤 Team & Player Info:**\n• "My team" or "Team for [name]"\n• "What players are on [name]'s team?"\n• "Show me all rosters"\n• "Search for [player name]"\n• "Who owns Travis Kelce?"\n\n**🤖 AI-Powered Analysis:**\n• "Who should I start this week?"\n• "Trade suggestions for [name]"\n• "How will [name] do this week?"\n\n**📋 League Activity:**\n• "Show me the draft results"\n• "First round draft picks"\n• "Recent transactions"\n• "Waiver wire pickups"\n\n💡 **Your League:** ${SLEEPER_LEAGUE_ID.slice(0, 8)}... | **AI Powered:** ✅`;
     
   } catch (error) {
     console.error('Error processing question:', error);
