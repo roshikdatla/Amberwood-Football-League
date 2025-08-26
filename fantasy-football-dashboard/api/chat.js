@@ -409,12 +409,29 @@ async function processLeagueQuestion(question) {
       transactions: transactions
     };
     
-    const aiPrompt = `You are an expert fantasy football analyst with access to comprehensive league data. The user asked: "${question}"
+    // Create comprehensive but token-efficient data summary (staying under 50k token limit)
+    const leagueData = `LEAGUE: ${leagueInfo.league?.name || 'Fantasy League'} (${standings?.length || 0} teams)
 
-Here is the complete league data:
-${JSON.stringify(comprehensiveData, null, 2)}
+STANDINGS:
+${standings?.map(t => `${t.team_name}: ${t.wins}-${t.losses}, ${t.points_for.toFixed(1)} PF`).join('\n') || 'No standings'}
 
-Please analyze this data and provide a detailed, insightful answer to their question. Use actual player names, team names, and specific data from above. Don't use placeholders like [player name] - use the real names and numbers from the data. Be specific and accurate.`;
+TEAM ROSTERS:
+${allRosters?.map(team => `${team.teamName}: ${team.players?.slice(0, 10).join(', ') || 'No players'}`).join('\n') || 'No rosters'}
+
+DRAFT RESULTS:
+${draftResults?.map(pick => `${pick.overall}. ${pick.player} (${pick.position}) - ${pick.draftedBy}`).join('\n') || 'No draft data'}
+
+RECENT TRANSACTIONS:
+${transactions?.slice(0, 15).map(t => `${t.user}: ${t.description}`).join('\n') || 'No transactions'}
+
+MATCHUPS:
+${matchups?.matchups?.map(m => m.length === 2 ? `${m[0].name} vs ${m[1].name} (${m[0].points}-${m[1].points})` : '').filter(Boolean).join('\n') || 'No matchups'}`;
+
+    const aiPrompt = `You are an expert fantasy football analyst. User question: "${question}"
+
+${leagueData}
+
+Analyze the actual data above and provide a specific answer using real names and numbers from the data. Be accurate and detailed.`;
 
     const aiResponse = await callClaudeAPI(aiPrompt);
     return aiResponse;
