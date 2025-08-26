@@ -145,6 +145,9 @@ async function callClaudeAPI(prompt) {
   console.log('🤖 Calling Claude API with key:', CLAUDE_API_KEY ? 'Present' : 'Missing');
   
   try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout
+    
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
@@ -154,10 +157,13 @@ async function callClaudeAPI(prompt) {
       },
       body: JSON.stringify({
         model: 'claude-sonnet-4-0',
-        max_tokens: 800,
+        max_tokens: 1000,
         messages: [{ role: 'user', content: prompt }]
-      })
+      }),
+      signal: controller.signal
     });
+    
+    clearTimeout(timeoutId);
     
     console.log('🤖 Claude API Response Status:', response.status);
     
@@ -403,19 +409,19 @@ async function processLeagueQuestion(question) {
       transactions: transactions
     };
     
-    const aiPrompt = `You are an expert fantasy football analyst with access to comprehensive league data. The user asked: "${question}"
+    // Create a concise summary instead of sending all raw data
+    const leagueSummary = `League: ${leagueInfo.league?.name || 'Fantasy League'}
+Teams: ${standings?.length || 0}
+Top 3 Teams: ${standings?.slice(0, 3).map(t => `${t.team_name} (${t.wins}-${t.losses})`).join(', ') || 'N/A'}
+Total Draft Picks: ${draftResults?.length || 0}
+Recent Activity: ${transactions?.length || 0} transactions`;
 
-Here is the complete league data:
-${JSON.stringify(comprehensiveData, null, 2)}
+    const aiPrompt = `You are a fantasy football expert. User question: "${question}"
 
-Please analyze this data and provide a detailed, insightful answer to their question. Focus on:
-- Specific data points that support your analysis
-- Player performance trends
-- Draft value analysis (reaches/steals)
-- Team comparisons
-- Strategic recommendations
+League Summary:
+${leagueSummary}
 
-Format your response with clear headers and bullet points. Be specific with names, numbers, and actionable insights.`;
+Based on this league context, provide a helpful, specific answer. Be concise but insightful. Focus on actionable fantasy football advice.`;
 
     const aiResponse = await callClaudeAPI(aiPrompt);
     return aiResponse;
