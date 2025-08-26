@@ -98,9 +98,11 @@ async function processLeagueQuestion(question) {
     console.log('🏈 Username:', SLEEPER_USERNAME);
     
     const lowerQuestion = question.toLowerCase();
+    console.log('🏈 Lower case question:', lowerQuestion);
     
     // Handle different types of questions
-    if (lowerQuestion.includes('standing') || lowerQuestion.includes('ranking') || lowerQuestion.includes('leaderboard')) {
+    if (lowerQuestion.includes('standing') || lowerQuestion.includes('ranking') || lowerQuestion.includes('leaderboard') || lowerQuestion.includes('show me')) {
+      console.log('🏈 Detected standings request');
       const standings = await getStandings();
       let response = '🏆 **Current League Standings:**\n\n';
       
@@ -112,6 +114,17 @@ async function processLeagueQuestion(question) {
       
       response += '\n📊 Sorted by wins, then points for.';
       return response;
+    }
+    
+    // Test response to see if Sleeper API is working
+    if (lowerQuestion.includes('test') || lowerQuestion === 'hi') {
+      console.log('🏈 Testing Sleeper API connection');
+      try {
+        const { league } = await getLeagueInfo();
+        return `✅ **Sleeper API Test Successful!**\n\nConnected to: **${league.name}**\nSeason: ${league.season}\nTeams: ${league.total_rosters}\n\nTry: "Show me the standings"`;
+      } catch (error) {
+        return `❌ **Sleeper API Test Failed!**\n\nError: ${error.message}\n\nCheck your environment variables in Railway.`;
+      }
     }
     
     if (lowerQuestion.includes('league') || lowerQuestion.includes('info')) {
