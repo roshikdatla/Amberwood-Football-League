@@ -381,321 +381,29 @@ async function processLeagueQuestion(question) {
     console.log('🏈 League ID:', SLEEPER_LEAGUE_ID);
     console.log('🏈 Username:', SLEEPER_USERNAME);
     
-    const lowerQuestion = question.toLowerCase();
-    console.log('🏈 Lower case question:', lowerQuestion);
+    // Send ALL questions to comprehensive AI analysis
+    console.log('🤖 Using comprehensive AI analysis for question:', question);
     
-    // Handle different types of questions
-    if (lowerQuestion.includes('standing') || lowerQuestion.includes('ranking') || lowerQuestion.includes('leaderboard') || lowerQuestion.includes('show me')) {
-      console.log('🏈 Detected standings request');
-      const standings = await getStandings();
-      let response = '🏆 **Current League Standings:**\n\n';
-      
-      standings.forEach((team, index) => {
-        response += `${index + 1}. **${team.team_name}** (${team.wins}-${team.losses}`;
-        if (team.ties > 0) response += `-${team.ties}`;
-        response += `) - ${team.points_for.toFixed(1)} PF\n`;
-      });
-      
-      response += '\n📊 Sorted by wins, then points for.';
-      return response;
-    }
+    // Gather comprehensive league data
+    const [leagueInfo, standings, allRosters, draftResults, matchups, transactions] = await Promise.all([
+      getLeagueInfo().catch(e => ({ error: e.message })),
+      getStandings().catch(e => ({ error: e.message })),
+      getTeamRosters().catch(e => ({ error: e.message })),
+      getDraftResults().catch(e => ({ error: e.message })),
+      getCurrentMatchups().catch(e => ({ error: e.message })),
+      getTransactions().catch(e => ({ error: e.message }))
+    ]);
     
-    // Test response to see if Sleeper API is working
-    if (lowerQuestion.includes('test') || lowerQuestion === 'hi') {
-      console.log('🏈 Testing Sleeper API connection');
-      try {
-        const { league } = await getLeagueInfo();
-        return `✅ **Sleeper API Test Successful!**\n\nConnected to: **${league.name}**\nSeason: ${league.season}\nTeams: ${league.total_rosters}\n\nTry: "Show me the standings"`;
-      } catch (error) {
-        return `❌ **Sleeper API Test Failed!**\n\nError: ${error.message}\n\nCheck your environment variables in Railway.`;
-      }
-    }
+    const comprehensiveData = {
+      league: leagueInfo,
+      standings: standings,
+      rosters: allRosters,
+      draft: draftResults,
+      matchups: matchups,
+      transactions: transactions
+    };
     
-    if (lowerQuestion.includes('league') || lowerQuestion.includes('info')) {
-      const { league } = await getLeagueInfo();
-      return `🏈 **${league.name}**\n\n📋 **League Info:**\n• Season: ${league.season}\n• Teams: ${league.total_rosters}\n• Type: ${league.settings.playoff_teams} teams make playoffs\n• Scoring: ${league.scoring_settings.pass_td || 4} pts/passing TD`;
-    }
-    
-    // Team analysis - works for any team
-    if (lowerQuestion.includes('my team') || lowerQuestion.includes('my roster') || lowerQuestion.includes('team')) {
-      // Extract team name from question if mentioned
-      let teamName = null;
-      const teamMatches = lowerQuestion.match(/(?:team|roster)\s+(?:for\s+)?([a-zA-Z]+)/);
-      if (teamMatches) {
-        teamName = teamMatches[1];
-      }
-      
-      // If they just say "my team" without specifying, ask them which team
-      if ((lowerQuestion.includes('my team') || lowerQuestion.includes('my roster')) && !teamName) {
-        const { users } = await getLeagueInfo();
-        let response = `❓ **Which team is yours?**\n\n👥 **League Members:**\n\n`;
-        users.forEach((user, index) => {
-          response += `${index + 1}. **${user.display_name || user.username}**\n`;
-        });
-        response += `\n💡 Say "Team for [your name]" or "My team is [your name]"`;
-        return response;
-      }
-      
-      const teamData = await getTeamRoster(teamName);
-      if (teamData) {
-        return `👤 **${teamData.user.display_name || teamData.user.username}'s Team**\n\n📊 **Record:** ${teamData.record}\n📈 **Points For:** ${teamData.pointsFor.toFixed(1)}\n📉 **Points Against:** ${teamData.pointsAgainst.toFixed(1)}\n\n💡 Ask me: "Who should [team name] start this week?" or "Trade suggestions for [team name]"`;
-      }
-      
-      if (teamName) {
-        return `❓ I couldn't find a team with the name "${teamName}". Try asking "Who's in the league?" to see all team names.`;
-      }
-      return `❓ **Which team would you like to analyze?**\n\nTry asking:\n• "Team for [name]" (for any player)\n• "Who's in the league?" (to see all teams)`;
-    }
-    
-    // Start/sit recommendations with AI
-    if (lowerQuestion.includes('start') || lowerQuestion.includes('sit') || lowerQuestion.includes('lineup')) {
-      // Extract team name if mentioned
-      let teamName = null;
-      const teamMatches = lowerQuestion.match(/(?:for|team)\s+([a-zA-Z]+)|should\s+([a-zA-Z]+)\s+(?:start|sit)/);
-      if (teamMatches) {
-        teamName = teamMatches[1] || teamMatches[2];
-        if (teamName === 'i' || teamName === 'should') {
-          teamName = null;
-        }
-      }
-      
-      // If they say "who should I start" without specifying team, ask which team
-      if (!teamName && (lowerQuestion.includes('should i') || lowerQuestion.includes('my lineup'))) {
-        const { users } = await getLeagueInfo();
-        let response = `❓ **Which team needs start/sit advice?**\n\n👥 **League Members:**\n\n`;
-        users.forEach((user, index) => {
-          response += `${index + 1}. **${user.display_name || user.username}**\n`;
-        });
-        response += `\n💡 Say "Who should [your name] start this week?"`;
-        return response;
-      }
-      
-      const teamData = await getTeamRoster(teamName);
-      if (!teamData) {
-        return `❓ **Which team needs start/sit advice?**\n\nTry asking:\n• "Who should [team name] start this week?"\n• "Lineup help for [team name]"`;
-      }
-      
-      const aiPrompt = `You are a fantasy football expert. Provide start/sit advice for ${teamData.user.display_name || teamData.user.username}'s team in week ${new Date().getWeek() || 'current'}. Their record is ${teamData.record} with ${teamData.pointsFor.toFixed(1)} points for. Give specific, actionable advice in 2-3 sentences focusing on this week's matchups and recent player performance.`;
-      
-      const aiAnalysis = await callClaudeAPI(aiPrompt);
-      return `🎯 **Start/Sit Advice for ${teamData.user.display_name || teamData.user.username}**\n\n${aiAnalysis}\n\n📊 **Team Stats:** ${teamData.record} record, ${teamData.pointsFor.toFixed(1)} PF`;
-    }
-    
-    // Trade suggestions with AI
-    if (lowerQuestion.includes('trade') || lowerQuestion.includes('swap')) {
-      let teamName = null;
-      const teamMatches = lowerQuestion.match(/(?:for|team)\s+([a-zA-Z]+)/);
-      if (teamMatches) {
-        teamName = teamMatches[1];
-      }
-      
-      const teamData = await getTeamRoster(teamName);
-      if (!teamData) {
-        return `❓ **Which team needs trade suggestions?**\n\nTry asking:\n• "Trade suggestions for me"\n• "Trade help for [team name]"\n• "What trades should [name] make?"`;
-      }
-      
-      const standings = await getStandings();
-      const teamRank = standings.findIndex(t => t.team_name === (teamData.user.display_name || teamData.user.username)) + 1;
-      
-      const aiPrompt = `You are a fantasy football expert. Provide trade suggestions for ${teamData.user.display_name || teamData.user.username}'s team. They are currently ranked #${teamRank} with a ${teamData.record} record and ${teamData.pointsFor.toFixed(1)} points for. Suggest 2-3 realistic trade targets and what positions to focus on. Keep it concise and actionable.`;
-      
-      const aiAnalysis = await callClaudeAPI(aiPrompt);
-      return `🤝 **Trade Suggestions for ${teamData.user.display_name || teamData.user.username}**\n\n${aiAnalysis}\n\n📈 **Current Rank:** #${teamRank} (${teamData.record})`;
-    }
-    
-    // Weekly matchups
-    if (lowerQuestion.includes('matchup') || lowerQuestion.includes('this week') || lowerQuestion.includes('opponent')) {
-      const matchupData = await getCurrentMatchups();
-      if (!matchupData) {
-        return `❌ **Couldn't load this week's matchups.** The season might not be active or there was an API error.`;
-      }
-      
-      let response = `⚡ **Week ${matchupData.week} Matchups:**\n\n`;
-      matchupData.matchups.forEach((matchup, index) => {
-        if (matchup.length === 2) {
-          response += `**${matchup[0].name}** vs **${matchup[1].name}**\n`;
-          response += `${matchup[0].points.toFixed(1)} - ${matchup[1].points.toFixed(1)}\n\n`;
-        }
-      });
-      
-      return response + `💡 Ask for specific matchup predictions: "How will [team name] do this week?"`;
-    }
-    
-    // List all teams
-    if (lowerQuestion.includes('who') && (lowerQuestion.includes('league') || lowerQuestion.includes('teams'))) {
-      const { users } = await getLeagueInfo();
-      let response = `👥 **League Members:**\n\n`;
-      users.forEach((user, index) => {
-        response += `${index + 1}. **${user.display_name || user.username}**\n`;
-      });
-      response += `\n💡 Use these names when asking about specific teams!`;
-      return response;
-    }
-    
-    // Team rosters - "Show me all rosters" or "What players are on [name]'s team?"
-    if (lowerQuestion.includes('roster') || lowerQuestion.includes('players')) {
-      if (lowerQuestion.includes('all')) {
-        // Show all rosters
-        const rosters = await getTeamRosters();
-        if (rosters.length === 0) {
-          return `❌ **Couldn't load team rosters.** There might be an API issue.`;
-        }
-        
-        let response = `🏈 **All Team Rosters:**\n\n`;
-        rosters.slice(0, 3).forEach(team => { // Limit to 3 teams to avoid long response
-          response += `**${team.teamName}** (${team.record}) - ${team.points.toFixed(1)} PF\n`;
-          response += `Top Players: ${team.players.slice(0, 5).join(', ')}\n\n`;
-        });
-        response += `💡 Ask "What players are on [name]'s team?" for full roster details!`;
-        return response;
-      } else {
-        // Specific team roster
-        const teamMatches = lowerQuestion.match(/(?:on|are)\s+([a-zA-Z]+)/);
-        let teamName = teamMatches ? teamMatches[1] : null;
-        
-        if (!teamName) {
-          return `❓ **Which team's roster would you like to see?**\n\nTry: "What players are on [name]'s team?"`;
-        }
-        
-        const rosters = await getTeamRosters();
-        const team = rosters.find(r => r.teamName.toLowerCase().includes(teamName.toLowerCase()));
-        
-        if (team) {
-          let response = `🏈 **${team.teamName}'s Roster** (${team.record})\n\n`;
-          team.players.forEach((player, index) => {
-            response += `${index + 1}. ${player}\n`;
-          });
-          response += `\n📊 **Total Points:** ${team.points.toFixed(1)}`;
-          return response;
-        } else {
-          return `❓ I couldn't find a team for "${teamName}". Try "Who's in the league?" to see all team names.`;
-        }
-      }
-    }
-    
-    // Player search - "Search for [player]" or "Find [player]" or "Who owns [player]"
-    if (lowerQuestion.includes('search') || lowerQuestion.includes('find') || lowerQuestion.includes('owns') || lowerQuestion.includes('who has')) {
-      let playerName = '';
-      
-      // Extract player name from various patterns
-      const searchMatch = lowerQuestion.match(/(?:search|find|for)\s+(.+)/);
-      const ownsMatch = lowerQuestion.match(/(?:owns|has)\s+(.+)/);
-      
-      if (searchMatch) playerName = searchMatch[1];
-      else if (ownsMatch) playerName = ownsMatch[1];
-      
-      if (!playerName) {
-        return `❓ **Which player would you like to search for?**\n\nTry: "Search for Josh Allen" or "Who owns Travis Kelce?"`;
-      }
-      
-      const players = await searchPlayer(playerName);
-      if (players.length === 0) {
-        return `❌ **No players found matching "${playerName}".** Try using full names or check spelling.`;
-      }
-      
-      let response = `🔍 **Search Results for "${playerName}":**\n\n`;
-      players.forEach((player, index) => {
-        response += `${index + 1}. **${player.name}** (${player.position} - ${player.team})\n`;
-        response += `   Owner: ${player.owner}\n\n`;
-      });
-      
-      return response;
-    }
-    
-    // Draft results - "Show me the draft" or "Draft results" or "Who was drafted first" or "When was [player] drafted"
-    if (lowerQuestion.includes('draft')) {
-      const draft = await getDraftResults();
-      if (!draft) {
-        return `❌ **No draft data available.** The league might not have drafted yet or data is unavailable.`;
-      }
-      
-      // Check for specific player draft lookup - "When was [player] drafted?"
-      const whenMatch = lowerQuestion.match(/(?:when was|was)\s+(.+?)\s+drafted/);
-      if (whenMatch) {
-        const playerSearchName = whenMatch[1].toLowerCase();
-        const playerPick = draft.find(pick => 
-          pick.player.toLowerCase().includes(playerSearchName) ||
-          playerSearchName.includes(pick.player.toLowerCase().split(' ')[1] || '') // Last name match
-        );
-        
-        if (playerPick) {
-          return `🎯 **${playerPick.player} Draft Info:**\n\n📍 **Pick:** ${playerPick.overall} overall (Round ${playerPick.round}, Pick ${playerPick.pick})\n👤 **Drafted by:** ${playerPick.draftedBy}\n🏈 **Position:** ${playerPick.position}\n🏟️ **NFL Team:** ${playerPick.team}`;
-        } else {
-          return `❓ **"${whenMatch[1]}" not found in draft results.** Try using the player's full name or check spelling.\n\n💡 You can also try "Search for ${whenMatch[1]}" to see if they're in the league.`;
-        }
-      }
-      
-      if (lowerQuestion.includes('first round') || lowerQuestion.includes('round 1')) {
-        const firstRound = draft.filter(pick => pick.round === 1);
-        let response = `🥇 **First Round Draft Results:**\n\n`;
-        firstRound.forEach(pick => {
-          response += `${pick.pick}. **${pick.player}** (${pick.position}) - ${pick.draftedBy}\n`;
-        });
-        return response;
-      } else if (lowerQuestion.includes('top 10')) {
-        const topTen = draft.slice(0, 10);
-        let response = `🔝 **Top 10 Draft Picks:**\n\n`;
-        topTen.forEach(pick => {
-          response += `${pick.overall}. **${pick.player}** (${pick.position}) - ${pick.draftedBy}\n`;
-        });
-        return response;
-      } else {
-        // Show draft summary
-        const totalPicks = draft.length;
-        const rounds = Math.max(...draft.map(p => p.round));
-        let response = `📋 **Draft Summary:**\n\n`;
-        response += `**Total Picks:** ${totalPicks}\n`;
-        response += `**Rounds:** ${rounds}\n\n`;
-        response += `**First 5 Picks:**\n`;
-        draft.slice(0, 5).forEach(pick => {
-          response += `${pick.overall}. ${pick.player} (${pick.position}) - ${pick.draftedBy}\n`;
-        });
-        response += `\n💡 Ask "When was [player] drafted?" or "first round draft" for more details!`;
-        return response;
-      }
-    }
-    
-    // Transactions - "Show me transactions" or "Recent trades" or "Waiver pickups"
-    if (lowerQuestion.includes('transaction') || lowerQuestion.includes('trade') || lowerQuestion.includes('waiver') || lowerQuestion.includes('pickup') || lowerQuestion.includes('added') || lowerQuestion.includes('dropped')) {
-      const transactions = await getTransactions();
-      if (transactions.length === 0) {
-        return `❌ **No recent transactions found.** The league might not be active or data is unavailable.`;
-      }
-      
-      let response = `💼 **Recent League Transactions:**\n\n`;
-      transactions.slice(0, 10).forEach((transaction, index) => {
-        const typeEmoji = transaction.type === 'trade' ? '🤝' : transaction.type === 'waiver' ? '📋' : '🆓';
-        response += `${typeEmoji} **${transaction.user}** - ${transaction.description}\n`;
-        response += `   ${transaction.timestamp}\n\n`;
-      });
-      
-      return response;
-    }
-    
-    // For any other question, send comprehensive league data to Claude AI for analysis
-    try {
-      console.log('🤖 Using comprehensive AI analysis for question:', question);
-      
-      // Gather comprehensive league data
-      const [leagueInfo, standings, allRosters, draftResults, matchups, transactions] = await Promise.all([
-        getLeagueInfo().catch(e => ({ error: e.message })),
-        getStandings().catch(e => ({ error: e.message })),
-        getTeamRosters().catch(e => ({ error: e.message })),
-        getDraftResults().catch(e => ({ error: e.message })),
-        getCurrentMatchups().catch(e => ({ error: e.message })),
-        getTransactions().catch(e => ({ error: e.message }))
-      ]);
-      
-      const comprehensiveData = {
-        league: leagueInfo,
-        standings: standings,
-        rosters: allRosters,
-        draft: draftResults,
-        matchups: matchups,
-        transactions: transactions
-      };
-      
-      const aiPrompt = `You are an expert fantasy football analyst with access to comprehensive league data. The user asked: "${question}"
+    const aiPrompt = `You are an expert fantasy football analyst with access to comprehensive league data. The user asked: "${question}"
 
 Here is the complete league data:
 ${JSON.stringify(comprehensiveData, null, 2)}
@@ -709,18 +417,12 @@ Please analyze this data and provide a detailed, insightful answer to their ques
 
 Format your response with clear headers and bullet points. Be specific with names, numbers, and actionable insights.`;
 
-      const aiResponse = await callClaudeAPI(aiPrompt);
-      return `🤖 **AI Analysis**\n\n${aiResponse}`;
-      
-    } catch (error) {
-      console.error('Comprehensive AI analysis failed:', error);
-      // Fallback to helpful response if AI fails
-      return `🏈 **Fantasy Football Assistant**\n\nHi! I have access to your Sleeper league data and AI analysis. Here are some questions that work great:\n\n**📊 Popular Queries:**\n• **"Show me the standings"** - Current league rankings\n• **"Who's in the league?"** - All team owners and info\n• **"This week's matchups"** - Current week games\n• **"Show me all rosters"** - Everyone's players\n• **"Team for [your name]"** - Specific team analysis\n\n**🔍 Player Searches:**\n• **"Who owns [player name]?"** - Find player's owner\n• **"Search for [player name]"** - Player lookup\n• **"When was [player name] drafted?"** - Draft history\n\n**🤖 AI Analysis (with comprehensive data):**\n• **"What were the worst draft reaches?"** - Draft analysis\n• **"Who should [your name] start this week?"** - Start/sit advice\n• **"What trades should I make?"** - Trade suggestions\n• **"How is my team performing?"** - Team analysis\n\n**📋 League History:**\n• **"Show me the draft results"** - Full draft recap\n• **"First round draft picks"** - Top picks\n• **"Recent transactions"** - Trades & pickups\n\n💡 You can now ask any fantasy football question and I'll analyze your full league data!`;
-    }
+    const aiResponse = await callClaudeAPI(aiPrompt);
+    return `🤖 **AI Analysis**\n\n${aiResponse}`;
     
   } catch (error) {
-    console.error('Error processing question:', error);
-    return `🏈 I'm having trouble accessing your Sleeper league data right now.\n\n**Error:** ${error.message}\n\n💡 Make sure your league ID (${SLEEPER_LEAGUE_ID}) and username (${SLEEPER_USERNAME}) are correct in the environment variables.`;
+    console.error('Comprehensive AI analysis failed:', error);
+    return `🏈 I'm having trouble accessing your Sleeper league data or Claude AI right now.\n\n**Error:** ${error.message}\n\n💡 Make sure your league ID (${SLEEPER_LEAGUE_ID}) and Claude API key are correctly configured.`;
   }
 }
 
