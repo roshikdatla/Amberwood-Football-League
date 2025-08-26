@@ -1,11 +1,5 @@
 import { TeamStanding } from '../types/sleeper';
 
-interface ClaudeApiResponse {
-  content: Array<{
-    text: string;
-  }>;
-}
-
 interface TeamAnalysis {
   teamName: string;
   record: string;
