@@ -38,16 +38,24 @@ async function callMCPTool(toolName, args = {}) {
 }
 
 export default async function handler(req, res) {
+  console.log('🔧 MCP Tool Handler Called:');
+  console.log('  Method:', req.method);
+  console.log('  URL:', req.url);
+  console.log('  Query:', req.query);
+  console.log('  Body:', req.body);
+  
   // Enable CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   if (req.method === 'OPTIONS') {
+    console.log('📋 OPTIONS request for MCP tool');
     return res.status(200).end();
   }
 
   if (req.method !== 'POST') {
+    console.log('❌ MCP Tool: Method not allowed:', req.method);
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
@@ -55,18 +63,21 @@ export default async function handler(req, res) {
     const { tool } = req.query;
     const args = req.body;
     
-    console.log(`Calling MCP tool: ${tool} with args:`, args);
+    console.log(`🔧 Calling MCP tool: ${tool} with args:`, args);
     
-    const result = callMCPTool(tool, args);
+    const result = await callMCPTool(tool, args);
     
-    res.status(200).json({
+    const response = {
       tool,
       result,
       timestamp: new Date().toISOString()
-    });
+    };
+    
+    console.log('✅ MCP Tool Success:', response);
+    res.status(200).json(response);
     
   } catch (error) {
-    console.error('MCP API error:', error);
+    console.error('💥 MCP API error:', error);
     res.status(500).json({ 
       error: 'Failed to call MCP tool',
       details: error.message 

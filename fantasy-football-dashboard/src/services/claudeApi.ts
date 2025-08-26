@@ -40,6 +40,12 @@ export class ClaudeApiService {
     this.apiKey = process.env.REACT_APP_CLAUDE_API_KEY || '';
     if (!this.apiKey) {
       console.warn('Claude API key not found. Set REACT_APP_CLAUDE_API_KEY environment variable.');
+      console.log('To get your API key:');
+      console.log('1. Go to https://console.anthropic.com/');
+      console.log('2. Create an account or log in');
+      console.log('3. Go to API Keys section');
+      console.log('4. Generate a new API key');
+      console.log('5. Add it to your .env file as REACT_APP_CLAUDE_API_KEY=your_key_here');
     }
   }
 
