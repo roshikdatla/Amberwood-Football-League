@@ -33,20 +33,12 @@ interface TeamAnalysis {
 }
 
 export class ClaudeApiService {
-  private apiKey: string;
-  private baseUrl = 'https://api.anthropic.com/v1/messages';
+  private apiBaseUrl: string;
 
   constructor() {
-    this.apiKey = process.env.REACT_APP_CLAUDE_API_KEY || '';
-    if (!this.apiKey) {
-      console.warn('Claude API key not found. Set REACT_APP_CLAUDE_API_KEY environment variable.');
-      console.log('To get your API key:');
-      console.log('1. Go to https://console.anthropic.com/');
-      console.log('2. Create an account or log in');
-      console.log('3. Go to API Keys section');
-      console.log('4. Generate a new API key');
-      console.log('5. Add it to your .env file as REACT_APP_CLAUDE_API_KEY=your_key_here');
-    }
+    // Use our own chat API instead of calling Anthropic directly
+    this.apiBaseUrl = process.env.REACT_APP_API_URL || 
+      (process.env.NODE_ENV === 'production' ? window.location.origin : 'http://localhost:8000');
   }
 
   async analyzeTeam(
@@ -55,117 +47,51 @@ export class ClaudeApiService {
     leagueName: string,
     currentWeek: number
   ): Promise<TeamAnalysis> {
-    if (!this.apiKey) {
-      throw new Error('Claude API key not configured');
-    }
-
-    const leagueContext = this.buildLeagueContext(allTeams, leagueName, currentWeek);
-    const teamContext = this.buildTeamContext(team, allTeams);
-    const upcomingOpponent = this.getUpcomingOpponent(team, allTeams, currentWeek);
-    
-    const prompt = `Provide a comprehensive fantasy football analysis for this team:
-
-LEAGUE CONTEXT:
-${leagueContext}
-
-TEAM TO ANALYZE:
-${team.display_name}
-Record: ${team.wins}-${team.losses}
-Points For: ${team.points_for.toFixed(1)}
-League Rank: ${team.rank} out of ${allTeams.length}
-
-PERFORMANCE CONTEXT:
-${teamContext}
-
-UPCOMING MATCHUP:
-Next opponent: ${upcomingOpponent}
-
-Provide a detailed analysis in JSON format:
-{
-  "overallGrade": "A+/A/A-/B+/B/B-/C+/C/C-/D+/D/F",
-  "gradeExplanation": "2-3 sentence explanation of the grade",
-  "strengths": ["strength1", "strength2", "strength3"],
-  "weaknesses": ["weakness1", "weakness2", "weakness3"], 
-  "advice": "Specific actionable advice for upcoming games",
-  "outlook": "Rest of season and playoff outlook",
-  "upcomingMatchup": {
-    "opponent": "${upcomingOpponent}",
-    "prediction": "Win/Loss prediction with score estimate",
-    "keyFactors": ["factor1", "factor2", "factor3"],
-    "confidence": "High/Medium/Low confidence level"
-  },
-  "rosterAnalysis": {
-    "qb": "QB position strength assessment",
-    "rb": "RB position strength assessment", 
-    "wr": "WR position strength assessment",
-    "te": "TE position strength assessment",
-    "flex": "FLEX position depth assessment",
-    "defense": "K/DST strength assessment"
-  },
-  "recentTrends": ["trend1", "trend2", "trend3"]
-}
-
-Focus on fantasy football strategy, performance trends, and actionable insights.`;
+    // Use our chat API instead of calling Anthropic directly
+    const question = `Analyze ${team.display_name}'s team in detail. They have a ${team.wins}-${team.losses} record with ${team.points_for.toFixed(1)} points for, currently ranked #${team.rank} out of ${allTeams.length} teams in ${leagueName}. Provide a comprehensive analysis including overall grade, strengths, weaknesses, advice, and outlook.`;
 
     try {
-      const response = await fetch(this.baseUrl, {
+      const response = await fetch(`${this.apiBaseUrl}/api/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-api-key': this.apiKey,
-          'anthropic-version': '2023-06-01'
         },
-        body: JSON.stringify({
-          model: 'claude-3-sonnet-20240229',
-          max_tokens: 1000,
-          messages: [
-            {
-              role: 'user',
-              content: prompt
-            }
-          ]
-        })
+        body: JSON.stringify({ message: question })
       });
 
       if (!response.ok) {
-        throw new Error(`Claude API error: ${response.status}`);
+        throw new Error(`Chat API error: ${response.status}`);
       }
 
-      const data: ClaudeApiResponse = await response.json();
-      const analysisText = data.content[0]?.text || '';
+      const data = await response.json();
+      const analysisText = data.response || '';
       
-      // Parse the JSON response from Claude
-      const jsonMatch = analysisText.match(/\{[\s\S]*\}/);
-      if (!jsonMatch) {
-        throw new Error('Invalid response format from Claude API');
-      }
-
-      const analysisData = JSON.parse(jsonMatch[0]);
-      
+      // Parse the response and structure it for the UI
+      // Since we're getting unstructured text from the AI, we'll format it appropriately
       return {
         teamName: team.display_name,
         record: `${team.wins}-${team.losses}`,
-        overallGrade: analysisData.overallGrade || 'B',
-        gradeExplanation: analysisData.gradeExplanation || 'Standard performance assessment.',
-        strengths: analysisData.strengths || [],
-        weaknesses: analysisData.weaknesses || [],
-        advice: analysisData.advice || 'No specific advice available.',
-        outlook: analysisData.outlook || 'Outlook not available.',
-        upcomingMatchup: analysisData.upcomingMatchup || {
-          opponent: upcomingOpponent,
-          prediction: 'Competitive matchup expected',
-          keyFactors: ['Player availability', 'Recent form', 'Matchup history'],
+        overallGrade: this.extractGradeFromAnalysis(analysisText),
+        gradeExplanation: this.extractSectionFromAnalysis(analysisText, 'explanation'),
+        strengths: this.extractBulletPoints(analysisText, 'strength'),
+        weaknesses: this.extractBulletPoints(analysisText, 'weakness'),
+        advice: this.extractSectionFromAnalysis(analysisText, 'advice') || 'No specific advice available.',
+        outlook: this.extractSectionFromAnalysis(analysisText, 'outlook') || 'Outlook not available.',
+        upcomingMatchup: {
+          opponent: 'League opponent',
+          prediction: this.extractSectionFromAnalysis(analysisText, 'prediction') || 'Competitive matchup expected',
+          keyFactors: this.extractBulletPoints(analysisText, 'factor'),
           confidence: 'Medium'
         },
-        rosterAnalysis: analysisData.rosterAnalysis || {
-          qb: 'QB assessment not available',
-          rb: 'RB assessment not available', 
-          wr: 'WR assessment not available',
-          te: 'TE assessment not available',
-          flex: 'Flex assessment not available',
-          defense: 'K/DST assessment not available'
+        rosterAnalysis: {
+          qb: this.extractSectionFromAnalysis(analysisText, 'qb') || 'QB assessment not available',
+          rb: this.extractSectionFromAnalysis(analysisText, 'rb') || 'RB assessment not available',
+          wr: this.extractSectionFromAnalysis(analysisText, 'wr') || 'WR assessment not available',
+          te: this.extractSectionFromAnalysis(analysisText, 'te') || 'TE assessment not available',
+          flex: 'Flex depth assessment based on available players',
+          defense: 'K/DST assessment based on league performance'
         },
-        recentTrends: analysisData.recentTrends || ['Performance trends not available']
+        recentTrends: this.extractBulletPoints(analysisText, 'trend')
       };
 
     } catch (error) {
@@ -267,6 +193,34 @@ Point Differential: ${(team.points_for - team.points_against).toFixed(1)}`;
         'Performance trending based on current metrics'
       ]
     };
+  }
+
+  private extractGradeFromAnalysis(text: string): string {
+    // Look for grade patterns like A+, B-, C+, etc.
+    const gradeMatch = text.match(/\b([ABCDF][+-]?)\b/);
+    return gradeMatch ? gradeMatch[1] : 'B';
+  }
+
+  private extractSectionFromAnalysis(text: string, section: string): string {
+    // Look for sections by keyword
+    const sectionRegex = new RegExp(`${section}[:\\-]?\\s*(.{1,200})`, 'i');
+    const match = text.match(sectionRegex);
+    if (match) {
+      return match[1].split('\n')[0].trim();
+    }
+    return '';
+  }
+
+  private extractBulletPoints(text: string, keyword: string): string[] {
+    // Look for bullet points containing the keyword
+    const lines = text.split('\n');
+    const points = lines
+      .filter(line => line.includes('•') || line.includes('-') || line.includes('*'))
+      .filter(line => line.toLowerCase().includes(keyword.toLowerCase()))
+      .map(line => line.replace(/[•\-*]\s*/, '').trim())
+      .slice(0, 3); // Limit to 3 items
+    
+    return points.length > 0 ? points : [`${keyword.charAt(0).toUpperCase() + keyword.slice(1)} analysis from AI`];
   }
 }
 
