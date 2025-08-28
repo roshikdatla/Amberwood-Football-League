@@ -2083,7 +2083,7 @@ body, html {
   
   .newsletter-cta {
     padding: 15px;
-    margin: 15px 5px;
+    margin: 15px 10px;
   }
   
   .cta-content {
@@ -2099,7 +2099,7 @@ body, html {
   .weekly-matchups-container,
   .activity-feed-container {
     padding: 15px;
-    margin: 0 5px 15px 5px;
+    margin: 0 10px 15px 10px;
   }
   
   .power-ranking-item {
@@ -2120,6 +2120,15 @@ body, html {
   
   .analysis {
     font-size: 0.75rem;
+  }
+  
+  /* Ensure no overflow on mobile containers */
+  .weekly-matchups-container *,
+  .activity-feed-container *,
+  .newsletter-cta * {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
   }
 }
 
@@ -2173,19 +2182,19 @@ body, html {
   
   .newsletter-cta {
     padding: 12px;
-    margin: 10px 2px;
+    margin: 10px 8px;
   }
   
   .compact-standings-container,
   .power-rankings-container {
     padding: 12px;
-    margin: 0 2px 12px 2px;
+    margin: 0 8px 12px 8px;
   }
   
   .weekly-matchups-container,
   .activity-feed-container {
     padding: 12px;
-    margin: 0 2px 12px 2px;
+    margin: 0 8px 12px 8px;
   }
   
   .cta-text h2 {
@@ -2214,6 +2223,14 @@ body, html {
   
   .analysis {
     font-size: 0.7rem;
+  }
+  
+  /* Ensure no overflow on mobile containers */
+  .weekly-matchups-container *,
+  .activity-feed-container *,
+  .newsletter-cta * {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 }
 
