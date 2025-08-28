@@ -70,27 +70,27 @@ body, html {
 /* Mobile Navigation */
 @media (max-width: 768px) {
   .nav-container {
-    padding: 0 15px;
+    padding: 0 10px;
     height: 60px;
   }
   
   .nav-brand {
-    font-size: 1rem;
-    gap: 8px;
+    font-size: 0.9rem;
+    gap: 6px;
   }
   
   .brand-logo {
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
   }
   
   .nav-links {
-    gap: 15px;
+    gap: 8px;
   }
   
   .nav-link {
-    padding: 6px 12px;
-    font-size: 0.9rem;
+    padding: 6px 8px;
+    font-size: 0.8rem;
   }
 }
 
@@ -2072,17 +2072,18 @@ body, html {
   
   .homepage-content {
     margin-top: -20px;
-    padding: 0 15px 30px;
+    padding: 0 10px 30px;
   }
   
   .compact-standings-container,
   .power-rankings-container {
-    padding: 20px;
+    padding: 15px;
+    margin: 0 5px 15px 5px;
   }
   
   .newsletter-cta {
-    padding: 20px;
-    margin: 20px 0 20px 0;
+    padding: 15px;
+    margin: 15px 5px;
   }
   
   .cta-content {
@@ -2097,7 +2098,8 @@ body, html {
   
   .weekly-matchups-container,
   .activity-feed-container {
-    padding: 20px;
+    padding: 15px;
+    margin: 0 5px 15px 5px;
   }
   
   .power-ranking-item {
@@ -2122,6 +2124,30 @@ body, html {
 }
 
 @media (max-width: 480px) {
+  .nav-container {
+    padding: 0 5px;
+    height: 55px;
+  }
+  
+  .nav-brand {
+    font-size: 0.8rem;
+    gap: 4px;
+  }
+  
+  .brand-logo {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .nav-links {
+    gap: 4px;
+  }
+  
+  .nav-link {
+    padding: 4px 6px;
+    font-size: 0.75rem;
+  }
+
   .hero-content .league-title h1 {
     font-size: 1.8rem;
   }
@@ -2142,12 +2168,24 @@ body, html {
   
   .homepage-content {
     margin-top: 0px;
-    padding: 0 10px 20px;
+    padding: 0 5px 20px;
   }
   
   .newsletter-cta {
-    padding: 15px;
-    margin: 15px 0;
+    padding: 12px;
+    margin: 10px 2px;
+  }
+  
+  .compact-standings-container,
+  .power-rankings-container {
+    padding: 12px;
+    margin: 0 2px 12px 2px;
+  }
+  
+  .weekly-matchups-container,
+  .activity-feed-container {
+    padding: 12px;
+    margin: 0 2px 12px 2px;
   }
   
   .cta-text h2 {
