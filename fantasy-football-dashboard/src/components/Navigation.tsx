@@ -21,18 +21,6 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage = 'home' }) => {
             Home
           </a>
           <a 
-            href="/standings" 
-            className={`nav-link ${currentPage === 'standings' ? 'active' : ''}`}
-          >
-            Standings
-          </a>
-          <a 
-            href="/matchups" 
-            className={`nav-link ${currentPage === 'matchups' ? 'active' : ''}`}
-          >
-            Matchups
-          </a>
-          <a 
             href="/newsletters" 
             className={`nav-link ${currentPage === 'newsletters' ? 'active' : ''}`}
           >

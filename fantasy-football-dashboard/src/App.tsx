@@ -21,7 +21,8 @@ function AppContent() {
             season="2025" 
           />
         } />
-        <Route path="/newsletters" element={<NewsletterArchive />} />
+        <Route path="/newsletters" element={<NewsletterArchive showArchive={true} />} />
+        <Route path="/newsletters/preseason" element={<NewsletterArchive />} />
         <Route path="/chat" element={<LeagueChat />} />
       </Routes>
     </div>

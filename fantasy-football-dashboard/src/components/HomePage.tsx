@@ -156,10 +156,10 @@ const HomePage: React.FC<HomePageProps> = ({
                 <p>Get the inside scoop on league drama, player analysis, and hot takes delivered weekly!</p>
               </div>
               <div className="cta-actions">
-                <a href="/newsletters" className="cta-primary-btn">
-                  View All Newsletters →
+                <a href="/newsletters/preseason" className="cta-primary-btn">
+                  Read Latest Issue →
                 </a>
-                <div className="cta-latest">Latest: Week {currentWeek > 1 ? currentWeek - 1 : 1} Recap</div>
+                <div className="cta-latest">Latest: Preseason Edition</div>
               </div>
             </div>
           </div>
