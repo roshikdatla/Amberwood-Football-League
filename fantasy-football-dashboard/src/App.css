@@ -56,6 +56,33 @@
   gap: 30px;
 }
 
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0 15px;
+    height: 60px;
+  }
+  
+  .nav-brand {
+    font-size: 1rem;
+    gap: 8px;
+  }
+  
+  .brand-logo {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .nav-links {
+    gap: 15px;
+  }
+  
+  .nav-link {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+}
+
 .nav-link {
   text-decoration: none;
   color: #666;
@@ -1651,6 +1678,67 @@
   .newspaper-content {
     padding: 20px;
   }
+  
+  .newspaper-masthead {
+    padding: 15px;
+  }
+  
+  .newspaper-title {
+    font-size: 1.8rem !important;
+  }
+  
+  .newspaper-subtitle {
+    font-size: 0.8rem !important;
+  }
+  
+  .newspaper-meta {
+    font-size: 0.7rem !important;
+  }
+  
+  .headline {
+    font-size: 1.3rem !important;
+  }
+  
+  .story-layout {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  
+  .story-column {
+    width: 100% !important;
+  }
+  
+  .teams-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+  
+  .team-card {
+    padding: 15px !important;
+  }
+  
+  .team-card h3 {
+    font-size: 1rem !important;
+  }
+  
+  .team-card p {
+    font-size: 0.8rem !important;
+  }
+  
+  .image-collage-horizontal {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  
+  .collage-photo-horizontal {
+    width: 100% !important;
+    height: 200px !important;
+  }
+  
+  .newsletter-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
 }
 
 /* League Chat Styling */
@@ -1903,6 +1991,31 @@
   .chat-input-form {
     padding: 15px;
   }
+  
+  .chat-header {
+    padding: 15px;
+  }
+  
+  .chat-title h2 {
+    font-size: 1.1rem;
+  }
+  
+  .chat-subtitle {
+    font-size: 0.8rem;
+  }
+  
+  .message-content {
+    padding: 10px 12px;
+  }
+  
+  .message-text {
+    font-size: 0.9rem;
+  }
+  
+  .chat-input {
+    font-size: 0.9rem;
+    padding: 12px 15px;
+  }
 }
 
 /* Responsive Design */
@@ -1932,6 +2045,14 @@
   
   .league-stats-quick {
     gap: 15px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .stat-card {
+    min-width: 140px;
+    flex: 1;
   }
   
   .stat-value {
@@ -1943,8 +2064,105 @@
     padding: 0 15px 30px;
   }
   
-  .compact-standings-container {
+  .compact-standings-container,
+  .power-rankings-container {
     padding: 20px;
+  }
+  
+  .newsletter-cta {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .cta-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .cta-text h2 {
+    font-size: 1.5rem;
+  }
+  
+  .weekly-matchups-container,
+  .activity-feed-container {
+    padding: 20px;
+  }
+  
+  .power-ranking-item {
+    grid-template-columns: 35px 1fr;
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .power-ranking-item .rank {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+  
+  .team-analysis .team-name {
+    font-size: 0.9rem;
+  }
+  
+  .analysis {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content .league-title h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-section {
+    padding: 40px 10px;
+  }
+  
+  .league-stats-quick {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .stat-card {
+    padding: 15px;
+    min-width: auto;
+  }
+  
+  .homepage-content {
+    padding: 0 10px 20px;
+  }
+  
+  .newsletter-cta {
+    padding: 15px;
+  }
+  
+  .cta-text h2 {
+    font-size: 1.3rem;
+  }
+  
+  .cta-text p {
+    font-size: 0.9rem;
+  }
+  
+  .power-ranking-item {
+    grid-template-columns: 30px 1fr;
+    gap: 8px;
+    padding: 8px;
+  }
+  
+  .power-ranking-item .rank {
+    width: 24px;
+    height: 24px;
+    font-size: 0.7rem;
+  }
+  
+  .team-analysis .team-name {
+    font-size: 0.85rem;
+  }
+  
+  .analysis {
+    font-size: 0.7rem;
   }
 }
 

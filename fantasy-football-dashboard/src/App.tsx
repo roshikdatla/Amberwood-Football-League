@@ -16,7 +16,6 @@ function AppContent() {
       <Routes>
         <Route path="/" element={
           <HomePage 
-            username="roshik" 
             leagueId="1240124901977759744" 
             season="2025" 
           />

@@ -1,20 +1,16 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { sleeperApi } from '../services/sleeperApi';
-import { claudeApi } from '../services/claudeApi';
 import { League, Roster, User, TeamStanding } from '../types/sleeper';
 import LeagueHero from './LeagueHero';
-import TeamAnalysisModal from './TeamAnalysisModal';
 import ActivityFeed from './ActivityFeed';
 import WeeklyMatchups from './WeeklyMatchups';
 
 interface HomePageProps {
-  username?: string;
   leagueId?: string;
   season?: string;
 }
 
 const HomePage: React.FC<HomePageProps> = ({ 
-  username = '', 
   leagueId = '', 
   season = '2025' 
 }) => {
@@ -25,11 +21,7 @@ const HomePage: React.FC<HomePageProps> = ({
   const [error, setError] = useState<string>('');
   const [currentWeek, setCurrentWeek] = useState(1);
   
-  // Team analysis modal states
-  const [showAnalysisModal, setShowAnalysisModal] = useState(false);
-  const [analysisLoading, setAnalysisLoading] = useState(false);
-  const [analysisError, setAnalysisError] = useState<string | null>(null);
-  const [currentAnalysis, setCurrentAnalysis] = useState<any>(null);
+  // Unused modal states removed for power rankings implementation
 
   const calculateStandings = (rosters: Roster[], users: User[]): TeamStanding[] => {
     const userMap = new Map(users.map(user => [user.user_id, user]));
@@ -97,33 +89,6 @@ const HomePage: React.FC<HomePageProps> = ({
     }
   }, []);
 
-  const analyzeTeam = async (team: TeamStanding) => {
-    setShowAnalysisModal(true);
-    setAnalysisLoading(true);
-    setAnalysisError(null);
-    setCurrentAnalysis(null);
-
-    try {
-      const analysis = await claudeApi.analyzeTeam(
-        team, 
-        standings, 
-        league?.name || 'Fantasy League',
-        currentWeek
-      );
-      setCurrentAnalysis(analysis);
-    } catch (err) {
-      setAnalysisError(err instanceof Error ? err.message : 'Failed to analyze team');
-      console.error('Team analysis error:', err);
-    } finally {
-      setAnalysisLoading(false);
-    }
-  };
-
-  const closeModal = () => {
-    setShowAnalysisModal(false);
-    setCurrentAnalysis(null);
-    setAnalysisError(null);
-  };
 
   useEffect(() => {
     if (leagueId) {
@@ -267,13 +232,6 @@ const HomePage: React.FC<HomePageProps> = ({
         </div>
       </div>
 
-      <TeamAnalysisModal
-        isOpen={showAnalysisModal}
-        onClose={closeModal}
-        analysis={currentAnalysis}
-        loading={analysisLoading}
-        error={analysisError}
-      />
     </div>
   );
 };
