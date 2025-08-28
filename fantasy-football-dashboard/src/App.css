@@ -1,6 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 .App {
   min-height: 100vh;
   background: linear-gradient(135deg, #1e3a8a 0%, #fbbf24 100%);
+  width: 100%;
 }
 
 /* Navigation Styles */
@@ -2060,7 +2071,7 @@
   }
   
   .homepage-content {
-    margin-top: -40px;
+    margin-top: -20px;
     padding: 0 15px 30px;
   }
   
@@ -2071,7 +2082,7 @@
   
   .newsletter-cta {
     padding: 20px;
-    margin-bottom: 20px;
+    margin: 20px 0 20px 0;
   }
   
   .cta-content {
@@ -2130,11 +2141,13 @@
   }
   
   .homepage-content {
+    margin-top: 0px;
     padding: 0 10px 20px;
   }
   
   .newsletter-cta {
     padding: 15px;
+    margin: 15px 0;
   }
   
   .cta-text h2 {
