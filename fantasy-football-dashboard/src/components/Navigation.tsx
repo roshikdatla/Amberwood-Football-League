@@ -9,8 +9,8 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage = 'home' }) => {
     <nav className="main-navigation">
       <div className="nav-container">
         <a href="/" className="nav-brand">
-          <span className="brand-icon">🏈</span>
-          Amberwood League
+          <img src="/b4318b8c9c94900e518a6168a6a73ab6.JPEG" alt="Amberwood Fantasy League" className="brand-logo" />
+          Amberwood Football League
         </a>
         
         <div className="nav-links">

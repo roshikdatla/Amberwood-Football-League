@@ -125,8 +125,9 @@ const LeagueChat: React.FC = () => {
     <div className="league-chat-container">
       <div className="chat-header">
         <div className="chat-title">
-          <img src="/claude-logo-png_seeklogo-554540.png" alt="Claude" className="chat-claude-logo" />
-          <h2>League Assistant</h2>
+          <div className="chat-title-text">
+            <h2>League Assistant</h2>
+          </div>
         </div>
         <div className="chat-subtitle">
           Ask me anything about your fantasy league!

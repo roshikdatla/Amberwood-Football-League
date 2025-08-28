@@ -1,6 +1,6 @@
 .App {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #fbbf24 100%);
 }
 
 /* Navigation Styles */
@@ -36,11 +36,19 @@
 }
 
 .nav-brand:hover {
-  color: #667eea;
+  color: #1e3a8a;
 }
 
 .brand-icon {
   font-size: 1.5rem;
+}
+
+.brand-logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fbbf24;
 }
 
 .nav-links {
@@ -59,14 +67,15 @@
 }
 
 .nav-link:hover {
-  color: #667eea;
-  background: rgba(102, 126, 234, 0.1);
+  color: #1e3a8a;
+  background: rgba(251, 191, 36, 0.1);
 }
 
 .nav-link.active {
-  color: #667eea;
-  background: rgba(102, 126, 234, 0.15);
+  color: #1e3a8a;
+  background: rgba(251, 191, 36, 0.15);
   font-weight: 600;
+  border-bottom: 2px solid #fbbf24;
 }
 
 /* Homepage Styles */
@@ -189,14 +198,16 @@
 .weekly-matchups-container,
 .activity-feed-container,
 .league-stats-container,
-.compact-standings-container {
+.compact-standings-container,
+.power-rankings-container {
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
   padding: 30px;
 }
 
-.compact-standings-container h3 {
+.compact-standings-container h3,
+.power-rankings-container h3 {
   color: #333;
   margin-bottom: 20px;
   font-size: 1.2rem;
@@ -285,6 +296,58 @@
   opacity: 0.7;
 }
 
+/* Power Rankings */
+.power-rankings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.power-ranking-item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.power-ranking-item:hover {
+  background-color: #f8f9fa;
+}
+
+.power-ranking-item .rank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #1e3a8a, #fbbf24);
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.team-analysis {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.team-analysis .team-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.analysis {
+  font-size: 0.8rem;
+  color: #666;
+  line-height: 1.4;
+  font-style: italic;
+}
+
 /* Loading and Error States */
 .loading {
   text-align: center;
@@ -308,11 +371,11 @@
 
 /* Newsletter CTA */
 .newsletter-cta {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
   border-radius: 12px;
   padding: 30px;
   color: white;
-  box-shadow: 0 8px 32px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 8px 32px rgba(251, 191, 36, 0.3);
   margin-bottom: 30px;
 }
 
@@ -494,7 +557,7 @@
 }
 
 .team-record {
-  background: linear-gradient(135deg, #4CAF50, #8BC34A);
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
   color: white;
   padding: 6px 12px;
   border-radius: 15px;
@@ -892,7 +955,7 @@
   align-items: center;
   justify-content: center;
   min-height: 80vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #fbbf24 100%);
   border-radius: 12px;
   color: white;
   text-align: center;
@@ -946,7 +1009,7 @@
 }
 
 .back-btn {
-  background: #667eea;
+  background: #fbbf24;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -957,7 +1020,7 @@
 }
 
 .back-btn:hover {
-  background: #5a67d8;
+  background: #1e40af;
   transform: translateY(-1px);
 }
 
@@ -1385,7 +1448,7 @@
 
 .archive-header p {
   font-size: 1.1rem;
-  color: #666;
+  color: #333;
 }
 
 .newsletter-grid {
@@ -1438,7 +1501,7 @@
 }
 
 .read-btn {
-  background: #667eea;
+  background: #fbbf24;
   color: white;
   border: none;
   padding: 8px 16px;
@@ -1449,7 +1512,7 @@
 }
 
 .read-btn:hover {
-  background: #5a67d8;
+  background: #1e40af;
 }
 
 .coming-soon-btn {
@@ -1620,15 +1683,29 @@
 }
 
 .chat-claude-logo {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
+}
+
+.chat-title-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
 }
 
 .chat-title h2 {
   margin: 0;
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 700;
   color: #333;
+}
+
+.chat-title h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
 }
 
 .chat-subtitle {

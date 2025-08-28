@@ -175,36 +175,93 @@ const HomePage: React.FC<HomePageProps> = ({
         </div>
         
         <div className="sidebar">
-          <div className="compact-standings-container">
-            <h3>League Standings</h3>
-            <div className="ai-feature-notice">
-              <div className="ai-notice-content">
-                <img src="/claude-logo-png_seeklogo-554540.png" alt="Claude" className="claude-logo" width="64" height="64" />
-                <small>Click any team for AI analysis (Sonnet-4)</small>
-              </div>
-            </div>
-            <div className="compact-standings-list">
-              {standings.map((team, index) => (
-                <div 
-                  key={team.roster_id} 
-                  className="compact-standing-row clickable"
-                  onClick={() => analyzeTeam(team)}
-                  title="Click for AI analysis"
-                >
-                  <div className="rank">{index + 1}</div>
-                  <div className="team-info">
-                    <div className="team-name">{team.display_name}</div>
-                    <div className="team-record">
-                      {team.wins}-{team.losses}
-                      {team.ties > 0 && `-${team.ties}`}
-                    </div>
-                  </div>
-                  <div className="points">{team.points_for.toFixed(0)}</div>
+          <div className="power-rankings-container">
+            <h3>Power Rankings</h3>
+            <div className="power-rankings-list">
+              <div className="power-ranking-item">
+                <div className="rank">1</div>
+                <div className="team-analysis">
+                  <div className="team-name">Pranav Jain</div>
+                  <div className="analysis">Elite WR corps with Jefferson-Nacua creates unmatched weekly ceiling despite QB uncertainty</div>
                 </div>
-              ))}
-            </div>
-            <div className="standings-footer">
-              <small>PF = Points For</small>
+              </div>
+              <div className="power-ranking-item">
+                <div className="rank">2</div>
+                <div className="team-analysis">
+                  <div className="team-name">Sahit Reddi</div>
+                  <div className="analysis">Incredible WR depth with Hill-Higgins-Adams trio provides matchup flexibility every week</div>
+                </div>
+              </div>
+              <div className="power-ranking-item">
+                <div className="rank">3</div>
+                <div className="team-analysis">
+                  <div className="team-name">Roshik</div>
+                  <div className="analysis">Brock Bowers' positional advantage at TE makes up for WR depth concerns</div>
+                </div>
+              </div>
+              <div className="power-ranking-item">
+                <div className="rank">4</div>
+                <div className="team-analysis">
+                  <div className="team-name">Sahil</div>
+                  <div className="analysis">Chase-Collins WR combo is elite, but Dak Prescott limits championship upside</div>
+                </div>
+              </div>
+              <div className="power-ranking-item">
+                <div className="rank">5</div>
+                <div className="team-analysis">
+                  <div className="team-name">Taaha</div>
+                  <div className="analysis">Four #1 WRs provide safety, though Lions RB dependence caps ceiling potential</div>
+                </div>
+              </div>
+              <div className="power-ranking-item">
+                <div className="rank">6</div>
+                <div className="team-analysis">
+                  <div className="team-name">Anudeep</div>
+                  <div className="analysis">Josh Allen's dual-threat ability covers for aging RB corps and depth concerns</div>
+                </div>
+              </div>
+              <div className="power-ranking-item">
+                <div className="rank">7</div>
+                <div className="team-analysis">
+                  <div className="team-name">Abhiram</div>
+                  <div className="analysis">Lamar's rushing floor is elite, but rookie dependence creates weekly volatility</div>
+                </div>
+              </div>
+              <div className="power-ranking-item">
+                <div className="rank">8</div>
+                <div className="team-analysis">
+                  <div className="team-name">Akhil</div>
+                  <div className="analysis">Brown-McLaurin provides solid WR foundation, Taylor bounce-back questions linger</div>
+                </div>
+              </div>
+              <div className="power-ranking-item">
+                <div className="rank">9</div>
+                <div className="team-analysis">
+                  <div className="team-name">Aditya</div>
+                  <div className="analysis">Mahomes-Purdy QB pairing can't overcome inconsistent RB situation and depth issues</div>
+                </div>
+              </div>
+              <div className="power-ranking-item">
+                <div className="rank">10</div>
+                <div className="team-analysis">
+                  <div className="team-name">Abhishek</div>
+                  <div className="analysis">Derrick Henry age concerns and WR corps lacking true WR1 upside limit ceiling</div>
+                </div>
+              </div>
+              <div className="power-ranking-item">
+                <div className="rank">11</div>
+                <div className="team-analysis">
+                  <div className="team-name">Ankith</div>
+                  <div className="analysis">Young talent promising but McCaffrey injury risk leaves dangerously thin at RB</div>
+                </div>
+              </div>
+              <div className="power-ranking-item">
+                <div className="rank">12</div>
+                <div className="team-analysis">
+                  <div className="team-name">Pranav P</div>
+                  <div className="analysis">QB uncertainty with Maye/Fields could waste solid TE advantage and skill position depth</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
