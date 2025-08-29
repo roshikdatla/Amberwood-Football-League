@@ -2083,7 +2083,7 @@ body, html {
   
   .newsletter-cta {
     padding: 15px 5px;
-    margin: 15px auto;
+    margin: 15px 20px 15px auto;
     max-width: calc(100% - 40px);
   }
   
@@ -2208,7 +2208,7 @@ body, html {
   
   .newsletter-cta {
     padding: 12px 3px;
-    margin: 10px auto;
+    margin: 10px 15px 10px auto;
     max-width: calc(100% - 30px);
   }
   
