@@ -125,8 +125,8 @@ body, html {
 .hero-section {
   position: relative;
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
-              url('./536239336_746657801583789_4209499692132568005_n.jpg') center 60%/cover;
-  padding: 80px 20px;
+              url('./536239336_746657801583789_4209499692132568005_n.jpg') center 45%/cover;
+  padding: 120px 20px;
   color: white;
   text-align: center;
 }
@@ -2083,8 +2083,8 @@ body, html {
   
   .newsletter-cta {
     padding: 15px 5px;
-    margin: 15px 20px 15px auto;
-    max-width: calc(100% - 40px);
+    margin: 15px 0;
+    max-width: calc(100% - 10px);
   }
   
   .cta-content {
@@ -2208,8 +2208,8 @@ body, html {
   
   .newsletter-cta {
     padding: 12px 3px;
-    margin: 10px 15px 10px auto;
-    max-width: calc(100% - 30px);
+    margin: 10px 0;
+    max-width: calc(100% - 6px);
   }
   
   .compact-standings-container,
