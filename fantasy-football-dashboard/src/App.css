@@ -2082,8 +2082,8 @@ body, html {
   }
   
   .newsletter-cta {
-    padding: 15px 2px;
-    margin: 15px 0;
+    padding: 15px 0px;
+    margin: 15px 5px;
   }
   
   .cta-content {
@@ -2104,17 +2104,19 @@ body, html {
   }
   
   .cta-primary-btn {
-    padding: 8px 12px;
-    font-size: 0.9rem;
+    padding: 6px 8px;
+    font-size: 0.85rem;
     white-space: nowrap;
-    max-width: 95%;
+    max-width: 90%;
     text-align: center;
+    overflow: hidden;
   }
   
   .cta-latest {
-    font-size: 0.8rem;
-    max-width: 95%;
+    font-size: 0.75rem;
+    max-width: 90%;
     text-align: center;
+    overflow: hidden;
   }
   
   .weekly-matchups-container,
@@ -2204,8 +2206,8 @@ body, html {
   }
   
   .newsletter-cta {
-    padding: 12px 1px;
-    margin: 10px 0;
+    padding: 12px 0px;
+    margin: 10px 8px;
   }
   
   .compact-standings-container,
@@ -2236,17 +2238,19 @@ body, html {
   }
   
   .cta-primary-btn {
-    padding: 6px 10px;
-    font-size: 0.8rem;
+    padding: 4px 6px;
+    font-size: 0.75rem;
     white-space: nowrap;
-    max-width: 90%;
+    max-width: 85%;
     text-align: center;
+    overflow: hidden;
   }
   
   .cta-latest {
-    font-size: 0.75rem;
-    max-width: 90%;
+    font-size: 0.7rem;
+    max-width: 85%;
     text-align: center;
+    overflow: hidden;
   }
   
   .power-ranking-item {
