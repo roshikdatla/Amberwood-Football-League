@@ -2082,8 +2082,9 @@ body, html {
   }
   
   .newsletter-cta {
-    padding: 15px 0px;
-    margin: 15px 5px;
+    padding: 15px 10px;
+    margin: 15px auto;
+    max-width: calc(100% - 20px);
   }
   
   .cta-content {
@@ -2206,8 +2207,9 @@ body, html {
   }
   
   .newsletter-cta {
-    padding: 12px 0px;
-    margin: 10px 8px;
+    padding: 12px 8px;
+    margin: 10px auto;
+    max-width: calc(100% - 16px);
   }
   
   .compact-standings-container,
