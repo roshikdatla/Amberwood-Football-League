@@ -99,8 +99,6 @@ const NewsletterArchive: React.FC<NewsletterArchiveProps> = ({ showArchive = fal
                   <li><strong>TE Scarcity:</strong> With Bowers/Hockenson kept, remaining TEs became more valuable</li>
                 </ul>
 
-                <h3>Championship Contenders</h3>
-                <p><strong>Top Tier:</strong> Pranav Jain, Sahit Reddi, Sahil Parikh, Taaha Motorwala, and Roshik Datla maximized their keeper advantages by building around them while also adding elite 1st round talent.</p>
 
                 <div className="sidebar-story">
                   <h3>INSIDE THIS EDITION</h3>
