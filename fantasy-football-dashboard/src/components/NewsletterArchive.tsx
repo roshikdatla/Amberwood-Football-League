@@ -52,7 +52,7 @@ const NewsletterArchive: React.FC<NewsletterArchiveProps> = ({ showArchive = fal
         <div className="newspaper-content">
           <div className="main-story">
             <h2 className="headline">When Keepers Rule, Strategy Shifts: Fantasy Managers Go All-In on Upside</h2>
-            <div className="byline">By Fantasy Sports Desk | Draft Coverage</div>
+            <div className="byline">By the Office of the Commissioner</div>
             
             <div className="large-collage-container">
               <div className="image-collage-horizontal">
