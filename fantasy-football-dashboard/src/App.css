@@ -2079,23 +2079,32 @@ body, html {
   .power-rankings-container {
     padding: 15px;
     margin: 0 auto 15px auto;
-    width: 60vw;
-    max-width: 60vw;
+    width: 75vw;
+    max-width: 75vw;
     box-sizing: border-box;
   }
   
   .newsletter-cta {
     padding: 15px;
     margin: 15px auto;
-    width: 70vw;
-    max-width: 70vw;
+    width: 75vw;
+    max-width: 75vw;
     box-sizing: border-box;
   }
   
   .cta-content {
+    display: flex;
     flex-direction: column;
     text-align: center;
     gap: 15px;
+  }
+  
+  .cta-icon {
+    order: 1;
+  }
+  
+  .cta-text {
+    order: 2;
   }
   
   .cta-text h2 {
@@ -2106,7 +2115,8 @@ body, html {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    align-items: flex-start;
+    align-items: center;
+    order: 3;
   }
   
   .cta-primary-btn {
@@ -2114,23 +2124,30 @@ body, html {
     font-size: 0.85rem;
     white-space: nowrap;
     max-width: 90%;
-    text-align: left;
+    text-align: center;
     overflow: hidden;
   }
   
   .cta-latest {
     font-size: 0.75rem;
     max-width: 90%;
-    text-align: left;
+    text-align: center;
     overflow: hidden;
   }
   
-  .weekly-matchups-container,
+  .weekly-matchups-container {
+    padding: 15px;
+    margin: 0 auto 15px auto;
+    width: 75vw;
+    max-width: 75vw;
+    box-sizing: border-box;
+  }
+  
   .activity-feed-container {
     padding: 15px;
     margin: 0 auto 15px auto;
-    width: 70vw;
-    max-width: 70vw;
+    width: 75vw;
+    max-width: 75vw;
     box-sizing: border-box;
   }
   
@@ -2156,6 +2173,35 @@ body, html {
     word-break: break-word;
   }
   
+  /* Simplified matchups for mobile */
+  .matchup-card {
+    padding: 10px;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .team-matchup {
+    border: none !important;
+    background: transparent !important;
+    padding: 8px 0;
+    justify-content: center;
+  }
+  
+  .team-matchup .team-record,
+  .team-matchup .team-points {
+    display: none;
+  }
+  
+  .team-matchup .team-name {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  .matchup-vs {
+    font-size: 0.8rem;
+    margin: 5px 0;
+  }
+
   /* Ensure no overflow on mobile containers */
   .weekly-matchups-container *,
   .activity-feed-container *,
@@ -2217,8 +2263,8 @@ body, html {
   .newsletter-cta {
     padding: 12px;
     margin: 10px auto;
-    width: 70vw;
-    max-width: 70vw;
+    width: 75vw;
+    max-width: 75vw;
     box-sizing: border-box;
   }
   
@@ -2226,18 +2272,33 @@ body, html {
   .power-rankings-container {
     padding: 12px;
     margin: 0 auto 12px auto;
-    width: 60vw;
-    max-width: 60vw;
+    width: 75vw;
+    max-width: 75vw;
     box-sizing: border-box;
   }
   
-  .weekly-matchups-container,
+  .weekly-matchups-container {
+    padding: 12px;
+    margin: 0 auto 12px auto;
+    width: 75vw;
+    max-width: 75vw;
+    box-sizing: border-box;
+  }
+  
   .activity-feed-container {
     padding: 12px;
     margin: 0 auto 12px auto;
-    width: 70vw;
-    max-width: 70vw;
+    width: 75vw;
+    max-width: 75vw;
     box-sizing: border-box;
+  }
+  
+  .cta-icon {
+    order: 1;
+  }
+  
+  .cta-text {
+    order: 2;
   }
   
   .cta-text h2 {
@@ -2252,7 +2313,8 @@ body, html {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    align-items: flex-start;
+    align-items: center;
+    order: 3;
   }
   
   .cta-primary-btn {
@@ -2260,14 +2322,14 @@ body, html {
     font-size: 0.75rem;
     white-space: nowrap;
     max-width: 85%;
-    text-align: left;
+    text-align: center;
     overflow: hidden;
   }
   
   .cta-latest {
     font-size: 0.7rem;
     max-width: 85%;
-    text-align: left;
+    text-align: center;
     overflow: hidden;
   }
   
@@ -2293,6 +2355,35 @@ body, html {
     word-break: break-word;
   }
   
+  /* Simplified matchups for mobile */
+  .matchup-card {
+    padding: 8px;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .team-matchup {
+    border: none !important;
+    background: transparent !important;
+    padding: 6px 0;
+    justify-content: center;
+  }
+  
+  .team-matchup .team-record,
+  .team-matchup .team-points {
+    display: none;
+  }
+  
+  .team-matchup .team-name {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+  
+  .matchup-vs {
+    font-size: 0.75rem;
+    margin: 4px 0;
+  }
+
   /* Ensure no overflow on mobile containers */
   .weekly-matchups-container *,
   .activity-feed-container *,
