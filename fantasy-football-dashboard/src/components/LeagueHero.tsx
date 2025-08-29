@@ -49,20 +49,6 @@ const LeagueHero: React.FC<LeagueHeroProps> = ({ league, currentWeek, loading })
           </div>
         </div>
 
-        <div className="league-stats-quick">
-          <div className="stat-item">
-            <div className="stat-value">{league?.total_rosters || 12}</div>
-            <div className="stat-label">Teams</div>
-          </div>
-          <div className="stat-item">
-            <div className="stat-value">{currentWeek}</div>
-            <div className="stat-label">Current Week</div>
-          </div>
-          <div className="stat-item">
-            <div className="stat-value">{league?.settings?.playoff_teams || 6}</div>
-            <div className="stat-label">Playoff Teams</div>
-          </div>
-        </div>
       </div>
     </div>
   );
