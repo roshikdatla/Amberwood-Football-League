@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import './App.css';
 import HomePage from './components/HomePage';
 import NewsletterArchive from './components/NewsletterArchive';
+import Week1Newsletter from './components/Week1Newsletter';
 import LeagueChat from './components/LeagueChat';
 import Navigation from './components/Navigation';
 
@@ -22,6 +23,7 @@ function AppContent() {
         } />
         <Route path="/newsletters" element={<NewsletterArchive showArchive={true} />} />
         <Route path="/newsletters/preseason" element={<NewsletterArchive />} />
+        <Route path="/newsletters/week1" element={<Week1Newsletter />} />
         <Route path="/chat" element={<LeagueChat />} />
       </Routes>
     </div>

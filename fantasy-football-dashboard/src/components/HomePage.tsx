@@ -121,10 +121,10 @@ const HomePage: React.FC<HomePageProps> = ({
                 <p>Get the inside scoop on league drama, player analysis, and hot takes delivered weekly!</p>
               </div>
               <div className="cta-actions">
-                <a href="/newsletters/preseason" className="cta-primary-btn">
+                <a href="/newsletters/week1" className="cta-primary-btn">
                   Read Latest Issue →
                 </a>
-                <div className="cta-latest">Latest: Preseason Edition</div>
+                <div className="cta-latest">Latest: Week 1 Edition</div>
               </div>
             </div>
           </div>
@@ -141,90 +141,90 @@ const HomePage: React.FC<HomePageProps> = ({
         
         <div className="sidebar">
           <div className="power-rankings-container">
-            <h3>Power Rankings</h3>
+            <h3>Betting Odds</h3>
             <div className="power-rankings-list">
               <div className="power-ranking-item">
                 <div className="rank">1</div>
                 <div className="team-analysis">
-                  <div className="team-name">Pranav Jain</div>
-                  <div className="analysis">Elite WR corps with Jefferson-Nacua creates unmatched weekly ceiling despite QB uncertainty</div>
+                  <div className="team-name">Abhishek (+250)</div>
+                  <div className="analysis">He's regular season Joel Embiid. But unfortunately he's also post season Joel Embiid</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">2</div>
                 <div className="team-analysis">
-                  <div className="team-name">Sahit Reddi</div>
-                  <div className="analysis">Incredible WR depth with Hill-Higgins-Adams trio provides matchup flexibility every week</div>
+                  <div className="team-name">Roshik (+350)</div>
+                  <div className="analysis">Too good to be true</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">3</div>
                 <div className="team-analysis">
-                  <div className="team-name">Roshik</div>
-                  <div className="analysis">Brock Bowers' positional advantage at TE makes up for WR depth concerns</div>
+                  <div className="team-name">Aditya (+425)</div>
+                  <div className="analysis">I dont know how this happened but it happened</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">4</div>
                 <div className="team-analysis">
-                  <div className="team-name">Sahil</div>
-                  <div className="analysis">Chase-Collins WR combo is elite, but Dak Prescott limits championship upside</div>
+                  <div className="team-name">Ankith (+600)</div>
+                  <div className="analysis">Cried all weekend but still put up 140</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">5</div>
                 <div className="team-analysis">
-                  <div className="team-name">Taaha</div>
-                  <div className="analysis">Four #1 WRs provide safety, though Lions RB dependence caps ceiling potential</div>
+                  <div className="team-name">Anudeep (+750)</div>
+                  <div className="analysis">My goat might be washed but lets see if he can bounce back</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">6</div>
                 <div className="team-analysis">
-                  <div className="team-name">Anudeep</div>
-                  <div className="analysis">Josh Allen's dual-threat ability covers for aging RB corps and depth concerns</div>
+                  <div className="team-name">Pranav Jain (+1600)</div>
+                  <div className="analysis">Mid</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">7</div>
                 <div className="team-analysis">
-                  <div className="team-name">Abhiram</div>
-                  <div className="analysis">Lamar's rushing floor is elite, but rookie dependence creates weekly volatility</div>
+                  <div className="team-name">Pranav P (+900)</div>
+                  <div className="analysis">Took an L but still moved up 5 spots in the power rankings</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">8</div>
                 <div className="team-analysis">
-                  <div className="team-name">Akhil</div>
-                  <div className="analysis">Brown-McLaurin provides solid WR foundation, Taylor bounce-back questions linger</div>
+                  <div className="team-name">Abhiram (+1800)</div>
+                  <div className="analysis">Championship hangover comes early</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">9</div>
                 <div className="team-analysis">
-                  <div className="team-name">Aditya</div>
-                  <div className="analysis">Mahomes-Purdy QB pairing can't overcome inconsistent RB situation and depth issues</div>
+                  <div className="team-name">Taaha (+2500)</div>
+                  <div className="analysis">Mickey</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">10</div>
                 <div className="team-analysis">
-                  <div className="team-name">Abhishek</div>
-                  <div className="analysis">Derrick Henry age concerns and WR corps lacking true WR1 upside limit ceiling</div>
+                  <div className="team-name">Sahit Reddi (+2000)</div>
+                  <div className="analysis">Celtics Shaq, Eagles Julio Jones, Jets Aaron Rodgers</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">11</div>
                 <div className="team-analysis">
-                  <div className="team-name">Ankith</div>
-                  <div className="analysis">Young talent promising but McCaffrey injury risk leaves dangerously thin at RB</div>
+                  <div className="team-name">Sahil (+5000)</div>
+                  <div className="analysis">Every year we expect something different but every year we get the same</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">12</div>
                 <div className="team-analysis">
-                  <div className="team-name">Pranav P</div>
-                  <div className="analysis">QB uncertainty with Maye/Fields could waste solid TE advantage and skill position depth</div>
+                  <div className="team-name">Akhil (+3000)</div>
+                  <div className="analysis">Tough start for the rookie</div>
                 </div>
               </div>
             </div>
