@@ -23,9 +23,9 @@ const Week1Newsletter: React.FC = () => {
             
             <div className="story-layout">
               <div className="story-column">
-                <div className="left-image" style={{marginBottom: '20px', marginLeft: '80px', border: '1px solid #ddd', padding: '20px', borderRadius: '8px', backgroundColor: '#f9f9f9', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', textAlign: 'center', display: 'inline-block'}}>
-                  <img src="/0CAFA0B7-EB9E-4F67-A55A-A122676D6371.PNG" alt="Ankith King Slayer" style={{maxWidth: '350px', height: 'auto', border: '2px solid #333', borderRadius: '4px'}} />
-                  <div className="draft-caption" style={{fontSize: '12px', fontStyle: 'italic', textAlign: 'center', marginTop: '5px', maxWidth: '350px'}}>
+                <div className="left-image" style={{marginBottom: '20px', border: '1px solid #ddd', padding: '20px', borderRadius: '8px', backgroundColor: '#f9f9f9', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', textAlign: 'center', display: 'inline-block', width: '100%', maxWidth: '400px'}}>
+                  <img src="/0CAFA0B7-EB9E-4F67-A55A-A122676D6371.PNG" alt="Ankith King Slayer" style={{width: '100%', maxWidth: '350px', height: 'auto', border: '2px solid #333', borderRadius: '4px'}} />
+                  <div className="draft-caption" style={{fontSize: '12px', fontStyle: 'italic', textAlign: 'center', marginTop: '5px'}}>
                     Ankith stuns the former champion
                   </div>
                 </div>

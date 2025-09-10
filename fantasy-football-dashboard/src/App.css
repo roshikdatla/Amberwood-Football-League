@@ -1682,6 +1682,18 @@ body, html {
     text-indent: 1rem;
   }
   
+  /* Fix Week 1 Newsletter mobile image */
+  .left-image {
+    margin-left: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  
+  .left-image img {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  
   .newspaper-container {
     margin: 10px;
   }
