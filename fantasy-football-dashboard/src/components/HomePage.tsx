@@ -160,70 +160,70 @@ const HomePage: React.FC<HomePageProps> = ({
               <div className="power-ranking-item">
                 <div className="rank">3</div>
                 <div className="team-analysis">
-                  <div className="team-name">Sahil +650</div>
+                  <div className="team-name">Sahil +450</div>
                   <div className="analysis">Good PF (259), explosive potential</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">4</div>
                 <div className="team-analysis">
-                  <div className="team-name">Pranav P +800</div>
+                  <div className="team-name">Pranav P +550</div>
                   <div className="analysis">Best PF in league (294) despite 1-1 record</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">5</div>
                 <div className="team-analysis">
-                  <div className="team-name">Taaha +1100</div>
+                  <div className="team-name">Taaha +650</div>
                   <div className="analysis">Undefeated but lowest PF (242), lucky but risky</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">6</div>
                 <div className="team-analysis">
-                  <div className="team-name">Anudeep +950</div>
+                  <div className="team-name">Anudeep +750</div>
                   <div className="analysis">Solid PF (272), bounce-back candidate</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">7</div>
                 <div className="team-analysis">
-                  <div className="team-name">Abhishek +1200</div>
+                  <div className="team-name">Abhishek +900</div>
                   <div className="analysis">Major concerns after Week 2 collapse</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">8</div>
                 <div className="team-analysis">
-                  <div className="team-name">Roshik +1400</div>
+                  <div className="team-name">Roshik +1100</div>
                   <div className="analysis">Disappointing recent performance</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">9</div>
                 <div className="team-analysis">
-                  <div className="team-name">Aditya +1600</div>
-                  <div className="analysis">Lowest PF among 1-1 teams</div>
+                  <div className="team-name">Aditya +1400</div>
+                  <div className="analysis">Championship experience, but recent struggles</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">10</div>
                 <div className="team-analysis">
-                  <div className="team-name">Abhiram +2500</div>
+                  <div className="team-name">Abhiram +1800</div>
                   <div className="analysis">Young talent, major upside bet</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">11</div>
                 <div className="team-analysis">
-                  <div className="team-name">Sahit Reddi +3000</div>
-                  <div className="analysis">Worst position, stars underperforming</div>
+                  <div className="team-name">Sahit Reddi +2200</div>
+                  <div className="analysis">Elite talent struggling, QB1 gone for year</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">12</div>
                 <div className="team-analysis">
-                  <div className="team-name">Akhil +3500</div>
+                  <div className="team-name">Akhil +2500</div>
                   <div className="analysis">Rookie struggles, long rebuild ahead</div>
                 </div>
               </div>
