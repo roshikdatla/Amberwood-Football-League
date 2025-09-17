@@ -146,73 +146,85 @@ const HomePage: React.FC<HomePageProps> = ({
               <div className="power-ranking-item">
                 <div className="rank">1</div>
                 <div className="team-analysis">
-                  <div className="team-name">Ankith (2-0, 311 PF)</div>
+                  <div className="team-name">Ankith +280</div>
+                  <div className="analysis">Undefeated with highest PF (311), clear favorite</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">2</div>
                 <div className="team-analysis">
-                  <div className="team-name">Pranav Jain (2-0, 269 PF)</div>
+                  <div className="team-name">Pranav Jain +350</div>
+                  <div className="analysis">Undefeated but lower PF (269), solid second choice</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">3</div>
                 <div className="team-analysis">
-                  <div className="team-name">Sahil (1-1, 259 PF)</div>
+                  <div className="team-name">Sahil +650</div>
+                  <div className="analysis">Good PF (259), explosive potential</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">4</div>
                 <div className="team-analysis">
-                  <div className="team-name">Pranav P (1-1, 294 PF)</div>
+                  <div className="team-name">Pranav P +450</div>
+                  <div className="analysis">Best PF in league (294) despite 1-1 record</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">5</div>
                 <div className="team-analysis">
-                  <div className="team-name">Taaha (2-0, 242 PF)</div>
+                  <div className="team-name">Taaha +900</div>
+                  <div className="analysis">Undefeated but lowest PF (242), lucky but risky</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">6</div>
                 <div className="team-analysis">
-                  <div className="team-name">Anudeep (1-1, 272 PF)</div>
+                  <div className="team-name">Anudeep +750</div>
+                  <div className="analysis">Solid PF (272), bounce-back candidate</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">7</div>
                 <div className="team-analysis">
-                  <div className="team-name">Abhishek (1-1, 259 PF)</div>
+                  <div className="team-name">Abhishek +1200</div>
+                  <div className="analysis">Major concerns after Week 2 collapse</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">8</div>
                 <div className="team-analysis">
-                  <div className="team-name">Roshik (1-1, 257 PF)</div>
+                  <div className="team-name">Roshik +1400</div>
+                  <div className="analysis">Disappointing recent performance</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">9</div>
                 <div className="team-analysis">
-                  <div className="team-name">Aditya (1-1, 254 PF)</div>
+                  <div className="team-name">Aditya +1600</div>
+                  <div className="analysis">Lowest PF among 1-1 teams</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">10</div>
                 <div className="team-analysis">
-                  <div className="team-name">Abhiram (0-2, 234 PF)</div>
+                  <div className="team-name">Abhiram +2500</div>
+                  <div className="analysis">Young talent, major upside bet</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">11</div>
                 <div className="team-analysis">
-                  <div className="team-name">Sahit Reddi (0-2, 230 PF)</div>
+                  <div className="team-name">Sahit Reddi +3000</div>
+                  <div className="analysis">Worst position, stars underperforming</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">12</div>
                 <div className="team-analysis">
-                  <div className="team-name">Akhil (0-2, 231 PF)</div>
+                  <div className="team-name">Akhil +2800</div>
+                  <div className="analysis">Rookie struggles, long rebuild ahead</div>
                 </div>
               </div>
             </div>
