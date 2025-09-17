@@ -23,7 +23,7 @@ const Week2Newsletter: React.FC = () => {
 
             <div className="center-image" style={{marginBottom: '30px', textAlign: 'center', width: '100%'}}>
               <div style={{border: '1px solid #ddd', padding: '20px', borderRadius: '8px', backgroundColor: '#f9f9f9', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', display: 'inline-block', maxWidth: '700px', width: '100%'}}>
-                <img src="/IMG_3622.WEBP" alt="Week 2 Highlights" style={{width: '100%', maxWidth: '650px', height: 'auto', border: '2px solid #333', borderRadius: '4px'}} className="newsletter-hero-image" />
+                <img src="/IMG_3622.WEBP" alt="Week 2 Highlights" style={{width: '100%', maxWidth: '650px', height: 'auto', border: '2px solid #333', borderRadius: '4px'}} />
                 <div className="draft-caption" style={{fontSize: '12px', fontStyle: 'italic', textAlign: 'center', marginTop: '10px'}}>
                   Every head must bow, every tongue must confess Pranav Jain is the greatest of all time
                 </div>

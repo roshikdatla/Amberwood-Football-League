@@ -2420,16 +2420,3 @@ body, html {
     opacity: 0;
   }
 }
-
-/* Newsletter Image Mobile Styles */
-@media (max-width: 768px) {
-  .newsletter-hero-image {
-    max-width: 90vw !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .newsletter-hero-image {
-    max-width: 95vw !important;
-  }
-}
