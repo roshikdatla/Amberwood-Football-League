@@ -167,21 +167,21 @@ const HomePage: React.FC<HomePageProps> = ({
               <div className="power-ranking-item">
                 <div className="rank">4</div>
                 <div className="team-analysis">
-                  <div className="team-name">Pranav P +450</div>
+                  <div className="team-name">Pranav P +800</div>
                   <div className="analysis">Best PF in league (294) despite 1-1 record</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">5</div>
                 <div className="team-analysis">
-                  <div className="team-name">Taaha +900</div>
+                  <div className="team-name">Taaha +1100</div>
                   <div className="analysis">Undefeated but lowest PF (242), lucky but risky</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">6</div>
                 <div className="team-analysis">
-                  <div className="team-name">Anudeep +750</div>
+                  <div className="team-name">Anudeep +950</div>
                   <div className="analysis">Solid PF (272), bounce-back candidate</div>
                 </div>
               </div>
@@ -223,7 +223,7 @@ const HomePage: React.FC<HomePageProps> = ({
               <div className="power-ranking-item">
                 <div className="rank">12</div>
                 <div className="team-analysis">
-                  <div className="team-name">Akhil +2800</div>
+                  <div className="team-name">Akhil +3500</div>
                   <div className="analysis">Rookie struggles, long rebuild ahead</div>
                 </div>
               </div>
