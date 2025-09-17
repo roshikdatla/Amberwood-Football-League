@@ -121,10 +121,10 @@ const HomePage: React.FC<HomePageProps> = ({
                 <p>Get the inside scoop on league drama, player analysis, and hot takes delivered weekly!</p>
               </div>
               <div className="cta-actions">
-                <a href="/newsletters/week1" className="cta-primary-btn">
+                <a href="/newsletters/week2" className="cta-primary-btn">
                   Read Latest Issue →
                 </a>
-                <div className="cta-latest">Latest: Week 1 Edition</div>
+                <div className="cta-latest">Latest: Week 2 Edition</div>
               </div>
             </div>
           </div>
@@ -146,85 +146,73 @@ const HomePage: React.FC<HomePageProps> = ({
               <div className="power-ranking-item">
                 <div className="rank">1</div>
                 <div className="team-analysis">
-                  <div className="team-name">Abhishek (+250)</div>
-                  <div className="analysis">He's regular season Joel Embiid. But unfortunately he's also post season Joel Embiid</div>
+                  <div className="team-name">Ankith (2-0, 311 PF)</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">2</div>
                 <div className="team-analysis">
-                  <div className="team-name">Roshik (+350)</div>
-                  <div className="analysis">Too good to be true</div>
+                  <div className="team-name">Pranav Jain (2-0, 269 PF)</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">3</div>
                 <div className="team-analysis">
-                  <div className="team-name">Aditya (+425)</div>
-                  <div className="analysis">I dont know how this happened but it happened</div>
+                  <div className="team-name">Sahil (1-1, 259 PF)</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">4</div>
                 <div className="team-analysis">
-                  <div className="team-name">Ankith (+600)</div>
-                  <div className="analysis">Cried all weekend but still put up 140</div>
+                  <div className="team-name">Pranav P (1-1, 294 PF)</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">5</div>
                 <div className="team-analysis">
-                  <div className="team-name">Anudeep (+750)</div>
-                  <div className="analysis">My goat might be washed but lets see if he can bounce back</div>
+                  <div className="team-name">Taaha (2-0, 242 PF)</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">6</div>
                 <div className="team-analysis">
-                  <div className="team-name">Pranav Jain (+1600)</div>
-                  <div className="analysis">Mid</div>
+                  <div className="team-name">Anudeep (1-1, 272 PF)</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">7</div>
                 <div className="team-analysis">
-                  <div className="team-name">Pranav P (+900)</div>
-                  <div className="analysis">Took an L but still moved up 5 spots in the power rankings</div>
+                  <div className="team-name">Abhishek (1-1, 259 PF)</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">8</div>
                 <div className="team-analysis">
-                  <div className="team-name">Abhiram (+1800)</div>
-                  <div className="analysis">Championship hangover comes early</div>
+                  <div className="team-name">Roshik (1-1, 257 PF)</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">9</div>
                 <div className="team-analysis">
-                  <div className="team-name">Taaha (+2500)</div>
-                  <div className="analysis">Mickey</div>
+                  <div className="team-name">Aditya (1-1, 254 PF)</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">10</div>
                 <div className="team-analysis">
-                  <div className="team-name">Sahit Reddi (+2000)</div>
-                  <div className="analysis">Celtics Shaq, Eagles Julio Jones, Jets Aaron Rodgers</div>
+                  <div className="team-name">Abhiram (0-2, 234 PF)</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">11</div>
                 <div className="team-analysis">
-                  <div className="team-name">Sahil (+5000)</div>
-                  <div className="analysis">Every year we expect something different but every year we get the same</div>
+                  <div className="team-name">Sahit Reddi (0-2, 230 PF)</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">12</div>
                 <div className="team-analysis">
-                  <div className="team-name">Akhil (+3000)</div>
-                  <div className="analysis">Tough start for the rookie</div>
+                  <div className="team-name">Akhil (0-2, 231 PF)</div>
                 </div>
               </div>
             </div>
