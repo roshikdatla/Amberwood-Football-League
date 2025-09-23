@@ -121,10 +121,10 @@ const HomePage: React.FC<HomePageProps> = ({
                 <p>Get the inside scoop on league drama, player analysis, and hot takes delivered weekly!</p>
               </div>
               <div className="cta-actions">
-                <a href="/newsletters/week2" className="cta-primary-btn">
+                <a href="/newsletters/week3" className="cta-primary-btn">
                   Read Latest Issue →
                 </a>
-                <div className="cta-latest">Latest: Week 2 Edition</div>
+                <div className="cta-latest">Latest: Week 3 Edition</div>
               </div>
             </div>
           </div>
