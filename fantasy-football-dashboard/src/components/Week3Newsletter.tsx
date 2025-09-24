@@ -18,7 +18,7 @@ const Week3Newsletter: React.FC = () => {
 
         <div className="newspaper-content">
           <div className="main-story">
-            <h2 className="headline">Week 3 Recap & Week 4 Preview</h2>
+            <h2 className="headline">Week 3 Review: Momentum Shifts and Meltdowns</h2>
             <div className="byline">By the Office of the Commissioner</div>
 
             <div className="center-image" style={{marginBottom: '30px', textAlign: 'center', width: '100%'}}>
