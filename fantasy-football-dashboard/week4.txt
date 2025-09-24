@@ -14,7 +14,7 @@ Winner Analysis: pranav4789's 139 points were driven by Amon-Ra St. Brown's exce
 Loser Analysis: audumula's catastrophic 90 points represent their worst performance of the season. Multiple position groups failed simultaneously, creating a perfect storm of underperformance. With injuries littering the roster from top to bottom, the team will have to make some changes quickly
 ⚔️ Competitive Battles
 "UPSET SPECIAL: Akhil Finally Breaks Through" akhilmetukuru (151.15) def. taahakm (135.42)
-Winner Analysis: akhilmetukuru's 151 points represent their season-high and first victory! After two tough losses, this team finally put together a complete performance when they needed it most. The eagles WR duo really carried Akhil to a much needed win
+Winner Analysis: akhilmetukuru's 151 points represent their season-high and first victory! After two tough losses, this team finally put together a complete performance when they needed it most. The Eagles WR duo really carried Akhil to a much needed win
 Loser Analysis: taahakm's 135 points would have won several other matchups, but they faced a desperate opponent playing their best game. The 2-0 magic finally ran out.
 "BARKLEY'S BATTLE: Roshik Edges Past Sahil" roshik (126.16) def. swahili28 (114.94)
 Winner Analysis: roshik's 126 points show steady, if unspectacular, production. Kyren Williams anchored this victory with consistent ground game production.
@@ -96,7 +96,7 @@ The 10-Point Reality Check: With an extra flex position averaging ~10 points, an
 🎭 Fresh Start Chronicles: The Name Change Brigade
 Four teams changed their names this season, hoping for better fantasy karma
 🔄 The Rebranding Revolution
-"Tudh Pushin' P" (Abhishek): Banking on Jalen Hurts' tush push reliability - seeking consistency after boom-bust performances
+"Tush Pushin' P" (Abhishek): Banking on Jalen Hurts' tush push reliability - seeking consistency after boom-bust performances
 "Treylor Swift" (Anudeep): Creative triple-wordplay (DeAndre Swift + Trey McBride + Taylor Swift) trying to "shake off" that 90-point disaster
 "Drake N' Bake" (Pranav P): Fully committing to Drake Maye's development. Like baking, this team is banking on elite rookies that may take time before they reach full potential 
 "Skatte-Bo Show" (Abhiram): Embracing the youth movement with Cam Skattebo + Bo Nix – and a new QB running the show
@@ -106,19 +106,19 @@ The Lesson: Changing your team name won't change your record, but sometimes a fr
 Tier 1: Championship Elite
 1. pranavj20 (3-0, 428 PF)
 Strengths: Perfect record, Lamar Jackson trade paying off, clutch performances in big games
-Concerns: Justin Jefferson's quiet 12.50 pts shows even stars can disappoint
+Concerns: Uninspiring RB room so far (Jacobs + Kamara), despite high draft capital
 Week 3 Performance: Survived battle of undefeateds - championship mettle showing
-2. abhishekD (2-1, 416 PF)
-Strengths: Derrick Henry bouncing back (10.70 pts), explosive ceiling (156 pts), clutch factor
-Concerns: Week 2 disaster shows floor concerns, consistency questions remain
-Week 3 Performance: Perfect revenge game - this team is dangerous when motivated
-3. ankithe (2-1, 437 PF)
+2. ankithe (2-1, 437 PF)
 Strengths: Highest points for in league, CMC's reliable 24.00 pts, balanced scoring
 Concerns: First loss shows vulnerability, dependent on CMC staying healthy
 Week 3 Performance: Competitive loss to perfect team - still elite tier
+3. abhishekD (2-1, 416 PF)
+Strengths: Jalen Hurts bouncing back (29.04 pts), explosive ceiling (156 pts), clutch factor
+Concerns: Week 2 disaster shows floor concerns, consistency questions remain
+Week 3 Performance: Perfect revenge game - this team is dangerous when motivated
 4. pranav4789 (2-1, 433 PF)
 Strengths: Second-highest points for, ARSB's 20.70 pts consistency, explosive upside
-Concerns: Young QB development, defensive consistency needed
+Concerns: Volatile RBs, lack of overall depth 
 Week 3 Performance: Dominant 139-point victory shows championship potential
 Tier 2: Playoff Contenders
 5. roshik (2-1, 383 PF)
@@ -175,34 +175,3 @@ Week 2: Lost to ankithe (124 vs 171) - faced the same powerhouse again
 Week 3: Beat abhiu (126 vs 76) - finally faced someone having a worse day
 This Mickey Award comes with a rabbit's foot keychain and a reminder that sometimes the fantasy football gods smile upon those who wait for their opponents to implode.
 Previous Mickey Awards: Given to teams that forgot football existed (still would have been more competitive than abhiu this week).
-
-🏅 Season Superlatives (Through Week 3)
-🎯 "Mr. Reliable" Award - ankithe (Ankith)
-For Most Consistent Elite Performance
-Despite suffering their first loss in Week 3, ankithe earns the Mr. Reliable award for delivering the most consistent championship-level production through three weeks. With the league's highest points for (437) and Christian McCaffrey anchoring their lineup with performances of 23.20, 22.70, and 24.00 points, this team has shown they can be counted on week after week.
-The Numbers:
-437 total points (league-leading average of 145.7 per week)
-CMC's consistency: Never below 22 points in any week
-2-1 record with their only loss coming to the perfect team
-Smallest variance in weekly scoring among top teams
-"While others have explosive weeks followed by disasters, ankithe just keeps grinding out elite performances. That's championship DNA."
-🎢 "Mr. Boom or Bust" Award - abhishekD (Abhishek)
-For Most Dramatic Weekly Swings
-Nobody embodies the wild ride of fantasy football quite like abhishekD. From league-leading highs to league-worst lows, this team has given their fanbase (and opponents) more heart attacks than a McDonald's convention. The 72-point swing between weeks represents the most dramatic fantasy football rollercoaster in league history.
-The Chaos:
-Week 1: 166.03 points (League Leader)
-Week 2: 93.64 points (League Basement)
-Week 3: 156.59 points (Statement Victory)
-Point Range: 72.95 points between highest and lowest weeks
-Derrick Henry Swings: 29.20 → 1.30 → 10.70 points
-"If you want predictable, don't draft abhishekD's team. If you want entertainment and potential championship upside, this is your squad."
-🏅 "Comeback Player of the Year" Award - pranavj20 (Pranav Jain)
-For Most Dramatic Season-Over-Season Improvement
-From the ashes of a catastrophic 2024 start rises pranavj20, delivering the most remarkable turnaround in league history. After suffering through an 0-3 nightmare start last season with embarrassingly low scoring, this team has completely reinvented itself into an undefeated powerhouse.
-The Remarkable Transformation:
-2024 Disaster: 0-3 record, 319 points (106.3 avg) - league's biggest disappointment
-2025 Dominance: 3-0 record, 428 points (142.7 avg) - league's only perfect team
-Net Improvement: +36.4 points per week, +3 wins through same span
-Point Swing: 109-point improvement over 3 weeks - unprecedented turnaround
-"This isn't just improvement - this is a complete franchise transformation. From laughingstock to league leader in one offseason."
-
