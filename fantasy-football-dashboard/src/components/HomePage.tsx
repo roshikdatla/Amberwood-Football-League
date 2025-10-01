@@ -121,10 +121,10 @@ const HomePage: React.FC<HomePageProps> = ({
                 <p>Get the inside scoop on league drama, player analysis, and hot takes delivered weekly!</p>
               </div>
               <div className="cta-actions">
-                <a href="/newsletters/week3" className="cta-primary-btn">
+                <a href="/newsletters/week4" className="cta-primary-btn">
                   Read Latest Issue →
                 </a>
-                <div className="cta-latest">Latest: Week 3 Edition</div>
+                <div className="cta-latest">Latest: Week 4 Edition</div>
               </div>
             </div>
           </div>
@@ -146,85 +146,85 @@ const HomePage: React.FC<HomePageProps> = ({
               <div className="power-ranking-item">
                 <div className="rank">1</div>
                 <div className="team-analysis">
-                  <div className="team-name">Pranav Jain +250</div>
-                  <div className="analysis">Perfect 3-0 record, Lamar Jackson trade paying off</div>
+                  <div className="team-name">Pranav Jain +200</div>
+                  <div className="analysis">Perfect 4-0 record, Puka Nacua unstoppable force</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">2</div>
                 <div className="team-analysis">
-                  <div className="team-name">Ankith +300</div>
-                  <div className="analysis">Highest PF (437), CMC's reliable production</div>
+                  <div className="team-name">Abhishek +350</div>
+                  <div className="analysis">3-1 boom-or-bust king, Rome Odunze breakout</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">3</div>
                 <div className="team-analysis">
-                  <div className="team-name">Abhishek +400</div>
-                  <div className="analysis">Jalen Hurts bouncing back, explosive ceiling</div>
+                  <div className="team-name">Pranav P +400</div>
+                  <div className="analysis">Highest PF (598) but unlucky 2-2, ARSB elite</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">4</div>
                 <div className="team-analysis">
-                  <div className="team-name">Pranav P +550</div>
-                  <div className="analysis">Second-highest PF (433), ARSB consistency</div>
+                  <div className="team-name">Aditya +600</div>
+                  <div className="analysis">Mahomes masterclass, championship pedigree showing</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">5</div>
                 <div className="team-analysis">
-                  <div className="team-name">Roshik +700</div>
-                  <div className="analysis">Steady 2-1 record, proven veterans</div>
+                  <div className="team-name">Sahil +750</div>
+                  <div className="analysis">Won by 0.24 points, surviving close games</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">6</div>
                 <div className="team-analysis">
-                  <div className="team-name">Taaha +800</div>
-                  <div className="analysis">Still 2-1 despite first loss, clutch factor</div>
+                  <div className="team-name">Sahit Reddi +900</div>
+                  <div className="analysis">170-point explosion breakthrough, Bijan finally clicking</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">7</div>
                 <div className="team-analysis">
-                  <div className="team-name">Akhil +1200</div>
-                  <div className="analysis">Finally broke through with first win</div>
+                  <div className="team-name">Ankith +1100</div>
+                  <div className="analysis">Injury apocalypse hit, Malik Nabers ACL tear</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">8</div>
                 <div className="team-analysis">
-                  <div className="team-name">Aditya +1400</div>
-                  <div className="analysis">Championship experience, decent production</div>
+                  <div className="team-name">Roshik +1400</div>
+                  <div className="analysis">Exactly 500 PF, needs scoring beyond Saquon</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">9</div>
                 <div className="team-analysis">
-                  <div className="team-name">Sahil +1600</div>
-                  <div className="analysis">Boom-or-bust consistency issues</div>
+                  <div className="team-name">Anudeep +1800</div>
+                  <div className="analysis">Benefited from opponent injuries, Josh Allen ceiling</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">10</div>
                 <div className="team-analysis">
-                  <div className="team-name">Anudeep +2000</div>
-                  <div className="analysis">Season-worst 90 points, needs fixes</div>
+                  <div className="team-name">Taaha +2200</div>
+                  <div className="analysis">Luck running out, second-lowest PF (476)</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">11</div>
                 <div className="team-analysis">
-                  <div className="team-name">Sahit Reddi +2500</div>
-                  <div className="analysis">Finally got first win vs struggling opponent</div>
+                  <div className="team-name">Akhil +3000</div>
+                  <div className="analysis">1-3 with lowest PF, Jonathan Taylor bright spot</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">12</div>
                 <div className="team-analysis">
-                  <div className="team-name">Abhiram +3500</div>
-                  <div className="analysis">Winless 0-3, trade aftermath disaster</div>
+                  <div className="team-name">Abhiram +5000</div>
+                  <div className="analysis">0-4 disaster, Cam Skattebo only positive</div>
                 </div>
               </div>
             </div>
