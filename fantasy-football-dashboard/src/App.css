@@ -1658,6 +1658,81 @@ body, html {
   font-style: italic;
 }
 
+/* Newsletter content font consistency */
+.parity-analysis,
+.parity-section,
+.standings-breakdown,
+.points-breakdown,
+.luck-analysis,
+.season-outlook,
+.chaos-predictions {
+  font-family: 'Times New Roman', serif;
+}
+
+.parity-analysis ul,
+.parity-analysis li,
+.standings-breakdown ul,
+.standings-breakdown li,
+.points-breakdown p,
+.luck-analysis p,
+.chaos-predictions ul,
+.chaos-predictions li {
+  font-family: 'Times New Roman', serif;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #000;
+}
+
+.parity-analysis h3,
+.parity-analysis h4 {
+  font-family: 'Times New Roman', serif;
+}
+
+.points-list p {
+  font-family: 'Times New Roman', serif;
+  margin-bottom: 8px;
+}
+
+/* Mickey Award and Season Outlook font consistency */
+.mickey-award,
+.award-section,
+.collapse-stats,
+.season-outlook,
+.chaos-predictions {
+  font-family: 'Times New Roman', serif;
+}
+
+.mickey-award h2,
+.mickey-award h3,
+.mickey-award h4,
+.season-outlook h2,
+.season-outlook h3 {
+  font-family: 'Times New Roman', serif;
+}
+
+.mickey-award p,
+.award-section p,
+.collapse-stats p,
+.season-outlook p,
+.chaos-predictions p {
+  font-family: 'Times New Roman', serif;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #000;
+}
+
+.mickey-award ul,
+.mickey-award li,
+.collapse-stats ul,
+.collapse-stats li,
+.chaos-predictions ul,
+.chaos-predictions li {
+  font-family: 'Times New Roman', serif;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #000;
+}
+
 /* Year-Over-Year Performance Section Styling */
 .year-over-year {
   font-family: 'Times New Roman', serif;
