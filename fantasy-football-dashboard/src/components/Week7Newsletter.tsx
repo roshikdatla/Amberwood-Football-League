@@ -40,7 +40,7 @@ const Week7Newsletter: React.FC = () => {
                       width: '100%',
                       height: 'auto',
                       display: 'block',
-                      marginBottom: '-50px'
+                      marginBottom: '-35px'
                     }}
                   >
                     <source src="/1761163917658-1a074722-ab78-4626-bc92-2d653bd05e63-2695.mp4" type="video/mp4" />
@@ -48,7 +48,7 @@ const Week7Newsletter: React.FC = () => {
                   </video>
                 </div>
                 <div className="draft-caption" style={{fontSize: '12px', fontStyle: 'italic', textAlign: 'center', marginTop: '10px'}}>
-                  Week 7 Highlights: CMC's historic performance shakes up the playoff race
+                  Ank Jordan looks back to his winning ways
                 </div>
               </div>
             </div>
