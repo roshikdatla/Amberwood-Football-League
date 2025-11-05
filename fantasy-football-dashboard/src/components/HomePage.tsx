@@ -121,10 +121,10 @@ const HomePage: React.FC<HomePageProps> = ({
                 <p>Get the inside scoop on league drama, player analysis, and hot takes delivered weekly!</p>
               </div>
               <div className="cta-actions">
-                <a href="/newsletters/week8" className="cta-primary-btn">
+                <a href="/newsletters/week9" className="cta-primary-btn">
                   Read Latest Issue →
                 </a>
-                <div className="cta-latest">Latest: Week 8 Edition</div>
+                <div className="cta-latest">Latest: Week 9 Edition</div>
               </div>
             </div>
           </div>
@@ -146,85 +146,85 @@ const HomePage: React.FC<HomePageProps> = ({
               <div className="power-ranking-item">
                 <div className="rank">1</div>
                 <div className="team-analysis">
-                  <div className="team-name">Pranav Jain +150</div>
-                  <div className="analysis">6-2, 1115 PF, 97% playoff lock</div>
+                  <div className="team-name">Sahit Reddi +175</div>
+                  <div className="analysis">6-3, the new favorite, 1253 PF (5th), 98%</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">2</div>
                 <div className="team-analysis">
-                  <div className="team-name">Aditya +250</div>
-                  <div className="analysis">5-3, Mahomes stack elite, 1110 PF, 92% playoffs</div>
+                  <div className="team-name">Pranav Jain +200</div>
+                  <div className="analysis">6-3, 1265 PF (1st), losing streak worries, 99%</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">3</div>
                 <div className="team-analysis">
-                  <div className="team-name">Sahit Reddi +400</div>
-                  <div className="analysis">5-3, streak ended, 1089 PF, 88% playoffs</div>
+                  <div className="team-name">Anudeep +275</div>
+                  <div className="analysis">6-3, cardiac wins, 1240 PF, 97% playoff lock</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">4</div>
                 <div className="team-analysis">
-                  <div className="team-name">Anudeep +400</div>
-                  <div className="analysis">5-3, surging hot, 1082 PF, 88% playoffs</div>
+                  <div className="team-name">Ankith +400</div>
+                  <div className="analysis">5-4, 1259 PF (3rd!), wild card favorite, 82%</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">5</div>
                 <div className="team-analysis">
-                  <div className="team-name">Pranav P +600</div>
-                  <div className="analysis">4-4 but 1136 PF (1st!), wild card lock, 75%</div>
+                  <div className="team-name">Aditya +500</div>
+                  <div className="analysis">6-3 but 1215 PF, weakest safety net, 90%</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">6</div>
                 <div className="team-analysis">
-                  <div className="team-name">Ankith +800</div>
-                  <div className="analysis">4-4, CMC team, 1125 PF (2nd), 70% playoffs</div>
+                  <div className="team-name">Sahil +800</div>
+                  <div className="analysis">4-5, 1262 PF (2nd!), unlucky losses, 58%</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">7</div>
                 <div className="team-analysis">
-                  <div className="team-name">Sahil +900</div>
-                  <div className="analysis">4-4, 1108 PF (3rd), 70% playoffs</div>
+                  <div className="team-name">Pranav P +1000</div>
+                  <div className="analysis">4-5, 1257 PF (4th), wild card cushion, 55%</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">8</div>
                 <div className="team-analysis">
-                  <div className="team-name">Abhishek +2000</div>
-                  <div className="analysis">4-4, bounce back, 1019 PF, 35% playoffs</div>
+                  <div className="team-name">Abhishek +1500</div>
+                  <div className="analysis">5-4, giant slayer, 1176 PF, 45% playoffs</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">9</div>
                 <div className="team-analysis">
-                  <div className="team-name">Roshik +5000</div>
-                  <div className="analysis">3-5, upset win, 1012 PF, 25% playoffs</div>
+                  <div className="team-name">Roshik +3500</div>
+                  <div className="analysis">4-5, nuclear ceiling (169!), 1182 PF, 35%</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">10</div>
                 <div className="team-analysis">
-                  <div className="team-name">Akhil +7500</div>
-                  <div className="analysis">3-5, fading fast, 1013 PF, 20% playoffs</div>
+                  <div className="team-name">Akhil +15000</div>
+                  <div className="analysis">3-6, bye week disaster, 1086 PF, 8%</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">11</div>
                 <div className="team-analysis">
-                  <div className="team-name">Taaha +12000</div>
-                  <div className="analysis">3-5, low ceiling, 941 PF, 15% playoffs</div>
+                  <div className="team-name">Taaha +25000</div>
+                  <div className="analysis">3-6, dead last in PF (1029), 5% playoffs</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">12</div>
                 <div className="team-analysis">
-                  <div className="team-name">Abhiram +25000</div>
-                  <div className="analysis">2-6, back-to-back wins, 1008 PF, 5%</div>
+                  <div className="team-name">Abhiram +50000</div>
+                  <div className="analysis">2-7, season over, 1099 PF, &lt;1% playoffs</div>
                 </div>
               </div>
             </div>
