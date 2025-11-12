@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { sleeperApi } from '../services/sleeperApi';
 import { League, Roster, User, TeamStanding } from '../types/sleeper';
 import LeagueHero from './LeagueHero';
-import ActivityFeed from './ActivityFeed';
+import StrengthOfSchedule from './StrengthOfSchedule';
 import WeeklyMatchups from './WeeklyMatchups';
 
 interface HomePageProps {
@@ -121,22 +121,22 @@ const HomePage: React.FC<HomePageProps> = ({
                 <p>Get the inside scoop on league drama, player analysis, and hot takes delivered weekly!</p>
               </div>
               <div className="cta-actions">
-                <a href="/newsletters/week9" className="cta-primary-btn">
+                <a href="/newsletters/week10" className="cta-primary-btn">
                   Read Latest Issue →
                 </a>
-                <div className="cta-latest">Latest: Week 9 Edition</div>
+                <div className="cta-latest">Latest: Week 10 Edition</div>
               </div>
             </div>
           </div>
 
-          <WeeklyMatchups 
-            leagueId={leagueId} 
-            currentWeek={currentWeek} 
-            users={users} 
-            standings={standings} 
+          <WeeklyMatchups
+            leagueId={leagueId}
+            currentWeek={currentWeek}
+            users={users}
+            standings={standings}
           />
-          
-          <ActivityFeed leagueId={leagueId} standings={standings} />
+
+          <StrengthOfSchedule />
         </div>
         
         <div className="sidebar">
@@ -146,85 +146,85 @@ const HomePage: React.FC<HomePageProps> = ({
               <div className="power-ranking-item">
                 <div className="rank">1</div>
                 <div className="team-analysis">
-                  <div className="team-name">Sahit Reddi +175</div>
-                  <div className="analysis">6-3, the new favorite, 1253 PF (5th), 98%</div>
+                  <div className="team-name">Pranav Jain +150</div>
+                  <div className="analysis">7-3, sole possession of 1st, 1401 PF</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">2</div>
                 <div className="team-analysis">
-                  <div className="team-name">Pranav Jain +200</div>
-                  <div className="analysis">6-3, 1265 PF (1st), losing streak worries, 99%</div>
+                  <div className="team-name">Sahit Reddi +175</div>
+                  <div className="analysis">7-3, sole 2nd place, 1389 PF</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">3</div>
                 <div className="team-analysis">
-                  <div className="team-name">Anudeep +275</div>
-                  <div className="analysis">6-3, cardiac wins, 1240 PF, 97% playoff lock</div>
+                  <div className="team-name">Ankith +300</div>
+                  <div className="analysis">6-4, 1405 PF (2nd in league!), 85% playoff prob</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">4</div>
                 <div className="team-analysis">
-                  <div className="team-name">Ankith +400</div>
-                  <div className="analysis">5-4, 1259 PF (3rd!), wild card favorite, 82%</div>
+                  <div className="team-name">Pranav P +400</div>
+                  <div className="analysis">5-5, 1430 PF (HIGHEST!), wild card lock, 80%</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">5</div>
                 <div className="team-analysis">
-                  <div className="team-name">Aditya +500</div>
-                  <div className="analysis">6-3 but 1215 PF, weakest safety net, 90%</div>
+                  <div className="team-name">Anudeep +500</div>
+                  <div className="analysis">6-4, 1366 PF, in the logjam, 63%</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">6</div>
                 <div className="team-analysis">
                   <div className="team-name">Sahil +800</div>
-                  <div className="analysis">4-5, 1262 PF (2nd!), unlucky losses, 58%</div>
+                  <div className="analysis">5-5, 1393 PF (4th!), needs wins, 48%</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">7</div>
                 <div className="team-analysis">
-                  <div className="team-name">Pranav P +1000</div>
-                  <div className="analysis">4-5, 1257 PF (4th), wild card cushion, 55%</div>
+                  <div className="team-name">Abhishek +1200</div>
+                  <div className="analysis">6-4, 1313 PF, must win out, 42%</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">8</div>
                 <div className="team-analysis">
-                  <div className="team-name">Abhishek +1500</div>
-                  <div className="analysis">5-4, giant slayer, 1176 PF, 45% playoffs</div>
+                  <div className="team-name">Aditya +1500</div>
+                  <div className="analysis">6-4, 1291 PF, 76-pt disaster, 35%</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">9</div>
                 <div className="team-analysis">
-                  <div className="team-name">Roshik +3500</div>
-                  <div className="analysis">4-5, nuclear ceiling (169!), 1182 PF, 35%</div>
+                  <div className="team-name">Roshik +5000</div>
+                  <div className="analysis">4-6, 1311 PF, on life support</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">10</div>
                 <div className="team-analysis">
-                  <div className="team-name">Akhil +15000</div>
-                  <div className="analysis">3-6, bye week disaster, 1086 PF, 8%</div>
+                  <div className="team-name">Akhil +20000</div>
+                  <div className="analysis">3-7, eliminated despite JT's 49.6 pts</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">11</div>
                 <div className="team-analysis">
-                  <div className="team-name">Taaha +25000</div>
-                  <div className="analysis">3-6, dead last in PF (1029), 5% playoffs</div>
+                  <div className="team-name">Taaha +30000</div>
+                  <div className="analysis">3-7, officially eliminated</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">12</div>
                 <div className="team-analysis">
                   <div className="team-name">Abhiram +50000</div>
-                  <div className="analysis">2-7, season over, 1099 PF, &lt;1% playoffs</div>
+                  <div className="analysis">2-8, season over, 1220 PF</div>
                 </div>
               </div>
             </div>

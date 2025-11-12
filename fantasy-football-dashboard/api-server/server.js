@@ -2,10 +2,16 @@ const express = require('express');
 const cors = require('cors');
 const { spawn } = require('child_process');
 const path = require('path');
+const Anthropic = require('@anthropic-ai/sdk');
 require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 8000;
+
+// Initialize Anthropic client
+const anthropic = new Anthropic({
+  apiKey: process.env.CLAUDE_API_KEY || process.env.ANTHROPIC_API_KEY,
+});
 
 // Middleware
 app.use(cors());
@@ -121,22 +127,75 @@ app.post('/api/mcp/:tool', async (req, res) => {
   try {
     const { tool } = req.params;
     const args = req.body;
-    
+
     console.log(`Calling MCP tool: ${tool} with args:`, args);
-    
+
     const result = await mcpConnection.callMCPTool(tool, args);
-    
+
     res.json({
       tool,
       result,
       timestamp: new Date().toISOString()
     });
-    
+
   } catch (error) {
     console.error('MCP API error:', error);
-    res.status(500).json({ 
+    res.status(500).json({
       error: 'Failed to call MCP tool',
-      details: error.message 
+      details: error.message
+    });
+  }
+});
+
+// Strength of Schedule AI Analysis
+app.post('/api/sos-analysis', async (req, res) => {
+  try {
+    const { teamName, record, opponents, avgOppWins, playoffContext } = req.body;
+
+    if (!teamName || !record || !opponents) {
+      return res.status(400).json({ error: 'Missing required fields' });
+    }
+
+    console.log(`Generating SOS analysis for ${teamName}`);
+
+    const prompt = `You are an expert fantasy football analyst. Generate a concise, insightful 1-2 sentence outlook for this team's remaining schedule:
+
+Team: ${teamName}
+Current Record: ${record}
+Remaining Opponents (Weeks 11-14): ${opponents.join(', ')}
+Average Opponent Wins: ${avgOppWins}
+Playoff Context: ${playoffContext || 'In playoff contention'}
+
+Focus on:
+- Schedule difficulty and key matchups
+- Playoff implications
+- Must-win games or opportunities
+- Any momentum considerations
+
+Keep it under 25 words, punchy, and insightful. No fluff.`;
+
+    const message = await anthropic.messages.create({
+      model: 'claude-sonnet-4-5',
+      max_tokens: 100,
+      messages: [{
+        role: 'user',
+        content: prompt
+      }]
+    });
+
+    const outlook = message.content[0].text.trim();
+
+    res.json({
+      teamName,
+      outlook,
+      timestamp: new Date().toISOString()
+    });
+
+  } catch (error) {
+    console.error('SOS Analysis API error:', error);
+    res.status(500).json({
+      error: 'Failed to generate analysis',
+      details: error.message
     });
   }
 });
