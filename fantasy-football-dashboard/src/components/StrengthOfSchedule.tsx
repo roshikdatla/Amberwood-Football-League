@@ -7,7 +7,7 @@ const StrengthOfSchedule: React.FC = () => {
       displayName: 'Pranav Jain',
       record: '7-3',
       opponents: ['audumula (6-4)', 'SahitReddi (7-3)', 'abhiu (2-8)', 'ankithe (6-4)'],
-      avgOppWins: 5.5,
+      avgOppWins: 5.25,
       difficulty: 'Hard',
       color: '#F44336',
       outlook: 'Strong playoff positioning with favorable schedule—only Week 12 vs. SahitReddi poses real threat. Weeks 13-14 against struggling teams offer cushion to secure first-round bye.'
@@ -40,7 +40,7 @@ const StrengthOfSchedule: React.FC = () => {
       avgOppWins: 6.0,
       difficulty: 'Hard',
       color: '#F44336',
-      outlook: 'Favorable slate with winnable Week 12 (abhiu 2-8) offering must-win cushion, but closing gauntlet against abhishekD/pranavj20 will decide playoff seeding in tight 6-4 logjam.'
+      outlook: 'Brutal stretch ahead facing all playoff contenders. Week 11 vs pranavj20 and Week 13 vs abhishekD are must-win games to secure top-5 spot in tight 6-4 logjam.'
     },
     {
       team: 'abhishekD',
@@ -57,7 +57,7 @@ const StrengthOfSchedule: React.FC = () => {
       displayName: 'Aditya',
       record: '6-4',
       opponents: ['SahitReddi (7-3)', 'audumula (6-4)', 'pranav4789 (5-5)', 'abhishekD (6-4)'],
-      avgOppWins: 5.75,
+      avgOppWins: 6.0,
       difficulty: 'Hard',
       color: '#F44336',
       outlook: 'Tough bounce-back after disaster week. Opening SahitReddi matchup crucial—win there and three winnable games follow to secure playoffs at 9-5 or better.'
@@ -77,7 +77,7 @@ const StrengthOfSchedule: React.FC = () => {
       displayName: 'Sahil',
       record: '5-5',
       opponents: ['ankithe (6-4)', 'taahakm (3-7)', 'akhilmetukuru (3-7)', 'roshik (4-6)'],
-      avgOppWins: 4.25,
+      avgOppWins: 4.0,
       difficulty: 'Easy',
       color: '#4CAF50',
       outlook: 'Favorable schedule ahead with three sub-.500 opponents offers clear playoff path, but Week 11 vs. ankithe (6-4) is a must-win to control destiny.'
@@ -97,30 +97,30 @@ const StrengthOfSchedule: React.FC = () => {
       displayName: 'Akhil',
       record: '3-7',
       opponents: ['abhishekD (6-4)', 'roshik (4-6)', 'swahili28 (5-5)', 'taahakm (3-7)'],
-      avgOppWins: 4.75,
+      avgOppWins: 4.5,
       difficulty: 'Medium',
       color: '#FF9800',
-      outlook: 'Brutal closing stretch against playoff contenders (two 7-3 teams). Focus on spoiler role—upsetting abhishekD or swahili28 could reshape playoff seeding significantly.'
+      outlook: 'Mixed schedule against playoff bubble teams. Focus on spoiler role—upsetting abhishekD or swahili28 could reshape playoff seeding significantly.'
     },
     {
       team: 'taahakm',
       displayName: 'Taaha',
       record: '3-7',
       opponents: ['abhiu (2-8)', 'swahili28 (5-5)', 'roshik (4-6)', 'akhilmetukuru (3-7)'],
-      avgOppWins: 4.0,
+      avgOppWins: 3.5,
       difficulty: 'Easy',
       color: '#4CAF50',
-      outlook: 'Despite elimination, taahakm faces the league\'s easiest closing stretch—prime opportunity to play spoiler and build momentum against struggling opponents averaging just 3.75 wins.'
+      outlook: 'Despite elimination, taahakm faces the league\'s easiest closing stretch—prime opportunity to play spoiler and build momentum against struggling opponents averaging just 3.5 wins.'
     },
     {
       team: 'abhiu',
       displayName: 'Abhiram',
       record: '2-8',
       opponents: ['taahakm (3-7)', 'ankithe (6-4)', 'pranavj20 (7-3)', 'SahitReddi (7-3)'],
-      avgOppWins: 5.5,
+      avgOppWins: 5.75,
       difficulty: 'Hard',
       color: '#F44336',
-      outlook: 'With playoffs out of reach, abhiu faces an uphill schedule averaging 5.5 wins. Week 11 against struggling taahakm offers the only realistic victory chance.'
+      outlook: 'With playoffs out of reach, abhiu faces an uphill schedule averaging 5.75 wins. Week 11 against struggling taahakm offers the only realistic victory chance.'
     }
   ];
 
