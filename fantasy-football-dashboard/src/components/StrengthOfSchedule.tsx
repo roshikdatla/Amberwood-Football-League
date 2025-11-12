@@ -124,11 +124,11 @@ const StrengthOfSchedule: React.FC = () => {
     }
   ];
 
-  // Group by difficulty
-  const veryHard = scheduleData.filter(t => t.difficulty === 'Very Hard');
-  const hard = scheduleData.filter(t => t.difficulty === 'Hard');
-  const medium = scheduleData.filter(t => t.difficulty === 'Medium');
-  const easy = scheduleData.filter(t => t.difficulty === 'Easy');
+  // Group by difficulty and sort by avgOppWins (descending)
+  const veryHard = scheduleData.filter(t => t.difficulty === 'Very Hard').sort((a, b) => b.avgOppWins - a.avgOppWins);
+  const hard = scheduleData.filter(t => t.difficulty === 'Hard').sort((a, b) => b.avgOppWins - a.avgOppWins);
+  const medium = scheduleData.filter(t => t.difficulty === 'Medium').sort((a, b) => b.avgOppWins - a.avgOppWins);
+  const easy = scheduleData.filter(t => t.difficulty === 'Easy').sort((a, b) => b.avgOppWins - a.avgOppWins);
 
   const renderTeams = (teams: typeof scheduleData) => (
     teams.map((team) => (
