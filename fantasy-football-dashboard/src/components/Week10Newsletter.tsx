@@ -167,14 +167,14 @@ const Week10Newsletter: React.FC = () => {
 
                 <div className="team-card">
                   <h4>abhishekD (6-4, 1313 PF) - Playoff Probability: 42%</h4>
-                  <p><strong>Remaining Schedule:</strong> Week 11 vs akhilmetukuru, Week 12 vs pranav4789, Week 13 vs swahili28, Week 14 vs kulkdaddy47</p>
-                  <p><strong>Analysis:</strong> Here's the problem: abhishekD is 6-4 but has just 1313 points scored, which is 6th among playoff hopefuls. They CAN'T rely on the wild card, so they MUST win games to secure a top-5 spot. The schedule is ok with matchups against pranavj20 (7-3) and kulkdaddy47 (6-4). They likely need to go 3-1 to finish 9-5 and feel safe.</p>
+                  <p><strong>Remaining Schedule:</strong> Week 11 vs akhilmetukuru, Week 12 vs pranav4789, Week 13 vs audumula, Week 14 vs kulkdaddy47</p>
+                  <p><strong>Analysis:</strong> Here's the problem: abhishekD is 6-4 but has just 1313 points scored, which is 6th among playoff hopefuls. They CAN'T rely on the wild card, so they MUST win games to secure a top-5 spot. The schedule has a winnable Week 11 (akhilmetukuru 3-7), then three tough matchups against 5-5+ teams. They likely need to go 3-1 to finish 9-5 and feel safe.</p>
                   <p><strong>Path to Playoffs:</strong> Win 3 of 4 to reach 9-5, which should lock up a top-5 spot. At 8-6, they'll be sweating on tiebreakers. At 7-7 or worse, they're likely out unless everyone else collapses. No wild card safety net here—it's win or go home.</p>
                 </div>
 
                 <div className="team-card">
                   <h4>audumula (6-4, 1366 PF) - Playoff Probability: 63%</h4>
-                  <p><strong>Remaining Schedule:</strong> Week 11 vs pranav4789, Week 12 vs abhiu, Week 13 vs abhishekD, Week 14 vs pranavj20</p>
+                  <p><strong>Remaining Schedule:</strong> Week 11 vs pranavj20, Week 12 vs kulkdaddy47, Week 13 vs abhishekD, Week 14 vs pranav4789</p>
                   <p><strong>Analysis:</strong> audumula was in COMPLETE CONTROL last week, tied with the best record in the league. However, after a critical loss last week, they are right back in the thick of the logjam. Though they have strong path to playoffs, a cold streak now could absolutely crater their chances of the playoffs.</p>
                   <p><strong>Path to Playoffs:</strong> Win 2 of the next 4 and continue strong scoring should ensure a top 5 finish. Points are on par with the rest of the logjam so they will likely have to pick up the scoring if they pick up loses and begin chasing for the wildcard spot.</p>
                 </div>
@@ -188,8 +188,8 @@ const Week10Newsletter: React.FC = () => {
 
                 <div className="team-card">
                   <h4>pranav4789 (5-5, 1430 PF) - Playoff Probability: 80%</h4>
-                  <p><strong>Remaining Schedule:</strong> Week 11 vs roshik, Week 12 vs audumula, Week 13 vs kulkdaddy47, Week 14 vs ankithe</p>
-                  <p><strong>Analysis:</strong> Despite being 5-5, pranav4789 has the HIGHEST POINTS SCORED IN THE LEAGUE (1430). They are the HEAVY favorite for the wild card spot. Even if they finish 6-8, they'll likely have the wild card locked up unless ankithe goes on an absolute tear. The schedule is tough with matchups against ankithe (6-4) and audumula (6-4), so getting to 8-6 or 7-7 through wins won't be easy. But here's the thing: THEY DON'T NEED TO WIN. They just need to keep scoring points and protect that wild card cushion.</p>
+                  <p><strong>Remaining Schedule:</strong> Week 11 vs roshik, Week 12 vs abhishekD, Week 13 vs kulkdaddy47, Week 14 vs audumula</p>
+                  <p><strong>Analysis:</strong> Despite being 5-5, pranav4789 has the HIGHEST POINTS SCORED IN THE LEAGUE (1430). They are the HEAVY favorite for the wild card spot. Even if they finish 6-8, they'll likely have the wild card locked up unless ankithe goes on an absolute tear. The schedule has a winnable Week 11 (roshik 4-6), then three tough matchups against 6-4 teams, so getting to 8-6 or 7-7 through wins won't be easy. But here's the thing: THEY DON'T NEED TO WIN. They just need to keep scoring points and protect that wild card cushion.</p>
                   <p><strong>Path to Playoffs:</strong> The wild card is 88% theirs already. Just keep scoring points and don't get leapfrogged by ankithe (1405) or swahili28 (1393). Even at 5-9 or 6-8, if they maintain the points lead, they're in. This team should be booking playoff hotels already.</p>
                 </div>
               </div>
