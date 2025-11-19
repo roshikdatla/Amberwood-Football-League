@@ -13,6 +13,7 @@ import Week7Newsletter from './components/Week7Newsletter';
 import Week8Newsletter from './components/Week8Newsletter';
 import Week9Newsletter from './components/Week9Newsletter';
 import Week10Newsletter from './components/Week10Newsletter';
+import Week11Newsletter from './components/Week11Newsletter';
 import LeagueChat from './components/LeagueChat';
 import Navigation from './components/Navigation';
 
@@ -42,6 +43,7 @@ function AppContent() {
         <Route path="/newsletters/week8" element={<Week8Newsletter />} />
         <Route path="/newsletters/week9" element={<Week9Newsletter />} />
         <Route path="/newsletters/week10" element={<Week10Newsletter />} />
+        <Route path="/newsletters/week11" element={<Week11Newsletter />} />
         <Route path="/chat" element={<LeagueChat />} />
       </Routes>
     </div>
