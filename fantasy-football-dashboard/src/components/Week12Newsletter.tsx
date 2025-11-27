@@ -15,11 +15,19 @@ const Week12Newsletter: React.FC = () => {
           .thanksgiving-banner-emoji {
             font-size: 24px !important;
           }
+          .newspaper-meta {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 8px !important;
+            align-items: center !important;
+          }
           .newspaper-meta span {
-            font-size: 12px !important;
-            padding: 3px 8px !important;
-            display: inline-block;
-            margin: 2px !important;
+            font-size: 11px !important;
+            padding: 6px 12px !important;
+            display: block !important;
+            margin: 0 !important;
+            width: auto !important;
+            max-width: 90% !important;
           }
           .section-headline {
             font-size: 18px !important;
