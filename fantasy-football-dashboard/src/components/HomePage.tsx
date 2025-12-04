@@ -120,10 +120,10 @@ const HomePage: React.FC<HomePageProps> = ({
                 <p>Get the inside scoop on league drama, player analysis, and hot takes delivered weekly!</p>
               </div>
               <div className="cta-actions">
-                <a href="/newsletters/week12" className="cta-primary-btn">
+                <a href="/newsletters/week13" className="cta-primary-btn">
                   Read Latest Issue →
                 </a>
-                <div className="cta-latest">Latest: Week 12 Edition</div>
+                <div className="cta-latest">Latest: Week 13 Edition</div>
               </div>
             </div>
           </div>
@@ -138,90 +138,90 @@ const HomePage: React.FC<HomePageProps> = ({
         
         <div className="sidebar">
           <div className="power-rankings-container">
-            <h3>Betting Odds</h3>
+            <h3>Championship Betting Odds</h3>
             <div className="power-rankings-list">
               <div className="power-ranking-item">
                 <div className="rank">1</div>
                 <div className="team-analysis">
-                  <div className="team-name">Pranav Jain +110</div>
-                  <div className="analysis">8-4, 1632 PF, faces abhiu next, 99% playoff</div>
+                  <div className="team-name">Sahil +120</div>
+                  <div className="analysis">8-5, 1852 PF (HIGHEST!), 85%+ playoff odds</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">2</div>
                 <div className="team-analysis">
-                  <div className="team-name">Pranav P +200</div>
-                  <div className="analysis">6-6, 1735 PF (HIGHEST!), wild card lock, 85%</div>
+                  <div className="team-name">Pranav Jain +180</div>
+                  <div className="analysis">9-4, 1744 PF, #1 seed, 85%+ playoff odds</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">3</div>
                 <div className="team-analysis">
-                  <div className="team-name">Sahil +250</div>
-                  <div className="analysis">7-5, 1690 PF, easiest schedule, 85%</div>
+                  <div className="team-name">Pranav P +220</div>
+                  <div className="analysis">6-7, 1843 PF, wild card lock, 70-80%</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">4</div>
                 <div className="team-analysis">
-                  <div className="team-name">Abhishek +300</div>
-                  <div className="analysis">8-4, 1596 PF, 1-win from clinch, 85%</div>
+                  <div className="team-name">Aditya +280</div>
+                  <div className="analysis">9-4, 1662 PF, #2 seed, 85%+ playoff odds</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">5</div>
                 <div className="team-analysis">
-                  <div className="team-name">Aditya +350</div>
-                  <div className="analysis">8-4, 1549 PF, 149-pt explosion, 80%</div>
+                  <div className="team-name">Anudeep +400</div>
+                  <div className="analysis">8-5, 1772 PF, #4 seed, 70-80% playoff odds</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">6</div>
                 <div className="team-analysis">
-                  <div className="team-name">Ankith +600</div>
-                  <div className="analysis">7-5, 1653 PF, must beat SahitReddi, 60%</div>
+                  <div className="team-name">Sahit Reddi +500</div>
+                  <div className="analysis">8-5, 1752 PF, #5 seed, 70-80% playoff odds</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">7</div>
                 <div className="team-analysis">
-                  <div className="team-name">Sahit Reddi +650</div>
-                  <div className="analysis">7-5, 1620 PF, ankithe showdown, 60%</div>
+                  <div className="team-name">Abhishek +900</div>
+                  <div className="analysis">8-5, 1725 PF, most vulnerable, 40-60%</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">8</div>
                 <div className="team-analysis">
-                  <div className="team-name">Anudeep +800</div>
-                  <div className="analysis">7-5, 1636 PF, brutal schedule, 55%</div>
+                  <div className="team-name">Ankith +2500</div>
+                  <div className="analysis">7-6, 1757 PF, long shot, 10-20%</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">9</div>
                 <div className="team-analysis">
-                  <div className="team-name">Roshik +5000</div>
-                  <div className="analysis">5-7, playing spoiler role</div>
+                  <div className="team-name">Roshik +10000</div>
+                  <div className="analysis">6-7, eliminated from playoffs</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">10</div>
                 <div className="team-analysis">
-                  <div className="team-name">Taaha +10000</div>
-                  <div className="analysis">4-8, eliminated from playoffs</div>
+                  <div className="team-name">Taaha +25000</div>
+                  <div className="analysis">4-9, eliminated from playoffs</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">11</div>
                 <div className="team-analysis">
-                  <div className="team-name">Akhil +25000</div>
-                  <div className="analysis">3-9, season over</div>
+                  <div className="team-name">Akhil +50000</div>
+                  <div className="analysis">3-10, season over</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">12</div>
                 <div className="team-analysis">
-                  <div className="team-name">Abhiram +50000</div>
-                  <div className="analysis">2-10, building for next year</div>
+                  <div className="team-name">Abhiram +100000</div>
+                  <div className="analysis">2-11, mathematically eliminated</div>
                 </div>
               </div>
             </div>
