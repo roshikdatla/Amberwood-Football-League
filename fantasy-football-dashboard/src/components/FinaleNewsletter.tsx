@@ -179,7 +179,6 @@ const FinaleNewsletter: React.FC = () => {
 
             <div className="center-image" style={{marginBottom: '20px', marginTop: '20px', textAlign: 'center'}}>
               <video
-                controls
                 autoPlay
                 muted
                 playsInline
