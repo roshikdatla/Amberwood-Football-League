@@ -176,10 +176,9 @@ const FinaleNewsletter: React.FC = () => {
             <div className="byline">By the Office of the Commissioner | Complete Season Recap</div>
 
             <div className="center-image" style={{marginBottom: '20px', marginTop: '20px', textAlign: 'center'}}>
-              <video
-                autoPlay
-                muted
-                playsInline
+              <img
+                src="/IMG_4456.JPG"
+                alt="2025 Amberwood Fantasy League Champion"
                 style={{
                   width: '100%',
                   maxWidth: '800px',
@@ -190,10 +189,7 @@ const FinaleNewsletter: React.FC = () => {
                   display: 'block',
                   margin: '0 auto'
                 }}
-              >
-                <source src="/2023 - Aditya Kulkarni 2024 - Anudeep Udumula 2025- Abhiram Udumula (3).mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              />
               <div className="draft-caption" style={{fontSize: '12px', fontStyle: 'italic', textAlign: 'center', marginTop: '10px'}}>
                 The 2025 Amberwood Fantasy League Champion
               </div>
