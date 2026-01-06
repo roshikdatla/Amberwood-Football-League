@@ -175,8 +175,6 @@ const FinaleNewsletter: React.FC = () => {
             <h2 className="headline">The Prince Who Finally Became a King</h2>
             <div className="byline">By the Office of the Commissioner | Complete Season Recap</div>
 
-            <h3>The Champion: Sahil's Playoff Masterclass</h3>
-
             <div className="center-image" style={{marginBottom: '20px', marginTop: '20px', textAlign: 'center'}}>
               <video
                 autoPlay
