@@ -182,6 +182,7 @@ const FinaleNewsletter: React.FC = () => {
                 controls
                 autoPlay
                 muted
+                playsInline
                 style={{
                   width: '100%',
                   maxWidth: '800px',
