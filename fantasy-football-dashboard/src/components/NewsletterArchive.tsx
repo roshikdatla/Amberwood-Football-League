@@ -112,14 +112,12 @@ const NewsletterArchive: React.FC<NewsletterArchiveProps> = ({ showArchive = fal
             <button className="read-btn">Read Now</button>
           </div>
 
-          {[14, 15, 16, 17].map(week => (
-            <div key={week} className="newsletter-card coming-soon">
-              <h3>Week {week} Edition</h3>
-              <p className="newsletter-date">Coming Soon</p>
-              <p className="newsletter-description">Weekly analysis and matchup previews</p>
-              <button className="coming-soon-btn" disabled>Coming Soon</button>
-            </div>
-          ))}
+          <div className="newsletter-card available" onClick={() => window.location.href = '/newsletters/finale'}>
+            <h3>Season Finale: 2025 Unwrapped</h3>
+            <p className="newsletter-date">January 2026</p>
+            <p className="newsletter-description">Complete season recap and championship story</p>
+            <button className="read-btn">Read Now</button>
+          </div>
         </div>
       </div>
     );

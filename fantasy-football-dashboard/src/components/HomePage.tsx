@@ -120,10 +120,10 @@ const HomePage: React.FC<HomePageProps> = ({
                 <p>Get the inside scoop on league drama, player analysis, and hot takes delivered weekly!</p>
               </div>
               <div className="cta-actions">
-                <a href="/newsletters/week13" className="cta-primary-btn">
+                <a href="/newsletters/finale" className="cta-primary-btn">
                   Read Latest Issue →
                 </a>
-                <div className="cta-latest">Latest: Week 13 Edition</div>
+                <div className="cta-latest">Latest: 2025 Season Finale</div>
               </div>
             </div>
           </div>
@@ -138,90 +138,90 @@ const HomePage: React.FC<HomePageProps> = ({
         
         <div className="sidebar">
           <div className="power-rankings-container">
-            <h3>Championship Betting Odds</h3>
+            <h3>2026 Championship Betting Odds</h3>
             <div className="power-rankings-list">
               <div className="power-ranking-item">
                 <div className="rank">1</div>
                 <div className="team-analysis">
-                  <div className="team-name">Sahil +120</div>
-                  <div className="analysis">8-5, 1852 PF (HIGHEST!), 85%+ playoff odds</div>
+                  <div className="team-name">Sahil +200</div>
+                  <div className="analysis">Defending champ, elite WR core, proven playoff performer</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">2</div>
                 <div className="team-analysis">
-                  <div className="team-name">Pranav Jain +180</div>
-                  <div className="analysis">9-4, 1744 PF, #1 seed, 85%+ playoff odds</div>
+                  <div className="team-name">Pranav Jain +250</div>
+                  <div className="analysis">Puka keeper, JSN keeper, best WR duo in league</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">3</div>
                 <div className="team-analysis">
-                  <div className="team-name">Pranav P +220</div>
-                  <div className="analysis">6-7, 1843 PF, wild card lock, 70-80%</div>
+                  <div className="team-name">Roshik +400</div>
+                  <div className="analysis">#1 overall pick, Bowers keeper, hottest team end of '25</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">4</div>
                 <div className="team-analysis">
-                  <div className="team-name">Aditya +280</div>
-                  <div className="analysis">9-4, 1662 PF, #2 seed, 85%+ playoff odds</div>
+                  <div className="team-name">Sahit +450</div>
+                  <div className="analysis">GM of Year, 3rd place finish, injury recovery potential</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">5</div>
                 <div className="team-analysis">
-                  <div className="team-name">Anudeep +400</div>
-                  <div className="analysis">8-5, 1772 PF, #4 seed, 70-80% playoff odds</div>
+                  <div className="team-name">Abhishek +600</div>
+                  <div className="analysis">Waiver wire wizard, strong finish, Drake London keeper</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">6</div>
                 <div className="team-analysis">
-                  <div className="team-name">Sahit Reddi +500</div>
-                  <div className="analysis">8-5, 1752 PF, #5 seed, 70-80% playoff odds</div>
+                  <div className="team-name">Anudeep +700</div>
+                  <div className="analysis">Josh Allen consistency, high scoring potential</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">7</div>
                 <div className="team-analysis">
-                  <div className="team-name">Abhishek +900</div>
-                  <div className="analysis">8-5, 1725 PF, most vulnerable, 40-60%</div>
+                  <div className="team-name">Pranav P +800</div>
+                  <div className="analysis">TE whisperer, wild card winner, consistent performer</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">8</div>
                 <div className="team-analysis">
-                  <div className="team-name">Ankith +2500</div>
-                  <div className="analysis">7-6, 1757 PF, long shot, 10-20%</div>
+                  <div className="team-name">Ankith +900</div>
+                  <div className="analysis">CMC owner, Malik Nabers keeper, solid foundation</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">9</div>
                 <div className="team-analysis">
-                  <div className="team-name">Roshik +10000</div>
-                  <div className="analysis">6-7, eliminated from playoffs</div>
+                  <div className="team-name">Aditya +1200</div>
+                  <div className="analysis">Lucky 2025 run ended, needs major improvements</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">10</div>
                 <div className="team-analysis">
-                  <div className="team-name">Taaha +25000</div>
-                  <div className="analysis">4-9, eliminated from playoffs</div>
+                  <div className="team-name">Taaha +2000</div>
+                  <div className="analysis">Young WR talent, needs RB upgrades for contention</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">11</div>
                 <div className="team-analysis">
-                  <div className="team-name">Akhil +50000</div>
-                  <div className="analysis">3-10, season over</div>
+                  <div className="team-name">Akhil +3500</div>
+                  <div className="analysis">Rebuild mode, needs fresh start after tough season</div>
                 </div>
               </div>
               <div className="power-ranking-item">
                 <div className="rank">12</div>
                 <div className="team-analysis">
-                  <div className="team-name">Abhiram +100000</div>
-                  <div className="analysis">2-11, mathematically eliminated</div>
+                  <div className="team-name">Abhiram +5000</div>
+                  <div className="analysis">Toilet bowl champ, nowhere to go but up in 2026</div>
                 </div>
               </div>
             </div>
