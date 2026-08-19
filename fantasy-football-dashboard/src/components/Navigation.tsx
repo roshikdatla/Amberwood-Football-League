@@ -5,6 +5,9 @@ interface NavigationProps {
 }
 
 const Navigation: React.FC<NavigationProps> = ({ currentPage = 'home' }) => {
+  const isNewsletter = currentPage === 'newsletters';
+  const isLastSeason = currentPage.startsWith('last-season');
+
   return (
     <nav className="main-navigation">
       <div className="nav-container">
@@ -22,15 +25,15 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage = 'home' }) => {
           </a>
           <a 
             href="/newsletters" 
-            className={`nav-link ${currentPage === 'newsletters' ? 'active' : ''}`}
+            className={`nav-link ${isNewsletter ? 'active' : ''}`}
           >
             Newsletter
           </a>
-          <a 
-            href="/chat" 
-            className={`nav-link ${currentPage === 'chat' ? 'active' : ''}`}
+          <a
+            href="/last-season"
+            className={`nav-link ${isLastSeason ? 'active' : ''}`}
           >
-            League Chat
+            2025
           </a>
         </div>
       </div>

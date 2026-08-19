@@ -3,15 +3,33 @@ import { sleeperApi } from '../services/sleeperApi';
 import { League, Roster, User, TeamStanding } from '../types/sleeper';
 import LeagueHero from './LeagueHero';
 import WeeklyMatchups from './WeeklyMatchups';
+import { SeasonConfig } from '../config/seasons';
 
 interface HomePageProps {
   leagueId?: string;
   season?: string;
+  seasonConfig?: SeasonConfig;
 }
+
+const championshipOdds = [
+  { manager: 'Pranav J', odds: '+450', case: 'League-best WR and flex rooms, plus the Puka revenge tour' },
+  { manager: 'Ankith', odds: '+550', case: 'Chase, Jeanty, and Rice give this roster weekly fireworks' },
+  { manager: 'Anudeep', odds: '+650', case: 'Amberwood\'s top RB room can control every flex matchup' },
+  { manager: 'Sahil', odds: '+750', case: 'The defending champion returns with an elite WR trio' },
+  { manager: 'Pranav P', odds: '+900', case: 'CMC, Hampton, and Nabers anchor the most balanced contender' },
+  { manager: 'Roshik', odds: '+1000', case: 'Bijan, Lamar, and Bowers create three premium weekly edges' },
+  { manager: 'Abhishek', odds: '+1200', case: 'Middle-round volume produced the league\'s deepest flex bench' },
+  { manager: 'Aditya', odds: '+1400', case: 'Nico and James Cook lead a roster built for a breakout bet' },
+  { manager: 'Gary', odds: '+1700', case: 'Josh Allen, Amon-Ra, and Jonathan Taylor can win any week' },
+  { manager: 'Sahit', odds: '+2000', case: 'A.J. Brown, Saquon, Maye, and Loveland carry real ceiling' },
+  { manager: 'Taaha', odds: '+2500', case: 'JSN, Kyren, and Walker headline a high-variance uprising' },
+  { manager: 'Abhiram', odds: '+3500', case: 'Elite RB and TE talent awaits one decisive quarterback move' },
+];
 
 const HomePage: React.FC<HomePageProps> = ({ 
   leagueId = '', 
-  season = '2025' 
+  season = '2026',
+  seasonConfig,
 }) => {
   const [league, setLeague] = useState<League | null>(null);
   const [standings, setStandings] = useState<TeamStanding[]>([]);
@@ -76,7 +94,7 @@ const HomePage: React.FC<HomePageProps> = ({
       ]);
 
       setLeague(leagueData);
-      setCurrentWeek(week);
+      setCurrentWeek(seasonConfig?.currentWeekOverride || week);
       setUsers(users);
       const calculatedStandings = calculateStandings(rosters, users);
       setStandings(calculatedStandings);
@@ -86,7 +104,7 @@ const HomePage: React.FC<HomePageProps> = ({
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [seasonConfig?.currentWeekOverride]);
 
 
   useEffect(() => {
@@ -108,10 +126,22 @@ const HomePage: React.FC<HomePageProps> = ({
 
   return (
     <div className="homepage-container">
-      <LeagueHero league={league} currentWeek={currentWeek} loading={loading} />
+      <LeagueHero
+        league={league}
+        currentWeek={currentWeek}
+        loading={loading}
+        seasonLabel={seasonConfig?.label || `${season} Season`}
+      />
       
       <div className="homepage-content">
         <div className="main-content">
+          {seasonConfig && !seasonConfig.isLeagueIdConfigured && (
+            <div className="season-config-notice">
+              2026 Sleeper league ID is not configured yet. Live tables are
+              temporarily using the archived league connection.
+            </div>
+          )}
+
           <div className="newsletter-cta">
             <div className="cta-content">
               <div className="cta-icon">📰</div>
@@ -120,10 +150,12 @@ const HomePage: React.FC<HomePageProps> = ({
                 <p>Get the inside scoop on league drama, player analysis, and hot takes delivered weekly!</p>
               </div>
               <div className="cta-actions">
-                <a href="/newsletters/finale" className="cta-primary-btn">
-                  Read Latest Issue →
+                <a href={seasonConfig?.latestNewsletterPath || '/newsletters'} className="cta-primary-btn">
+                  Open Newsletter Hub →
                 </a>
-                <div className="cta-latest">Latest: 2025 Season Finale</div>
+                <div className="cta-latest">
+                  Latest: {seasonConfig?.latestNewsletterLabel || `${season} Season Hub`}
+                </div>
               </div>
             </div>
           </div>
@@ -138,92 +170,17 @@ const HomePage: React.FC<HomePageProps> = ({
         
         <div className="sidebar">
           <div className="power-rankings-container">
-            <h3>2026 Championship Betting Odds</h3>
+            <h3>{seasonConfig?.shortLabel || season} Championship Betting Odds</h3>
             <div className="power-rankings-list">
-              <div className="power-ranking-item">
-                <div className="rank">1</div>
-                <div className="team-analysis">
-                  <div className="team-name">Sahil +200</div>
-                  <div className="analysis">Defending champ, elite WR core, proven playoff performer</div>
+              {championshipOdds.map((team, index) => (
+                <div className="power-ranking-item" key={team.manager}>
+                  <div className="rank">{index + 1}</div>
+                  <div className="team-analysis">
+                    <div className="team-name">{team.manager} {team.odds}</div>
+                    <div className="analysis">{team.case}</div>
+                  </div>
                 </div>
-              </div>
-              <div className="power-ranking-item">
-                <div className="rank">2</div>
-                <div className="team-analysis">
-                  <div className="team-name">Pranav Jain +250</div>
-                  <div className="analysis">Puka keeper, JSN keeper, best WR duo in league</div>
-                </div>
-              </div>
-              <div className="power-ranking-item">
-                <div className="rank">3</div>
-                <div className="team-analysis">
-                  <div className="team-name">Roshik +400</div>
-                  <div className="analysis">#1 overall pick, Bowers keeper, hottest team end of '25</div>
-                </div>
-              </div>
-              <div className="power-ranking-item">
-                <div className="rank">4</div>
-                <div className="team-analysis">
-                  <div className="team-name">Sahit +450</div>
-                  <div className="analysis">GM of Year, 3rd place finish, injury recovery potential</div>
-                </div>
-              </div>
-              <div className="power-ranking-item">
-                <div className="rank">5</div>
-                <div className="team-analysis">
-                  <div className="team-name">Abhishek +600</div>
-                  <div className="analysis">Waiver wire wizard, strong finish, Drake London keeper</div>
-                </div>
-              </div>
-              <div className="power-ranking-item">
-                <div className="rank">6</div>
-                <div className="team-analysis">
-                  <div className="team-name">Anudeep +700</div>
-                  <div className="analysis">Josh Allen consistency, high scoring potential</div>
-                </div>
-              </div>
-              <div className="power-ranking-item">
-                <div className="rank">7</div>
-                <div className="team-analysis">
-                  <div className="team-name">Pranav P +800</div>
-                  <div className="analysis">TE whisperer, wild card winner, consistent performer</div>
-                </div>
-              </div>
-              <div className="power-ranking-item">
-                <div className="rank">8</div>
-                <div className="team-analysis">
-                  <div className="team-name">Ankith +900</div>
-                  <div className="analysis">CMC owner, Malik Nabers keeper, solid foundation</div>
-                </div>
-              </div>
-              <div className="power-ranking-item">
-                <div className="rank">9</div>
-                <div className="team-analysis">
-                  <div className="team-name">Aditya +1200</div>
-                  <div className="analysis">Lucky 2025 run ended, needs major improvements</div>
-                </div>
-              </div>
-              <div className="power-ranking-item">
-                <div className="rank">10</div>
-                <div className="team-analysis">
-                  <div className="team-name">Taaha +2000</div>
-                  <div className="analysis">Young WR talent, needs RB upgrades for contention</div>
-                </div>
-              </div>
-              <div className="power-ranking-item">
-                <div className="rank">11</div>
-                <div className="team-analysis">
-                  <div className="team-name">Akhil +3500</div>
-                  <div className="analysis">Rebuild mode, needs fresh start after tough season</div>
-                </div>
-              </div>
-              <div className="power-ranking-item">
-                <div className="rank">12</div>
-                <div className="team-analysis">
-                  <div className="team-name">Abhiram +5000</div>
-                  <div className="analysis">Toilet bowl champ, nowhere to go but up in 2026</div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>

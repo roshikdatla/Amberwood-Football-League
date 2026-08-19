@@ -14,11 +14,12 @@ export interface MCPToolResponse {
 }
 
 export class MCPApiService {
-  async sendChatMessage(message: string): Promise<string> {
+  async sendChatMessage(message: string, season = '2026'): Promise<string> {
     const endpoint = `${API_BASE_URL}/api/chat`;
     console.log('🚀 MCP Chat Request:');
     console.log('  Endpoint:', endpoint);
     console.log('  Message:', message);
+    console.log('  Season:', season);
     console.log('  API_BASE_URL:', API_BASE_URL);
     console.log('  NODE_ENV:', process.env.NODE_ENV);
     
@@ -28,7 +29,7 @@ export class MCPApiService {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ message }),
+        body: JSON.stringify({ message, season }),
       });
 
       console.log('📡 Response Status:', response.status);

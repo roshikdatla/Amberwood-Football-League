@@ -469,6 +469,1219 @@ body, html {
   opacity: 0.8;
 }
 
+.season-config-notice {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 8px;
+  color: #9a3412;
+  font-weight: 600;
+  padding: 14px 18px;
+  box-shadow: 0 4px 16px rgba(154, 52, 18, 0.08);
+}
+
+.last-season-page,
+.current-newsletter-page {
+  min-height: calc(100vh - 70px);
+}
+
+.last-season-hero {
+  background:
+    linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.86)),
+    url('./IMG_4456.JPG') center 42%/cover;
+  color: white;
+  padding: 86px 20px 72px;
+}
+
+.last-season-hero-content {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.archive-kicker {
+  color: #fbbf24;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.last-season-hero h1,
+.current-newsletter-shell h1 {
+  font-size: 2.8rem;
+  line-height: 1.08;
+  margin: 0 0 14px;
+}
+
+.last-season-hero p,
+.current-newsletter-shell p {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  max-width: 760px;
+  margin: 0;
+}
+
+.last-season-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.last-season-stats div {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.last-season-stats span {
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.76rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.last-season-stats strong {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.last-season-content {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 28px 20px 52px;
+}
+
+.archive-search-band,
+.current-newsletter-shell {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 26px;
+}
+
+.archive-search-band label {
+  display: block;
+  color: #111827;
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.archive-search-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+}
+
+.archive-search-row input {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  color: #111827;
+  font-size: 1rem;
+  min-width: 0;
+  padding: 13px 14px;
+}
+
+.archive-search-row button {
+  background: #1e3a8a;
+  border: 0;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0 18px;
+}
+
+.archive-search-band p {
+  color: #6b7280;
+  margin: 12px 0 0;
+}
+
+.archive-results {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.archive-result-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  min-height: 260px;
+  padding: 22px;
+}
+
+.archive-result-meta {
+  color: #6b7280;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.78rem;
+  font-weight: 700;
+  gap: 10px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.archive-result-card h2 {
+  color: #111827;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  margin: 0 0 10px;
+}
+
+.archive-result-card p {
+  color: #4b5563;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0 0 18px;
+}
+
+.archive-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.archive-tags span {
+  background: #eef2ff;
+  border-radius: 999px;
+  color: #3730a3;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 5px 9px;
+}
+
+.archive-open-link,
+.archive-secondary-link {
+  color: #1e3a8a;
+  display: inline-block;
+  font-weight: 800;
+  margin-top: 18px;
+  text-decoration: none;
+}
+
+.archive-open-link:hover,
+.archive-secondary-link:hover {
+  color: #f59e0b;
+}
+
+.archive-empty {
+  background: white;
+  border-radius: 8px;
+  color: #6b7280;
+  grid-column: 1 / -1;
+  padding: 28px;
+  text-align: center;
+}
+
+.current-newsletter-page {
+  padding: 56px 20px;
+}
+
+.current-newsletter-shell {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.current-newsletter-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.draft-placeholder-card {
+  background: #f9fafb;
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+  margin-top: 26px;
+  padding: 24px;
+}
+
+.draft-placeholder-card h2 {
+  color: #111827;
+  font-size: 1.4rem;
+  margin: 0 0 10px;
+}
+
+.draft-placeholder-card p {
+  color: #4b5563;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.draft-newsletter-page {
+  background:
+    linear-gradient(180deg, #08111f 0%, #10254a 320px, #eef2f7 320px, #eef2f7 100%);
+  color: #111827;
+  padding: 0 20px 56px;
+}
+
+.draft-newsletter-hero {
+  align-items: end;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 56px 0 28px;
+}
+
+.draft-newsletter-hero-copy {
+  color: white;
+}
+
+.draft-newsletter-hero-copy h1 {
+  color: white;
+  font-size: clamp(2.4rem, 5vw, 4.9rem);
+  letter-spacing: 0;
+  line-height: 0.94;
+  margin: 0 0 18px;
+  text-transform: uppercase;
+}
+
+.draft-newsletter-hero-copy p {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 780px;
+}
+
+.draft-newsletter-scorebug {
+  background: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+}
+
+.draft-newsletter-scorebug div {
+  border-bottom: 1px solid #d9e2ef;
+  padding: 16px 18px;
+}
+
+.draft-newsletter-scorebug div:last-child {
+  border-bottom: 0;
+}
+
+.draft-newsletter-scorebug span {
+  color: #64748b;
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.draft-newsletter-scorebug strong {
+  color: #0f172a;
+  display: block;
+  font-size: 1rem;
+  margin-top: 4px;
+}
+
+.draft-newsletter-section {
+  background: white;
+  border: 1px solid #d9e2ef;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  margin: 22px auto 0;
+  max-width: 1180px;
+  padding: 26px;
+}
+
+.draft-section-header {
+  align-items: end;
+  border-bottom: 1px solid #d9e2ef;
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+}
+
+.draft-section-header span {
+  background: #fbbf24;
+  border-radius: 8px;
+  color: #111827;
+  flex: 0 0 auto;
+  font-size: 0.74rem;
+  font-weight: 900;
+  padding: 7px 10px;
+  text-transform: uppercase;
+}
+
+.draft-section-header h2 {
+  color: #111827;
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+  line-height: 1.1;
+  margin: 0;
+  text-align: right;
+}
+
+.draft-callout-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.draft-callout-card,
+.draft-trend-card,
+.team-newsletter-card,
+.final-tier-card {
+  border: 1px solid #d9e2ef;
+  border-radius: 8px;
+  background: #fbfdff;
+}
+
+.draft-callout-card {
+  overflow: hidden;
+}
+
+.draft-callout-card h3 {
+  background: #111827;
+  color: white;
+  font-size: 1rem;
+  margin: 0;
+  padding: 14px 16px;
+}
+
+.draft-callout-card.value-card h3 {
+  background: #14532d;
+}
+
+.draft-table-wrap {
+  overflow-x: auto;
+}
+
+.draft-newsletter-table {
+  border-collapse: collapse;
+  min-width: 520px;
+  width: 100%;
+}
+
+.draft-newsletter-table th,
+.draft-newsletter-table td {
+  border-bottom: 1px solid #e5edf7;
+  font-size: 0.88rem;
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.draft-newsletter-table th {
+  color: #64748b;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.draft-newsletter-table td:first-child {
+  color: #1e3a8a;
+  font-weight: 900;
+}
+
+.draft-newsletter-table td:last-child {
+  color: #b91c1c;
+  font-weight: 900;
+}
+
+.value-card .draft-newsletter-table td:last-child {
+  color: #15803d;
+}
+
+.draft-trend-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-top: 18px;
+}
+
+.draft-trend-card {
+  padding: 16px;
+}
+
+.draft-trend-card h3 {
+  color: #111827;
+  font-size: 1rem;
+  line-height: 1.2;
+  margin: 0 0 10px;
+}
+
+.draft-trend-card p {
+  color: #4b5563;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.power-ranking-list {
+  display: grid;
+  gap: 10px;
+}
+
+.power-ranking-row {
+  align-items: center;
+  background: #fbfdff;
+  border: 1px solid #d9e2ef;
+  border-radius: 8px;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 44px minmax(0, 1fr) 52px;
+  min-height: 72px;
+  padding: 12px 14px;
+}
+
+.power-rank-number {
+  align-items: center;
+  background: #1e3a8a;
+  border-radius: 8px;
+  color: white;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 900;
+  height: 44px;
+  justify-content: center;
+  width: 44px;
+}
+
+.power-ranking-row h3 {
+  color: #111827;
+  font-size: 1rem;
+  margin: 0 0 3px;
+}
+
+.power-ranking-row p {
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.power-ranking-row > strong {
+  background: #fef3c7;
+  border-radius: 8px;
+  color: #92400e;
+  font-size: 0.95rem;
+  justify-self: end;
+  min-width: 44px;
+  padding: 8px 10px;
+  text-align: center;
+}
+
+.team-newsletter-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.team-newsletter-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px;
+}
+
+.team-newsletter-topline {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.team-newsletter-topline span {
+  align-items: center;
+  background: #111827;
+  border-radius: 8px;
+  color: white;
+  display: flex;
+  font-size: 0.85rem;
+  font-weight: 900;
+  height: 34px;
+  justify-content: center;
+  width: 42px;
+}
+
+.team-newsletter-topline strong {
+  color: #1e3a8a;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.team-newsletter-card h3 {
+  color: #111827;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.team-grade-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+}
+
+.team-grade-grid div {
+  background: white;
+  border: 1px solid #e5edf7;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.team-grade-grid dt {
+  color: #64748b;
+  font-size: 0.7rem;
+  font-weight: 900;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.team-grade-grid dd {
+  color: #111827;
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.team-newsletter-card p {
+  color: #374151;
+  font-size: 0.94rem;
+  line-height: 1.62;
+  margin: 0;
+}
+
+.final-whistle-section {
+  background:
+    linear-gradient(135deg, rgba(8, 17, 31, 0.96), rgba(30, 58, 138, 0.94));
+  color: white;
+}
+
+.final-whistle-section .draft-section-header {
+  border-bottom-color: rgba(255, 255, 255, 0.18);
+}
+
+.final-whistle-section .draft-section-header h2 {
+  color: white;
+}
+
+.final-assessment-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.final-tier-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+  padding: 16px;
+}
+
+.final-tier-card h3 {
+  color: white;
+  font-size: 1rem;
+  margin: 0 0 8px;
+}
+
+.final-tier-card strong {
+  color: #fbbf24;
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+
+.final-tier-card p,
+.final-whistle-copy {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.92rem;
+  line-height: 1.58;
+  margin: 0;
+}
+
+.final-whistle-copy {
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 1rem;
+  margin-top: 20px;
+  max-width: none;
+  padding-top: 18px;
+}
+
+.draft-issue-newsletter .newspaper-container {
+  border-color: #111827;
+  border-top-color: #1e3a8a;
+}
+
+.draft-issue-newsletter .newspaper-header {
+  background:
+    linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+}
+
+.draft-issue-newsletter .newspaper-meta {
+  background: #eef2ff;
+}
+
+.draft-issue-newsletter .section-headline {
+  background: #111827;
+  border: 3px solid #1e3a8a;
+  color: #fbbf24;
+  padding: 12px 16px;
+}
+
+.newspaper-data-table {
+  border-collapse: collapse;
+  font-family: 'Times New Roman', serif;
+  font-size: 0.86rem;
+  margin: 10px 0 18px;
+  width: 100%;
+}
+
+.newspaper-data-table th,
+.newspaper-data-table td {
+  border: 1px solid #111827;
+  color: #000;
+  padding: 7px 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.newspaper-data-table th {
+  background: #111827;
+  color: #fff;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+}
+
+.newspaper-data-table td:first-child,
+.newspaper-data-table td:last-child {
+  font-weight: 800;
+}
+
+.newspaper-data-table td:last-child {
+  color: #9f1239;
+}
+
+.newspaper-data-table.value-table td:last-child {
+  color: #166534;
+}
+
+.trend-newspaper-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.trend-newspaper-card {
+  background: #f9f9f9;
+  border: 2px solid #000;
+  font-family: 'Times New Roman', serif;
+  padding: 14px;
+}
+
+.trend-newspaper-card h3 {
+  border-bottom: 2px solid #000;
+  color: #000;
+  font-size: 1rem;
+  line-height: 1.2;
+  margin: 0 0 10px;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.trend-newspaper-card p {
+  color: #000;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  margin: 0;
+  text-align: justify;
+}
+
+.power-newspaper-grid {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.power-newspaper-row {
+  align-items: center;
+  background: #f9f9f9;
+  border: 2px solid #000;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 34px minmax(0, 1fr) 42px;
+  min-height: 58px;
+  padding: 8px;
+}
+
+.power-newspaper-row span {
+  align-items: center;
+  background: #111827;
+  color: #fbbf24;
+  display: flex;
+  font-family: 'Times New Roman', serif;
+  font-size: 1rem;
+  font-weight: 900;
+  height: 34px;
+  justify-content: center;
+  width: 34px;
+}
+
+.power-newspaper-row strong {
+  color: #000;
+  display: block;
+  font-family: 'Times New Roman', serif;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+}
+
+.power-newspaper-row p {
+  color: #333;
+  font-family: 'Times New Roman', serif;
+  font-size: 0.78rem;
+  line-height: 1.25;
+  margin: 2px 0 0;
+}
+
+.power-newspaper-row em {
+  background: #fbbf24;
+  border: 1px solid #000;
+  color: #111827;
+  font-family: 'Times New Roman', serif;
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 900;
+  padding: 5px;
+  text-align: center;
+}
+
+.draft-grade-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.draft-grade-line span {
+  background: #111827;
+  color: #fbbf24;
+  font-size: 0.74rem;
+  font-weight: 800;
+  padding: 5px 7px;
+  text-transform: uppercase;
+}
+
+.draft-team-card .championship-headline {
+  background: #fff8e1;
+  border: 1px dashed #92400e;
+  color: #000;
+}
+
+.draft-issue-newsletter .newspaper-footer {
+  background: #111827;
+  border-top: 3px solid #1e3a8a;
+  color: #fbbf24;
+  font-family: 'Times New Roman', serif;
+  padding: 18px;
+  text-align: center;
+}
+
+.draft-issue-newsletter .footer-line {
+  border-top: 2px solid #fbbf24;
+  margin-bottom: 12px;
+}
+
+.draft-issue-newsletter .newspaper-tagline {
+  color: #fbbf24;
+  font-weight: 800;
+}
+
+.nytimes-draft-newsletter {
+  --nyt-ink: #111111;
+  --nyt-paper: #fffefa;
+  --nyt-muted: #555555;
+  --nyt-rule: #111111;
+  --nyt-hairline: #d6d1c4;
+}
+
+.newsletter-archive:has(.nytimes-draft-newsletter) {
+  background: #f3f0e8;
+}
+
+.nytimes-draft-newsletter .newspaper-container {
+  background: var(--nyt-paper);
+  border: 1px solid var(--nyt-rule);
+  border-top: 0;
+  box-shadow: 0 18px 44px rgba(17, 17, 17, 0.12);
+}
+
+.nytimes-draft-newsletter .newspaper-header {
+  background: var(--nyt-paper);
+  border-bottom: 4px double var(--nyt-rule);
+  padding: 24px 34px 18px;
+}
+
+.nytimes-draft-newsletter .newspaper-header::before {
+  background: var(--nyt-rule);
+  height: 1px;
+}
+
+.nytimes-draft-newsletter .newspaper-title {
+  color: var(--nyt-ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.8rem, 7vw, 6.2rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 0.92;
+  text-shadow: none;
+  text-transform: none;
+}
+
+.nytimes-draft-newsletter .newspaper-subtitle {
+  color: var(--nyt-muted);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.98rem;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin: 10px 0 18px;
+  text-transform: none;
+}
+
+.nytimes-draft-newsletter .newspaper-meta {
+  background: transparent;
+  border-bottom: 1px solid var(--nyt-rule);
+  border-top: 2px solid var(--nyt-rule);
+  color: var(--nyt-ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  letter-spacing: 0;
+  padding: 9px 0;
+}
+
+.nytimes-draft-newsletter .newspaper-content {
+  background: var(--nyt-paper);
+  padding: 24px 34px 30px;
+}
+
+.nytimes-draft-newsletter .headline {
+  border-bottom: 1px solid var(--nyt-rule);
+  color: var(--nyt-ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2rem, 4vw, 4.05rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 0.98;
+  margin-bottom: 9px;
+  padding-bottom: 12px;
+  text-transform: none;
+}
+
+.nytimes-draft-newsletter .byline {
+  border-bottom: 1px solid var(--nyt-hairline);
+  color: var(--nyt-muted);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.86rem;
+  font-style: normal;
+  letter-spacing: 0;
+  margin-bottom: 22px;
+  padding-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.nytimes-draft-newsletter .story-layout {
+  gap: 24px;
+}
+
+.nytimes-draft-newsletter .story-column {
+  color: var(--nyt-ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.98rem;
+  line-height: 1.62;
+  text-align: left;
+}
+
+.nytimes-draft-newsletter .story-column p {
+  margin-bottom: 13px;
+  text-indent: 0;
+}
+
+.nytimes-draft-newsletter .lead-paragraph {
+  font-size: 1.12rem !important;
+  font-weight: 700 !important;
+  line-height: 1.58 !important;
+}
+
+.nytimes-draft-newsletter .story-column h3,
+.nytimes-draft-newsletter .trend-newspaper-card h3 {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--nyt-rule);
+  color: var(--nyt-ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.08rem;
+  letter-spacing: 0;
+  margin: 0 0 10px;
+  padding: 0 0 6px;
+  text-transform: none;
+}
+
+.nytimes-draft-newsletter .team-analysis {
+  background: transparent;
+  border-top: 2px solid var(--nyt-rule);
+  margin-top: 28px;
+  padding-top: 18px;
+}
+
+.nytimes-draft-newsletter .section-headline {
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid var(--nyt-rule);
+  color: var(--nyt-ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.85rem;
+  letter-spacing: 0;
+  margin-bottom: 18px;
+  padding: 0 0 8px;
+  text-align: left;
+  text-shadow: none;
+  text-transform: none;
+}
+
+.nytimes-draft-newsletter .newspaper-data-table {
+  border-top: 2px solid var(--nyt-rule);
+  font-size: 0.83rem;
+}
+
+.nytimes-draft-newsletter .draft-table-note {
+  border-bottom: 1px solid var(--nyt-hairline);
+  color: var(--nyt-muted);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.76rem;
+  font-style: italic;
+  margin: -10px 0 18px;
+  padding-bottom: 8px;
+  text-align: center;
+}
+
+.nytimes-draft-newsletter .newspaper-data-table th,
+.nytimes-draft-newsletter .newspaper-data-table td {
+  border: 0;
+  border-bottom: 1px solid var(--nyt-hairline);
+  padding: 7px 6px;
+}
+
+.nytimes-draft-newsletter .newspaper-data-table th {
+  background: transparent;
+  color: var(--nyt-muted);
+  font-size: 0.68rem;
+  letter-spacing: 0;
+}
+
+.nytimes-draft-newsletter .newspaper-data-table td:last-child {
+  color: var(--nyt-ink);
+}
+
+.nytimes-draft-newsletter .positional-ranking-note {
+  margin-bottom: 12px;
+}
+
+.nytimes-draft-newsletter .position-rankings-scroll {
+  overflow-x: auto;
+}
+
+.nytimes-draft-newsletter .position-rankings-table {
+  min-width: 440px;
+  table-layout: fixed;
+}
+
+.nytimes-draft-newsletter .position-rankings-table th:first-child,
+.nytimes-draft-newsletter .position-rankings-table td:first-child {
+  text-align: center;
+  width: 54px;
+}
+
+.nytimes-draft-newsletter .position-rankings-table td:not(:first-child) {
+  font-weight: 600;
+}
+
+.nytimes-draft-newsletter .position-rankings-table tbody tr:first-child td {
+  border-bottom: 2px solid var(--nyt-rule);
+  font-weight: 800;
+}
+
+.nytimes-draft-newsletter .trend-newspaper-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.nytimes-draft-newsletter .trend-newspaper-card {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--nyt-rule);
+  padding: 12px 0 0;
+}
+
+.nytimes-draft-newsletter .trend-newspaper-card p {
+  color: var(--nyt-ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.88rem;
+  line-height: 1.58;
+  text-align: left;
+}
+
+.nytimes-draft-newsletter .power-newspaper-grid {
+  gap: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.nytimes-draft-newsletter .power-newspaper-row {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--nyt-hairline);
+  grid-template-columns: 26px minmax(0, 1fr) 38px;
+  min-height: 58px;
+  padding: 9px 10px;
+}
+
+.nytimes-draft-newsletter .power-newspaper-row span {
+  background: transparent;
+  color: var(--nyt-ink);
+  font-size: 1.15rem;
+  height: auto;
+  width: auto;
+}
+
+.nytimes-draft-newsletter .power-newspaper-row strong {
+  color: var(--nyt-ink);
+  font-size: 0.94rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.nytimes-draft-newsletter .power-newspaper-row .power-ranking-slogan {
+  color: var(--nyt-ink);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 0.8rem;
+  font-style: italic;
+  letter-spacing: 0;
+  line-height: 1.12;
+  margin-top: 3px;
+  text-transform: uppercase;
+}
+
+.nytimes-draft-newsletter .power-newspaper-row em {
+  background: transparent;
+  border: 1px solid var(--nyt-rule);
+  color: var(--nyt-ink);
+  font-size: 0.8rem;
+  padding: 4px;
+}
+
+.nytimes-draft-newsletter .draft-teams-grid {
+  gap: 18px;
+}
+
+.nytimes-draft-newsletter .draft-team-card {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--nyt-rule);
+  padding: 12px 0 0;
+}
+
+.nytimes-draft-newsletter .draft-team-card h3 {
+  border: 0;
+  color: var(--nyt-ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.08rem;
+  margin-bottom: 9px;
+  padding-bottom: 0;
+  text-transform: none;
+}
+
+.nytimes-draft-newsletter .draft-team-card p {
+  color: var(--nyt-ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.86rem;
+  line-height: 1.48;
+}
+
+.nytimes-draft-newsletter .draft-grade-line span {
+  background: transparent;
+  border: 1px solid var(--nyt-rule);
+  color: var(--nyt-ink);
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.nytimes-draft-newsletter .draft-team-card .championship-headline {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--nyt-hairline);
+  font-style: normal;
+  padding: 8px 0 0;
+}
+
+.nytimes-draft-newsletter .championship-headline span {
+  color: var(--nyt-muted);
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+}
+
+.nytimes-draft-newsletter .championship-headline strong {
+  display: block;
+  font-size: 0.94rem;
+  line-height: 1.25;
+}
+
+.nytimes-draft-newsletter .final-assessment {
+  background: transparent;
+  border: 2px solid var(--nyt-rule);
+  margin-top: 30px;
+  padding: 18px;
+}
+
+.nytimes-draft-newsletter .assessment-text {
+  color: var(--nyt-ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  text-align: left;
+  text-indent: 0;
+}
+
+.nytimes-draft-newsletter .newspaper-footer {
+  background: transparent;
+  border-top: 3px double var(--nyt-rule);
+  color: var(--nyt-ink);
+  margin-top: 26px;
+  padding: 18px 0 0;
+}
+
+.nytimes-draft-newsletter .footer-line {
+  border-top: 0;
+  margin: 0;
+}
+
+.nytimes-draft-newsletter .newspaper-tagline {
+  color: var(--nyt-muted);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.82rem;
+  font-style: italic;
+  font-weight: 400;
+}
+
 /* Team Analysis Modal */
 .modal-overlay {
   position: fixed;
@@ -2636,6 +3849,163 @@ body, html {
   .newsletter-cta * {
     word-wrap: break-word;
     overflow-wrap: break-word;
+  }
+}
+
+@media (max-width: 900px) {
+  .last-season-stats,
+  .archive-results,
+  .draft-callout-grid,
+  .team-newsletter-grid,
+  .final-assessment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .draft-newsletter-hero,
+  .draft-trend-grid,
+  .trend-newspaper-grid,
+  .power-newspaper-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nytimes-draft-newsletter .trend-newspaper-grid,
+  .nytimes-draft-newsletter .power-newspaper-grid,
+  .nytimes-draft-newsletter .draft-teams-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .draft-newsletter-hero {
+    align-items: start;
+    padding-top: 42px;
+  }
+
+  .last-season-hero h1,
+  .current-newsletter-shell h1 {
+    font-size: 2.1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .last-season-hero {
+    padding: 52px 14px 46px;
+  }
+
+  .last-season-content,
+  .current-newsletter-page {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .draft-newsletter-page {
+    background:
+      linear-gradient(180deg, #08111f 0%, #10254a 420px, #eef2f7 420px, #eef2f7 100%);
+    padding-bottom: 34px;
+  }
+
+  .draft-newsletter-hero {
+    gap: 18px;
+    padding: 32px 0 18px;
+  }
+
+  .draft-newsletter-hero-copy h1 {
+    font-size: 2.35rem;
+  }
+
+  .draft-newsletter-hero-copy p {
+    font-size: 0.96rem;
+  }
+
+  .draft-newsletter-section {
+    padding: 18px;
+  }
+
+  .draft-section-header {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .draft-section-header h2 {
+    text-align: left;
+  }
+
+  .draft-newsletter-table {
+    min-width: 470px;
+  }
+
+  .draft-results-layout {
+    gap: 16px;
+  }
+
+  .newspaper-data-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .power-newspaper-row {
+    grid-template-columns: 32px minmax(0, 1fr) 40px;
+  }
+
+  .draft-newsletter-table th,
+  .draft-newsletter-table td {
+    padding: 10px;
+  }
+
+  .power-ranking-row {
+    grid-template-columns: 40px minmax(0, 1fr) 48px;
+    padding: 10px;
+  }
+
+  .power-rank-number {
+    height: 40px;
+    width: 40px;
+  }
+
+  .team-grade-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-search-band,
+  .archive-result-card,
+  .current-newsletter-shell {
+    padding: 18px;
+  }
+
+  .archive-search-row {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-search-row button {
+    min-height: 42px;
+  }
+
+  .last-season-hero h1,
+  .current-newsletter-shell h1 {
+    font-size: 1.75rem;
+  }
+
+  .nytimes-draft-newsletter .newspaper-header,
+  .nytimes-draft-newsletter .newspaper-content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .nytimes-draft-newsletter .newspaper-title {
+    font-size: 2.7rem;
+  }
+
+  .nytimes-draft-newsletter .headline {
+    font-size: 2rem;
+  }
+
+  .last-season-hero p,
+  .current-newsletter-shell p {
+    font-size: 0.95rem;
+  }
+
+  .last-season-stats strong,
+  .archive-result-card h2 {
+    overflow-wrap: anywhere;
   }
 }
 

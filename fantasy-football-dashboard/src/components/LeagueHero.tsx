@@ -5,9 +5,10 @@ interface LeagueHeroProps {
   league: League | null;
   currentWeek: number;
   loading: boolean;
+  seasonLabel?: string;
 }
 
-const LeagueHero: React.FC<LeagueHeroProps> = ({ league, currentWeek, loading }) => {
+const LeagueHero: React.FC<LeagueHeroProps> = ({ league, currentWeek, loading, seasonLabel = '2026 Season' }) => {
   const totalWeeks = 17; // Standard NFL season weeks
   const progressPercentage = (currentWeek / totalWeeks) * 100;
 
@@ -33,7 +34,7 @@ const LeagueHero: React.FC<LeagueHeroProps> = ({ league, currentWeek, loading })
           <h1>{league?.name || 'Amberwood Football League'}</h1>
         </div>
         <p className="league-subtitle">
-          Fantasy Football • {league?.season || '2025'} Season
+          Fantasy Football • {seasonLabel}
         </p>
         
         <div className="season-progress">

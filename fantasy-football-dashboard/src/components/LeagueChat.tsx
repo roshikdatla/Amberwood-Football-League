@@ -11,11 +11,18 @@ interface Message {
   displayText?: string;
 }
 
-const LeagueChat: React.FC = () => {
+interface LeagueChatProps {
+  season?: string;
+  archiveMode?: boolean;
+}
+
+const LeagueChat: React.FC<LeagueChatProps> = ({ season = '2026', archiveMode = false }) => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: "Hi! I'm your fantasy football assistant. I can help you analyze your Amberwood Fantasy Football League using AI and real-time data from Sleeper.\n\nTry asking me about standings, rosters, trades, draft analysis, or any other fantasy football questions!",
+      text: archiveMode
+        ? "Hi! I'm your 2025 season archive assistant. Ask me about 2025 newsletters, the playoff race, awards, keepers, draft setup, or season finale."
+        : "Hi! I'm your fantasy football assistant. I can help you analyze your Amberwood Fantasy Football League using AI and real-time data from Sleeper.\n\nTry asking me about standings, rosters, trades, draft analysis, or any other fantasy football questions!",
       sender: 'assistant',
       timestamp: new Date()
     }
@@ -95,7 +102,7 @@ const LeagueChat: React.FC = () => {
 
     try {
       // Call the MCP server through the API
-      const response = await mcpApi.sendChatMessage(inputText.trim());
+      const response = await mcpApi.sendChatMessage(inputText.trim(), season);
       
       // Replace loading message with typewriter effect
       setMessages(prev => prev.map(msg => 
@@ -126,11 +133,11 @@ const LeagueChat: React.FC = () => {
       <div className="chat-header">
         <div className="chat-title">
           <div className="chat-title-text">
-            <h2>League Assistant</h2>
+            <h2>{archiveMode ? '2025 Archive Assistant' : 'League Assistant'}</h2>
           </div>
         </div>
         <div className="chat-subtitle">
-          Ask me anything about your fantasy league!
+          {archiveMode ? 'Ask about the 2025 season.' : 'Ask me anything about your fantasy league!'}
         </div>
       </div>
 

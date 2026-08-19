@@ -2,117 +2,129 @@ import React from 'react';
 
 interface NewsletterArchiveProps {
   showArchive?: boolean;
+  basePath?: string;
+  title?: string;
+  subtitle?: string;
 }
 
-const NewsletterArchive: React.FC<NewsletterArchiveProps> = ({ showArchive = false }) => {
+const NewsletterArchive: React.FC<NewsletterArchiveProps> = ({
+  showArchive = false,
+  basePath = '/newsletters',
+  title = 'Newsletter Archive',
+  subtitle = 'Browse all editions of the Amberwood Fantasy Times',
+}) => {
+  const goToNewsletter = (slug: string) => {
+    window.location.href = `${basePath}/${slug}`;
+  };
+
   if (showArchive) {
     return (
       <div className="newsletter-archive-list">
         <div className="archive-header">
-          <h1>📰 Newsletter Archive</h1>
-          <p>Browse all editions of the Amberwood Fantasy Times</p>
+          <h1>{title}</h1>
+          <p>{subtitle}</p>
         </div>
         
         <div className="newsletter-grid">
-          <div className="newsletter-card available" onClick={() => window.location.href = '/newsletters/preseason'}>
+          <div className="newsletter-card available" onClick={() => goToNewsletter('preseason')}>
             <h3>Preseason Edition</h3>
             <p className="newsletter-date">August 2025</p>
             <p className="newsletter-description">Draft coverage and team analysis</p>
             <button className="read-btn">Read Now</button>
           </div>
           
-          <div className="newsletter-card available" onClick={() => window.location.href = '/newsletters/week1'}>
+          <div className="newsletter-card available" onClick={() => goToNewsletter('week1')}>
             <h3>Week 1 Edition</h3>
             <p className="newsletter-date">September 2025</p>
             <p className="newsletter-description">Fireworks, flops, and first impressions</p>
             <button className="read-btn">Read Now</button>
           </div>
 
-          <div className="newsletter-card available" onClick={() => window.location.href = '/newsletters/week2'}>
+          <div className="newsletter-card available" onClick={() => goToNewsletter('week2')}>
             <h3>Week 2 Edition</h3>
             <p className="newsletter-date">September 2025</p>
             <p className="newsletter-description">Comebacks, collapses, and chaos</p>
             <button className="read-btn">Read Now</button>
           </div>
 
-          <div className="newsletter-card available" onClick={() => window.location.href = '/newsletters/week3'}>
+          <div className="newsletter-card available" onClick={() => goToNewsletter('week3')}>
             <h3>Week 3 Edition</h3>
             <p className="newsletter-date">September 2025</p>
             <p className="newsletter-description">Momentum shifts and meltdowns</p>
             <button className="read-btn">Read Now</button>
           </div>
 
-          <div className="newsletter-card available" onClick={() => window.location.href = '/newsletters/week4'}>
+          <div className="newsletter-card available" onClick={() => goToNewsletter('week4')}>
             <h3>Week 4 Edition</h3>
             <p className="newsletter-date">September 2025</p>
             <p className="newsletter-description">Red October: The Great 2-2 Logjam</p>
             <button className="read-btn">Read Now</button>
           </div>
 
-          <div className="newsletter-card available" onClick={() => window.location.href = '/newsletters/week5'}>
+          <div className="newsletter-card available" onClick={() => goToNewsletter('week5')}>
             <h3>Week 5 Edition</h3>
             <p className="newsletter-date">October 2025</p>
             <p className="newsletter-description">Shocks, surges, and shattered dreams</p>
             <button className="read-btn">Read Now</button>
           </div>
 
-          <div className="newsletter-card available" onClick={() => window.location.href = '/newsletters/week6'}>
+          <div className="newsletter-card available" onClick={() => goToNewsletter('week6')}>
             <h3>Week 6 Edition</h3>
             <p className="newsletter-date">October 2025</p>
             <p className="newsletter-description">The perfect season falls</p>
             <button className="read-btn">Read Now</button>
           </div>
 
-          <div className="newsletter-card available" onClick={() => window.location.href = '/newsletters/week7'}>
+          <div className="newsletter-card available" onClick={() => goToNewsletter('week7')}>
             <h3>Week 7 Edition</h3>
             <p className="newsletter-date">October 2025</p>
             <p className="newsletter-description">CMC goes nuclear & playoff race intensifies</p>
             <button className="read-btn">Read Now</button>
           </div>
 
-          <div className="newsletter-card available" onClick={() => window.location.href = '/newsletters/week8'}>
+          <div className="newsletter-card available" onClick={() => goToNewsletter('week8')}>
             <h3>Week 8 Edition</h3>
             <p className="newsletter-date">October 2025</p>
             <p className="newsletter-description">Power shifts and playoff storms brewing</p>
             <button className="read-btn">Read Now</button>
           </div>
 
-          <div className="newsletter-card available" onClick={() => window.location.href = '/newsletters/week9'}>
+          <div className="newsletter-card available" onClick={() => goToNewsletter('week9')}>
             <h3>Week 9 Edition</h3>
             <p className="newsletter-date">November 2025</p>
             <p className="newsletter-description">Cardiac finishes and nuclear explosions</p>
             <button className="read-btn">Read Now</button>
           </div>
 
-          <div className="newsletter-card available" onClick={() => window.location.href = '/newsletters/week10'}>
+          <div className="newsletter-card available" onClick={() => goToNewsletter('week10')}>
             <h3>Week 10 Edition</h3>
             <p className="newsletter-date">November 2025</p>
             <p className="newsletter-description">Playoff chaos and 172-point explosions</p>
             <button className="read-btn">Read Now</button>
           </div>
 
-          <div className="newsletter-card available" onClick={() => window.location.href = '/newsletters/week11'}>
+          <div className="newsletter-card available" onClick={() => goToNewsletter('week11')}>
             <h3>Week 11 Edition</h3>
             <p className="newsletter-date">November 2025</p>
             <p className="newsletter-description">audumula's dominance and playoff picture shakeup</p>
             <button className="read-btn">Read Now</button>
           </div>
 
-          <div className="newsletter-card available" onClick={() => window.location.href = '/newsletters/week12'}>
+          <div className="newsletter-card available" onClick={() => goToNewsletter('week12')}>
             <h3>Week 12 Edition</h3>
             <p className="newsletter-date">November 2025</p>
             <p className="newsletter-description">Playoff chaos as kulkdaddy47 dominates</p>
             <button className="read-btn">Read Now</button>
           </div>
 
-          <div className="newsletter-card available" onClick={() => window.location.href = '/newsletters/week13'}>
+          <div className="newsletter-card available" onClick={() => goToNewsletter('week13')}>
             <h3>Week 13 Edition</h3>
             <p className="newsletter-date">December 2025</p>
             <p className="newsletter-description">The Final Regular Season Showdown</p>
             <button className="read-btn">Read Now</button>
           </div>
 
-          <div className="newsletter-card available" onClick={() => window.location.href = '/newsletters/finale'}>
+          <div className="newsletter-card available" onClick={() => goToNewsletter('finale')}>
             <h3>Season Finale: 2025 Unwrapped</h3>
             <p className="newsletter-date">January 2026</p>
             <p className="newsletter-description">Complete season recap and championship story</p>

@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const fs = require('fs');
 const { spawn } = require('child_process');
 const path = require('path');
 const Anthropic = require('@anthropic-ai/sdk');
@@ -87,6 +88,101 @@ class MCPServerConnection {
 
 const mcpConnection = new MCPServerConnection();
 
+const lastSeasonArchiveEntries = [
+  {
+    id: 'season-finale',
+    title: 'Season Finale: 2025 Unwrapped',
+    date: 'January 2026',
+    path: '/last-season/newsletters/finale',
+    summary: 'Sahil won the 2025 title, Pranav Jain finished runner-up, Abhiram won the toilet bowl, and Roshik won the consolation bracket with the 2026 first overall pick.',
+    tags: ['champion', 'finale', 'sahil', 'pranav', 'abhiram', 'awards'],
+    textFile: 'finale.txt'
+  },
+  {
+    id: 'awards',
+    title: '2025 Awards and Superlatives',
+    date: 'January 2026',
+    path: '/last-season/newsletters/finale',
+    summary: 'Sahit was GM of the Year, Christian McCaffrey was League MVP, Sahil had the Dak-Pickens stack, Puka Nacua was Keeper of the Year, and Michael Wilson was Waiver Wire Addition of the Year.',
+    tags: ['awards', 'gm of year', 'mvp', 'keeper', 'waiver wire'],
+    textFile: 'finale.txt'
+  },
+  {
+    id: 'keeper-notes',
+    title: '2026 Keeper and Draft Context',
+    date: 'January 2026',
+    path: '/last-season/newsletters/finale',
+    summary: 'Key 2026 keeper context included Puka Nacua, Jaxon Smith-Njigba, Brock Bowers, Malik Nabers, Drake London, Josh Allen, and Roshik holding the first overall pick.',
+    tags: ['keepers', '2026 draft', 'puka', 'jsn', 'bowers', 'nabers'],
+    textFile: 'finale.txt'
+  },
+  {
+    id: 'week13',
+    title: 'Week 13 Edition',
+    date: 'December 2025',
+    path: '/last-season/newsletters/week13',
+    summary: 'The playoff picture took shape with major games for audumula, SahitReddi, swahili28, kulkdaddy47, and pranavj20.',
+    tags: ['week 13', 'playoffs', 'seeding', 'points for'],
+    textFile: 'week13.txt'
+  },
+  {
+    id: 'week12',
+    title: 'Week 12 Edition',
+    date: 'November 2025',
+    path: '/last-season/newsletters/week12',
+    summary: 'The points-for wild card became crucial, with pranav4789 leading the league in scoring despite sitting outside the automatic playoff spots.',
+    tags: ['week 12', 'wild card', 'points for', 'playoff race'],
+    textFile: 'week12.txt'
+  },
+  {
+    id: 'preseason',
+    title: 'Preseason Edition',
+    date: 'August 2025',
+    path: '/last-season/newsletters/preseason',
+    summary: 'Draft coverage, keeper-adjusted values, team-by-team analysis, reaches, values, sleepers, and championship headlines.',
+    tags: ['preseason', 'draft', 'keepers', 'team analysis'],
+    textFile: 'preseason.txt'
+  }
+];
+
+const archiveDirectory = path.join(__dirname, '..', 'public', 'archive', '2025');
+
+function readArchiveText(textFile) {
+  try {
+    return fs.readFileSync(path.join(archiveDirectory, textFile), 'utf8');
+  } catch {
+    return '';
+  }
+}
+
+function searchLastSeasonArchive(question) {
+  const terms = question.toLowerCase().split(/\s+/).filter(term => term.length > 2);
+  const scoredEntries = lastSeasonArchiveEntries
+    .map(entry => {
+      const archiveText = readArchiveText(entry.textFile);
+      const searchText = [
+        entry.title,
+        entry.date,
+        entry.summary,
+        entry.tags.join(' '),
+        archiveText
+      ].join(' ').toLowerCase();
+      const score = terms.reduce((total, term) => total + (searchText.includes(term) ? 1 : 0), 0);
+      return { entry, score };
+    })
+    .filter(({ score }) => score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 4);
+
+  if (scoredEntries.length === 0) {
+    return `I searched the 2025 archive and did not find a direct match for "${question}". Try names like Sahil, Puka, CMC, Abhiram, Roshik, Week 13, keeper, playoffs, awards, or draft.`;
+  }
+
+  return `2025 archive results:\n\n${scoredEntries.map(({ entry }, index) => (
+    `${index + 1}. ${entry.title} (${entry.date})\n${entry.summary}\nOpen: ${entry.path}`
+  )).join('\n\n')}`;
+}
+
 // API Routes
 app.get('/api/health', (req, res) => {
   res.json({ 
@@ -98,16 +194,16 @@ app.get('/api/health', (req, res) => {
 
 app.post('/api/chat', async (req, res) => {
   try {
-    const { message } = req.body;
+    const { message, season = '2026' } = req.body;
     
     if (!message) {
       return res.status(400).json({ error: 'Message is required' });
     }
 
-    console.log('Processing chat message:', message);
+    console.log(`Processing ${season} chat message:`, message);
     
     // Analyze the message to determine what MCP tools to call
-    const response = await processLeagueQuestion(message);
+    const response = await processLeagueQuestion(message, season);
     
     res.json({ 
       response,
@@ -200,10 +296,14 @@ Keep it under 25 words, punchy, and insightful. No fluff.`;
   }
 });
 
-async function processLeagueQuestion(question) {
+async function processLeagueQuestion(question, season = '2026') {
   const lowerQuestion = question.toLowerCase();
   
   try {
+    if (season === '2025') {
+      return searchLastSeasonArchive(question);
+    }
+
     if (lowerQuestion.includes('standing') || lowerQuestion.includes('rank')) {
       const standings = await mcpConnection.callMCPTool('get_standings');
       return `Current League Standings:\n\n${standings.map((team, i) => 
