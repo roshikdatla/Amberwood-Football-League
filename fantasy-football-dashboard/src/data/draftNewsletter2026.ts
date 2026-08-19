@@ -139,7 +139,7 @@ export const teamProfiles: TeamProfile[] = [
     concern: 'The TE spot and QB slot both need somebody to just be steady',
     headline: 'Nico De Gallo Goes Back-To-Back',
     storyline:
-      'The defending 2025 champion came back with Justin Jefferson, George Pickens, and Garrett Wilson, which is a title defense with pyrotechnics. Derrick Henry and Travis Etienne give the lineup enough RB bite to survive the tough weeks, and Jaylen Warren can patch a lot of lineup bruises. If Isaiah Likely is just steady enough, Sahil can pull the Chiefs-style repeat and spend December reminding everybody that the throne is not vacant.',
+      'The defending 2025 champion came back with Justin Jefferson, George Pickens, and Garrett Wilson, which is a title defense with pyrotechnics. Derrick Henry and Travis Etienne give the lineup enough RB bite to survive the tough weeks, and Jaylen Warren can patch a lot of lineup bruises. If Isaiah Likely is just steady enough, Sahil can pull the Chiefs-style repeat and spend December reminding everybody that the throne is not vacant. With Alvin Kamara set to miss time, Travis Etienne\'s value ticks up even higher.',
   },
   {
     rank: 5,
