@@ -84,17 +84,17 @@ export const draftTrends: DraftTrend[] = [
 ];
 
 export const positionalRankings: PositionalRankingRow[] = [
-  { manager: 'Pranav J', qb: 3, rb: 12, wr: 1, te: 4, flex: 1 },
-  { manager: 'Ankith', qb: 9, rb: 4, wr: 3, te: 9, flex: 8 },
-  { manager: 'Anudeep', qb: 4, rb: 1, wr: 10, te: 10, flex: 5 },
-  { manager: 'Sahil', qb: 11, rb: 10, wr: 2, te: 8, flex: 3 },
-  { manager: 'Pranav P', qb: 7, rb: 2, wr: 4, te: 11, flex: 4 },
+  { manager: 'Pranav J', qb: 4, rb: 12, wr: 1, te: 9, flex: 1 },
+  { manager: 'Ankith', qb: 11, rb: 4, wr: 3, te: 6, flex: 8 },
+  { manager: 'Anudeep', qb: 3, rb: 1, wr: 10, te: 4, flex: 5 },
+  { manager: 'Sahil', qb: 10, rb: 10, wr: 2, te: 12, flex: 3 },
+  { manager: 'Pranav P', qb: 7, rb: 2, wr: 4, te: 3, flex: 4 },
   { manager: 'Roshik', qb: 2, rb: 3, wr: 11, te: 1, flex: 7 },
-  { manager: 'Abhishek', qb: 5, rb: 5, wr: 5, te: 12, flex: 2 },
-  { manager: 'Aditya', qb: 8, rb: 6, wr: 8, te: 6, flex: 6 },
-  { manager: 'Gary', qb: 1, rb: 9, wr: 6, te: 5, flex: 9 },
-  { manager: 'Sahit', qb: 6, rb: 11, wr: 7, te: 3, flex: 11 },
-  { manager: 'Taaha', qb: 10, rb: 8, wr: 9, te: 7, flex: 12 },
+  { manager: 'Abhishek', qb: 5, rb: 5, wr: 5, te: 5, flex: 2 },
+  { manager: 'Aditya', qb: 6, rb: 6, wr: 8, te: 7, flex: 6 },
+  { manager: 'Gary', qb: 1, rb: 9, wr: 6, te: 8, flex: 9 },
+  { manager: 'Sahit', qb: 8, rb: 11, wr: 7, te: 10, flex: 11 },
+  { manager: 'Taaha', qb: 9, rb: 8, wr: 9, te: 11, flex: 12 },
   { manager: 'Abhiram', qb: 12, rb: 7, wr: 12, te: 2, flex: 10 },
 ];
 
@@ -119,7 +119,7 @@ export const teamProfiles: TeamProfile[] = [
     draftGrade: 'A-',
     identity: 'A stars-and-breakouts roster that can win a matchup in three plays',
     concern: 'The middle of the roster leans on rookies and second-year leaps to materialize',
-    xFactor: 'Marvin Harrison Jr. (Round 4)',
+    xFactor: 'Marvin Harrison Jr. (Round 5)',
     xFactorNote: 'A true year-two jump turns this from a top-three team into the scariest lineup in Amberwood, no waiver help required.',
     headline: 'Chase, Jeanty, and Rice Give Ankith A Superstar Trio That Never Turns Off',
     storyline:
@@ -132,8 +132,8 @@ export const teamProfiles: TeamProfile[] = [
     draftGrade: 'A-',
     identity: 'A ground-and-pound roster that wants to win the trenches every week',
     concern: 'Outside of Drake London, the WR room needs a second reliable starter to appear',
-    xFactor: 'Drake London (Round 4)',
-    xFactorNote: 'If London becomes a true WR1 alpha, this roster has no positional weakness and the RB edge simply overwhelms the field.',
+    xFactor: 'Joe Burrow (Round 7)',
+    xFactorNote: 'A healthy Burrow gives Anudeep a top-five QB paired with the league\'s best RB room; the only path to a soft weekly ceiling disappears.',
     headline: 'Gibbs, Love, and Javonte Turn Anudeep Into The League\'s Weekly Bully',
     storyline:
       'Anudeep built the type of RB room that makes opponents start trade shopping before Week 1. Jahmyr Gibbs is the headliner, but Jeremiyah Love, Javonte Williams, Rico Dowdle, and Brian Robinson give this team serious flex muscle. If Drake London becomes the alpha and Joe Burrow stays healthy, this can look like the 2005 Steelers with better PPR formatting. The formula is simple: own the RB slots, own the flex slots, and make everyone else chase.',
@@ -145,7 +145,7 @@ export const teamProfiles: TeamProfile[] = [
     draftGrade: 'B+',
     identity: 'A defending champ with the league\'s most explosive WR ceiling',
     concern: 'The TE spot and QB slot both need somebody to just be steady',
-    xFactor: 'Jaylen Warren (Round 5)',
+    xFactor: 'Jaylen Warren (Round 6)',
     xFactorNote: 'If Warren carves out a true 1B role behind Henry, the lineup suddenly has three RB-eligible weapons and the depth issue disappears.',
     headline: 'Jefferson, Pickens, and Wilson Fire Sahil Toward A Back-To-Back Title',
     storyline:
@@ -197,8 +197,8 @@ export const teamProfiles: TeamProfile[] = [
     draftGrade: 'B-',
     identity: 'A high-variance roster leaning on veteran bounce-backs to detonate',
     concern: 'A handful of ADP reaches need to outrun their draft cost immediately',
-    xFactor: 'Quinshon Judkins (Round 5)',
-    xFactorNote: 'A true lead-back role behind Cook gives this team two weekly RB starters and turns the flex spot into a real weapon.',
+    xFactor: 'Quinshon Judkins (Round 8)',
+    xFactorNote: 'An 8th-round lead-back outcome next to Cook gives this team two weekly RB starters and turns the flex spot into a real weapon.',
     headline: 'Nico Collins and James Cook Anchor Aditya\'s Long-Con Title Push',
     storyline:
       'Aditya has a very funny villain arc sitting on the runway. Nico Collins and James Cook are premium anchors, while Davante Adams, Quinshon Judkins, Parker Washington, Courtland Sutton, and Kyle Pitts give him multiple ways to find a second gear. The model did not love the Patrick Mahomes cost, but if Mahomes turns back into Mahomes, nobody will care. This team can spend September getting roasted and December posting screenshots.',
