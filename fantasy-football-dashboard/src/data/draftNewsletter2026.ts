@@ -107,7 +107,7 @@ export const teamProfiles: TeamProfile[] = [
     identity: 'A WR-first juggernaut built to bury opponents on Sunday night',
     concern: 'The RB room needs Skattebo or Swift to become a true weekly workhorse',
     xFactor: 'Cam Skattebo (Round 4)',
-    xFactorNote: 'If the rookie clears the touch threshold, an already elite roster gets a legitimate RB1 without paying first-round tax.',
+    xFactorNote: 'If Skattebo takes a year-two leap and clears the touch threshold, an already elite roster gets a legitimate RB1 without paying first-round tax.',
     headline: 'Puka, CeeDee, and DeVonta Torch The League All The Way To Amberwood Gold',
     storyline:
       'Puka Nacua in the 8th is the kind of keeper that makes the rest of the league check the bylaws. Add CeeDee Lamb and DeVonta Smith, and suddenly this roster looks like the 2013 Broncos were dropped into a two-flex PPR league. Trading back gave Pranav J four fourth-round swings, which became Cam Skattebo, D\'Andre Swift, Tyler Warren, and Jalen Hurts: a full starting unit delivered in one round. If that middle-round avalanche holds up, last year\'s runner-up can turn the revenge tour into a trophy parade.',
@@ -120,7 +120,7 @@ export const teamProfiles: TeamProfile[] = [
     identity: 'A stars-and-breakouts roster that can win a matchup in three plays',
     concern: 'The middle of the roster leans on rookies and second-year leaps to materialize',
     xFactor: 'Marvin Harrison Jr. (Round 5)',
-    xFactorNote: 'A true year-two jump turns this from a top-three team into the scariest lineup in Amberwood, no waiver help required.',
+    xFactorNote: 'A true year-three jump turns this from a top-three team into the scariest lineup in Amberwood, no waiver help required.',
     headline: 'Chase, Jeanty, and Rice Give Ankith A Superstar Trio That Never Turns Off',
     storyline:
       'Ja\'Marr Chase, Ashton Jeanty, and Rashee Rice are not a foundation, they are a weekly threat. Ankith also loaded up on breakout doors with Marvin Harrison, Josh Downs, Jayden Reed, Caleb Williams, and Jaxson Dart. This team has the feel of the 2021 Bengals: young, explosive, and one leap away from making everyone uncomfortable. If Caleb levels up and one of the bench WRs turns into a real flex weapon, the title case gets loud fast.',
@@ -224,7 +224,7 @@ export const teamProfiles: TeamProfile[] = [
     identity: 'A boom-or-bust roster living on a very loud top five',
     concern: 'RB and flex depth thins out fast if any starter misses time',
     xFactor: 'Drake Maye (Round 6)',
-    xFactorNote: 'A true year-two QB leap turns Sahit\'s ceiling into legit contender territory and gives the offense a second gear it currently lacks.',
+    xFactorNote: 'A true year-three QB leap turns Sahit\'s ceiling into legit contender territory and gives the offense a second gear it currently lacks.',
     headline: 'A.J. Brown and Saquon Give Sahit A Top Five Nobody Wants In The Playoffs',
     storyline:
       'Sahit has a top five that can absolutely crash the playoff party: A.J. Brown, Saquon Barkley, Jaylen Waddle, Drake Maye, and Colston Loveland. The roster gets thin faster than the contenders above him, but the ceiling pieces are real. If Maye and Loveland pop at the same time, this starts looking like a 2007 Giants season arc: uneven early, dangerous late, and suddenly everyone is nervous. The margin is thin, but the upside is loud.',
@@ -237,7 +237,7 @@ export const teamProfiles: TeamProfile[] = [
     identity: 'A young roster stacked with breakout doors nobody else was ready to open',
     concern: 'Too many picks need to outperform ADP for the plan to actually work',
     xFactor: 'Luther Burden III (Round 5)',
-    xFactorNote: 'A true rookie breakout gives Taaha a WR2 he drafted a full round early and validates the entire aggressive draft plan.',
+    xFactorNote: 'A true year-two breakout gives Taaha a WR2 he drafted a full round early and validates the entire aggressive draft plan.',
     headline: 'JSN, K9, and Kyren Give Taaha A Foundation The League Underestimated',
     storyline:
       'Taaha drafted like a man planting flags, not checking consensus. JSN, Kenneth Walker, Kyren Williams, Luther Burden, Harold Fannin, Xavier Worthy, and Bo Nix give this roster a lot of breakout doors. Fannin was a reach by ADP, but if he hits, that pick changes the whole tone of the draft. If Burden and Fannin level up while Worthy finally detonates, Taaha gets to spend the season handing out apology forms.',
