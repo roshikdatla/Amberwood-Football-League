@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import { activeSeason } from '../config/seasons';
 import {
   bestValues,
@@ -6,11 +6,42 @@ import {
   draftTrends,
   finalAssessment,
   positionalRankings,
-  powerRankings,
   teamProfiles,
 } from '../data/draftNewsletter2026';
 
+type PositionalSortKey = 'manager' | 'qb' | 'rb' | 'wr' | 'te' | 'flex';
+
 const CurrentSeasonNewsletterArchive: React.FC = () => {
+  const [sortKey, setSortKey] = useState<PositionalSortKey>('manager');
+  const [sortAsc, setSortAsc] = useState(true);
+
+  const handleSort = (key: PositionalSortKey) => {
+    if (key === sortKey) {
+      setSortAsc((prev) => !prev);
+    } else {
+      setSortKey(key);
+      setSortAsc(true);
+    }
+  };
+
+  const sortedPositionalRankings = useMemo(() => {
+    const rows = [...positionalRankings];
+    rows.sort((a, b) => {
+      const av = a[sortKey];
+      const bv = b[sortKey];
+      if (typeof av === 'number' && typeof bv === 'number') {
+        return sortAsc ? av - bv : bv - av;
+      }
+      const as = String(av);
+      const bs = String(bv);
+      return sortAsc ? as.localeCompare(bs) : bs.localeCompare(as);
+    });
+    return rows;
+  }, [sortKey, sortAsc]);
+
+  const sortIndicator = (key: PositionalSortKey) =>
+    sortKey === key ? (sortAsc ? ' ▲' : ' ▼') : '';
+
   return (
     <div className="newsletter-archive">
       <div className="draft-issue-newsletter nytimes-draft-newsletter">
@@ -30,6 +61,13 @@ const CurrentSeasonNewsletterArchive: React.FC = () => {
           </div>
 
           <div className="newspaper-content">
+            <figure className="newspaper-cover-photo">
+              <img src="/pranav.PNG" alt="Pranav J on the phone during the 2026 Amberwood draft" />
+              <figcaption>
+                Pranav J works the phones during the 2026 Amberwood draft — the WR keeper king who set the tone for the entire league.
+              </figcaption>
+            </figure>
+
             <div className="main-story">
               <h2 className="headline">A League of Contenders, Every One Certain This Is the Year</h2>
               <div className="byline">
@@ -63,37 +101,6 @@ const CurrentSeasonNewsletterArchive: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="story-column">
-                  <h3>Draft Board Sirens</h3>
-                  <p>
-                    Wide receiver became the main event. Quarterbacks slid. Tight
-                    end caused a mini gold rush. The true 2026 rookie run began
-                    with Jeremiyah Love at 3.01, then gathered speed with Carnell
-                    Tate, Jadarian Price, and Jordyn Tyson.
-                  </p>
-                  <p>
-                    Among running backs and receivers taken in the first 10
-                    rounds, the value board loved Roshik grabbing Chris Godwin
-                    in the ninth, Abhiram landing DK Metcalf in the eighth, and
-                    Roshik adding Alec Pierce in the eighth. The reaches were
-                    mostly upside bets, the kind of picks that either disappear
-                    quietly or become a victory-lap text in October.
-                  </p>
-                  <p>
-                    Historical comp for the room: part 1999 Rams, part 2007
-                    Patriots, part fantasy manager group chat at 1:14 AM. Nobody
-                    is calm. Everybody is undefeated. This is exactly how it
-                    should feel.
-                  </p>
-                  <p>
-                    The trade market created two draft rooms inside one league.
-                    Some managers moved up to stack premium picks and hunt stars;
-                    Pranav J, Abhishek, and Pranav P traded back for extra shots
-                    across the third, fourth, and fifth rounds. The season will
-                    settle Amberwood&apos;s newest argument: concentrated star power
-                    or middle-round volume.
-                  </p>
-                </div>
               </div>
             </div>
 
@@ -179,22 +186,41 @@ const CurrentSeasonNewsletterArchive: React.FC = () => {
                 FantasyPros PPR weighted room scores | Flex ranks the best
                 remaining RB, WR, and TE options after core starters are filled
               </p>
+              <p className="draft-table-note positional-ranking-note">
+                Click any column header to sort. Lower number = better positional room.
+              </p>
               <div className="position-rankings-scroll">
-                <table className="newspaper-data-table position-rankings-table">
+                <table className="newspaper-data-table position-rankings-table sortable">
                   <thead>
                     <tr>
-                      <th>Rank</th>
-                      <th>RB Room</th>
-                      <th>WR Room</th>
-                      <th>Flex Depth</th>
+                      <th onClick={() => handleSort('manager')} style={{ cursor: 'pointer' }}>
+                        Team{sortIndicator('manager')}
+                      </th>
+                      <th onClick={() => handleSort('qb')} style={{ cursor: 'pointer' }}>
+                        QB{sortIndicator('qb')}
+                      </th>
+                      <th onClick={() => handleSort('rb')} style={{ cursor: 'pointer' }}>
+                        RB{sortIndicator('rb')}
+                      </th>
+                      <th onClick={() => handleSort('wr')} style={{ cursor: 'pointer' }}>
+                        WR{sortIndicator('wr')}
+                      </th>
+                      <th onClick={() => handleSort('te')} style={{ cursor: 'pointer' }}>
+                        TE{sortIndicator('te')}
+                      </th>
+                      <th onClick={() => handleSort('flex')} style={{ cursor: 'pointer' }}>
+                        Flex{sortIndicator('flex')}
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
-                    {positionalRankings.map((row) => (
-                      <tr key={row.rank}>
-                        <td>{row.rank}</td>
+                    {sortedPositionalRankings.map((row) => (
+                      <tr key={row.manager}>
+                        <td>{row.manager}</td>
+                        <td>{row.qb}</td>
                         <td>{row.rb}</td>
                         <td>{row.wr}</td>
+                        <td>{row.te}</td>
                         <td>{row.flex}</td>
                       </tr>
                     ))}
@@ -204,23 +230,7 @@ const CurrentSeasonNewsletterArchive: React.FC = () => {
             </div>
 
             <div className="team-analysis">
-              <h2 className="section-headline">Preseason Power Rankings</h2>
-              <div className="power-newspaper-grid">
-                {powerRankings.map((team) => (
-                  <div className="power-newspaper-row" key={team.manager}>
-                    <span>{team.rank}</span>
-                    <div>
-                      <strong>{team.manager}</strong>
-                      <p className="power-ranking-slogan">{team.headline}</p>
-                    </div>
-                    <em>{team.grade}</em>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="team-analysis">
-              <h2 className="section-headline">How Every Team Wins The Title</h2>
+              <h2 className="section-headline">Team by Team Breakdown</h2>
               <div className="teams-grid draft-teams-grid">
                 {teamProfiles.map((team) => (
                   <div className="team-card draft-team-card" key={team.manager}>
@@ -232,10 +242,13 @@ const CurrentSeasonNewsletterArchive: React.FC = () => {
                       <span>Draft: {team.draftGrade}</span>
                     </div>
                     <p>
-                      <strong>Strength:</strong> {team.strength}
+                      <strong>Team Identity:</strong> {team.identity}
                     </p>
                     <p>
-                      <strong>Weakness:</strong> {team.weakness}
+                      <strong>Biggest Concern:</strong> {team.concern}
+                    </p>
+                    <p>
+                      <strong>X-Factor:</strong> {team.xFactor} — {team.xFactorNote}
                     </p>
                     <p className="championship-headline">
                       <span>Championship Headline</span>

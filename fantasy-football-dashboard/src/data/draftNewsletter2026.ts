@@ -12,18 +12,13 @@ export type DraftTrend = {
   body: string;
 };
 
-export type PowerRanking = {
-  rank: number;
-  manager: string;
-  grade: string;
-  headline: string;
-};
-
 export type PositionalRankingRow = {
-  rank: number;
-  rb: string;
-  wr: string;
-  flex: string;
+  manager: string;
+  qb: number;
+  rb: number;
+  wr: number;
+  te: number;
+  flex: number;
 };
 
 export type TeamProfile = {
@@ -31,8 +26,10 @@ export type TeamProfile = {
   manager: string;
   keeperGrade: string;
   draftGrade: string;
-  strength: string;
-  weakness: string;
+  identity: string;
+  concern: string;
+  xFactor: string;
+  xFactorNote: string;
   headline: string;
   storyline: string;
 };
@@ -86,34 +83,19 @@ export const draftTrends: DraftTrend[] = [
   },
 ];
 
-export const powerRankings: PowerRanking[] = [
-  { rank: 1, manager: 'Pranav J', grade: 'A', headline: 'WR Voltron has arrived' },
-  { rank: 2, manager: 'Ankith', grade: 'A-', headline: 'Elite stars, breakout doors everywhere' },
-  { rank: 3, manager: 'Anudeep', grade: 'A-', headline: 'The RB empire strikes first' },
-  { rank: 4, manager: 'Sahil', grade: 'B+', headline: 'The defending champ has receiver fireworks' },
-  { rank: 5, manager: 'Pranav P', grade: 'B+', headline: 'Balanced, clean, and dangerous' },
-  { rank: 6, manager: 'Roshik', grade: 'B+', headline: 'Bijan, Lamar, and Bowers is a nasty spine' },
-  { rank: 7, manager: 'Abhishek', grade: 'B', headline: 'No holes, plenty of heat' },
-  { rank: 8, manager: 'Aditya', grade: 'B-', headline: 'Strong core, needs the bets to cash' },
-  { rank: 9, manager: 'Gary', grade: 'B-', headline: 'Three superstars and a depth test' },
-  { rank: 10, manager: 'Sahit', grade: 'C+', headline: 'High-ceiling core, thin margins' },
-  { rank: 11, manager: 'Taaha', grade: 'C+', headline: 'The "I saw it first" team' },
-  { rank: 12, manager: 'Abhiram', grade: 'C', headline: 'Needs QB help, but not out of ammunition' },
-];
-
 export const positionalRankings: PositionalRankingRow[] = [
-  { rank: 1, rb: 'Anudeep', wr: 'Pranav J', flex: 'Pranav J' },
-  { rank: 2, rb: 'Pranav P', wr: 'Sahil', flex: 'Abhishek' },
-  { rank: 3, rb: 'Roshik', wr: 'Ankith', flex: 'Sahil' },
-  { rank: 4, rb: 'Ankith', wr: 'Pranav P', flex: 'Pranav P' },
-  { rank: 5, rb: 'Abhishek', wr: 'Abhishek', flex: 'Anudeep' },
-  { rank: 6, rb: 'Aditya', wr: 'Gary', flex: 'Aditya' },
-  { rank: 7, rb: 'Abhiram', wr: 'Sahit', flex: 'Roshik' },
-  { rank: 8, rb: 'Taaha', wr: 'Aditya', flex: 'Ankith' },
-  { rank: 9, rb: 'Gary', wr: 'Taaha', flex: 'Gary' },
-  { rank: 10, rb: 'Sahil', wr: 'Anudeep', flex: 'Abhiram' },
-  { rank: 11, rb: 'Sahit', wr: 'Roshik', flex: 'Sahit' },
-  { rank: 12, rb: 'Pranav J', wr: 'Abhiram', flex: 'Taaha' },
+  { manager: 'Pranav J', qb: 3, rb: 12, wr: 1, te: 4, flex: 1 },
+  { manager: 'Ankith', qb: 9, rb: 4, wr: 3, te: 9, flex: 8 },
+  { manager: 'Anudeep', qb: 4, rb: 1, wr: 10, te: 10, flex: 5 },
+  { manager: 'Sahil', qb: 11, rb: 10, wr: 2, te: 8, flex: 3 },
+  { manager: 'Pranav P', qb: 7, rb: 2, wr: 4, te: 11, flex: 4 },
+  { manager: 'Roshik', qb: 2, rb: 3, wr: 11, te: 1, flex: 7 },
+  { manager: 'Abhishek', qb: 5, rb: 5, wr: 5, te: 12, flex: 2 },
+  { manager: 'Aditya', qb: 8, rb: 6, wr: 8, te: 6, flex: 6 },
+  { manager: 'Gary', qb: 1, rb: 9, wr: 6, te: 5, flex: 9 },
+  { manager: 'Sahit', qb: 6, rb: 11, wr: 7, te: 3, flex: 11 },
+  { manager: 'Taaha', qb: 10, rb: 8, wr: 9, te: 7, flex: 12 },
+  { manager: 'Abhiram', qb: 12, rb: 7, wr: 12, te: 2, flex: 10 },
 ];
 
 export const teamProfiles: TeamProfile[] = [
@@ -122,9 +104,11 @@ export const teamProfiles: TeamProfile[] = [
     manager: 'Pranav J',
     keeperGrade: 'A++',
     draftGrade: 'A',
-    strength: 'Best WR room in the league',
-    weakness: 'RB room needs cooperation',
-    headline: 'Revenge Complete: Pooka Koopa Troopa\'s Claims The Crown',
+    identity: 'A WR-first juggernaut built to bury opponents on Sunday night',
+    concern: 'The RB room needs Skattebo or Swift to become a true weekly workhorse',
+    xFactor: 'Cam Skattebo (Round 4)',
+    xFactorNote: 'If the rookie clears the touch threshold, an already elite roster gets a legitimate RB1 without paying first-round tax.',
+    headline: 'Puka, CeeDee, and DeVonta Torch The League All The Way To Amberwood Gold',
     storyline:
       'Puka Nacua in the 8th is the kind of keeper that makes the rest of the league check the bylaws. Add CeeDee Lamb and DeVonta Smith, and suddenly this roster looks like the 2013 Broncos were dropped into a two-flex PPR league. Trading back gave Pranav J four fourth-round swings, which became Cam Skattebo, D\'Andre Swift, Tyler Warren, and Jalen Hurts: a full starting unit delivered in one round. If that middle-round avalanche holds up, last year\'s runner-up can turn the revenge tour into a trophy parade.',
   },
@@ -133,9 +117,11 @@ export const teamProfiles: TeamProfile[] = [
     manager: 'Ankith',
     keeperGrade: 'A-',
     draftGrade: 'A-',
-    strength: 'Elite top-end talent',
-    weakness: 'TE and flex depth are less terrifying than the stars',
-    headline: 'Jeanty Morgan Chase & Co. Closes The Title Deal',
+    identity: 'A stars-and-breakouts roster that can win a matchup in three plays',
+    concern: 'The middle of the roster leans on rookies and second-year leaps to materialize',
+    xFactor: 'Marvin Harrison Jr. (Round 4)',
+    xFactorNote: 'A true year-two jump turns this from a top-three team into the scariest lineup in Amberwood, no waiver help required.',
+    headline: 'Chase, Jeanty, and Rice Give Ankith A Superstar Trio That Never Turns Off',
     storyline:
       'Ja\'Marr Chase, Ashton Jeanty, and Rashee Rice are not a foundation, they are a weekly threat. Ankith also loaded up on breakout doors with Marvin Harrison, Josh Downs, Jayden Reed, Caleb Williams, and Jaxson Dart. This team has the feel of the 2021 Bengals: young, explosive, and one leap away from making everyone uncomfortable. If Caleb levels up and one of the bench WRs turns into a real flex weapon, the title case gets loud fast.',
   },
@@ -144,9 +130,11 @@ export const teamProfiles: TeamProfile[] = [
     manager: 'Anudeep',
     keeperGrade: 'A+',
     draftGrade: 'A-',
-    strength: 'Best RB room in the league',
-    weakness: 'WR depth needs to hold the line',
-    headline: 'Made In Jahmyrica Builds An Amberwood Champion',
+    identity: 'A ground-and-pound roster that wants to win the trenches every week',
+    concern: 'Outside of Drake London, the WR room needs a second reliable starter to appear',
+    xFactor: 'Drake London (Round 4)',
+    xFactorNote: 'If London becomes a true WR1 alpha, this roster has no positional weakness and the RB edge simply overwhelms the field.',
+    headline: 'Gibbs, Love, and Javonte Turn Anudeep Into The League\'s Weekly Bully',
     storyline:
       'Anudeep built the type of RB room that makes opponents start trade shopping before Week 1. Jahmyr Gibbs is the headliner, but Jeremiyah Love, Javonte Williams, Rico Dowdle, and Brian Robinson give this team serious flex muscle. If Drake London becomes the alpha and Joe Burrow stays healthy, this can look like the 2005 Steelers with better PPR formatting. The formula is simple: own the RB slots, own the flex slots, and make everyone else chase.',
   },
@@ -155,9 +143,11 @@ export const teamProfiles: TeamProfile[] = [
     manager: 'Sahil',
     keeperGrade: 'A',
     draftGrade: 'B+',
-    strength: 'Elite WR trio',
-    weakness: 'TE is the soft spot',
-    headline: 'Nico De Gallo Goes Back-To-Back',
+    identity: 'A defending champ with the league\'s most explosive WR ceiling',
+    concern: 'The TE spot and QB slot both need somebody to just be steady',
+    xFactor: 'Jaylen Warren (Round 5)',
+    xFactorNote: 'If Warren carves out a true 1B role behind Henry, the lineup suddenly has three RB-eligible weapons and the depth issue disappears.',
+    headline: 'Jefferson, Pickens, and Wilson Fire Sahil Toward A Back-To-Back Title',
     storyline:
       'The defending 2025 champion came back with Justin Jefferson, George Pickens, and Garrett Wilson, which is a title defense with pyrotechnics. Derrick Henry and Travis Etienne give the lineup enough RB bite to survive the tough weeks, and Jaylen Warren can patch a lot of lineup bruises. If Isaiah Likely is just steady enough, Sahil can pull the Chiefs-style repeat and spend December reminding everybody that the throne is not vacant.',
   },
@@ -166,9 +156,11 @@ export const teamProfiles: TeamProfile[] = [
     manager: 'Pranav P',
     keeperGrade: 'B+',
     draftGrade: 'B+',
-    strength: 'RB/WR balance',
-    weakness: 'TE ceiling is shaky',
-    headline: 'Super O-Marion Bros Levels Up To The Title',
+    identity: 'A no-holes, no-panic roster with real depth at every skill spot',
+    concern: 'No true elite ceiling player besides CMC to win a shootout on his own',
+    xFactor: 'Justin Herbert (Round 12)',
+    xFactorNote: 'A 12th-round starting QB in a two-flex PPR league is a cheat code if Herbert plays like Herbert; unlocks a top-three finish.',
+    headline: 'CMC and Nabers Anchor A Pranav P Roster With No Weekly Off Switch',
     storyline:
       'Pranav P drafted like a GM who did not panic, did not chase, and quietly built a problem. Trading back kept him firing through the third, fourth, and fifth, where Zay Flowers, keeper Omarion Hampton, and Jameson Williams turned patience into lineup depth. Malik Nabers, Rome Odunze, and Justin Herbert give the roster even more answers, with Herbert in the 12th looking like the kind of value pick that gets replayed during playoff week. If CMC is CMC and one of the young WRs becomes a weekly rocket, this roster can win without needing a miracle.',
   },
@@ -177,9 +169,11 @@ export const teamProfiles: TeamProfile[] = [
     manager: 'Roshik',
     keeperGrade: 'A+',
     draftGrade: 'B+',
-    strength: 'Elite TE advantage',
-    weakness: 'WR room needs one more ceiling outcome',
-    headline: 'Olave Garden Serves Up An Amberwood Title',
+    identity: 'A superstar-spine build with weekly positional edges at RB, QB, and TE',
+    concern: 'The WR room needs one more player to hit a true starter ceiling',
+    xFactor: 'Chris Godwin (Round 9)',
+    xFactorNote: 'A healthy Godwin in the 9th is a starter-caliber PPR asset for free; fixes the only real weakness on the roster.',
+    headline: 'Bijan, Lamar, and Bowers Give Roshik A Spine Nobody In Amberwood Wants To See',
     storyline:
       'Roshik starts every week with Bijan Robinson, Lamar Jackson, and Brock Bowers. That is a superstar spine with 2019 Ravens energy: weird to defend, explosive by design, and capable of making normal fantasy math look silly. Chris Olave and DJ Moore do not need to be superheroes, but one of them has to punch up. If Bowers becomes the weekly TE cheat code, this team can win matchups before the late window even kicks off.',
   },
@@ -188,9 +182,11 @@ export const teamProfiles: TeamProfile[] = [
     manager: 'Abhishek',
     keeperGrade: 'B+',
     draftGrade: 'B',
-    strength: 'Best balanced roster construction',
-    weakness: 'Needs one true superstar leap',
-    headline: 'Egg McMuffins Cracks The Championship Code',
+    identity: 'The most balanced roster in the league with no weak starting slot',
+    concern: 'Needs one middle-round WR to hit a true breakout ceiling',
+    xFactor: 'Jayden Daniels (Round 7)',
+    xFactorNote: 'A top-five QB finish in the 7th is a season-defining edge and turns the trade-back strategy into a title formula.',
+    headline: 'Chase Brown and Breece Hall Fuel A Balanced Abhishek Playoff Machine',
     storyline:
       'Abhishek traded back and stormed the middle rounds with two third-round picks and two fourth-round picks, the fantasy equivalent of bringing extra draft cards to the podium. Breece Hall, Ladd McConkey, Tetairoa McMillan, and Mike Evans turned that volume into immediate starters around Chase Brown and keeper Emeka Egbuka. Jayden Daniels in the 7th could be the pick that turns this from solid into scary. If one of the young WRs erupts, this team becomes the playoff matchup nobody wants because every slot is alive.',
   },
@@ -199,9 +195,11 @@ export const teamProfiles: TeamProfile[] = [
     manager: 'Aditya',
     keeperGrade: 'A-',
     draftGrade: 'B-',
-    strength: 'Strong core pieces',
-    weakness: 'A few draft bets need to outrun ADP',
-    headline: 'Breece\'s Pieces Puts The Trophy Together',
+    identity: 'A high-variance roster leaning on veteran bounce-backs to detonate',
+    concern: 'A handful of ADP reaches need to outrun their draft cost immediately',
+    xFactor: 'Quinshon Judkins (Round 5)',
+    xFactorNote: 'A true lead-back role behind Cook gives this team two weekly RB starters and turns the flex spot into a real weapon.',
+    headline: 'Nico Collins and James Cook Anchor Aditya\'s Long-Con Title Push',
     storyline:
       'Aditya has a very funny villain arc sitting on the runway. Nico Collins and James Cook are premium anchors, while Davante Adams, Quinshon Judkins, Parker Washington, Courtland Sutton, and Kyle Pitts give him multiple ways to find a second gear. The model did not love the Patrick Mahomes cost, but if Mahomes turns back into Mahomes, nobody will care. This team can spend September getting roasted and December posting screenshots.',
   },
@@ -210,9 +208,11 @@ export const teamProfiles: TeamProfile[] = [
     manager: 'Gary',
     keeperGrade: 'B',
     draftGrade: 'B-',
-    strength: 'Best QB room plus an elite top three',
-    weakness: 'Depth has to prove it fast',
-    headline: 'GarVeen\'s Superstars Finish The Job',
+    identity: 'A three-superstar roster with a real weekly QB advantage',
+    concern: 'The bottom half of the lineup has to produce actual starter-quality weeks',
+    xFactor: 'Carnell Tate (Round 5)',
+    xFactorNote: 'A rookie WR2 outcome gives Gary a fourth reliable weekly starter and turns three superstars into a real title threat.',
+    headline: 'Josh Allen, Amon-Ra, and JT Give Gary A Trio That Can Steal Any Week',
     storyline:
       'Josh Allen, Amon-Ra St. Brown, and Jonathan Taylor is a fantastic way to start any fantasy football sentence. That trio can win weeks by itself, which is more than most teams can say. The season comes down to Christian Watson, Carnell Tate, Stefon Diggs, RJ Harvey, and Dalton Kincaid turning the supporting cast into real weekly answers. If two of those pieces hit, Gary becomes the classic lower-seed nightmare with a superstar QB and no fear.',
   },
@@ -221,9 +221,11 @@ export const teamProfiles: TeamProfile[] = [
     manager: 'Sahit',
     keeperGrade: 'A',
     draftGrade: 'C+',
-    strength: 'QB/TE upside',
-    weakness: 'RB and flex depth are thin',
-    headline: 'Loveland Island Becomes Championship Country',
+    identity: 'A boom-or-bust roster living on a very loud top five',
+    concern: 'RB and flex depth thins out fast if any starter misses time',
+    xFactor: 'Drake Maye (Round 6)',
+    xFactorNote: 'A true year-two QB leap turns Sahit\'s ceiling into legit contender territory and gives the offense a second gear it currently lacks.',
+    headline: 'A.J. Brown and Saquon Give Sahit A Top Five Nobody Wants In The Playoffs',
     storyline:
       'Sahit has a top five that can absolutely crash the playoff party: A.J. Brown, Saquon Barkley, Jaylen Waddle, Drake Maye, and Colston Loveland. The roster gets thin faster than the contenders above him, but the ceiling pieces are real. If Maye and Loveland pop at the same time, this starts looking like a 2007 Giants season arc: uneven early, dangerous late, and suddenly everyone is nervous. The margin is thin, but the upside is loud.',
   },
@@ -232,9 +234,11 @@ export const teamProfiles: TeamProfile[] = [
     manager: 'Taaha',
     keeperGrade: 'C+',
     draftGrade: 'C+',
-    strength: 'Exciting young foundation',
-    weakness: 'Flex depth ranked last in the model',
-    headline: 'Burden Of Proof Becomes Proof Of Greatness',
+    identity: 'A young roster stacked with breakout doors nobody else was ready to open',
+    concern: 'Too many picks need to outperform ADP for the plan to actually work',
+    xFactor: 'Luther Burden III (Round 5)',
+    xFactorNote: 'A true rookie breakout gives Taaha a WR2 he drafted a full round early and validates the entire aggressive draft plan.',
+    headline: 'JSN, K9, and Kyren Give Taaha A Foundation The League Underestimated',
     storyline:
       'Taaha drafted like a man planting flags, not checking consensus. JSN, Kenneth Walker, Kyren Williams, Luther Burden, Harold Fannin, Xavier Worthy, and Bo Nix give this roster a lot of breakout doors. Fannin was a reach by ADP, but if he hits, that pick changes the whole tone of the draft. If Burden and Fannin level up while Worthy finally detonates, Taaha gets to spend the season handing out apology forms.',
   },
@@ -243,9 +247,11 @@ export const teamProfiles: TeamProfile[] = [
     manager: 'Abhiram',
     keeperGrade: 'N/A',
     draftGrade: 'C',
-    strength: 'Elite TE and real RB upside',
-    weakness: 'No drafted QB',
-    headline: 'From No QB To No. 1: Ayy-Shane.com Stuns Amberwood',
+    identity: 'A talent-rich skill-position roster with one giant missing piece',
+    concern: 'No drafted QB means every week starts with a waiver-wire prayer',
+    xFactor: 'DK Metcalf (Round 8)',
+    xFactorNote: 'A true bounce-back season gives Abhiram a third real WR starter and buys enough weekly firepower to survive the QB hole.',
+    headline: 'McBride, Achane, and Bucky Give Abhiram A Skill Core Too Loud To Ignore',
     storyline:
       'Abhiram left the draft with one giant blinking sign that says find quarterback, but the rest of the roster is not dead. Trey McBride, De\'Von Achane, Bucky Irving, Chuba Hubbard, Aaron Jones, Tee Higgins, Brian Thomas, DK Metcalf, and 2026 rookie Jordyn Tyson are enough talent to climb fast. Remember, 2024 Jackson\'s Jets won from 7-7 territory, so nobody gets buried in August. Nail QB on waivers or in a trade, and this ranking can look rude by midseason.',
   },

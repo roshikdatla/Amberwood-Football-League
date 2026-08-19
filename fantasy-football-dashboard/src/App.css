@@ -1374,6 +1374,29 @@ body, html {
   padding: 24px 34px 30px;
 }
 
+.nytimes-draft-newsletter .newspaper-cover-photo {
+  margin: 0 0 24px;
+  padding: 0;
+}
+
+.nytimes-draft-newsletter .newspaper-cover-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--nyt-rule);
+}
+
+.nytimes-draft-newsletter .newspaper-cover-photo figcaption {
+  color: var(--nyt-ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.9rem;
+  font-style: italic;
+  line-height: 1.4;
+  margin-top: 8px;
+  padding: 0 4px;
+  opacity: 0.85;
+}
+
 .nytimes-draft-newsletter .headline {
   border-bottom: 1px solid var(--nyt-rule);
   color: var(--nyt-ink);
