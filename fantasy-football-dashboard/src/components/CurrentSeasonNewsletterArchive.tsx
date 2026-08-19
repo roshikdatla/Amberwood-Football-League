@@ -251,9 +251,6 @@ const CurrentSeasonNewsletterArchive: React.FC = () => {
                     <p>
                       <strong>Biggest Concern:</strong> {team.concern}
                     </p>
-                    <p>
-                      <strong>X-Factor:</strong> {team.xFactor} — {team.xFactorNote}
-                    </p>
                     <p className="championship-headline">
                       <span>Championship Headline</span>
                       <strong>{team.headline}</strong>
