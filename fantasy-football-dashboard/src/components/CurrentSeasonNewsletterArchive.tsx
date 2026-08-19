@@ -112,7 +112,8 @@ const CurrentSeasonNewsletterArchive: React.FC = () => {
               <div className="story-layout draft-results-layout">
                 <div className="story-column">
                   <h3>Top 5 Biggest Reaches</h3>
-                  <table className="newspaper-data-table">
+                  <div className="draft-picks-scroll">
+                  <table className="newspaper-data-table draft-picks-table">
                     <thead>
                       <tr>
                         <th>#</th>
@@ -136,11 +137,13 @@ const CurrentSeasonNewsletterArchive: React.FC = () => {
                       ))}
                     </tbody>
                   </table>
+                  </div>
                 </div>
 
                 <div className="story-column">
                   <h3>Top 5 Value Picks</h3>
-                  <table className="newspaper-data-table value-table">
+                  <div className="draft-picks-scroll">
+                  <table className="newspaper-data-table value-table draft-picks-table">
                     <thead>
                       <tr>
                         <th>#</th>
@@ -164,6 +167,7 @@ const CurrentSeasonNewsletterArchive: React.FC = () => {
                       ))}
                     </tbody>
                   </table>
+                  </div>
                 </div>
               </div>
             </div>

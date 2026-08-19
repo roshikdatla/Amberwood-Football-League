@@ -1519,8 +1519,14 @@ body, html {
   margin-bottom: 12px;
 }
 
-.nytimes-draft-newsletter .position-rankings-scroll {
+.nytimes-draft-newsletter .position-rankings-scroll,
+.nytimes-draft-newsletter .draft-picks-scroll {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.nytimes-draft-newsletter .draft-picks-table {
+  min-width: 380px;
 }
 
 .nytimes-draft-newsletter .position-rankings-table {
@@ -3963,6 +3969,12 @@ body, html {
     display: block;
     overflow-x: auto;
     white-space: nowrap;
+  }
+
+  .draft-picks-scroll .newspaper-data-table,
+  .position-rankings-scroll .newspaper-data-table {
+    display: table;
+    overflow-x: visible;
   }
 
   .power-newspaper-row {
