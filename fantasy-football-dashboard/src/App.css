@@ -4295,61 +4295,31 @@ body, html {
   text-align: center;
 }
 
-.rivalry-tale-grid {
-  align-items: stretch;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 160px minmax(0, 1fr);
-  margin: 18px 0;
-}
-
-.rivalry-team-panel,
-.rivalry-series-seal {
+.rivalry-series-score {
   align-items: center;
+  background: #171717;
+  color: #fff;
   display: flex;
-  flex-direction: column;
+  gap: 12px;
   justify-content: center;
-  min-height: 120px;
-  padding: 15px;
+  margin: 18px auto;
+  max-width: 260px;
+  padding: 11px 18px;
   text-align: center;
 }
 
-.rivalry-team-panel {
-  background: #fff;
-  border: 2px solid #000;
-}
-
-.rivalry-manager,
-.rivalry-series-seal > span {
+.rivalry-series-score > span {
   font-family: 'Times New Roman', serif;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
 
-.rivalry-team-panel strong {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.15rem;
-  line-height: 1.2;
-  margin: 7px 0;
-}
-
-.rivalry-team-panel small,
-.rivalry-series-seal small {
-  font-family: 'Times New Roman', serif;
-  font-style: italic;
-}
-
-.rivalry-series-seal {
-  background: #171717;
-  color: #fff;
-}
-
-.rivalry-series-seal strong {
+.rivalry-series-score strong {
   color: #fff;
   font-family: Georgia, 'Times New Roman', serif;
   font-size: 1.05rem;
-  margin: 8px 0;
 }
 
 .rivalry-stat-strip {
@@ -4544,13 +4514,9 @@ body, html {
     font-size: 1.3rem;
   }
 
-  .rivalry-tale-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .rivalry-team-panel,
-  .rivalry-series-seal {
-    min-height: 100px;
+  .rivalry-series-score {
+    margin: 14px auto;
+    padding: 9px 14px;
   }
 
   .rivalry-stat-strip {

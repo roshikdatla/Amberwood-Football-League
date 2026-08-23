@@ -87,7 +87,7 @@ const buildAnalytics = (
   const teams: TeamWithCandidates[] = rosters.map((roster) => {
     const user = userMap.get(roster.owner_id);
     const manager = user?.display_name || user?.username || `Team ${roster.roster_id}`;
-    const name = user?.metadata?.team_name || manager;
+    const name = user?.metadata?.team_name?.trim() || manager;
     const playerLines = new Map<string, PlayerLine>();
     const weeklyScores: { week: number; points: number }[] = [];
     const positionTotals = new Map(positionOrder.map((position) => [position, 0]));

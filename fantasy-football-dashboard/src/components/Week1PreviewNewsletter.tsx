@@ -77,30 +77,16 @@ const Week1PreviewNewsletter: React.FC = () => {
                       <span>{rivalry.meetings} prior meetings</span>
                     </div>
 
-                    <h3>{rivalry.headline}</h3>
+                    <h3>{rivalry.sideA.teamName} vs {rivalry.sideB.teamName}</h3>
                     <span className="rivalry-summary-label">Rivalry summary</span>
                     <p className="rivalry-deck">{rivalry.deck}</p>
 
-                    <div className="rivalry-tale-grid">
-                      <div className="rivalry-team-panel">
-                        <span className="rivalry-manager">{rivalry.sideA.manager}</span>
-                        <strong>{rivalry.sideA.teamName}</strong>
-                        <small>
-                          {rivalry.sideA.wins}–{rivalry.sideA.losses} in series
-                        </small>
-                      </div>
-                      <div className="rivalry-series-seal">
-                        <span>Series</span>
-                        <strong>{getSeriesLabel(rivalry)}</strong>
-                        <small>Since {rivalry.historyStart}</small>
-                      </div>
-                      <div className="rivalry-team-panel">
-                        <span className="rivalry-manager">{rivalry.sideB.manager}</span>
-                        <strong>{rivalry.sideB.teamName}</strong>
-                        <small>
-                          {rivalry.sideB.wins}–{rivalry.sideB.losses} in series
-                        </small>
-                      </div>
+                    <div
+                      className="rivalry-series-score"
+                      aria-label={`Series score: ${getSeriesLabel(rivalry)}`}
+                    >
+                      <span>Series</span>
+                      <strong>{getSeriesLabel(rivalry)}</strong>
                     </div>
 
                     <div className="rivalry-stat-strip">
