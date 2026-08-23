@@ -4766,66 +4766,116 @@ body, html {
 
 @media (max-width: 760px) {
   .rivalry-table-scroll {
-    overflow: visible;
+    margin: 0 -4px;
+    overflow-x: auto;
+    padding: 0 4px;
   }
 
   .rivalry-position-table,
   .rivalry-history-table {
-    border-top: 0 !important;
-    display: block !important;
-    min-width: 0;
+    border-top: 2px solid #111 !important;
+    display: table !important;
+    font-size: 0.68rem;
+    line-height: 1.15;
+    margin: 5px 0 12px;
+    min-width: 0 !important;
+    table-layout: fixed;
     white-space: normal;
     width: 100%;
   }
 
   .rivalry-position-table thead,
   .rivalry-history-table thead {
-    display: none;
+    display: table-header-group;
   }
 
   .rivalry-position-table tbody,
-  .rivalry-history-table tbody,
-  .rivalry-position-table tr,
-  .rivalry-history-table tr {
-    display: block;
-    width: 100%;
+  .rivalry-history-table tbody {
+    display: table-row-group;
   }
 
   .rivalry-position-table tr,
   .rivalry-history-table tr {
-    background: #fff;
-    border: 1px solid #aaa;
-    margin-bottom: 10px;
-    padding: 5px 10px;
+    display: table-row;
   }
 
+  .rivalry-position-table th,
+  .rivalry-history-table th,
   .rivalry-position-table td,
   .rivalry-history-table td {
-    align-items: baseline;
-    border-bottom: 1px solid #ddd !important;
-    display: grid;
-    gap: 12px;
-    grid-template-columns: minmax(92px, 0.9fr) minmax(0, 1.1fr);
-    padding: 7px 0 !important;
-    text-align: right !important;
+    border-bottom: 1px solid #d6d1c4 !important;
+    display: table-cell;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+    padding: 5px 2px !important;
+    text-align: center !important;
+    vertical-align: middle;
     white-space: normal;
-    width: 100%;
   }
 
-  .rivalry-position-table td:last-child,
-  .rivalry-history-table td:last-child {
-    border-bottom: 0 !important;
+  .rivalry-position-table th,
+  .rivalry-history-table th {
+    font-size: 0.57rem !important;
+    hyphens: auto;
+    letter-spacing: 0;
+    text-transform: uppercase;
   }
 
   .rivalry-position-table td::before,
   .rivalry-history-table td::before {
-    color: #666;
-    content: attr(data-label);
-    font-size: 0.68rem;
-    font-weight: 700;
+    content: none;
+  }
+
+  .rivalry-position-table th:first-child,
+  .rivalry-position-table td:first-child {
+    width: 18%;
+  }
+
+  .rivalry-position-table th:nth-child(2),
+  .rivalry-position-table td:nth-child(2),
+  .rivalry-position-table th:nth-child(3),
+  .rivalry-position-table td:nth-child(3) {
+    width: 22%;
+  }
+
+  .rivalry-position-table th:last-child,
+  .rivalry-position-table td:last-child {
+    width: 38%;
+  }
+
+  .rivalry-history-table th:first-child,
+  .rivalry-history-table td:first-child {
+    width: 17%;
+  }
+
+  .rivalry-history-table th:nth-child(2),
+  .rivalry-history-table td:nth-child(2) {
+    width: 13%;
+  }
+
+  .rivalry-history-table th:nth-child(3),
+  .rivalry-history-table td:nth-child(3),
+  .rivalry-history-table th:nth-child(4),
+  .rivalry-history-table td:nth-child(4) {
+    width: 20%;
+  }
+
+  .rivalry-history-table th:last-child,
+  .rivalry-history-table td:last-child {
+    width: 30%;
+  }
+
+  .rivalry-table-title {
+    font-size: 0.82rem;
     letter-spacing: 0.5px;
-    text-align: left;
-    text-transform: uppercase;
+    margin: 17px 0 5px;
+    padding-bottom: 4px;
+  }
+
+  .rivalry-playoff-key {
+    font-size: 0.65rem;
+    line-height: 1.25;
+    margin-top: 4px;
   }
 }
 
