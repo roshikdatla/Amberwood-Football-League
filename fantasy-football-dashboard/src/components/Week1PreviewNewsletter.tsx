@@ -167,10 +167,10 @@ const Week1PreviewNewsletter: React.FC = () => {
                                 : rivalry.sideB.manager;
                             return (
                               <tr key={position}>
-                                <td>{position}</td>
-                                <td>{formatPoints(aPoints)}</td>
-                                <td>{formatPoints(bPoints)}</td>
-                                <td>{leader}</td>
+                                <td data-label="Position">{position}</td>
+                                <td data-label={rivalry.sideA.manager}>{formatPoints(aPoints)}</td>
+                                <td data-label={rivalry.sideB.manager}>{formatPoints(bPoints)}</td>
+                                <td data-label="Historical edge">{leader}</td>
                               </tr>
                             );
                           })}
@@ -193,13 +193,13 @@ const Week1PreviewNewsletter: React.FC = () => {
                         <tbody>
                           {rivalry.history.map((game) => (
                             <tr key={`${game.season}-${game.week}`}>
-                              <td>{game.season}</td>
-                              <td>
+                              <td data-label="Season">{game.season}</td>
+                              <td data-label="Week">
                                 {game.week}{game.isPlayoff && <span className="playoff-star"> ★</span>}
                               </td>
-                              <td>{formatPoints(game.scoreA)}</td>
-                              <td>{formatPoints(game.scoreB)}</td>
-                              <td>{game.winner}</td>
+                              <td data-label={rivalry.sideA.manager}>{formatPoints(game.scoreA)}</td>
+                              <td data-label={rivalry.sideB.manager}>{formatPoints(game.scoreB)}</td>
+                              <td data-label="Winner">{game.winner}</td>
                             </tr>
                           ))}
                         </tbody>

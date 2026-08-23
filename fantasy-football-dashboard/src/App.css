@@ -4580,6 +4580,296 @@ body, html {
   }
 }
 
+/* Mobile-first newsletter reading experience */
+@media (max-width: 768px) {
+  .nav-container {
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .nav-brand {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .nav-brand-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .nav-links {
+    flex: 0 0 auto;
+  }
+
+  .newsletter-archive {
+    padding: 8px 0 24px;
+    width: 100%;
+  }
+
+  .newsletter-archive .newspaper-container {
+    border-left: 0;
+    border-right: 0;
+    box-shadow: none;
+    margin: 0;
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .newsletter-archive .newspaper-header,
+  .nytimes-draft-newsletter .newspaper-header {
+    padding: 16px 14px 13px;
+  }
+
+  .newsletter-archive .newspaper-masthead {
+    min-width: 0;
+    padding: 0;
+  }
+
+  .newsletter-archive .newspaper-title,
+  .nytimes-draft-newsletter .newspaper-title {
+    font-size: clamp(1.65rem, 9vw, 2.35rem) !important;
+    letter-spacing: 0.5px;
+    line-height: 1.02;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+  }
+
+  .newsletter-archive .newspaper-subtitle {
+    font-size: 0.78rem !important;
+    line-height: 1.35;
+    margin: 7px 0 12px;
+  }
+
+  .newsletter-archive .newspaper-meta {
+    gap: 3px;
+    grid-template-columns: 1fr;
+    margin-top: 10px;
+    padding: 8px 4px;
+    text-align: center;
+  }
+
+  .newsletter-archive .newspaper-meta .edition,
+  .newsletter-archive .newspaper-meta .date,
+  .newsletter-archive .newspaper-meta .price {
+    justify-self: center;
+  }
+
+  .newsletter-archive .newspaper-content,
+  .nytimes-draft-newsletter .newspaper-content {
+    min-width: 0;
+    padding: 18px 14px 24px;
+  }
+
+  .newsletter-archive .main-story,
+  .newsletter-archive .story-layout,
+  .newsletter-archive .story-column,
+  .newsletter-archive .team-analysis,
+  .newsletter-archive .week-preview,
+  .newsletter-archive .final-assessment,
+  .newsletter-archive .teams-grid,
+  .newsletter-archive .team-card,
+  .newsletter-archive .matchup-result,
+  .newsletter-archive .matchup-preview,
+  .newsletter-archive .sidebar-story,
+  .newsletter-archive .center-image,
+  .newsletter-archive .left-image {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .newsletter-archive .story-layout,
+  .newsletter-archive .teams-grid {
+    gap: 14px !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .newsletter-archive .story-column,
+  .newsletter-archive .story-column p,
+  .newsletter-archive .assessment-text,
+  .newsletter-archive .team-analysis-card p {
+    text-align: left;
+    text-indent: 0;
+  }
+
+  .newsletter-archive .story-column {
+    font-size: 0.98rem;
+    line-height: 1.62;
+  }
+
+  .newsletter-archive .headline,
+  .nytimes-draft-newsletter .headline {
+    font-size: clamp(1.35rem, 7vw, 1.85rem) !important;
+    letter-spacing: 0;
+    line-height: 1.08;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+  }
+
+  .newsletter-archive .section-headline,
+  .nytimes-draft-newsletter .section-headline {
+    font-size: clamp(1.25rem, 6vw, 1.6rem);
+    letter-spacing: 0.3px;
+    line-height: 1.12;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+  }
+
+  .newsletter-archive h3,
+  .newsletter-archive h4,
+  .newsletter-archive h5,
+  .newsletter-archive p,
+  .newsletter-archive li,
+  .newsletter-archive a {
+    overflow-wrap: anywhere;
+  }
+
+  .newsletter-archive .team-card,
+  .newsletter-archive .matchup-preview,
+  .newsletter-archive .matchup-result,
+  .newsletter-archive .sidebar-story,
+  .newsletter-archive .final-assessment {
+    padding: 13px !important;
+  }
+
+  .newsletter-archive img,
+  .newsletter-archive video {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .newsletter-archive .center-image > div,
+  .newsletter-archive .left-image > div,
+  .newsletter-archive figure {
+    max-width: 100% !important;
+  }
+
+  .newsletter-archive .image-collage,
+  .newsletter-archive .image-collage-large {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    max-width: 100%;
+  }
+
+  .newsletter-archive .collage-photo,
+  .newsletter-archive .collage-photo-large,
+  .newsletter-archive .collage-photo-horizontal {
+    height: auto !important;
+    max-height: 420px;
+  }
+
+  .newsletter-archive .newspaper-data-table {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .rivalry-table-scroll {
+    overflow: visible;
+  }
+
+  .rivalry-position-table,
+  .rivalry-history-table {
+    border-top: 0 !important;
+    display: block !important;
+    min-width: 0;
+    white-space: normal;
+    width: 100%;
+  }
+
+  .rivalry-position-table thead,
+  .rivalry-history-table thead {
+    display: none;
+  }
+
+  .rivalry-position-table tbody,
+  .rivalry-history-table tbody,
+  .rivalry-position-table tr,
+  .rivalry-history-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .rivalry-position-table tr,
+  .rivalry-history-table tr {
+    background: #fff;
+    border: 1px solid #aaa;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+  }
+
+  .rivalry-position-table td,
+  .rivalry-history-table td {
+    align-items: baseline;
+    border-bottom: 1px solid #ddd !important;
+    display: grid;
+    gap: 12px;
+    grid-template-columns: minmax(92px, 0.9fr) minmax(0, 1.1fr);
+    padding: 7px 0 !important;
+    text-align: right !important;
+    white-space: normal;
+    width: 100%;
+  }
+
+  .rivalry-position-table td:last-child,
+  .rivalry-history-table td:last-child {
+    border-bottom: 0 !important;
+  }
+
+  .rivalry-position-table td::before,
+  .rivalry-history-table td::before {
+    color: #666;
+    content: attr(data-label);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-align: left;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .nav-brand {
+    flex: 0 0 auto;
+  }
+
+  .nav-brand-text {
+    display: none;
+  }
+
+  .brand-logo {
+    height: 36px;
+    width: 36px;
+  }
+
+  .nav-links {
+    gap: 2px;
+  }
+
+  .nav-link {
+    font-size: 0.76rem;
+    padding: 6px;
+  }
+
+  .newsletter-archive .newspaper-header,
+  .nytimes-draft-newsletter .newspaper-header,
+  .newsletter-archive .newspaper-content,
+  .nytimes-draft-newsletter .newspaper-content {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .rivalry-profile {
+    padding: 12px;
+  }
+}
+
 /* Typing cursor animation for chat */
 .typing-cursor {
   animation: blink 1s infinite;

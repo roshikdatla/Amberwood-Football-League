@@ -13,7 +13,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage = 'home' }) => {
       <div className="nav-container">
         <a href="/" className="nav-brand">
           <img src="/b4318b8c9c94900e518a6168a6a73ab6.JPEG" alt="Amberwood Fantasy League" className="brand-logo" />
-          Amberwood Football League
+          <span className="nav-brand-text">Amberwood Football League</span>
         </a>
         
         <div className="nav-links">
