@@ -59,3 +59,6 @@ venv.bak/
 # OS
 .DS_Store
 Thumbs.db
+
+# Local matchup polling database
+amberwood_votes.db*

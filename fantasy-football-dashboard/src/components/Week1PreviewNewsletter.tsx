@@ -77,7 +77,14 @@ const Week1PreviewNewsletter: React.FC = () => {
                       <span>{rivalry.meetings} prior meetings</span>
                     </div>
 
-                    <h3>{rivalry.sideA.teamName} vs {rivalry.sideB.teamName}</h3>
+                    <h3
+                      className="rivalry-versus-title"
+                      aria-label={`${rivalry.sideA.teamName} versus ${rivalry.sideB.teamName}`}
+                    >
+                      <span>{rivalry.sideA.teamName}</span>
+                      <b aria-hidden="true">vs</b>
+                      <span>{rivalry.sideB.teamName}</span>
+                    </h3>
                     <span className="rivalry-summary-label">Rivalry summary</span>
                     <p className="rivalry-deck">{rivalry.deck}</p>
 

@@ -2388,11 +2388,17 @@ body, html {
   gap: 15px;
 }
 
+.matchup-card-shell {
+  background: #f8f9fa;
+  border: 1px solid #e2e7ee;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
 .matchup-card {
   display: flex;
   align-items: center;
-  background: #f8f9fa;
-  border-radius: 12px;
+  background: transparent;
   padding: 20px;
   gap: 20px;
 }
@@ -2446,6 +2452,132 @@ body, html {
   color: #666;
   font-size: 0.9rem;
   flex-shrink: 0;
+}
+
+.matchup-poll {
+  background: #fff;
+  border-top: 1px solid #dfe5ec;
+  padding: 14px 20px 16px;
+}
+
+.matchup-poll-heading {
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.matchup-poll-heading strong {
+  color: #15243a;
+  font-size: 0.85rem;
+}
+
+.matchup-poll-heading span {
+  color: #68778c;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.matchup-poll-options {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.matchup-vote-button {
+  align-items: center;
+  background: #f5f7fa;
+  border: 1px solid #cfd8e4;
+  border-radius: 8px;
+  color: #15243a;
+  cursor: pointer;
+  display: flex;
+  font-family: inherit;
+  gap: 8px;
+  justify-content: space-between;
+  min-width: 0;
+  padding: 10px 12px;
+  text-align: left;
+  transition: border-color 0.18s ease, background-color 0.18s ease, transform 0.18s ease;
+}
+
+.matchup-vote-button:hover:not(:disabled),
+.matchup-vote-button:focus-visible:not(:disabled) {
+  background: #edf3fb;
+  border-color: #1d4f91;
+  transform: translateY(-1px);
+}
+
+.matchup-vote-button:focus-visible {
+  outline: 3px solid rgba(248, 182, 45, 0.45);
+  outline-offset: 2px;
+}
+
+.matchup-vote-button:disabled {
+  cursor: default;
+}
+
+.matchup-vote-button.selected {
+  background: #eaf2fc;
+  border-color: #1d4f91;
+  box-shadow: inset 3px 0 0 #1d4f91;
+}
+
+.matchup-vote-button span {
+  font-size: 0.8rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.matchup-vote-button b {
+  color: #7a1111;
+  flex: 0 0 auto;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.matchup-vote-meter {
+  background: #f8b62d;
+  border-radius: 999px;
+  display: flex;
+  height: 5px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.matchup-vote-meter span {
+  background: #1d4f91;
+  display: block;
+  min-width: 2px;
+  transition: width 0.3s ease;
+}
+
+.matchup-poll-status,
+.matchup-poll-error {
+  color: #68778c;
+  font-size: 0.7rem;
+  margin: 8px 0 0;
+  text-align: center;
+}
+
+.matchup-poll-error {
+  align-items: center;
+  color: #9d1c24;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.matchup-poll-error button {
+  background: transparent;
+  border: 0;
+  color: #1d4f91;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+  padding: 2px 4px;
+  text-decoration: underline;
 }
 
 .no-matchups {
@@ -3807,6 +3939,17 @@ body, html {
     flex-direction: column;
     gap: 8px;
   }
+
+  .matchup-poll {
+    padding: 12px;
+  }
+
+  .matchup-vote-button {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+    padding: 9px;
+  }
   
   .team-matchup {
     border: none !important;
@@ -3988,6 +4131,19 @@ body, html {
     padding: 8px;
     flex-direction: column;
     gap: 6px;
+  }
+
+  .matchup-poll-heading {
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .matchup-vote-button span {
+    font-size: 0.74rem;
+  }
+
+  .matchup-vote-button b {
+    font-size: 0.68rem;
   }
   
   .team-matchup {
@@ -4262,15 +4418,36 @@ body, html {
   text-align: right;
 }
 
-.rivalry-profile > h3 {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.65rem;
-  letter-spacing: -0.25px;
-  line-height: 1.15;
-  margin: 0 auto 10px;
-  max-width: 850px;
+.rivalry-profile > h3.rivalry-versus-title {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+  font-weight: 800;
+  gap: 12px;
+  justify-content: center;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+  margin: 0 auto 22px;
+  max-width: 960px;
   text-align: center;
-  text-transform: uppercase;
+  text-transform: none;
+}
+
+.rivalry-versus-title b {
+  align-items: center;
+  background: #f8b62d;
+  border-radius: 50%;
+  color: #15243a;
+  display: inline-flex;
+  flex: 0 0 46px;
+  font-size: 1rem;
+  height: 46px;
+  justify-content: center;
+  letter-spacing: 0;
+  text-transform: lowercase;
+  width: 46px;
 }
 
 .rivalry-summary-label {
@@ -4510,8 +4687,22 @@ body, html {
     text-align: center;
   }
 
-  .rivalry-profile > h3 {
-    font-size: 1.3rem;
+  .rivalry-profile > h3.rivalry-versus-title {
+    font-size: clamp(1.35rem, 7vw, 1.8rem);
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .rivalry-versus-title span {
+    flex: 1 1 100%;
+  }
+
+  .rivalry-versus-title b {
+    flex-basis: 36px;
+    font-size: 0.8rem;
+    height: 36px;
+    margin: -2px 0;
+    width: 36px;
   }
 
   .rivalry-series-score {
