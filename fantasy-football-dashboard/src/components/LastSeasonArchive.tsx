@@ -130,6 +130,15 @@ const LastSeasonArchive: React.FC = () => {
       </section>
 
       <main className="last-season-content">
+        <Link className="archive-analytics-card" to="/last-season/beyond-the-boxscore">
+          <div>
+            <span>2025 Analytics Lab</span>
+            <h2>Beyond the Boxscore</h2>
+            <p>Explore every team's MVP, Bum, positional scoring ranks, best weeks, consistency, and lineup efficiency from the complete 2025 season.</p>
+          </div>
+          <strong>Open dashboard →</strong>
+        </Link>
+
         <section className="archive-search-band">
           <label htmlFor="last-season-search">Search 2025 Season</label>
           <div className="archive-search-row">

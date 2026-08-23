@@ -116,6 +116,78 @@ body, html {
   border-bottom: 2px solid #fbbf24;
 }
 
+/* Beyond the Boxscore */
+.beyond-page { min-height: calc(100vh - 70px); background: #f5f2e9; color: #152238; }
+.beyond-hero { padding: 68px max(24px, calc((100vw - 1240px) / 2)); color: white; background: radial-gradient(circle at 85% 20%, rgba(251,191,36,.28), transparent 28%), linear-gradient(125deg, #081a35, #163d71 62%, #1e3a8a); }
+.beyond-kicker { color: #fbbf24; font-size: .75rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.beyond-hero h1 { margin: 8px 0; font-family: Georgia, serif; font-size: clamp(2.6rem, 6vw, 5.4rem); line-height: .95; letter-spacing: -.04em; }
+.beyond-hero p { max-width: 720px; margin: 18px 0 24px; color: #dbe7f8; font-size: 1.08rem; line-height: 1.6; }
+.beyond-hero-meta { display: flex; gap: 10px; flex-wrap: wrap; }
+.beyond-hero-meta span { padding: 7px 12px; border: 1px solid rgba(255,255,255,.22); border-radius: 99px; background: rgba(255,255,255,.08); font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
+.beyond-content { max-width: 1240px; margin: 0 auto; padding: 30px 24px 70px; }
+.beyond-toolbar { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 24px; }
+.beyond-toolbar > div { display: flex; flex-direction: column; gap: 3px; }
+.beyond-toolbar > div strong { font-family: Georgia, serif; font-size: 1.35rem; }
+.beyond-toolbar > div span { color: #697586; font-size: .9rem; }
+.beyond-toolbar label { display: flex; flex-direction: column; gap: 5px; color: #526174; font-size: .7rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.beyond-toolbar select { min-width: 230px; padding: 10px 34px 10px 12px; border: 1px solid #cbd2da; border-radius: 8px; background: white; color: #152238; font: inherit; font-size: .9rem; text-transform: none; letter-spacing: 0; }
+.beyond-state { margin: 24px 0; padding: 28px; border: 1px solid #d5dbe2; background: white; text-align: center; border-radius: 10px; }
+.beyond-error { color: #9b1c1c; border-color: #efb3b3; }
+.beyond-team-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.beyond-team-card { overflow: hidden; border: 1px solid #d7d9db; border-top: 4px solid #fbbf24; border-radius: 12px; background: #fff; box-shadow: 0 12px 28px rgba(28,39,54,.08); }
+.beyond-team-card > header { display: flex; justify-content: space-between; gap: 20px; padding: 22px 22px 18px; border-bottom: 1px solid #edf0f2; }
+.beyond-rank { color: #b06c00; font-size: .7rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.beyond-team-card h2 { margin: 4px 0 0; font-family: Georgia, serif; font-size: 1.55rem; }
+.beyond-team-card header p { margin: 4px 0 0; color: #798493; font-size: .78rem; }
+.beyond-total { flex: 0 0 auto; text-align: right; }
+.beyond-total strong { display: block; color: #163d71; font-size: 1.7rem; line-height: 1; }
+.beyond-total span { color: #7b8795; font-size: .68rem; text-transform: uppercase; }
+.beyond-spotlight-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: #e7e9ec; }
+.beyond-spotlight { display: flex; min-height: 92px; gap: 10px; padding: 15px; background: #fafafa; }
+.beyond-spotlight-icon { font-size: 1.4rem; }
+.beyond-spotlight div { min-width: 0; }
+.beyond-spotlight small, .beyond-spotlight strong, .beyond-spotlight div span { display: block; }
+.beyond-spotlight small { color: #8a6308; font-size: .65rem; font-weight: 900; letter-spacing: .09em; text-transform: uppercase; }
+.beyond-spotlight strong { overflow: hidden; margin: 4px 0 2px; text-overflow: ellipsis; white-space: nowrap; font-size: .92rem; }
+.beyond-spotlight div span { color: #6c7785; font-size: .72rem; }
+.beyond-position-section { padding: 20px 22px; }
+.beyond-position-section h3 { margin: 0 0 13px; font-family: Georgia, serif; font-size: 1rem; }
+.beyond-position-table { display: grid; gap: 9px; }
+.beyond-position-row { display: grid; grid-template-columns: 32px 1fr 54px 62px 28px; align-items: center; gap: 8px; font-size: .75rem; }
+.beyond-position-row > div { height: 6px; overflow: hidden; border-radius: 99px; background: #edf0f3; }
+.beyond-position-row i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #1e3a8a, #fbbf24); }
+.beyond-position-row span { text-align: right; font-variant-numeric: tabular-nums; }
+.beyond-position-row .beyond-position-average { color: #6c7785; font-size: .7rem; }
+.beyond-position-row em { color: #1e3a8a; font-style: normal; font-weight: 800; text-align: right; }
+.beyond-team-card footer { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #e5e8eb; background: #f4f6f8; }
+.beyond-team-card footer div { padding: 13px 10px; text-align: center; border-right: 1px solid #e1e5e9; }
+.beyond-team-card footer div:last-child { border: 0; }
+.beyond-team-card footer span, .beyond-team-card footer strong { display: block; }
+.beyond-team-card footer span { color: #7b8591; font-size: .6rem; font-weight: 800; text-transform: uppercase; }
+.beyond-team-card footer strong { margin-top: 3px; font-size: .78rem; }
+.beyond-methodology { margin-top: 24px; padding: 18px 20px; border-left: 4px solid #fbbf24; background: #fff; color: #596677; font-size: .82rem; line-height: 1.55; }
+.beyond-methodology strong { color: #152238; }
+.beyond-methodology p { display: inline; margin-left: 8px; }
+
+@media (max-width: 880px) {
+  .beyond-team-grid { grid-template-columns: 1fr; }
+  .nav-links { gap: 6px; }
+  .nav-link { padding-left: 8px; padding-right: 8px; }
+}
+
+@media (max-width: 600px) {
+  .beyond-page { min-height: calc(100vh - 60px); }
+  .beyond-hero { padding: 45px 18px; }
+  .beyond-content { padding: 22px 12px 50px; }
+  .beyond-toolbar { align-items: stretch; flex-direction: column; }
+  .beyond-toolbar select { width: 100%; }
+  .beyond-spotlight-grid { grid-template-columns: 1fr; }
+  .beyond-team-card > header { padding: 18px 15px; }
+  .beyond-position-section { padding: 18px 15px; }
+  .beyond-team-card footer { grid-template-columns: 1fr; }
+  .beyond-team-card footer div { border-right: 0; border-bottom: 1px solid #e1e5e9; }
+}
+
 /* Homepage Styles */
 .homepage-container {
   min-height: 100vh;
@@ -553,6 +625,62 @@ body, html {
   max-width: 1180px;
   margin: 0 auto;
   padding: 28px 20px 52px;
+}
+
+.archive-analytics-card {
+  align-items: center;
+  background: linear-gradient(120deg, #10294d, #1e3a8a);
+  border-left: 5px solid #fbbf24;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(15, 35, 69, 0.2);
+  color: white;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  margin-bottom: 22px;
+  padding: 24px 26px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.archive-analytics-card:hover {
+  box-shadow: 0 12px 30px rgba(15, 35, 69, 0.28);
+  transform: translateY(-2px);
+}
+
+.archive-analytics-card span {
+  color: #fbbf24;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.archive-analytics-card h2 {
+  font-family: Georgia, serif;
+  font-size: 1.6rem;
+  margin: 5px 0 6px;
+}
+
+.archive-analytics-card p {
+  color: #dbe7f8;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 760px;
+}
+
+.archive-analytics-card > strong {
+  color: #fbbf24;
+  flex: 0 0 auto;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 640px) {
+  .archive-analytics-card {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+  }
 }
 
 .archive-search-band,
@@ -2884,6 +3012,7 @@ body, html {
 }
 
 .read-btn {
+  display: inline-block;
   background: #fbbf24;
   color: white;
   border: none;
@@ -2891,6 +3020,7 @@ body, html {
   border-radius: 5px;
   font-weight: 500;
   cursor: pointer;
+  text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
@@ -4066,6 +4196,387 @@ body, html {
   .last-season-stats strong,
   .archive-result-card h2 {
     overflow-wrap: anywhere;
+  }
+}
+
+/* 2026 Rivalry Week newsletter */
+.rivalry-week-newsletter .newspaper-header {
+  border-top: 6px solid #7a1111;
+}
+
+.rivalry-cover-story {
+  border-bottom: 4px double #000;
+  padding-bottom: 28px;
+}
+
+.rivalry-eyebrow {
+  margin: 0 0 10px;
+  color: #7a1111;
+  font-family: 'Times New Roman', serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.rivalry-intro-copy {
+  margin: 22px auto 0;
+  max-width: 900px;
+}
+
+.rivalry-matchup-stack {
+  display: grid;
+  gap: 34px;
+}
+
+.rivalry-profile {
+  background: #fbfaf6;
+  border: 2px solid #000;
+  box-shadow: 6px 6px 0 #d9d4c8;
+  margin: 0;
+  padding: 22px;
+}
+
+.rivalry-card-heading {
+  align-items: center;
+  border-bottom: 1px solid #000;
+  border-top: 3px solid #000;
+  display: grid;
+  font-family: 'Times New Roman', serif;
+  font-size: 0.72rem;
+  grid-template-columns: 1fr auto 1fr;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+  padding: 8px 2px;
+  text-transform: uppercase;
+}
+
+.rivalry-card-heading strong {
+  color: #7a1111;
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+.rivalry-card-heading span:last-child {
+  text-align: right;
+}
+
+.rivalry-profile > h3 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.65rem;
+  letter-spacing: -0.25px;
+  line-height: 1.15;
+  margin: 0 auto 10px;
+  max-width: 850px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.rivalry-summary-label {
+  color: #7a1111;
+  display: block;
+  font-family: 'Times New Roman', serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin: 14px 0 5px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.rivalry-deck {
+  font-family: 'Times New Roman', serif;
+  font-size: 1rem;
+  font-style: normal;
+  line-height: 1.5;
+  margin: 0 auto 22px;
+  max-width: 820px;
+  text-align: center;
+}
+
+.rivalry-tale-grid {
+  align-items: stretch;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 160px minmax(0, 1fr);
+  margin: 18px 0;
+}
+
+.rivalry-team-panel,
+.rivalry-series-seal {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 120px;
+  padding: 15px;
+  text-align: center;
+}
+
+.rivalry-team-panel {
+  background: #fff;
+  border: 2px solid #000;
+}
+
+.rivalry-manager,
+.rivalry-series-seal > span {
+  font-family: 'Times New Roman', serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.rivalry-team-panel strong {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.15rem;
+  line-height: 1.2;
+  margin: 7px 0;
+}
+
+.rivalry-team-panel small,
+.rivalry-series-seal small {
+  font-family: 'Times New Roman', serif;
+  font-style: italic;
+}
+
+.rivalry-series-seal {
+  background: #171717;
+  color: #fff;
+}
+
+.rivalry-series-seal strong {
+  color: #fff;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.05rem;
+  margin: 8px 0;
+}
+
+.rivalry-stat-strip {
+  border-bottom: 1px solid #000;
+  border-top: 1px solid #000;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  margin: 18px 0;
+}
+
+.rivalry-stat-strip div {
+  border-right: 1px solid #999;
+  padding: 12px 8px;
+  text-align: center;
+}
+
+.rivalry-stat-strip div:last-child {
+  border-right: 0;
+}
+
+.rivalry-stat-strip span,
+.rivalry-last-meeting > span {
+  display: block;
+  font-family: 'Times New Roman', serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.rivalry-stat-strip strong {
+  display: block;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.92rem;
+  margin-top: 5px;
+}
+
+.rivalry-stat-strip .rivalry-score-pair {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.rivalry-score-pair span {
+  display: inline;
+  font-size: 0.82rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.rivalry-score-pair b {
+  color: #7a1111;
+  margin-right: 3px;
+}
+
+.rivalry-last-meeting {
+  background: #eeeae1;
+  border-left: 5px solid #7a1111;
+  display: grid;
+  font-family: 'Times New Roman', serif;
+  gap: 3px;
+  grid-template-columns: 105px minmax(0, 1fr) auto;
+  margin: 18px 0 22px;
+  padding: 13px 15px;
+}
+
+.rivalry-last-meeting em {
+  white-space: nowrap;
+}
+
+.rivalry-table-title {
+  border-bottom: 2px solid #000;
+  font-family: 'Times New Roman', serif;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  margin: 0 0 10px;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.rivalry-table-title {
+  margin-top: 24px;
+}
+
+.rivalry-iconic-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 26px;
+}
+
+.rivalry-iconic-card {
+  background: #fff;
+  border: 1px solid #777;
+  border-top: 4px solid #7a1111;
+  padding: 15px;
+}
+
+.rivalry-iconic-card > span {
+  font-family: 'Times New Roman', serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.rivalry-iconic-card h5 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.05rem;
+  margin: 8px 0;
+}
+
+.rivalry-iconic-card p {
+  font-family: 'Times New Roman', serif;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.rivalry-table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.rivalry-position-table,
+.rivalry-history-table {
+  min-width: 560px;
+}
+
+.rivalry-position-table td,
+.rivalry-position-table th,
+.rivalry-history-table td,
+.rivalry-history-table th {
+  text-align: center;
+}
+
+.rivalry-position-table td:first-child,
+.rivalry-history-table td:last-child {
+  font-weight: 700;
+}
+
+.playoff-star {
+  color: #7a1111;
+  font-weight: 700;
+}
+
+.rivalry-playoff-key {
+  font-family: 'Times New Roman', serif;
+  font-size: 0.74rem;
+  font-style: italic;
+  margin: 8px 0 0;
+  text-align: right;
+}
+
+.rivalry-final-word {
+  margin-top: 38px;
+}
+
+.rivalry-data-credit {
+  border-top: 1px dashed #666;
+  font-family: 'Times New Roman', serif;
+  font-size: 0.75rem;
+  margin-top: 20px;
+  padding-top: 12px;
+  text-align: center;
+}
+
+.rivalry-back-link {
+  margin: 24px 0 4px;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .rivalry-profile {
+    box-shadow: 3px 3px 0 #d9d4c8;
+    padding: 16px;
+  }
+
+  .rivalry-card-heading {
+    gap: 6px;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .rivalry-card-heading span:last-child {
+    text-align: center;
+  }
+
+  .rivalry-profile > h3 {
+    font-size: 1.3rem;
+  }
+
+  .rivalry-tale-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rivalry-team-panel,
+  .rivalry-series-seal {
+    min-height: 100px;
+  }
+
+  .rivalry-stat-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .rivalry-stat-strip div {
+    border-bottom: 1px solid #999;
+    border-right: 0;
+  }
+
+  .rivalry-stat-strip div:last-child {
+    border-bottom: 0;
+  }
+
+  .rivalry-iconic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rivalry-last-meeting {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .rivalry-last-meeting em {
+    white-space: normal;
   }
 }
 

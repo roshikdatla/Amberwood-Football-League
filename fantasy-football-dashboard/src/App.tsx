@@ -1,8 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation, useParams } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 import HomePage from './components/HomePage';
 import CurrentSeasonNewsletterArchive from './components/CurrentSeasonNewsletterArchive';
+import CurrentSeasonNewsletterCollection from './components/CurrentSeasonNewsletterCollection';
+import Week1PreviewNewsletter from './components/Week1PreviewNewsletter';
 import LastSeasonArchive from './components/LastSeasonArchive';
 import NewsletterArchive from './components/NewsletterArchive';
 import Week1Newsletter from './components/Week1Newsletter';
@@ -21,12 +23,8 @@ import Week13Newsletter from './components/Week13Newsletter';
 import FinaleNewsletter from './components/FinaleNewsletter';
 import LeagueChat from './components/LeagueChat';
 import Navigation from './components/Navigation';
+import BeyondTheBoxscore from './components/BeyondTheBoxscore';
 import { activeSeason, archivedSeason } from './config/seasons';
-
-function LegacyNewsletterRedirect() {
-  const { issue } = useParams();
-  return <Navigate to={`/last-season/newsletters/${issue || ''}`} replace />;
-}
 
 function AppContent() {
   const location = useLocation();
@@ -43,9 +41,12 @@ function AppContent() {
             seasonConfig={activeSeason}
           />
         } />
-        <Route path="/newsletters" element={<CurrentSeasonNewsletterArchive />} />
-        <Route path="/newsletters/:issue" element={<LegacyNewsletterRedirect />} />
+        <Route path="/newsletters" element={<CurrentSeasonNewsletterCollection />} />
+        <Route path="/beyond-the-boxscore" element={<BeyondTheBoxscore seasonConfig={activeSeason} />} />
+        <Route path="/newsletters/preseason" element={<CurrentSeasonNewsletterArchive />} />
+        <Route path="/newsletters/week1" element={<Week1PreviewNewsletter />} />
         <Route path="/last-season" element={<LastSeasonArchive />} />
+        <Route path="/last-season/beyond-the-boxscore" element={<BeyondTheBoxscore seasonConfig={archivedSeason} />} />
         <Route
           path="/last-season/newsletters"
           element={

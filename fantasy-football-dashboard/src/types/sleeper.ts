@@ -6,6 +6,7 @@ export interface League {
   sport: string;
   season_type: string;
   status: string;
+  roster_positions?: string[];
   settings: {
     playoff_teams: number;
     playoff_week_start: number;

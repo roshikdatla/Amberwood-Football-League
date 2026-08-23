@@ -5,7 +5,7 @@ interface NavigationProps {
 }
 
 const Navigation: React.FC<NavigationProps> = ({ currentPage = 'home' }) => {
-  const isNewsletter = currentPage === 'newsletters';
+  const isNewsletter = currentPage.startsWith('newsletters');
   const isLastSeason = currentPage.startsWith('last-season');
 
   return (

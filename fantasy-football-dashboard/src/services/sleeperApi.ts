@@ -33,6 +33,26 @@ export const sleeperApi = {
     return response.data;
   },
 
+  // Get every available matchup week through the supplied week. Sleeper returns
+  // an empty array for weeks that have not started yet.
+  getSeasonMatchups: async (leagueId: string, throughWeek: number) => {
+    const weeks = Array.from({ length: Math.max(1, throughWeek) }, (_, index) => index + 1);
+    return Promise.all(weeks.map(async (week) => ({
+      week,
+      matchups: await sleeperApi.getMatchups(leagueId, week),
+    })));
+  },
+
+  getLeagueDrafts: async (leagueId: string) => {
+    const response = await axios.get(`${BASE_URL}/league/${leagueId}/drafts`);
+    return response.data;
+  },
+
+  getDraftPicks: async (draftId: string) => {
+    const response = await axios.get(`${BASE_URL}/draft/${draftId}/picks`);
+    return response.data;
+  },
+
   // Get league transactions
   getLeagueTransactions: async (leagueId: string) => {
     const response = await axios.get(`${BASE_URL}/league/${leagueId}/transactions/1`);
