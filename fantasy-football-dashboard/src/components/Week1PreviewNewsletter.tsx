@@ -1,4 +1,5 @@
 import React from 'react';
+import RivalryMatchupArtwork from './RivalryMatchupArtwork';
 import {
   rivalryPositions,
   rivalryPreviews,
@@ -68,9 +69,23 @@ const Week1PreviewNewsletter: React.FC = () => {
             <section className="team-analysis rivalry-matchups-section">
               <h2 className="section-headline">The Week 1 Rivalry Card</h2>
 
+              <nav className="rivalry-jump-links" aria-label="Jump to a Week 1 matchup">
+                {rivalryPreviews.map((rivalry) => (
+                  <a href={`#rivalry-matchup-${rivalry.id}`} key={rivalry.id}>
+                    <span aria-hidden="true">0{rivalry.id}</span>
+                    {rivalry.sideA.manager} vs {rivalry.sideB.manager}
+                  </a>
+                ))}
+              </nav>
+
               <div className="rivalry-matchup-stack">
                 {rivalryPreviews.map((rivalry) => (
-                  <article className="matchup-preview rivalry-profile" key={rivalry.id}>
+                  <article
+                    className="matchup-preview rivalry-profile"
+                    id={`rivalry-matchup-${rivalry.id}`}
+                    aria-labelledby={`rivalry-title-${rivalry.id}`}
+                    key={rivalry.id}
+                  >
                     <div className="rivalry-card-heading">
                       <span>Matchup {rivalry.id}</span>
                       <strong>{rivalry.billing}</strong>
@@ -78,6 +93,7 @@ const Week1PreviewNewsletter: React.FC = () => {
                     </div>
 
                     <h3
+                      id={`rivalry-title-${rivalry.id}`}
                       className="rivalry-versus-title"
                       aria-label={`${rivalry.sideA.teamName} versus ${rivalry.sideB.teamName}`}
                     >
@@ -85,6 +101,7 @@ const Week1PreviewNewsletter: React.FC = () => {
                       <b aria-hidden="true">vs</b>
                       <span>{rivalry.sideB.teamName}</span>
                     </h3>
+                    <RivalryMatchupArtwork matchupId={rivalry.id} />
                     <span className="rivalry-summary-label">Rivalry summary</span>
                     <p className="rivalry-deck">{rivalry.deck}</p>
 
@@ -138,15 +155,24 @@ const Week1PreviewNewsletter: React.FC = () => {
                       })}
                     </div>
 
-                    <h4 className="rivalry-table-title">Historical Points by Position</h4>
-                    <div className="rivalry-table-scroll">
-                      <table className="newspaper-data-table rivalry-position-table">
+                    <p className="rivalry-scroll-hint" id={`rivalry-scroll-hint-${rivalry.id}`}>
+                      Swipe or scroll the tables sideways to see every column.
+                    </p>
+                    <h4 className="rivalry-table-title" id={`rivalry-positions-${rivalry.id}`}>Historical Points by Position</h4>
+                    <div
+                      className="rivalry-table-scroll"
+                      role="region"
+                      aria-label={`${rivalry.sideA.manager} versus ${rivalry.sideB.manager}: historical points by position`}
+                      aria-describedby={`rivalry-scroll-hint-${rivalry.id}`}
+                      tabIndex={0}
+                    >
+                      <table className="newspaper-data-table rivalry-position-table" aria-labelledby={`rivalry-positions-${rivalry.id}`}>
                         <thead>
                           <tr>
-                            <th>Position</th>
-                            <th>{rivalry.sideA.manager}</th>
-                            <th>{rivalry.sideB.manager}</th>
-                            <th>Historical edge</th>
+                            <th scope="col">Position</th>
+                            <th scope="col">{rivalry.sideA.manager}</th>
+                            <th scope="col">{rivalry.sideB.manager}</th>
+                            <th scope="col">Historical edge</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -160,7 +186,7 @@ const Week1PreviewNewsletter: React.FC = () => {
                                 : rivalry.sideB.manager;
                             return (
                               <tr key={position}>
-                                <td data-label="Position">{position}</td>
+                                <th scope="row">{position}</th>
                                 <td data-label={rivalry.sideA.manager}>{formatPoints(aPoints)}</td>
                                 <td data-label={rivalry.sideB.manager}>{formatPoints(bPoints)}</td>
                                 <td data-label="Historical edge">{leader}</td>
@@ -171,16 +197,22 @@ const Week1PreviewNewsletter: React.FC = () => {
                       </table>
                     </div>
 
-                    <h4 className="rivalry-table-title">Complete Head-to-Head Ledger</h4>
-                    <div className="rivalry-table-scroll">
-                      <table className="newspaper-data-table rivalry-history-table">
+                    <h4 className="rivalry-table-title" id={`rivalry-history-${rivalry.id}`}>Complete Head-to-Head Ledger</h4>
+                    <div
+                      className="rivalry-table-scroll"
+                      role="region"
+                      aria-label={`${rivalry.sideA.manager} versus ${rivalry.sideB.manager}: complete head-to-head ledger`}
+                      aria-describedby={`rivalry-scroll-hint-${rivalry.id}`}
+                      tabIndex={0}
+                    >
+                      <table className="newspaper-data-table rivalry-history-table" aria-labelledby={`rivalry-history-${rivalry.id}`}>
                         <thead>
                           <tr>
-                            <th>Season</th>
-                            <th>Week</th>
-                            <th>{rivalry.sideA.manager}</th>
-                            <th>{rivalry.sideB.manager}</th>
-                            <th>Winner</th>
+                            <th scope="col">Season</th>
+                            <th scope="col">Week</th>
+                            <th scope="col">{rivalry.sideA.manager}</th>
+                            <th scope="col">{rivalry.sideB.manager}</th>
+                            <th scope="col">Winner</th>
                           </tr>
                         </thead>
                         <tbody>

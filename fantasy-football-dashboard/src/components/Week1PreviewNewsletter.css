@@ -1,0 +1,182 @@
+.rivalry-week-newsletter .rivalry-matchup-artwork {
+  background: #ede0c4;
+  border: 1px solid #6b4b2b;
+  box-sizing: border-box;
+  isolation: isolate;
+  margin: 0 auto 24px;
+  max-width: 640px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.rivalry-week-newsletter .rivalry-matchup-artwork img {
+  display: block;
+  height: auto;
+  max-width: none;
+  position: absolute;
+}
+
+.rivalry-week-newsletter .rivalry-jump-links {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 16px 0 28px;
+}
+
+.rivalry-week-newsletter .rivalry-jump-links a {
+  align-items: center;
+  background: #f4efe3;
+  border: 1px solid #b5a58d;
+  color: #611010;
+  display: flex;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.95rem;
+  gap: 10px;
+  line-height: 1.4;
+  min-height: 44px;
+  padding: 8px 12px;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.rivalry-week-newsletter .rivalry-jump-links a:hover {
+  background: #e9dfcc;
+}
+
+.rivalry-week-newsletter .rivalry-jump-links span {
+  color: #333;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.rivalry-week-newsletter .rivalry-profile {
+  scroll-margin-top: 90px;
+}
+
+.rivalry-week-newsletter a:focus-visible,
+.rivalry-week-newsletter .rivalry-table-scroll:focus-visible {
+  outline: 3px solid #075f9a;
+  outline-offset: 3px;
+}
+
+.rivalry-week-newsletter .rivalry-scroll-hint {
+  display: none;
+}
+
+.rivalry-week-newsletter .rivalry-iconic-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.rivalry-week-newsletter .rivalry-table-scroll {
+  min-width: 0;
+}
+
+.rivalry-week-newsletter .rivalry-back-link a {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  min-height: 44px;
+}
+
+@media (max-width: 760px) {
+  .rivalry-week-newsletter .rivalry-jump-links {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rivalry-week-newsletter .rivalry-matchup-artwork {
+    margin-bottom: 20px;
+  }
+
+  .rivalry-week-newsletter .rivalry-deck,
+  .rivalry-week-newsletter .story-column,
+  .rivalry-week-newsletter .assessment-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .rivalry-week-newsletter .rivalry-card-heading,
+  .rivalry-week-newsletter .rivalry-card-heading strong,
+  .rivalry-week-newsletter .rivalry-iconic-card > span,
+  .rivalry-week-newsletter .rivalry-summary-label,
+  .rivalry-week-newsletter .rivalry-stat-strip > div > span,
+  .rivalry-week-newsletter .rivalry-last-meeting > span,
+  .rivalry-week-newsletter .rivalry-series-score > span {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .rivalry-week-newsletter .rivalry-score-pair {
+    flex-wrap: wrap;
+  }
+
+  .rivalry-week-newsletter .rivalry-score-pair span,
+  .rivalry-week-newsletter .rivalry-stat-strip strong {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .rivalry-week-newsletter .rivalry-last-meeting {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .rivalry-week-newsletter .rivalry-scroll-hint {
+    color: #4b4033;
+    display: block;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin: 22px 0 10px;
+  }
+
+  .rivalry-week-newsletter .rivalry-table-scroll {
+    border: 1px solid #d6d1c4;
+    margin: 0;
+    overscroll-behavior-x: contain;
+    padding: 0;
+  }
+
+  .rivalry-week-newsletter .rivalry-position-table,
+  .rivalry-week-newsletter .rivalry-history-table {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin: 0;
+    min-width: 28rem !important;
+    table-layout: auto;
+  }
+
+  .rivalry-week-newsletter .rivalry-position-table th,
+  .rivalry-week-newsletter .rivalry-history-table th,
+  .rivalry-week-newsletter .rivalry-position-table td,
+  .rivalry-week-newsletter .rivalry-history-table td {
+    hyphens: none;
+    line-height: 1.5;
+    overflow-wrap: normal;
+    padding: 10px 8px !important;
+    white-space: nowrap;
+  }
+
+  .rivalry-week-newsletter .rivalry-position-table th,
+  .rivalry-week-newsletter .rivalry-history-table th {
+    font-size: 0.75rem !important;
+  }
+
+  .rivalry-week-newsletter .rivalry-position-table th[scope='row'] {
+    font-size: 0.875rem !important;
+  }
+
+  .rivalry-week-newsletter .rivalry-table-title {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .rivalry-week-newsletter .rivalry-playoff-key,
+  .rivalry-week-newsletter .rivalry-data-credit {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+}
