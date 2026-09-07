@@ -281,14 +281,14 @@ export const rivalryPreviews: RivalryPreview[] = [
     currentStreak: 'Aditya, 1 win',
     sideA: {
       manager: 'Aditya',
-      teamName: 'Breece’s Pieces',
+      teamName: 'Cookin Sutton Biryani',
       wins: 3,
       losses: 1,
       averageScore: 130.1,
       iconicPerformance: {
         name: 'DeAndre Hopkins', position: 'WR', points: 34.8, season: 2023, week: 8,
         teamScore: 155.38, won: true, isPlayoff: false,
-        story: 'DeAndre Hopkins delivered 34.80 points in the game that gave Aditya his largest victory over Abhiram. Breece’s Pieces climbed to 155.38 points and Hopkins’ receiving clinic helped create a 46.30-point margin.',
+        story: 'DeAndre Hopkins delivered 34.80 points in the game that gave Aditya his largest victory over Abhiram. Cookin Sutton Biryani climbed to 155.38 points and Hopkins’ receiving clinic helped create a 46.30-point margin.',
       },
       positionAverages: { QB: 18.09, RB: 34.95, WR: 34.08, TE: 10.5, FLEX: 16.58, K: 7.98, DEF: 7.94 },
     },
