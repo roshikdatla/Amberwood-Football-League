@@ -52,6 +52,20 @@ test('newsletter renders four sections, six readable scorecards and preserves th
   expect(kelceCard).toHaveTextContent('10.10 pts');
 });
 
+test('overview replaces the two recap paragraphs with the reaction image and preserves the lead', () => {
+  render(<Week1RecapNewsletter />);
+  const overview = screen.getByRole('region', { name: 'Now that’s Rivalry Week.' });
+  expect(within(overview).queryByText(/^Start with Anudeep and Sahil/)).not.toBeInTheDocument();
+  expect(within(overview).queryByText(/^Pranav J kept the Pranav Bowl bragging rights/)).not.toBeInTheDocument();
+  expect(overview.querySelector('.week-one-lead')).toHaveTextContent(
+    'The defending champ scored 160—and lost. Kenneth Walker went off on Monday night—and it still wasn’t enough. Gary came out of retirement and straight into the win column. If you wanted a gentle start to the season, you picked the wrong league.'
+  );
+  const image = overview.querySelector('.week-one-overview-image img');
+  expect(image).toHaveAttribute('src', '/week1-recap-reaction.png');
+  expect(image).toHaveAttribute('width', '851');
+  expect(image).toHaveAttribute('height', '362');
+});
+
 test('NFL reporting is woven into matchup prose with sources, not separate sections', () => {
   const { container } = render(<Week1RecapNewsletter />);
   expect(screen.queryByRole('heading', { name: /NFL connection/i })).not.toBeInTheDocument();

@@ -34,8 +34,9 @@ const Week1RecapNewsletter: React.FC = () => (
         <p className="week-one-kicker">01 / Overview</p>
         <h2 id="overview-title">Now that’s<br />Rivalry Week.</h2>
         <p className="week-one-lead">The defending champ scored 160—and lost. Kenneth Walker went off on Monday night—and it still wasn’t enough. Gary came out of retirement and straight into the win column. If you wanted a gentle start to the season, you picked the wrong league.</p>
-        <p>Start with Anudeep and Sahil. Two heavyweight lineups, 324.26 points between them, and the whole thing came down to Captain Kelce helping Anudeep squeeze home by 4.26. Then there was Roshik–Taaha: an early lead, a roaring Sunday comeback, and Walker nearly tearing up the ending on Monday. Roshik escaped by 5.76. Taaha is going to remember every decimal.</p>
-        <p>Pranav J kept the Pranav Bowl bragging rights. Ankith handed Sahit a 73.34-point beating, with the Patriots stack adding insult to injury. GarVeen’s stars announced the partnership’s arrival, and Abhiram skipped the drama and banked the win. Six games down. Plenty of scores still to settle. Let’s get into it.</p>
+        <figure className="week-one-overview-image">
+          <img src="/week1-recap-reaction.png" alt="Rivalry Week reaction: a man in sunglasses holding up one hand." width={851} height={362} decoding="async" />
+        </figure>
         <dl className="week-one-numbers">
           <div><dt>Closest finish</dt><dd>4.26 <small>points</small></dd><span>Anudeep over Sahil</span></div>
           <div><dt>High score</dt><dd>164.26</dd><span>Made in Jahmyrica</span></div>

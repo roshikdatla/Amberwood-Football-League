@@ -29,6 +29,8 @@
 .week-one-overview { padding-top: 36px; }
 .week-one-overview h2 { font-size: clamp(2.2rem,5vw,3.6rem); margin-bottom: 24px; max-width: 850px; }
 .week-one-issue .week-one-lead { font-family: Georgia, 'Times New Roman', serif; font-size: 1.3rem; line-height: 1.55; }
+.week-one-overview-image { width: 100%; max-width: 851px; margin: 24px auto; }
+.week-one-overview-image img { display: block; width: 100%; height: auto; border-radius: 8px; }
 .week-one-numbers { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); margin: 26px 0 0; border-block: 1px solid var(--issue-rule); }
 .week-one-numbers div { padding: 18px 14px; border-right: 1px solid var(--issue-rule); }
 .week-one-numbers div:first-child { padding-left: 0; }
