@@ -1,4 +1,5 @@
 import React from 'react';
+import './SeasonDashboard.css';
 
 interface NavigationProps {
   currentPage?: string;
@@ -28,6 +29,12 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage = 'home' }) => {
             className={`nav-link ${isNewsletter ? 'active' : ''}`}
           >
             Newsletter
+          </a>
+          <a
+            href="/beyond-the-boxscore"
+            className={`nav-link ${currentPage === 'beyond-the-boxscore' ? 'active' : ''}`}
+          >
+            Beyond the Boxscore
           </a>
           <a
             href="/last-season"

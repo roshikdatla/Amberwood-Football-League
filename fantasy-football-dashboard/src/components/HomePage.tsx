@@ -4,27 +4,13 @@ import { League, Roster, User, TeamStanding } from '../types/sleeper';
 import LeagueHero from './LeagueHero';
 import WeeklyMatchups from './WeeklyMatchups';
 import { SeasonConfig } from '../config/seasons';
+import { getRecapTeam, week1PowerRankings } from '../data/week1Recap2026';
 
 interface HomePageProps {
   leagueId?: string;
   season?: string;
   seasonConfig?: SeasonConfig;
 }
-
-const championshipOdds = [
-  { manager: 'Pranav J', odds: '+450', case: 'League-best WR and flex rooms, plus the Puka revenge tour' },
-  { manager: 'Ankith', odds: '+550', case: 'Chase, Jeanty, and Rice give this roster weekly fireworks' },
-  { manager: 'Anudeep', odds: '+650', case: 'Amberwood\'s top RB room can control every flex matchup' },
-  { manager: 'Sahil', odds: '+750', case: 'The defending champion returns with an elite WR trio' },
-  { manager: 'Pranav P', odds: '+900', case: 'CMC, Hampton, and Nabers anchor the most balanced contender' },
-  { manager: 'Roshik', odds: '+1000', case: 'Bijan, Lamar, and Bowers create three premium weekly edges' },
-  { manager: 'Abhishek', odds: '+1200', case: 'Middle-round volume produced the league\'s deepest flex bench' },
-  { manager: 'Aditya', odds: '+1400', case: 'Nico and James Cook lead a roster built for a breakout bet' },
-  { manager: 'Gary', odds: '+1700', case: 'Josh Allen, Amon-Ra, and Jonathan Taylor can win any week' },
-  { manager: 'Sahit', odds: '+2000', case: 'A.J. Brown, Saquon, Maye, and Loveland carry real ceiling' },
-  { manager: 'Taaha', odds: '+2500', case: 'JSN, Kyren, and Walker headline a high-variance uprising' },
-  { manager: 'Abhiram', odds: '+3500', case: 'Elite RB and TE talent awaits one decisive quarterback move' },
-];
 
 const HomePage: React.FC<HomePageProps> = ({ 
   leagueId = '', 
@@ -170,18 +156,19 @@ const HomePage: React.FC<HomePageProps> = ({
         
         <div className="sidebar">
           <div className="power-rankings-container">
-            <h3>{seasonConfig?.shortLabel || season} Championship Betting Odds</h3>
+            <h3>{seasonConfig?.shortLabel || season} Power Rankings · After Week 1</h3>
             <div className="power-rankings-list">
-              {championshipOdds.map((team, index) => (
-                <div className="power-ranking-item" key={team.manager}>
+              {week1PowerRankings.map((ranking, index) => (
+                <div className="power-ranking-item" key={ranking.rosterId}>
                   <div className="rank">{index + 1}</div>
                   <div className="team-analysis">
-                    <div className="team-name">{team.manager} {team.odds}</div>
-                    <div className="analysis">{team.case}</div>
+                    <div className="team-name">{getRecapTeam(ranking.rosterId).manager}</div>
+                    <div className="analysis">{ranking.tier} · {getRecapTeam(ranking.rosterId).record}</div>
                   </div>
                 </div>
               ))}
             </div>
+            <a href="/newsletters/week1-recap#power-rankings" className="power-rankings-detail-link">Read all 12 season outlooks →</a>
           </div>
         </div>
       </div>

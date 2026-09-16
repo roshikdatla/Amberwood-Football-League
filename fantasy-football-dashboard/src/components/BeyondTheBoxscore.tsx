@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { SeasonConfig } from '../config/seasons';
 import { sleeperApi } from '../services/sleeperApi';
 import { Roster, User } from '../types/sleeper';
+import './SeasonDashboard.css';
 
 type Player = {
   player_id?: string;
@@ -65,6 +66,13 @@ const signedPoints = (value = 0) => `${value >= 0 ? '+' : ''}${points(value)}`;
 const getPlayerName = (player: Player | undefined, id: string) =>
   player?.full_name || [player?.first_name, player?.last_name].filter(Boolean).join(' ') || id;
 
+// Future matchup responses can contain a full players_points map of zeroes.
+// A populated map alone is not evidence that a week has actually been played.
+const hasRecordedScores = ({ matchups }: WeekData) => matchups.some((matchup) =>
+  (typeof matchup.points === 'number' && matchup.points !== 0) ||
+  Object.values(matchup.players_points || {}).some((score) => score !== 0)
+);
+
 const standardDeviation = (values: number[]) => {
   if (!values.length) return 0;
   const average = values.reduce((sum, value) => sum + value, 0) / values.length;
@@ -77,12 +85,11 @@ const buildAnalytics = (
   weeks: WeekData[],
   players: Record<string, Player>,
   draftPicks: DraftPick[],
-  rosterPositions: string[]
+  rosterPositions: string[],
+  minimumAwardStarts = 4
 ): TeamAnalytics[] => {
   const userMap = new Map(users.map((user) => [user.user_id, user]));
-  const completedWeeks = weeks.filter(({ matchups }) => matchups.some((matchup) =>
-    typeof matchup.points === 'number' && (matchup.points !== 0 || Object.keys(matchup.players_points || {}).length > 0)
-  ));
+  const completedWeeks = weeks.filter(hasRecordedScores);
 
   const teams: TeamWithCandidates[] = rosters.map((roster) => {
     const user = userMap.get(roster.owner_id);
@@ -188,10 +195,11 @@ const buildAnalytics = (
     };
   });
 
-  // Awards use a fixed four-start minimum. Per-start position baselines and draft-vs-
+  // Awards reach a four-start minimum once the season has enough completed weeks.
+  // Earlier awards are explicitly provisional. Per-start baselines and draft-vs-
   // production ranks are league-wide so players at scarce positions are judged
   // against appropriate peers rather than raw cross-position point totals.
-  const eligibleLines = teams.flatMap((team) => team.awardLines.filter((line) => line.starts >= 4));
+  const eligibleLines = teams.flatMap((team) => team.awardLines.filter((line) => line.starts >= minimumAwardStarts));
   const positionAverages = new Map(positionOrder.map((position) => {
     const positionLines = eligibleLines.filter((line) => line.position === position);
     const totalStarts = positionLines.reduce((sum, line) => sum + line.starts, 0);
@@ -213,7 +221,7 @@ const buildAnalytics = (
       .map((line, index) => [line.id, index + 1])
   );
   teams.forEach((team) => {
-    const candidates = team.awardLines.filter((line) => line.starts >= 4);
+    const candidates = team.awardLines.filter((line) => line.starts >= minimumAwardStarts);
     team.mvp = [...candidates].sort((a, b) =>
       (b.valueAboveAverage || 0) - (a.valueAboveAverage || 0) || b.points - a.points
     )[0];
@@ -264,29 +272,35 @@ const BeyondTheBoxscore: React.FC<BeyondTheBoxscoreProps> = ({ seasonConfig }) =
   useEffect(() => {
     let mounted = true;
     const load = async () => {
+      setLoading(true);
+      setError('');
+      setTeams([]);
+      setCompletedWeekCount(0);
+      setSelectedRosterId('all');
       try {
-        const nflWeek = seasonConfig.status === 'archived'
+        const league = await sleeperApi.getLeague(seasonConfig.leagueId);
+        const lastScoredWeek = league.settings?.last_scored_leg;
+        const throughWeek = seasonConfig.status === 'archived'
           ? 18
-          : await sleeperApi.getCurrentWeek();
-        const throughWeek = Math.min(18, Math.max(1, nflWeek || 1));
-        const [rosters, users, weekData, players, drafts, league] = await Promise.all([
+          : Math.min(18, Math.max(0, typeof lastScoredWeek === 'number'
+            ? lastScoredWeek
+            : (await sleeperApi.getCurrentWeek() || 1) - 1));
+        const [rosters, users, weekData, players, drafts] = await Promise.all([
           sleeperApi.getLeagueRosters(seasonConfig.leagueId),
           sleeperApi.getLeagueUsers(seasonConfig.leagueId),
-          sleeperApi.getSeasonMatchups(seasonConfig.leagueId, throughWeek),
+          throughWeek > 0 ? sleeperApi.getSeasonMatchups(seasonConfig.leagueId, throughWeek) : Promise.resolve([]),
           sleeperApi.getAllPlayers(),
           sleeperApi.getLeagueDrafts(seasonConfig.leagueId),
-          sleeperApi.getLeague(seasonConfig.leagueId),
         ]);
         if (!mounted) return;
         const draftList = drafts as Draft[];
         const selectedDraft = draftList.find((draft) => draft.status === 'complete') || draftList[0];
         const draftPicks = selectedDraft ? await sleeperApi.getDraftPicks(selectedDraft.draft_id) : [];
         if (!mounted) return;
-        const completed = weekData.filter(({ matchups }: WeekData) => matchups.some((matchup) =>
-          typeof matchup.points === 'number' && (matchup.points !== 0 || Object.keys(matchup.players_points || {}).length > 0)
-        ));
+        const completed = weekData.filter(hasRecordedScores);
+        const minimumAwardStarts = seasonConfig.status === 'archived' ? 4 : Math.min(4, Math.max(1, completed.length));
         setCompletedWeekCount(completed.length);
-        setTeams(buildAnalytics(rosters, users, weekData, players, draftPicks, league.roster_positions || []));
+        setTeams(completed.length ? buildAnalytics(rosters, users, completed, players, draftPicks, league.roster_positions || [], minimumAwardStarts) : []);
       } catch (caught) {
         console.error('Failed to load Beyond the Boxscore:', caught);
         if (mounted) setError('Advanced stats could not be loaded from Sleeper. Please try again shortly.');
@@ -301,13 +315,14 @@ const BeyondTheBoxscore: React.FC<BeyondTheBoxscoreProps> = ({ seasonConfig }) =
   const displayedTeams = useMemo(() => selectedRosterId === 'all'
     ? teams
     : teams.filter((team) => team.rosterId === selectedRosterId), [selectedRosterId, teams]);
+  const isEarlySeason = seasonConfig.status === 'active' && completedWeekCount > 0 && completedWeekCount < 4;
 
   return (
     <div className="beyond-page">
       <section className="beyond-hero">
         <div className="beyond-kicker">Amberwood Analytics Lab</div>
         <h1>Beyond the Boxscore</h1>
-        <p>Who is carrying, who is coasting, and where every team creates its points. All numbers update cumulatively from Sleeper throughout the season.</p>
+        <p>Who is carrying, who is coasting, and where every team creates its points. All numbers update cumulatively from completed weeks throughout the season.</p>
         <div className="beyond-hero-meta"><span>{seasonConfig.key} season</span><span>{completedWeekCount} week{completedWeekCount === 1 ? '' : 's'} charted</span><span>{teams.length} teams</span></div>
       </section>
 
@@ -330,8 +345,8 @@ const BeyondTheBoxscore: React.FC<BeyondTheBoxscoreProps> = ({ seasonConfig }) =
               <header><div><span className="beyond-rank">#{team.leagueRank} in scoring</span><h2>{team.name}</h2>{team.manager !== team.name && <p>Managed by {team.manager}</p>}</div><div className="beyond-total"><strong>{points(team.points)}</strong><span>starter points</span></div></header>
 
               <div className="beyond-spotlight-grid">
-                <PlayerSpotlight label="Team MVP" icon="👑" player={team.mvp} detail={(player) => `${signedPoints(player.valueAboveAverage)} points/start vs average ${player.position}`} />
-                <PlayerSpotlight label="Biggest Disappointment" icon="🧱" player={team.bum} detail={(player) => `Pick ${player.draftPick} · ${points(player.points / player.starts)} points/start (injuries included)`} />
+                <PlayerSpotlight label={isEarlySeason ? 'Early MVP' : 'Team MVP'} icon="👑" player={team.mvp} detail={(player) => `${signedPoints(player.valueAboveAverage)} points/start vs average ${player.position}`} />
+                <PlayerSpotlight label={isEarlySeason ? 'Early Disappointment' : 'Biggest Disappointment'} icon="🧱" player={team.bum} detail={(player) => `Pick ${player.draftPick} · ${points(player.points / player.starts)} points/start (injuries included)`} />
               </div>
 
               <div className="beyond-position-section"><h3>Points by position</h3><div className="beyond-position-table">
@@ -340,14 +355,14 @@ const BeyondTheBoxscore: React.FC<BeyondTheBoxscoreProps> = ({ seasonConfig }) =
 
               <footer>
                 <div><span>Best week</span><strong>{team.bestWeekNumber ? `${points(team.bestWeek)} · Wk ${team.bestWeekNumber}` : 'TBD'}</strong></div>
-                <div><span>Consistency</span><strong>{completedWeekCount ? `±${points(team.consistency)}` : 'TBD'}</strong></div>
+                <div><span>Consistency</span><strong>{completedWeekCount > 1 ? `±${points(team.consistency)}` : 'After Week 2'}</strong></div>
                 <div><span>Lineup efficiency</span><strong>{completedWeekCount ? `${points(team.lineupEfficiency)}%` : 'TBD'}</strong></div>
               </footer>
             </article>
           ))}
         </div>
 
-        <aside className="beyond-methodology"><strong>How the awards work</strong><p>Both awards require at least four starts and include QB, RB, WR, and TE only. MVP is the player with the largest points-per-start advantage over the league's average starter at his position. Biggest Disappointment is the largest league-wide gap between Amberwood draft-capital rank and per-start value-above-average production rank; injuries are included. Position averages show each team's combined starter points at that position per completed week. Bench points do not count.</p></aside>
+        <aside className="beyond-methodology"><strong>How the awards work</strong><p>{isEarlySeason ? `Early awards are provisional after ${completedWeekCount} completed week${completedWeekCount === 1 ? '' : 's'} and require ${completedWeekCount} start${completedWeekCount === 1 ? '' : 's'}. The minimum rises to four starts as the season progresses.` : 'Both awards require at least four starts.'} Awards include QB, RB, WR, and TE only. MVP is the player with the largest points-per-start advantage over the league's average starter at his position. Biggest Disappointment is the largest league-wide gap between Amberwood draft-capital rank and per-start value-above-average production rank; injuries are included. Position averages show each team's combined starter points at that position per completed week. Bench points do not count.</p></aside>
       </main>
     </div>
   );

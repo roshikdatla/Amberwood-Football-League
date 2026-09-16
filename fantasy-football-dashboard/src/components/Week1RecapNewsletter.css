@@ -1,0 +1,140 @@
+.week-one-issue {
+  --issue-ink: #192b40;
+  --issue-muted: #58616a;
+  --issue-red: #851c27;
+  --issue-rule: #d8d2c5;
+  background: #eeeae1;
+  color: var(--issue-ink);
+  padding: 28px 18px 50px;
+  text-align: left;
+}
+.week-one-issue *, .week-one-issue *::before, .week-one-issue *::after { box-sizing: border-box; }
+.week-one-paper { max-width: 1120px; margin: 0 auto; background: #fffdf8; border: 1px solid var(--issue-rule); border-top: 5px solid var(--issue-red); padding: 36px 48px; }
+.week-one-issue p { font-size: 1rem; line-height: 1.7; margin: 0 0 18px; }
+.week-one-issue h2, .week-one-issue h3, .week-one-issue h4 { color: var(--issue-ink); margin: 0; overflow-wrap: anywhere; }
+.week-one-issue h2 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.13; letter-spacing: -.025em; }
+.week-one-issue h3 { font-size: 1.4rem; line-height: 1.25; letter-spacing: -.025em; }
+.week-one-issue h4 { font-size: 1rem; }
+.week-one-issue a { color: #264d74; text-underline-offset: 4px; }
+.week-one-issue a:focus-visible, .week-one-issue summary:focus-visible { outline: 3px solid #b77e08; outline-offset: 4px; }
+.week-one-issue .week-one-kicker { color: var(--issue-red); font-size: .73rem; font-weight: 800; letter-spacing: .12em; line-height: 1.5; text-transform: uppercase; margin-bottom: 12px; }
+.week-one-masthead { text-align: center; }
+.week-one-archive-link { display: block; width: fit-content; font-size: .85rem; min-height: 44px; }
+.week-one-masthead h1 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2.2rem, 6vw, 4.8rem); letter-spacing: -.05em; line-height: 1.03; margin: 10px 0 28px; color: #131b22; }
+.week-one-edition { border-top: 2px solid var(--issue-ink); border-bottom: 1px solid var(--issue-ink); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; padding: 12px 0; font-size: .78rem; font-weight: 650; }
+.week-one-edition strong { color: var(--issue-red); }
+.week-one-contents { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 8px; padding: 20px 0; border-bottom: 1px solid var(--issue-rule); }
+.week-one-contents a { display: flex; align-items: center; gap: 8px; font-size: .82rem; min-height: 44px; text-decoration: none; font-weight: 700; padding: 8px; background: #f1eee7; border-radius: 5px; }
+.week-one-contents span { color: var(--issue-red); font-size: .72rem; }
+.week-one-overview { padding-top: 36px; }
+.week-one-overview h2 { font-size: clamp(2.2rem,5vw,3.6rem); margin-bottom: 24px; max-width: 850px; }
+.week-one-issue .week-one-lead { font-family: Georgia, 'Times New Roman', serif; font-size: 1.3rem; line-height: 1.55; }
+.week-one-numbers { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); margin: 26px 0 0; border-block: 1px solid var(--issue-rule); }
+.week-one-numbers div { padding: 18px 14px; border-right: 1px solid var(--issue-rule); }
+.week-one-numbers div:first-child { padding-left: 0; }
+.week-one-numbers div:last-child { border-right: 0; }
+.week-one-numbers dt { font-size: .72rem; font-weight: 700; text-transform: uppercase; color: var(--issue-muted); }
+.week-one-numbers dd { font-size: 2rem; font-weight: 800; margin: 4px 0; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+.week-one-numbers small { font-size: .7rem; letter-spacing: 0; font-weight: 500; }
+.week-one-numbers span { color: var(--issue-muted); font-size: .75rem; }
+.week-one-section { border-top: 3px double var(--issue-ink); margin-top: 44px; padding-top: 26px; }
+.week-one-section-heading { margin-bottom: 22px; }
+.week-one-issue section[id], .week-one-recap { scroll-margin-top: 110px; }
+.week-one-matchup-links { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 22px; }
+.week-one-matchup-links a { background: #f1eee7; border-radius: 20px; min-height: 44px; display: flex; align-items: center; padding: 8px 12px; font-size: .77rem; text-decoration: none; font-weight: 600; }
+.week-one-recaps { display: grid; gap: 24px; }
+.week-one-recap { background: #fff; border: 1px solid #cbd2da; border-radius: 14px; padding: 24px; }
+.week-one-card-meta { display: flex; justify-content: space-between; gap: 14px; font-size: .74rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 18px; }
+.week-one-card-meta span { color: var(--issue-red); }
+.week-one-card-meta b { color: #49624e; }
+.week-one-issue .week-one-versus { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px; font-size: clamp(1.3rem,3vw,1.8rem); margin-bottom: 20px; font-weight: 800; }
+.week-one-versus > span { background: #f5bc37; border-radius: 50%; width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; font-size: .8rem; letter-spacing: 0; }
+.week-one-scoreboard { border: 1px solid var(--issue-rule); border-radius: 8px; overflow: hidden; }
+.week-one-scoreboard > div { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 14px; padding: 12px 16px; background: #faf9f6; }
+.week-one-scoreboard > div + div { border-top: 1px solid var(--issue-rule); }
+.week-one-scoreboard .week-one-winner { background: #edf2f7; }
+.week-one-scoreboard strong { display: block; font-size: 1rem; overflow-wrap: anywhere; }
+.week-one-scoreboard span { display: block; color: var(--issue-muted); font-size: .76rem; margin-top: 3px; }
+.week-one-scoreboard b { font-size: 1.8rem; letter-spacing: -.035em; font-variant-numeric: tabular-nums; }
+.week-one-result-note { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 5px 14px; color: var(--issue-muted); font-size: .75rem; padding: 12px 0 18px; }
+.week-one-result-note strong { color: var(--issue-red); }
+.week-one-xfactor { padding: 18px; background: #f4f1e8; border-left: 3px solid #c18a16; border-radius: 0 8px 8px 0; margin: 20px 0; }
+.week-one-xfactor h4 { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 5px 12px; margin-bottom: 10px; font-size: 1.15rem; }
+.week-one-xfactor h4 span { font-size: .92rem; color: var(--issue-red); white-space: nowrap; }
+.week-one-xfactor p:last-child, .week-one-lowlight p:last-child { margin-bottom: 0; }
+.week-one-lowlight h4 { color: var(--issue-red); margin-bottom: 6px; }
+.week-one-nfl-note { border-top: 1px solid var(--issue-rule); margin-top: 20px; padding-top: 16px; }
+.week-one-nfl-note h4 { color: #264d74; margin-bottom: 6px; }
+.week-one-nfl-note p { font-size: .93rem; margin-bottom: 4px; }
+.week-one-nfl-note > div { display: flex; flex-wrap: wrap; gap: 0 16px; }
+.week-one-nfl-note a { display: inline-flex; align-items: center; min-height: 44px; font-size: .77rem; }
+.week-one-availability { background: #f1eee7; border-radius: 6px; padding: 0 14px; }
+.week-one-availability summary { min-height: 44px; padding: 13px 0; cursor: pointer; font-size: .85rem; font-weight: 700; }
+.week-one-availability ul { margin: 0; padding: 0 0 16px 20px; }
+.week-one-availability li { font-size: .92rem; line-height: 1.65; margin-bottom: 12px; }
+.week-one-availability li:last-child { margin-bottom: 0; }
+.week-one-rankings { padding: 0; margin: 24px 0 0; list-style: none; }
+.week-one-ranking { display: grid; grid-template-columns: 52px minmax(0,1fr); gap: 18px; border-top: 1px solid var(--issue-rule); padding: 22px 0; }
+.week-one-rank-number { font-size: 2rem; color: #9b7b42; font-weight: 800; line-height: 1.1; letter-spacing: -.06em; }
+.week-one-rank-meta { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 4px 16px; margin-bottom: 6px; font-size: .7rem; text-transform: uppercase; letter-spacing: .04em; color: var(--issue-muted); }
+.week-one-rank-meta strong { white-space: nowrap; }
+.week-one-rank-meta strong span { font-weight: 500; text-transform: none; margin-left: 4px; }
+.week-one-rank-meta .rank-up { color: #226747; }
+.week-one-rank-meta .rank-down { color: #a03436; }
+.week-one-rank-content .week-one-team-meta { font-size: .78rem; color: var(--issue-muted); margin: 6px 0 12px; }
+.week-one-rank-content > p { margin-bottom: 8px; }
+.week-one-rank-content details { border-top: 1px dotted var(--issue-rule); }
+.week-one-rank-content summary { color: #264d74; font-size: .82rem; cursor: pointer; min-height: 44px; padding: 12px 0; font-weight: 650; }
+.week-one-rank-content details p { font-size: .9rem; margin-bottom: 0; }
+.week-one-previews { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; margin-top: 24px; }
+.week-one-preview { border: 1px solid var(--issue-rule); border-top: 3px solid var(--issue-ink); background: #fff; border-radius: 0 0 10px 10px; padding: 22px; }
+.week-one-preview h3 { margin-bottom: 18px; }
+.week-one-preview-teams { margin-bottom: 18px; background: #f3f0e9; border-radius: 6px; padding: 3px 10px; }
+.week-one-preview-teams > div { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 12px; padding: 10px 0; }
+.week-one-preview-teams > div + div { border-top: 1px solid var(--issue-rule); }
+.week-one-preview-teams strong { font-size: .88rem; display: block; overflow-wrap: anywhere; }
+.week-one-preview-teams span { display: block; font-size: .75rem; color: var(--issue-muted); margin-top: 4px; }
+.week-one-preview-teams b { font-size: .9rem; font-variant-numeric: tabular-nums; }
+.week-one-preview h4 { margin-bottom: 6px; }
+.week-one-pick { border-top: 1px solid var(--issue-rule); padding-top: 14px; }
+.week-one-pick strong { font-size: .87rem; color: var(--issue-red); }
+.week-one-pick p { font-size: .9rem; margin: 6px 0 0; }
+.week-one-dashboard-callout { background: var(--issue-ink); color: #fff; border-radius: 10px; padding: 26px; margin-top: 40px; }
+.week-one-dashboard-callout h2 { color: #fff; font-size: 1.8rem; margin-bottom: 12px; }
+.week-one-dashboard-callout .week-one-kicker { color: #f4c357; }
+.week-one-dashboard-callout a { display: inline-flex; align-items: center; background: #f4c357; color: #192b40; min-height: 44px; padding: 10px 16px; border-radius: 5px; font-weight: 700; font-size: .9rem; text-decoration: none; }
+.week-one-footer { border-top: 1px solid var(--issue-rule); padding-top: 24px; margin-top: 28px; }
+.week-one-footer p { font-size: .75rem; color: var(--issue-muted); }
+.week-one-footer > div { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.week-one-footer > div a { min-height: 44px; display: inline-flex; align-items: center; font-size: .8rem; }
+.week-one-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+@media (max-width: 760px) {
+  .week-one-issue { padding: 12px 8px 30px; }
+  .week-one-paper { padding: 22px 16px; }
+  .week-one-contents { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .week-one-previews { grid-template-columns: minmax(0,1fr); }
+  .week-one-recap, .week-one-preview { padding: 18px 14px; }
+  .week-one-issue .week-one-lead { font-size: 1.16rem; }
+  .week-one-recap p, .week-one-preview p { font-size: .97rem; line-height: 1.65; }
+  .week-one-numbers { grid-template-columns: minmax(0,1fr); }
+  .week-one-numbers div, .week-one-numbers div:first-child { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; padding: 12px 0; border-right: 0; border-bottom: 1px solid var(--issue-rule); gap: 3px 10px; }
+  .week-one-numbers div:last-child { border-bottom: 0; }
+  .week-one-numbers dd { grid-column: 2; grid-row: 1 / 3; font-size: 1.65rem; margin: 0; }
+  .week-one-numbers span { grid-column: 1; }
+  .week-one-scoreboard > div { padding: 12px 10px; gap: 10px; }
+  .week-one-scoreboard b { font-size: 1.55rem; }
+  .week-one-scoreboard strong { font-size: .94rem; }
+  .week-one-xfactor { padding: 14px; }
+  .week-one-ranking { grid-template-columns: 32px minmax(0,1fr); gap: 10px; }
+  .week-one-rank-number { font-size: 1.5rem; }
+  .week-one-rank-content h3 { font-size: 1.25rem; }
+  .week-one-rank-content p { font-size: .96rem; }
+  .week-one-dashboard-callout { padding: 20px 16px; }
+}
+@media (max-width: 360px) {
+  .week-one-paper { padding-inline: 12px; }
+  .week-one-card-meta { font-size: .65rem; }
+  .week-one-recap { padding-inline: 10px; }
+  .week-one-scoreboard b { font-size: 1.3rem; }
+  .week-one-contents a { font-size: .73rem; padding: 8px 6px; gap: 5px; }
+}

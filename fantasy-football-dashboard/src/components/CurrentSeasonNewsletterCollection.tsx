@@ -3,6 +3,13 @@ import { activeSeason } from '../config/seasons';
 
 const currentSeasonNewsletters = [
   {
+    slug: 'week1-recap',
+    title: 'Week 1 Recap: Rivalry Week Settled',
+    date: 'September 16, 2026',
+    description: 'Six rivalry verdicts, the decisive players, updated power rankings, and the Week 2 matchups ahead',
+    status: 'Read Now',
+  },
+  {
     slug: 'week1',
     title: 'Week 1: Rivalry Week Preview',
     date: 'September 2026',

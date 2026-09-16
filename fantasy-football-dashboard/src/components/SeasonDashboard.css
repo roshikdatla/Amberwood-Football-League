@@ -1,0 +1,109 @@
+/* Keep all four destinations accessible without horizontal scrolling. */
+.power-rankings-detail-link {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 12px;
+  color: #264d74;
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.main-navigation .nav-container {
+  gap: 16px;
+}
+
+.main-navigation .nav-links {
+  gap: clamp(3px, 1vw, 18px);
+  min-width: 0;
+}
+
+.main-navigation .nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  text-align: center;
+}
+
+.beyond-page .beyond-team-card h2,
+.beyond-page .beyond-team-card header p {
+  overflow-wrap: anywhere;
+}
+
+.beyond-page .beyond-spotlight strong {
+  overflow: visible;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 900px) {
+  .main-navigation .nav-container {
+    height: auto;
+    min-height: 70px;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 8px 12px 6px;
+  }
+
+  .main-navigation .nav-brand {
+    flex: 1 1 100%;
+    min-width: 0;
+    font-size: .94rem;
+  }
+
+  .main-navigation .nav-brand-text {
+    display: inline;
+  }
+
+  .main-navigation .brand-logo {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+  }
+
+  .main-navigation .nav-links {
+    display: grid;
+    grid-template-columns: .7fr 1fr 1.5fr .65fr;
+    flex: 1 1 100%;
+    width: 100%;
+    gap: 3px;
+  }
+
+  .main-navigation .nav-link {
+    min-width: 0;
+    padding: 6px 4px;
+    font-size: .77rem;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 600px) {
+  .beyond-page .beyond-hero h1 {
+    font-size: clamp(2.3rem, 10vw, 3.5rem);
+    overflow-wrap: anywhere;
+  }
+
+  .beyond-page .beyond-toolbar,
+  .beyond-page .beyond-toolbar label,
+  .beyond-page .beyond-toolbar select {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .beyond-page .beyond-team-card > header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .beyond-page .beyond-team-card > header > div:first-child {
+    flex: 1 1 170px;
+    min-width: 0;
+  }
+
+  .beyond-page .beyond-position-row {
+    grid-template-columns: 30px minmax(12px, 1fr) 43px 48px 22px;
+    gap: 5px;
+    font-size: .73rem;
+  }
+}
