@@ -51,3 +51,16 @@ test('newsletter renders four sections, six readable scorecards and preserves th
   expect(kelceCard).toHaveTextContent('Travis Kelce');
   expect(kelceCard).toHaveTextContent('10.10 pts');
 });
+
+test('NFL reporting is woven into matchup prose with sources, not separate sections', () => {
+  const { container } = render(<Week1RecapNewsletter />);
+  expect(screen.queryByRole('heading', { name: /NFL connection/i })).not.toBeInTheDocument();
+  expect(container.querySelector('.week-one-nfl-note')).not.toBeInTheDocument();
+  expect(container.querySelector('.week-one-availability')).not.toBeInTheDocument();
+  expect(container.querySelector('#recap-1 .week-one-recap-summary')).toHaveTextContent('NFC Offensive Player of the Week');
+  expect(container.querySelector('#recap-2 .week-one-recap-summary')).toHaveTextContent('191 scrimmage yards');
+  expect(container.querySelector('#recap-3 .week-one-recap-summary')).toHaveTextContent('Jason Witten');
+  expect(container.querySelector('#recap-5 .week-one-recap-summary')).toHaveTextContent('three fourth-quarter interceptions');
+  expect(container.querySelectorAll('.week-one-recap-summary .week-one-inline-sources a')).toHaveLength(6);
+  expect(screen.getByRole('heading', { name: 'Now that’s Rivalry Week.' })).toBeInTheDocument();
+});

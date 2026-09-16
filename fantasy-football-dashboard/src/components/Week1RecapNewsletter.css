@@ -63,16 +63,8 @@
 .week-one-xfactor h4 span { font-size: .92rem; color: var(--issue-red); white-space: nowrap; }
 .week-one-xfactor p:last-child, .week-one-lowlight p:last-child { margin-bottom: 0; }
 .week-one-lowlight h4 { color: var(--issue-red); margin-bottom: 6px; }
-.week-one-nfl-note { border-top: 1px solid var(--issue-rule); margin-top: 20px; padding-top: 16px; }
-.week-one-nfl-note h4 { color: #264d74; margin-bottom: 6px; }
-.week-one-nfl-note p { font-size: .93rem; margin-bottom: 4px; }
-.week-one-nfl-note > div { display: flex; flex-wrap: wrap; gap: 0 16px; }
-.week-one-nfl-note a { display: inline-flex; align-items: center; min-height: 44px; font-size: .77rem; }
-.week-one-availability { background: #f1eee7; border-radius: 6px; padding: 0 14px; }
-.week-one-availability summary { min-height: 44px; padding: 13px 0; cursor: pointer; font-size: .85rem; font-weight: 700; }
-.week-one-availability ul { margin: 0; padding: 0 0 16px 20px; }
-.week-one-availability li { font-size: .92rem; line-height: 1.65; margin-bottom: 12px; }
-.week-one-availability li:last-child { margin-bottom: 0; }
+.week-one-inline-sources { margin-left: 4px; white-space: nowrap; }
+.week-one-inline-sources a { display: inline-block; min-width: 24px; min-height: 24px; text-align: center; font-size: .72rem; vertical-align: baseline; }
 .week-one-rankings { padding: 0; margin: 24px 0 0; list-style: none; }
 .week-one-ranking { display: grid; grid-template-columns: 52px minmax(0,1fr); gap: 18px; border-top: 1px solid var(--issue-rule); padding: 22px 0; }
 .week-one-rank-number { font-size: 2rem; color: #9b7b42; font-weight: 800; line-height: 1.1; letter-spacing: -.06em; }
