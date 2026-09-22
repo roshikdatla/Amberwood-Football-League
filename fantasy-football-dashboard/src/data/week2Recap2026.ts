@@ -165,10 +165,10 @@ const ranking = (rosterId: number, tier: string, outlook: string, sources?: Repo
   tier, outlook, sources,
 });
 export const week2PowerRankings: PowerRanking[] = [
-  ranking(12, 'The team to catch',
-    'Pranav J has the receiving firepower to carry a title run, with Lamb and DeVonta showing he can win big even without Nacua. Getting Puka healthy after his hip-related absence and finding steady backfield production are the next steps toward making the league’s toughest assignment even tougher.', [pukaReport]),
   ranking(11, 'Title contender',
     'Allen, Taylor and Amon-Ra give GarVeen a championship-level core, and Kincaid’s emergence makes this more than a three-man operation. Moore’s shoulder injury makes his Week 3 availability uncertain, so Diggs and Metcalf need to keep the receiving floor from falling away.', [mooreReport]),
+  ranking(12, 'The team to catch',
+    'Pranav J has the receiving firepower to carry a title run, with Lamb and DeVonta showing he can win big even without Nacua. Getting Puka healthy after his hip-related absence and finding steady backfield production are the next steps toward making the league’s toughest assignment even tougher.', [pukaReport]),
   ranking(1, 'Title contender',
     'Gibbs and Kelce give Anudeep a path through the big matchups, but a deep playoff run needs London and McLaurin contributing before the rescue mission starts. Dowdle returned after a toe injury, and Anudeep will want reliable backfield cover so Gibbs does not have to carry every difficult week.', [sundayInjuries]),
   ranking(6, 'Title contender',

@@ -49,6 +49,9 @@ const Week2RecapNewsletter: React.FC = () => (
         <p className="week-one-kicker">01 / Overview</p>
         <h2 id="overview-title">{week2Overview.headline}</h2>
         <p className="week-one-lead">{week2Overview.lead}</p>
+        <figure className="week-one-overview-image">
+          <img src="/week2-recap-reaction.webp" alt="Week 2 reaction: Miami Heat players fight for a rebound above the Bucks." decoding="async" />
+        </figure>
       </section>
 
       <section className="week-one-section" id="recaps" aria-labelledby="recaps-title">
