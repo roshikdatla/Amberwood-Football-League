@@ -3,6 +3,13 @@ import { activeSeason } from '../config/seasons';
 
 const currentSeasonNewsletters = [
   {
+    slug: 'week2-recap',
+    title: 'Week 2 Recap: Adams Stole the Ending',
+    date: 'September 21, 2026',
+    description: 'Adams’ Monday-night comeback, six matchup recaps, injury-aware season outlooks, and the Week 3 card',
+    status: 'Read Now',
+  },
+  {
     slug: 'week1-recap',
     title: 'Week 1 Recap: Rivalry Week Settled',
     date: 'September 16, 2026',

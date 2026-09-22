@@ -1,0 +1,18 @@
+.week-two-issue .week-two-status {
+  margin: 18px 0 0;
+  padding: 12px 14px;
+  background: #f3f0e9;
+  border-left: 3px solid #b77e08;
+  border-radius: 0 6px 6px 0;
+  color: var(--issue-muted);
+  font-size: .8rem;
+  line-height: 1.6;
+}
+.week-two-status strong { color: var(--issue-ink); }
+.week-two-issue .week-one-recap-summary { margin-top: 20px; }
+.week-two-issue .week-one-card-meta { flex-wrap: wrap; gap: 6px 14px; }
+.week-two-issue .week-one-preview-teams > div { grid-template-columns: minmax(0, 1fr); }
+
+@media (max-width: 360px) {
+  .week-two-issue .week-two-status { padding: 10px; font-size: .77rem; }
+}

@@ -4,7 +4,7 @@ import { League, Roster, User, TeamStanding } from '../types/sleeper';
 import LeagueHero from './LeagueHero';
 import WeeklyMatchups from './WeeklyMatchups';
 import { SeasonConfig } from '../config/seasons';
-import { getRecapTeam, week1PowerRankings } from '../data/week1Recap2026';
+import { getRecapTeam, week2PowerRankings } from '../data/week2Recap2026';
 
 interface HomePageProps {
   leagueId?: string;
@@ -156,9 +156,9 @@ const HomePage: React.FC<HomePageProps> = ({
         
         <div className="sidebar">
           <div className="power-rankings-container">
-            <h3>{seasonConfig?.shortLabel || season} Power Rankings · After Week 1</h3>
+            <h3>{seasonConfig?.shortLabel || season} Power Rankings · After Week 2</h3>
             <div className="power-rankings-list">
-              {week1PowerRankings.map((ranking, index) => (
+              {week2PowerRankings.map((ranking, index) => (
                 <div className="power-ranking-item" key={ranking.rosterId}>
                   <div className="rank">{index + 1}</div>
                   <div className="team-analysis">
@@ -168,7 +168,7 @@ const HomePage: React.FC<HomePageProps> = ({
                 </div>
               ))}
             </div>
-            <a href="/newsletters/week1-recap#power-rankings" className="power-rankings-detail-link">Read all 12 season outlooks →</a>
+            <a href="/newsletters/week2-recap#power-rankings" className="power-rankings-detail-link">Read all 12 season outlooks →</a>
           </div>
         </div>
       </div>
