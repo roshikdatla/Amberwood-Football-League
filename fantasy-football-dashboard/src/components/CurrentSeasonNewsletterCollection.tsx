@@ -3,6 +3,13 @@ import { activeSeason } from '../config/seasons';
 
 const currentSeasonNewsletters = [
   {
+    slug: 'week3-recap',
+    title: 'Week 3 Recap: The Scoreboard Has Jokes',
+    date: 'September 30, 2026',
+    description: 'Six matchup recaps, Mickey of the Week, injury-aware season outlooks, and the Week 4 card',
+    status: 'Read Now',
+  },
+  {
     slug: 'week2-recap',
     title: 'Week 2 Recap: Adams Stole the Ending',
     date: 'September 21, 2026',
