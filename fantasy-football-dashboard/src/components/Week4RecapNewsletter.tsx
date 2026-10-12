@@ -43,6 +43,9 @@ const Week4RecapNewsletter: React.FC = () => {
           <p className="week-one-kicker">01 / Overview</p>
           <h2 id="overview-title">{week4Overview.headline}</h2>
           <p className="week-one-lead">{week4Overview.lead}</p>
+          <figure className="week-one-overview-image">
+            <video src="/week4-recap-cover.mp4" alt="Week 4 recap cover." decoding="async" controls autoPlay muted style={{width: '100%', maxWidth: '700px'}} />
+          </figure>
         </section>
 
         <section className="week-one-section" id="recaps" aria-labelledby="recaps-title">
