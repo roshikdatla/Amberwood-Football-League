@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   formatScore, getRecapTeam, getStarter, mickeyOfTheWeek, recapSource,
   week4Overview, week4PowerRankings, week4Recaps, week5Previews,
@@ -16,6 +16,7 @@ const editionDate = new Intl.DateTimeFormat('en-US', {
 
 const Week4RecapNewsletter: React.FC = () => {
   const mickeyTeam = getRecapTeam(mickeyOfTheWeek.rosterId);
+  const [videoEnded, setVideoEnded] = useState(false);
 
   return (
     <main className="week-one-issue week-three-issue" id="issue-top">
@@ -44,7 +45,18 @@ const Week4RecapNewsletter: React.FC = () => {
           <h2 id="overview-title">{week4Overview.headline}</h2>
           <p className="week-one-lead">{week4Overview.lead}</p>
           <figure className="week-one-overview-image">
-            <video src="/week4-recap-cover.mp4" alt="Week 4 recap cover." decoding="async" controls autoPlay muted style={{width: '100%', maxWidth: '700px'}} />
+            {!videoEnded && (
+              <img src="/week4-recap-cover.gif" alt="Week 4 recap cover." decoding="async" style={{width: '100%', maxWidth: '700px'}} onLoad={() => {
+                const img = new Image();
+                img.src = '/week4-recap-cover.gif';
+                img.onload = () => {
+                  setTimeout(() => setVideoEnded(true), 2900);
+                };
+              }} />
+            )}
+            {videoEnded && (
+              <img src="/week4-recap-cover-last.jpg" alt="Week 4 recap cover." decoding="async" style={{width: '100%', maxWidth: '700px'}} />
+            )}
           </figure>
         </section>
 
