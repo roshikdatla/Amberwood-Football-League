@@ -1,0 +1,1163 @@
+{
+  "source": "https://fantasy-www.nfl.com/news/nfl-how-to-watch-week-4-schedule-london-game-details-and-more",
+  "note": "Final starter points grouped by scheduled NFL game window, not a historical live scoring feed. Team affiliation from captured Sleeper player metadata.",
+  "teams": [
+    {
+      "rosterId": 1,
+      "matchupId": 4,
+      "windows": [
+        {
+          "window": "Thu",
+          "points": 7,
+          "cumulative": 7,
+          "players": [
+            [
+              "Pittsburgh Steelers",
+              7,
+              "PIT"
+            ]
+          ]
+        },
+        {
+          "window": "Sun London",
+          "points": 0,
+          "cumulative": 7,
+          "players": []
+        },
+        {
+          "window": "Sun early",
+          "points": 83.92,
+          "cumulative": 90.92,
+          "players": [
+            [
+              "Joe Burrow",
+              24.72,
+              "CIN"
+            ],
+            [
+              "Javonte Williams",
+              31.3,
+              "DAL"
+            ],
+            [
+              "Jeremiyah Love",
+              6.5,
+              "ARI"
+            ],
+            [
+              "Matthew Golden",
+              11.7,
+              "GB"
+            ],
+            [
+              "Makai Lemon",
+              5.7,
+              "PHI"
+            ],
+            [
+              "Evan McPherson",
+              4,
+              "CIN"
+            ]
+          ]
+        },
+        {
+          "window": "Sun late",
+          "points": 3.5,
+          "cumulative": 94.42,
+          "players": [
+            [
+              "Travis Kelce",
+              3.5,
+              "KC"
+            ]
+          ]
+        },
+        {
+          "window": "SNF",
+          "points": 17.7,
+          "cumulative": 112.12,
+          "players": [
+            [
+              "Jahmyr Gibbs",
+              17.7,
+              "DET"
+            ]
+          ]
+        },
+        {
+          "window": "MNF",
+          "points": 14.6,
+          "cumulative": 126.72,
+          "players": [
+            [
+              "Drake London",
+              14.6,
+              "ATL"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "rosterId": 2,
+      "matchupId": 4,
+      "windows": [
+        {
+          "window": "Thu",
+          "points": 21.9,
+          "cumulative": 21.9,
+          "players": [
+            [
+              "Denzel Boston",
+              12.9,
+              "CLE"
+            ],
+            [
+              "Cleveland Browns",
+              9,
+              "CLE"
+            ]
+          ]
+        },
+        {
+          "window": "Sun London",
+          "points": 5.1,
+          "cumulative": 27.0,
+          "players": [
+            [
+              "Antonio Williams",
+              5.1,
+              "WAS"
+            ]
+          ]
+        },
+        {
+          "window": "Sun early",
+          "points": 23.4,
+          "cumulative": 50.4,
+          "players": [
+            [
+              "Chase Brown",
+              19.1,
+              "CIN"
+            ],
+            [
+              "David Montgomery",
+              4.3,
+              "HOU"
+            ],
+            [
+              "Kenyon Sadiq",
+              0,
+              "NYJ"
+            ]
+          ]
+        },
+        {
+          "window": "Sun late",
+          "points": 34.72,
+          "cumulative": 85.12,
+          "players": [
+            [
+              "Brock Purdy",
+              19.62,
+              "SF"
+            ],
+            [
+              "Rashee Rice",
+              0,
+              "KC"
+            ],
+            [
+              "Will Reichard",
+              15.1,
+              "MIN"
+            ]
+          ]
+        },
+        {
+          "window": "SNF",
+          "points": 22.4,
+          "cumulative": 107.52,
+          "players": [
+            [
+              "Sam LaPorta",
+              22.4,
+              "DET"
+            ]
+          ]
+        },
+        {
+          "window": "MNF",
+          "points": 0,
+          "cumulative": 107.52,
+          "players": []
+        }
+      ]
+    },
+    {
+      "rosterId": 3,
+      "matchupId": 6,
+      "windows": [
+        {
+          "window": "Thu",
+          "points": 2.1,
+          "cumulative": 2.1,
+          "players": [
+            [
+              "Chris Boswell",
+              2.1,
+              "PIT"
+            ]
+          ]
+        },
+        {
+          "window": "Sun London",
+          "points": 0,
+          "cumulative": 2.1,
+          "players": []
+        },
+        {
+          "window": "Sun early",
+          "points": 55.88,
+          "cumulative": 57.98,
+          "players": [
+            [
+              "Lamar Jackson",
+              18.88,
+              "BAL"
+            ],
+            [
+              "Christian Watson",
+              7.7,
+              "GB"
+            ],
+            [
+              "Romeo Doubs",
+              23.8,
+              "NE"
+            ],
+            [
+              "Baltimore Ravens",
+              5.5,
+              "BAL"
+            ]
+          ]
+        },
+        {
+          "window": "Sun late",
+          "points": 54.7,
+          "cumulative": 112.68,
+          "players": [
+            [
+              "Aaron Jones",
+              15.8,
+              "MIN"
+            ],
+            [
+              "Brock Bowers",
+              20.6,
+              "LV"
+            ],
+            [
+              "RJ Harvey",
+              18.3,
+              "DEN"
+            ]
+          ]
+        },
+        {
+          "window": "SNF",
+          "points": 0,
+          "cumulative": 112.68,
+          "players": []
+        },
+        {
+          "window": "MNF",
+          "points": 52.8,
+          "cumulative": 165.48,
+          "players": [
+            [
+              "Bijan Robinson",
+              31.2,
+              "ATL"
+            ],
+            [
+              "Chris Olave",
+              21.6,
+              "NO"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "rosterId": 4,
+      "matchupId": 3,
+      "windows": [
+        {
+          "window": "Thu",
+          "points": 0,
+          "cumulative": 0,
+          "players": []
+        },
+        {
+          "window": "Sun London",
+          "points": 4.6,
+          "cumulative": 4.6,
+          "players": [
+            [
+              "Josh Downs",
+              4.6,
+              "IND"
+            ]
+          ]
+        },
+        {
+          "window": "Sun early",
+          "points": 55.1,
+          "cumulative": 59.7,
+          "players": [
+            [
+              "Braelon Allen",
+              8.7,
+              "NYJ"
+            ],
+            [
+              "Ja'Marr Chase",
+              5.7,
+              "CIN"
+            ],
+            [
+              "Tucker Kraft",
+              16.5,
+              "GB"
+            ],
+            [
+              "Dontayvion Wicks",
+              4.8,
+              "PHI"
+            ],
+            [
+              "Tyler Loop",
+              7.4,
+              "BAL"
+            ],
+            [
+              "New York Giants",
+              12,
+              "NYG"
+            ]
+          ]
+        },
+        {
+          "window": "Sun late",
+          "points": 18.6,
+          "cumulative": 78.3,
+          "players": [
+            [
+              "Ashton Jeanty",
+              18.6,
+              "LV"
+            ]
+          ]
+        },
+        {
+          "window": "SNF",
+          "points": 68.68,
+          "cumulative": 146.98,
+          "players": [
+            [
+              "Jared Goff",
+              22.48,
+              "DET"
+            ],
+            [
+              "Tetairoa McMillan",
+              46.2,
+              "CAR"
+            ]
+          ]
+        },
+        {
+          "window": "MNF",
+          "points": 0,
+          "cumulative": 146.98,
+          "players": []
+        }
+      ]
+    },
+    {
+      "rosterId": 5,
+      "matchupId": 5,
+      "windows": [
+        {
+          "window": "Thu",
+          "points": 11.7,
+          "cumulative": 11.7,
+          "players": [
+            [
+              "Harold Fannin",
+              11.7,
+              "CLE"
+            ]
+          ]
+        },
+        {
+          "window": "Sun London",
+          "points": 7,
+          "cumulative": 18.7,
+          "players": [
+            [
+              "Jacory Croskey-Merritt",
+              7,
+              "WAS"
+            ]
+          ]
+        },
+        {
+          "window": "Sun early",
+          "points": 73.08,
+          "cumulative": 91.78,
+          "players": [
+            [
+              "Trevor Lawrence",
+              13.08,
+              "JAX"
+            ],
+            [
+              "Kyren Williams",
+              36.7,
+              "LAR"
+            ],
+            [
+              "Luther Burden",
+              11.4,
+              "CHI"
+            ],
+            [
+              "Cam Little",
+              11.9,
+              "JAX"
+            ]
+          ]
+        },
+        {
+          "window": "Sun late",
+          "points": 50.0,
+          "cumulative": 141.78,
+          "players": [
+            [
+              "Jaxon Smith-Njigba",
+              12.6,
+              "SEA"
+            ],
+            [
+              "Kenneth Walker",
+              32.9,
+              "KC"
+            ],
+            [
+              "Kansas City Chiefs",
+              4.5,
+              "KC"
+            ]
+          ]
+        },
+        {
+          "window": "SNF",
+          "points": 0,
+          "cumulative": 141.78,
+          "players": []
+        },
+        {
+          "window": "MNF",
+          "points": 11.9,
+          "cumulative": 153.68,
+          "players": [
+            [
+              "Juwan Johnson",
+              11.9,
+              "NO"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "rosterId": 6,
+      "matchupId": 5,
+      "windows": [
+        {
+          "window": "Thu",
+          "points": 15.6,
+          "cumulative": 15.6,
+          "players": [
+            [
+              "Jaylen Warren",
+              15.6,
+              "PIT"
+            ]
+          ]
+        },
+        {
+          "window": "Sun London",
+          "points": 0,
+          "cumulative": 15.6,
+          "players": []
+        },
+        {
+          "window": "Sun early",
+          "points": 62.8,
+          "cumulative": 78.4,
+          "players": [
+            [
+              "Dak Prescott",
+              18.1,
+              "DAL"
+            ],
+            [
+              "Derrick Henry",
+              15.9,
+              "BAL"
+            ],
+            [
+              "George Pickens",
+              9.5,
+              "DAL"
+            ],
+            [
+              "Isaiah Likely",
+              13.6,
+              "NYG"
+            ],
+            [
+              "Garrett Wilson",
+              5.7,
+              "NYJ"
+            ]
+          ]
+        },
+        {
+          "window": "Sun late",
+          "points": 16.9,
+          "cumulative": 95.3,
+          "players": [
+            [
+              "Tre Tucker",
+              8.4,
+              "LV"
+            ],
+            [
+              "Harrison Butker",
+              5,
+              "KC"
+            ],
+            [
+              "Denver Broncos",
+              3.5,
+              "DEN"
+            ]
+          ]
+        },
+        {
+          "window": "SNF",
+          "points": 6.6,
+          "cumulative": 101.9,
+          "players": [
+            [
+              "Darren Waller",
+              6.6,
+              "CAR"
+            ]
+          ]
+        },
+        {
+          "window": "MNF",
+          "points": 0,
+          "cumulative": 101.9,
+          "players": []
+        }
+      ]
+    },
+    {
+      "rosterId": 7,
+      "matchupId": 1,
+      "windows": [
+        {
+          "window": "Thu",
+          "points": 0,
+          "cumulative": 0,
+          "players": []
+        },
+        {
+          "window": "Sun London",
+          "points": 0,
+          "cumulative": 0,
+          "players": []
+        },
+        {
+          "window": "Sun early",
+          "points": 71.2,
+          "cumulative": 71.2,
+          "players": [
+            [
+              "Zay Flowers",
+              27.8,
+              "BAL"
+            ],
+            [
+              "Malik Nabers",
+              25.2,
+              "NYG"
+            ],
+            [
+              "Mack Hollins",
+              8.3,
+              "NE"
+            ],
+            [
+              "Brandon Aubrey",
+              9.9,
+              "DAL"
+            ]
+          ]
+        },
+        {
+          "window": "Sun late",
+          "points": 66.28,
+          "cumulative": 137.48,
+          "players": [
+            [
+              "Kyler Murray",
+              11.48,
+              "MIN"
+            ],
+            [
+              "Christian McCaffrey",
+              16,
+              "SF"
+            ],
+            [
+              "Omarion Hampton",
+              13.3,
+              "LAC"
+            ],
+            [
+              "George Kittle",
+              18.5,
+              "SF"
+            ],
+            [
+              "Minnesota Vikings",
+              7,
+              "MIN"
+            ]
+          ]
+        },
+        {
+          "window": "SNF",
+          "points": 18.2,
+          "cumulative": 155.68,
+          "players": [
+            [
+              "Jameson Williams",
+              18.2,
+              "DET"
+            ]
+          ]
+        },
+        {
+          "window": "MNF",
+          "points": 0,
+          "cumulative": 155.68,
+          "players": []
+        }
+      ]
+    },
+    {
+      "rosterId": 8,
+      "matchupId": 2,
+      "windows": [
+        {
+          "window": "Thu",
+          "points": 11.4,
+          "cumulative": 11.4,
+          "players": [
+            [
+              "KC Concepcion",
+              11.4,
+              "CLE"
+            ]
+          ]
+        },
+        {
+          "window": "Sun London",
+          "points": 14.4,
+          "cumulative": 25.8,
+          "players": [
+            [
+              "Spencer Shrader",
+              14.4,
+              "IND"
+            ]
+          ]
+        },
+        {
+          "window": "Sun early",
+          "points": 47.8,
+          "cumulative": 73.6,
+          "players": [
+            [
+              "Saquon Barkley",
+              1,
+              "PHI"
+            ],
+            [
+              "Bhayshul Tuten",
+              11.1,
+              "JAX"
+            ],
+            [
+              "Michael Wilson",
+              16.5,
+              "ARI"
+            ],
+            [
+              "Colston Loveland",
+              11.7,
+              "CHI"
+            ],
+            [
+              "Green Bay Packers",
+              7.5,
+              "GB"
+            ]
+          ]
+        },
+        {
+          "window": "Sun late",
+          "points": 23.6,
+          "cumulative": 97.2,
+          "players": [
+            [
+              "Jaylen Waddle",
+              14.5,
+              "DEN"
+            ],
+            [
+              "Jordan Addison",
+              9.1,
+              "MIN"
+            ]
+          ]
+        },
+        {
+          "window": "SNF",
+          "points": 21.46,
+          "cumulative": 118.66,
+          "players": [
+            [
+              "Bryce Young",
+              21.46,
+              "CAR"
+            ]
+          ]
+        },
+        {
+          "window": "MNF",
+          "points": 0,
+          "cumulative": 118.66,
+          "players": []
+        }
+      ]
+    },
+    {
+      "rosterId": 9,
+      "matchupId": 2,
+      "windows": [
+        {
+          "window": "Thu",
+          "points": 21.6,
+          "cumulative": 21.6,
+          "players": [
+            [
+              "Quinshon Judkins",
+              21.6,
+              "CLE"
+            ]
+          ]
+        },
+        {
+          "window": "Sun London",
+          "points": 0,
+          "cumulative": 21.6,
+          "players": []
+        },
+        {
+          "window": "Sun early",
+          "points": 66.4,
+          "cumulative": 88.0,
+          "players": [
+            [
+              "James Cook",
+              16.3,
+              "BUF"
+            ],
+            [
+              "Parker Washington",
+              2,
+              "JAX"
+            ],
+            [
+              "Davante Adams",
+              7.2,
+              "LAR"
+            ],
+            [
+              "Jake Ferguson",
+              4.1,
+              "DAL"
+            ],
+            [
+              "Nico Collins",
+              32.8,
+              "HOU"
+            ],
+            [
+              "Houston Texans",
+              4,
+              "HOU"
+            ]
+          ]
+        },
+        {
+          "window": "Sun late",
+          "points": 32.5,
+          "cumulative": 120.5,
+          "players": [
+            [
+              "Patrick Mahomes",
+              17,
+              "KC"
+            ],
+            [
+              "Xavier Worthy",
+              11,
+              "KC"
+            ],
+            [
+              "Eddy Pineiro",
+              4.5,
+              "SF"
+            ]
+          ]
+        },
+        {
+          "window": "SNF",
+          "points": 0,
+          "cumulative": 120.5,
+          "players": []
+        },
+        {
+          "window": "MNF",
+          "points": 0,
+          "cumulative": 120.5,
+          "players": []
+        }
+      ]
+    },
+    {
+      "rosterId": 10,
+      "matchupId": 1,
+      "windows": [
+        {
+          "window": "Thu",
+          "points": 0,
+          "cumulative": 0,
+          "players": []
+        },
+        {
+          "window": "Sun London",
+          "points": 9.2,
+          "cumulative": 9.2,
+          "players": [
+            [
+              "Laquon Treadwell",
+              9.2,
+              "IND"
+            ]
+          ]
+        },
+        {
+          "window": "Sun early",
+          "points": 47.8,
+          "cumulative": 57.0,
+          "players": [
+            [
+              "Bucky Irving",
+              6.1,
+              "TB"
+            ],
+            [
+              "Tee Higgins",
+              28.7,
+              "CIN"
+            ],
+            [
+              "Trey McBride",
+              10.1,
+              "ARI"
+            ],
+            [
+              "Dalton Schultz",
+              2.9,
+              "HOU"
+            ]
+          ]
+        },
+        {
+          "window": "Sun late",
+          "points": 41.1,
+          "cumulative": 98.1,
+          "players": [
+            [
+              "T.J. Hockenson",
+              26.9,
+              "MIN"
+            ],
+            [
+              "Matt Gay",
+              14.2,
+              "LV"
+            ]
+          ]
+        },
+        {
+          "window": "SNF",
+          "points": 27.9,
+          "cumulative": 126.0,
+          "players": [
+            [
+              "Chuba Hubbard",
+              27.9,
+              "CAR"
+            ]
+          ]
+        },
+        {
+          "window": "MNF",
+          "points": 13.94,
+          "cumulative": 139.94,
+          "players": [
+            [
+              "Tyler Shough",
+              15.94,
+              "NO"
+            ],
+            [
+              "New Orleans Saints",
+              -2,
+              "NO"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "rosterId": 11,
+      "matchupId": 3,
+      "windows": [
+        {
+          "window": "Thu",
+          "points": 18.5,
+          "cumulative": 18.5,
+          "players": [
+            [
+              "DK Metcalf",
+              18.5,
+              "PIT"
+            ]
+          ]
+        },
+        {
+          "window": "Sun London",
+          "points": 31.2,
+          "cumulative": 49.7,
+          "players": [
+            [
+              "Jonathan Taylor",
+              22.7,
+              "IND"
+            ],
+            [
+              "Stefon Diggs",
+              8.5,
+              "WAS"
+            ]
+          ]
+        },
+        {
+          "window": "Sun early",
+          "points": 23.92,
+          "cumulative": 73.62,
+          "players": [
+            [
+              "Josh Allen",
+              17.52,
+              "BUF"
+            ],
+            [
+              "Dalton Kincaid",
+              1.7,
+              "BUF"
+            ],
+            [
+              "DJ Moore",
+              2.7,
+              "BUF"
+            ],
+            [
+              "Chase McLaughlin",
+              2,
+              "TB"
+            ]
+          ]
+        },
+        {
+          "window": "Sun late",
+          "points": 0,
+          "cumulative": 73.62,
+          "players": []
+        },
+        {
+          "window": "SNF",
+          "points": 18.5,
+          "cumulative": 92.12,
+          "players": [
+            [
+              "Amon-Ra St. Brown",
+              15.5,
+              "DET"
+            ],
+            [
+              "Detroit Lions",
+              3,
+              "DET"
+            ]
+          ]
+        },
+        {
+          "window": "MNF",
+          "points": 22.8,
+          "cumulative": 114.92,
+          "players": [
+            [
+              "Alvin Kamara",
+              22.8,
+              "NO"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "rosterId": 12,
+      "matchupId": 6,
+      "windows": [
+        {
+          "window": "Thu",
+          "points": 3.5,
+          "cumulative": 3.5,
+          "players": [
+            [
+              "Michael Pittman",
+              3.5,
+              "PIT"
+            ]
+          ]
+        },
+        {
+          "window": "Sun London",
+          "points": 9.1,
+          "cumulative": 12.6,
+          "players": [
+            [
+              "Tyler Warren",
+              9.1,
+              "IND"
+            ]
+          ]
+        },
+        {
+          "window": "Sun early",
+          "points": 114.92,
+          "cumulative": 127.52,
+          "players": [
+            [
+              "Jalen Hurts",
+              12.52,
+              "PHI"
+            ],
+            [
+              "D'Andre Swift",
+              7.4,
+              "CHI"
+            ],
+            [
+              "Cam Skattebo",
+              7.6,
+              "NYG"
+            ],
+            [
+              "CeeDee Lamb",
+              43.3,
+              "DAL"
+            ],
+            [
+              "Puka Nacua",
+              29.7,
+              "LAR"
+            ],
+            [
+              "Ka'imi Fairbairn",
+              14.4,
+              "HOU"
+            ]
+          ]
+        },
+        {
+          "window": "Sun late",
+          "points": 11,
+          "cumulative": 138.52,
+          "players": [
+            [
+              "Seattle Seahawks",
+              11,
+              "SEA"
+            ]
+          ]
+        },
+        {
+          "window": "SNF",
+          "points": 0,
+          "cumulative": 138.52,
+          "players": []
+        },
+        {
+          "window": "MNF",
+          "points": 17.4,
+          "cumulative": 155.92,
+          "players": [
+            [
+              "Devaughn Vele",
+              17.4,
+              "NO"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

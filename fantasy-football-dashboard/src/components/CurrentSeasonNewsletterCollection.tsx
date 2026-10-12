@@ -3,6 +3,13 @@ import { activeSeason } from '../config/seasons';
 
 const currentSeasonNewsletters = [
   {
+    slug: 'week4-recap',
+    title: 'Week 4 Recap: The Mouse Ears Have Changed Hands',
+    date: 'Week 5 pregame edition',
+    description: 'Six matchup recaps, Mickey of the Week, season outlooks, and the Week 5 preview',
+    status: 'Read Now',
+  },
+  {
     slug: 'week3-recap',
     title: 'Week 3 Recap: The Scoreboard Has Jokes',
     date: 'September 30, 2026',
