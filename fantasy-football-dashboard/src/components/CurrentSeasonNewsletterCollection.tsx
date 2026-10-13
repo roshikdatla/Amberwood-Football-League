@@ -3,6 +3,13 @@ import { activeSeason } from '../config/seasons';
 
 const currentSeasonNewsletters = [
   {
+    slug: 'week5-recap',
+    title: 'Week 5 Recap: Monday Miracles and a Record Wrecking Ball',
+    date: 'October 13, 2026',
+    description: 'Two Monday comebacks, Sahil’s record eruption, six recaps, Mickey, power rankings, and Week 6 picks',
+    status: 'Read Now',
+  },
+  {
     slug: 'week4-recap',
     title: 'Week 4 Recap: The Mouse Ears Have Changed Hands',
     date: 'Week 5 pregame edition',
