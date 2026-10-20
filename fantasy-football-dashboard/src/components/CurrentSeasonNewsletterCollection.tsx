@@ -3,6 +3,13 @@ import { activeSeason } from '../config/seasons';
 
 const currentSeasonNewsletters = [
   {
+    slug: 'week6-recap',
+    title: 'Week 6 Recap: Six and Oh, Two Mouse Ears, Three Monday Heists',
+    date: 'October 20, 2026',
+    description: 'Roshik stays perfect, three Monday reversals, six recaps, Mickey, season outlooks, and Week 7 picks',
+    status: 'Read Now',
+  },
+  {
     slug: 'week5-recap',
     title: 'Week 5 Recap: Monday Miracles and a Record Wrecking Ball',
     date: 'October 13, 2026',
