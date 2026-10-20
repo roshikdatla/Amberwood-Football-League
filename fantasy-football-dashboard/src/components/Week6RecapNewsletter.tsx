@@ -43,6 +43,9 @@ const Week6RecapNewsletter: React.FC = () => {
           <p className="week-one-kicker">01 / Overview</p>
           <h2 id="overview-title">{week6Overview.headline}</h2>
           <p className="week-one-lead">{week6Overview.lead}</p>
+          <figure className="week-one-overview-image">
+            <img src="/week6-recap-cover.png" alt="Week 6 recap cover." decoding="async" />
+          </figure>
         </section>
 
         <section className="week-one-section" id="recaps" aria-labelledby="recaps-title">
