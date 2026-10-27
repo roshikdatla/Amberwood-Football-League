@@ -3,6 +3,13 @@ import { activeSeason } from '../config/seasons';
 
 const currentSeasonNewsletters = [
   {
+    slug: 'week7-recap',
+    title: 'Week 7 Recap: Six Pull Away. Only Five Get the Easy Door.',
+    date: 'October 27, 2026',
+    description: 'The top-six sweep, the points-wildcard twist, six recaps, Mickey, season outlooks and Week 8 picks',
+    status: 'Read Now',
+  },
+  {
     slug: 'week6-recap',
     title: 'Week 6 Recap: Six and Oh, Two Mouse Ears, Three Monday Heists',
     date: 'October 20, 2026',
