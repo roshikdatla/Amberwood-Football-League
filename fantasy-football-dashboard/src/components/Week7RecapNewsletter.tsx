@@ -44,7 +44,7 @@ const Week7RecapNewsletter: React.FC = () => {
           <h2 id="overview-title">{week7Overview.headline}</h2>
           <p className="week-one-lead">{week7Overview.lead}</p>
           <figure className="week-one-overview-image">
-            <img src="/week7-recap-cover.svg" alt="Week 7 recap cover." decoding="async" />
+            <video src="/week7-recap-cover.mp4" aria-label="Week 7 recap cover." autoPlay loop muted playsInline style={{width: '100%', maxWidth: '700px'}} />
           </figure>
           <aside className="week-three-mickey-card" aria-labelledby="playoff-picture-title">
             <p className="week-one-kicker">The playoff picture / Two different races</p>
