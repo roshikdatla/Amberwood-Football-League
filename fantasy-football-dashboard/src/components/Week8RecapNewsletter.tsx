@@ -151,7 +151,6 @@ const Week8RecapNewsletter: React.FC = () => {
 
         <aside className="week-one-dashboard-callout">
           <div><p className="week-one-kicker">Still arguing? Pull up the numbers.</p><h2>Beyond the Boxscore.</h2><p>Who’s carrying the lineup? Where are the points coming from? Take a closer look at the season so far.</p></div>
-          <a href="/beyond-the-boxscore">Open the 2026 dashboard →</a>
         </aside>
         <footer className="week-one-footer">
           <p>Scores and lineup data: <a href={recapSource.sources.week8} target="_blank" rel="noreferrer">Sleeper Week 8</a> · <a href={recapSource.sources.week9} target="_blank" rel="noreferrer">Week 9 schedule</a>. Editorial cutoff: November 3, 2026, after Week 8. Recaps preserve historical Week 8 lineups; Week 9 picks are forecasts and availability can change. Final score data retrieved {editionDate}, subject to stat corrections. Numbered links cite supporting reports.</p>

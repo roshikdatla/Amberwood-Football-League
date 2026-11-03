@@ -75,7 +75,7 @@ test('this pregame edition separates its editorial cutoff from the data retrieva
   expect(container.querySelectorAll('img')).toHaveLength(1);
   expect(container.textContent).not.toMatch(/Score so far|Live snapshot|commissioner/);
   expect(screen.getByRole('link', { name: 'Read the Week 7 recap' })).toHaveAttribute('href', '/newsletters/week7-recap');
-  expect(screen.getByRole('link', { name: /Open the 2026 dashboard/ })).toHaveAttribute('href', '/beyond-the-boxscore');
+  expect(container.querySelector('a[href="/beyond-the-boxscore"]')).toBeNull();
   expect(screen.queryByRole('heading', { name: /NFL connection/i })).not.toBeInTheDocument();
 });
 

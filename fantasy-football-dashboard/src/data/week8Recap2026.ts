@@ -152,12 +152,12 @@ export const week8Recaps: Recap[] = [
       4,
       7
     ],
-    "billing": "THE BANK COLLECTS. THE PLAYOFF BOUNCER STILL SAYS NO.",
-    "summary": "Ankith took a 29.10–24.90 Thursday edge, then added 80.70 in Sunday’s daytime window against Pranav P’s 73.40. That made it 109.80–98.30 before the night game. Sunday night widened the gap to 132.70–113.28; Caleb Williams’ Monday 13.98 simply added the final bank statement. The result: 146.68–113.28, a 33.40-point win, with Chase’s 33.10 and Allen’s 25.30 providing the biggest revenue streams. Both managers now stand 5–3. Pranav P still owns fourth on the points tiebreaker, while Ankith is sixth by record and outside the field because Taaha holds the wildcard. A profitable quarter, followed by an awkward meeting with admissions. The bank beat a playoff tenant and still has to ask the landlord for a key.",
+    "billing": "SUPER O-MARION BRO HITS THE WRONG PIPE.",
+    "summary": "Ankith took a 29.10–24.90 Thursday edge, then added 80.70 in Sunday’s daytime window against Pranav P’s 73.40. That made it 109.80–98.30 before the night game. Sunday night widened the gap to 132.70–113.28; Caleb Williams’ Monday 13.98 put the final score on screen. The result: 146.68–113.28, a 33.40-point win, with Chase’s 33.10 and Allen’s 25.30 doing most of the damage. Both managers now stand 5–3. Pranav P still owns fourth on the points tiebreaker, while Ankith is sixth by record and outside the field because Taaha holds the wildcard. Super O-Marion Bro spent the weekend taking damage without finding a mushroom. Ankith cleared the level, only to discover the playoff princess is still in another castle.",
     "xFactorRosterId": 4,
     "xFactorId": "chase",
-    "xFactor": "Chase supplied 33.10, almost the entire winning margin by himself. Add Allen’s 25.30 and the bank had two dependable revenue streams instead of trying to finance the week with a motivational quote.",
-    "lowlight": "Zay Flowers’ 0.00 left Pranav P without a key contribution, while Henry and Minnesota added only 6.00 apiece. His total fell 64.70 from last week’s 177.98. Ankith survived Myers’ 0.00 because the rest of the bank actually opened. These are lineup scores, not claims about why a player scored zero.",
+    "xFactor": "Chase supplied 33.10, almost the entire winning margin by himself. Add Allen’s 25.30 and Pranav P was facing two boss fights with one health bar. There was no helpful green pipe out of this one.",
+    "lowlight": "Zay Flowers’ 0.00 left Pranav P without a key contribution, while Henry and Minnesota added only 6.00 apiece. His total fell 64.70 from last week’s 177.98. Ankith survived Myers’ 0.00; Super O-Marion Bro could have used a second controller, an extra life, or literally any points from Flowers. These are lineup scores, not claims about why a player scored zero.",
     "sources": [
       {
         "label": "Sleeper Week 8 lineups and scores",
@@ -175,12 +175,12 @@ export const week8Recaps: Recap[] = [
       2,
       9
     ],
-    "billing": "A WIN SO UGLY IT COMES WITH A MICKEY RECEIPT.",
-    "summary": "Neither team had a Thursday starter contribution, so the comedy waited for Sunday. Abhishek emerged from the daytime games up 68.36–60.38, an eight-point lead in a matchup that appeared to be conserving electricity. Sunday night supplied 25.70 for Abhishek and only 7.20 for Aditya, closing the book at 94.06–67.58 with nobody left Monday. Rice’s 18.30 and Chase Brown’s 16.10 were enough to deliver a 26.48-point victory; Cook’s 18.10 could not rescue Aditya’s total. Both teams leave at 3–5, but they occupied the bottom two scoring spots on the weekly card. The biryani was not merely undercooked. Someone forgot to turn on the stove, and Abhishek still needed raita to beat it.",
+    "billing": "ZERO DARK PURDY RAIDED THE WRONG KITCHEN.",
+    "summary": "Neither team had a Thursday starter contribution, so the comedy waited for Sunday. Abhishek emerged from the daytime games up 68.36–60.38, an eight-point lead as Zero Dark Purdy attempted a stealth operation so quiet the scoreboard barely noticed. Sunday night supplied 25.70 for Abhishek and only 7.20 for Aditya, closing the book at 94.06–67.58 with nobody left Monday. Rice’s 18.30 and Chase Brown’s 16.10 were enough to deliver a 26.48-point victory; Cook’s 18.10 could not rescue Aditya’s total. Both teams leave at 3–5, but they occupied the bottom two scoring spots on the weekly card. The biryani was not merely undercooked. Someone forgot to turn on the stove, and Abhishek still needed raita to beat it.",
     "xFactorRosterId": 2,
     "xFactorId": "rice",
-    "xFactor": "Rice’s 18.30 was the largest contribution to Abhishek’s total. In a matchup where the combined score was 161.64, a modest WR day looked like a private rescue helicopter.",
-    "lowlight": "Coleman’s 1.40, Pitts’ 2.60 and Parker Washington’s 3.60 left Aditya’s lineup with very little margin. Abhishek won despite Brissett’s 3.46, Reichard’s 0.50 and Kansas City’s 1.00. The schedule did more heavy lifting than either manager should admit.",
+    "xFactor": "Rice’s 18.30 was the largest contribution to Abhishek’s total. The combined score was only 161.64, and somehow the best Rice in a matchup against Cookin Sutton Biryani belonged to the other team. That should trigger an immediate kitchen inspection.",
+    "lowlight": "Coleman’s 1.40, Pitts’ 2.60 and Parker Washington’s 3.60 left Aditya’s lineup with very little margin. Abhishek won despite Brissett’s 3.46, Reichard’s 0.50 and Kansas City’s 1.00. Zero Dark Purdy completed the mission, but the debrief is going to be mostly questions about how a bowl of cold biryani nearly put up a fight.",
     "sources": [
       {
         "label": "Sleeper Week 8 lineups and scores",
@@ -198,12 +198,12 @@ export const week8Recaps: Recap[] = [
       10,
       6
     ],
-    "billing": "BUC-EE’S OPENS A 176-POINT SUPERSTORE.",
-    "summary": "Abhiram put 10.36 on the board Thursday while Sahil waited for Sunday. Then came the supermarket-sized avalanche: 166.30 more for Abhiram during Sunday’s daytime games against Sahil’s 110.20. With neither team adding points in the night games, the completed result was 176.66–110.20, a 66.46-point demolition. Higgins delivered 39.50, Fannin 25.40 and Irving 23.00, combining for 87.90 before the rest of the checkout line even mattered. Warren’s 22.30 was Sahil’s biggest response. Abhiram reaches 5–3 and the fifth record-based berth in the current snapshot; Sahil drops to 2–6. J J the Jet Plane did make it to the stadium. Unfortunately, Buc-ee’s had purchased the airport, the parking lot and the rights to the postgame apology.",
+    "billing": "J J THE JET PLANE MAKES AN EMERGENCY BUC-EE’S STOP.",
+    "summary": "Abhiram put 10.36 on the board Thursday while Sahil waited for Sunday. Then came the supermarket-sized avalanche: 166.30 more for Abhiram during Sunday’s daytime games against Sahil’s 110.20. With neither team adding points in the night games, the completed result was 176.66–110.20, a 66.46-point demolition. Higgins delivered 39.50, Fannin 25.40 and Irving 23.00, combining for 87.90 before the rest of the lineup even mattered. Warren’s 22.30 was Sahil’s biggest response. Abhiram reaches 5–3 and the fifth record-based berth in the current snapshot; Sahil drops to 2–6. J J the Jet Plane landed at Buc-ee’s looking for fuel and left with a bag of Beaver Nuggets and a grounded aircraft. The only thing reaching cruising altitude was Abhiram’s score.",
     "xFactorRosterId": 10,
     "xFactorId": "higgins",
-    "xFactor": "Higgins’ 39.50 supplied the week’s loudest statement in this matchup. The Higgins–Fannin–Irving trio alone outscored Aditya’s entire lineup by 20.32. That is not a recommended business model for the rest of the league.",
-    "lowlight": "Tre Tucker’s 0.00, Denver’s 2.50 and Pickens’ 6.80 left Sahil short of support for Warren. Meanwhile Abhiram’s lower contributions included Gordon at 6.90 and Bernard at 8.00. When the other team’s lowlights are still paying rent, it may not be your week.",
+    "xFactor": "Higgins’ 39.50 supplied the week’s loudest statement in this matchup. The Higgins–Fannin–Irving trio alone outscored Aditya’s entire lineup by 20.32. Buc-ee’s has famously oversized everything; apparently the fantasy beatdowns come in family size too.",
+    "lowlight": "Tre Tucker’s 0.00, Denver’s 2.50 and Pickens’ 6.80 left Sahil short of support for Warren. Meanwhile Abhiram’s lower contributions included Gordon at 6.90 and Bernard at 8.00. J J announced that the team was experiencing minor turbulence. The wing was already in the Buc-ee’s parking lot.",
     "sources": [
       {
         "label": "Sleeper Week 8 lineups and scores",
@@ -221,12 +221,12 @@ export const week8Recaps: Recap[] = [
       8,
       3
     ],
-    "billing": "THE WINLESS TEAM CANCELS THE PERFECT-SEASON PARADE.",
-    "summary": "Roshik started Thursday with 42.50 while Sahit had nothing on the board. By the end of Sunday’s daytime games, the script had flipped: Sahit had 125.16, and Roshik was finished at 111.10. Barkley’s Sunday-night 12.40 and Loveland’s Monday 11.50 only made the final margin louder. Sahit wins 149.06–111.10, his first victory and Roshik’s first defeat. Tuten’s 31.90 and Wilson’s 28.80 supplied the upset’s foundation; Bowers’ 28.20 and Jacobs’ 23.20 could not preserve the perfect record. The league’s last winless team personally repossessed the undefeated banner. Loveland Island finally opened for business, and its first customer was the richest man on the beach. This was not a lucky scrape: Sahit finished third in weekly scoring and won by 37.96.",
+    "billing": "OLAVE GARDEN GETS DUMPED ON LOVELAND ISLAND.",
+    "summary": "Roshik started Thursday with 42.50 while Sahit had nothing on the board. By the end of Sunday’s daytime games, the script had flipped: Sahit had 125.16, and Roshik was finished at 111.10. Barkley’s Sunday-night 12.40 and Loveland’s Monday 11.50 only made the final margin louder. Sahit wins 149.06–111.10, his first victory and Roshik’s first defeat. Tuten’s 31.90 and Wilson’s 28.80 supplied the upset’s foundation; Bowers’ 28.20 and Jacobs’ 23.20 could not preserve the perfect record. Loveland Island finally held a recoupling, and Roshik’s perfect record got dumped by the fire pit. Olave Garden promised unlimited breadsticks; Sahit helped himself to the entire undefeated season. This was not a lucky scrape: Sahit finished third in weekly scoring and won by 37.96.",
     "xFactorRosterId": 8,
     "xFactorId": "tuten",
-    "xFactor": "Tuten and Wilson combined for 60.70. Sahit did not sneak through on a technicality: 149.06 was the third-best score of the week, and the 37.96-point margin left very little room for a recount.",
-    "lowlight": "Roshik’s lineup recorded 0.00 from Lamar Jackson, Chris Godwin and Emanuel Wilson, plus 7.60 from Bijan. The undefeated banner had three missing support beams, and Sahit arrived with a demolition permit.",
+    "xFactor": "Tuten and Wilson combined for 60.70. Sahit’s 149.06 was the third-best score of the week, and the 37.96-point margin turned this from an upset into a very uncomfortable dinner service. Tuten and Wilson ordered the Never-Ending Touchdown Bowl; Roshik never found the waiter.",
+    "lowlight": "Roshik’s lineup recorded 0.00 from Lamar Jackson, Chris Godwin and Emanuel Wilson, plus 7.60 from Bijan. Three empty plates at Olave Garden, and somehow nobody thought to bring out more breadsticks. Sahit sent the perfect season home before dessert.",
     "sources": [
       {
         "label": "Sleeper Week 8 lineups and scores",
@@ -244,12 +244,12 @@ export const week8Recaps: Recap[] = [
       12,
       11
     ],
-    "billing": "TWO MANAGERS. ZERO ANSWERS FOR THE KOOPA OFFENSE.",
-    "summary": "Pranav J opened with 21.52 Thursday, then stacked 123.70 during Sunday’s daytime window to reach 145.22. Gary & Naveen managed 100.96 in that window and another 12.80 Sunday night, finishing at 113.76. The result was already leaning heavily one way before Monday, when Swift’s 27.90 and Seattle’s 2.00 took Pranav J to 175.12. Pollard’s 30.20 and Puka’s 25.00 had supplied two of the biggest early bricks. The 61.36-point win moves Pranav J to 7–1 and first on the season-points tiebreaker. Allen’s 26.56 could not keep GarVeen in range. Two managers, one lineup, and apparently both assumed the other person had prepared the emergency plan. The Koopa offense did not send a warning; it sent an invoice.",
+    "billing": "GARVEEN GETS BLUE-SHELLED BY THE KOOPA TROOP.",
+    "summary": "Pranav J opened with 21.52 Thursday, then stacked 123.70 during Sunday’s daytime window to reach 145.22. Gary & Naveen managed 100.96 in that window and another 12.80 Sunday night, finishing at 113.76. The result was already leaning heavily one way before Monday, when Swift’s 27.90 and Seattle’s 2.00 took Pranav J to 175.12. Pollard’s 30.20 and Puka’s 25.00 had supplied two of the biggest early bricks. The 61.36-point win moves Pranav J to 7–1 and first on the season-points tiebreaker. Allen’s 26.56 could not keep GarVeen in range. GarVeen combined two names into one team and still could not find the multiplayer advantage. Pooka Koopa Troopa’s treated them like the tutorial level: a few shells, a victory lap, and no reason to save the game.",
     "xFactorRosterId": 12,
     "xFactorId": "swift",
-    "xFactor": "Swift’s Monday 27.90 completed an 83.10-point Pollard–Puka–Swift trio. That is the kind of three-player output that lets a team stop checking the app for reassurance and start checking it for screenshots.",
-    "lowlight": "Dobbins at 1.30, Metcalf at 1.40 and Taylor at 6.70 combined for 9.40 on GarVeen’s side. Allen cannot be the entire emergency-management department. Two managers, three tiny contributions and one very long Sunday.",
+    "xFactor": "Swift’s Monday 27.90 completed an 83.10-point Pollard–Puka–Swift trio. Three threats, three green shells circling the kart. GarVeen spent the weekend staring at the back of a Koopa and wondering whether someone had unplugged their controller.",
+    "lowlight": "Dobbins at 1.30, Metcalf at 1.40 and Taylor at 6.70 combined for 9.40 on GarVeen’s side. Allen cannot drive both halves of this tandem kart. Gary had the steering wheel, Naveen had the map, and somehow both selected Rainbow Road with no guardrails.",
     "sources": [
       {
         "label": "Sleeper Week 8 lineups and scores",
@@ -267,12 +267,12 @@ export const week8Recaps: Recap[] = [
       1,
       5
     ],
-    "billing": "JAHMYRICA CASHES IN. TAAHA COLLECTS MORE POINTS THAN WINS.",
-    "summary": "Anudeep posted 30.50 Thursday and another 111.78 during Sunday’s daytime games, finishing at 142.28. Taaha had only 59.50 from Sunday daytime and 3.20 Sunday night, leaving a 79.58-point mountain for Monday. JSN’s 26.30, Burden’s 18.60 and Santos’ 10.20 made a serious 55.10-point push, but the final 117.80 still fell 24.48 short. Burrow’s 41.48, Gibbs’ 26.80 and Golden’s 20.90 had supplied Anudeep’s biggest individual contributions. Jahmyrica moves to 6–2; Taaha falls to 2–6 while holding the points wildcard with the league’s second-highest season total. The offense keeps filing excellent paperwork. The win column keeps sending automated rejection emails. A credible Monday rally, unfortunately, does not come with partial credit in the standings.",
+    "billing": "JAHMYRICA RESTS. BURDEN OF PROOF LOSES ITS CASE.",
+    "summary": "Anudeep posted 30.50 Thursday and another 111.78 during Sunday’s daytime games, finishing at 142.28. Taaha had only 59.50 from Sunday daytime and 3.20 Sunday night, leaving a 79.58-point mountain for Monday. JSN’s 26.30, Burden’s 18.60 and Santos’ 10.20 made a serious 55.10-point push, but the final 117.80 still fell 24.48 short. Burrow’s 41.48, Gibbs’ 26.80 and Golden’s 20.90 had supplied Anudeep’s biggest individual contributions. Jahmyrica moves to 6–2; Taaha falls to 2–6 while holding the points wildcard with the league’s second-highest season total. Burden of Proof submitted its Monday rally as new evidence, but the jury had already seen Burrow’s testimony. Made in Jahmyrica was halfway to the beach while Taaha was still asking the judge to reconsider.",
     "xFactorRosterId": 1,
     "xFactorId": "burrow",
-    "xFactor": "Burrow’s 41.48, combined with Gibbs’ 26.80 and Golden’s 20.90, totaled 89.18. That gave Anudeep enough cover to survive three other starters below six points and Taaha’s 55.10-point Monday push. Some lineups have depth. This one had an extremely convincing top floor.",
-    "lowlight": "Omar Cooper’s 0.00 and Okonkwo’s 3.20 made Taaha’s Monday climb steeper. Anudeep was hardly flawless—London 1.80, Jeremiyah Love 2.30 and Javonte 5.70—but Burrow’s 41.48 covered a lot of sins. Taaha’s wildcard is alive; his patience may require a roster spot.",
+    "xFactor": "Burrow’s 41.48, combined with Gibbs’ 26.80 and Golden’s 20.90, totaled 89.18. That gave Anudeep enough cover to survive three other starters below six points and Taaha’s 55.10-point Monday push. Burrow handed Jahmyrica an all-inclusive vacation; the rest of the lineup mainly argued over who packed the sunscreen.",
+    "lowlight": "Omar Cooper’s 0.00 and Okonkwo’s 3.20 made Taaha’s Monday climb steeper. Anudeep was hardly flawless—London 1.80, Jeremiyah Love 2.30 and Javonte 5.70—but Burrow’s 41.48 covered a lot of sins. Burden of Proof called Cooper to the witness stand and got complete silence. The wildcard case is still open; this week’s verdict is not.",
     "sources": [
       {
         "label": "Sleeper Week 8 lineups and scores",
