@@ -226,7 +226,7 @@ export const week8Recaps: Recap[] = [
     "xFactorRosterId": 8,
     "xFactorId": "tuten",
     "xFactor": "Tuten and Wilson combined for 60.70. Sahit did not sneak through on a technicality: 149.06 was the third-best score of the week, and the 37.96-point margin left very little room for a recount.",
-    "lowlight": "Roshik’s lineup recorded 0.00 from Lamar Jackson, Chris Godwin and Emanuel Wilson, plus 7.60 from Bijan. No injury or absence explanation is implied by those scores. The undefeated banner had three missing support beams, and Sahit arrived with a demolition permit.",
+    "lowlight": "Roshik’s lineup recorded 0.00 from Lamar Jackson, Chris Godwin and Emanuel Wilson, plus 7.60 from Bijan. The undefeated banner had three missing support beams, and Sahit arrived with a demolition permit.",
     "sources": [
       {
         "label": "Sleeper Week 8 lineups and scores",
