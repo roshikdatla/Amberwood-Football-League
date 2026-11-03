@@ -127,7 +127,7 @@ export const recapSource = {
 };
 export const week8Overview = {
   "headline": "THE UNBEATEN FALL. THE WINLESS RISE.",
-  "lead": "Amberwood, the perfect season and the winless season checked out on the same receipt. Sahit handed Roshik his first loss while collecting his first win, Abhiram exploded for 176.66, and the playoff picture rearranged itself like a group chat after someone mentions dues. Buckle up: the top five still qualify by record, but the sixth ticket belongs to points, not vibes."
+  "lead": "Amberwood, the perfect season and the winless season checked out on the same receipt. Sahit handed Roshik his first loss while collecting his first win, Abhiram exploded for 176.66, and the battle for the fifth record-based playoff spot tightened among Pranav P, Abhiram and Ankith. Buckle up: the top five still qualify by record, but the sixth ticket belongs to points, not vibes."
 };
 export const playoffPicture = {
   "headline": "FIVE RECORD BERTHS. ONE POINTS ESCAPE HATCH.",
@@ -176,7 +176,7 @@ export const week8Recaps: Recap[] = [
       9
     ],
     "billing": "A WIN SO UGLY IT COMES WITH A MICKEY RECEIPT.",
-    "summary": "Neither team had a Thursday starter contribution, so the comedy waited for Sunday. Abhishek emerged from the daytime games up 68.36–60.38, an eight-point lead in a matchup that appeared to be conserving electricity. Sunday night supplied 25.70 for Abhishek and only 7.20 for Aditya, closing the book at 94.06–67.58 with nobody left Monday. Rice’s 18.30 and Chase Brown’s 16.10 were enough to deliver a 26.48-point victory; Cook’s 18.10 could not rescue Aditya’s total. Both teams leave at 3–5, but they occupied the bottom two scoring spots on the weekly card. The biryani was not merely undercooked. Someone forgot to turn on the stove, and Abhishek still needed a reservation to beat it.",
+    "summary": "Neither team had a Thursday starter contribution, so the comedy waited for Sunday. Abhishek emerged from the daytime games up 68.36–60.38, an eight-point lead in a matchup that appeared to be conserving electricity. Sunday night supplied 25.70 for Abhishek and only 7.20 for Aditya, closing the book at 94.06–67.58 with nobody left Monday. Rice’s 18.30 and Chase Brown’s 16.10 were enough to deliver a 26.48-point victory; Cook’s 18.10 could not rescue Aditya’s total. Both teams leave at 3–5, but they occupied the bottom two scoring spots on the weekly card. The biryani was not merely undercooked. Someone forgot to turn on the stove, and Abhishek still needed raita to beat it.",
     "xFactorRosterId": 2,
     "xFactorId": "rice",
     "xFactor": "Rice’s 18.30 was the largest contribution to Abhishek’s total. In a matchup where the combined score was 161.64, a modest WR day looked like a private rescue helicopter.",

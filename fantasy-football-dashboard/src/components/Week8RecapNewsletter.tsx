@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   formatScore, getRecapTeam, getStarter, mickeyOfTheWeek, recapSource,
-  playoffPicture, toiletPicture, week8Overview, week8PowerRankings, week8Recaps, week9Previews,
+  playoffPicture, week8Overview, week8PowerRankings, week8Recaps, week9Previews,
 } from '../data/week8Recap2026';
 import './Week1RecapNewsletter.css';
 import './Week3RecapNewsletter.css';
@@ -52,9 +52,7 @@ const Week8RecapNewsletter: React.FC = () => {
             {playoffPicture.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
             <p><strong>Five record berths:</strong> {playoffPicture.topFive}</p>
             <p><strong>Points wildcard, outside that five:</strong> {playoffPicture.wildcard}</p>
-            <p className="week-three-mickey-explainer">Snapshot after Week 8, not clinched berths. The five best records qualify first, using total points as the record tiebreaker. The sixth berth goes to the highest total-points team among everyone else. When the top five change, the wildcard pool changes too.</p>
           </aside>
-          <aside className="week-three-mickey-card" aria-labelledby="toilet-picture-title"><p className="week-one-kicker">The toilet bowl / Two reasons to care</p><h3 id="toilet-picture-title">{toiletPicture.headline}</h3>{toiletPicture.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}<p className="week-three-mickey-explainer">Rules supplied by the league: bottom two seeds receive byes; a win secures safety from last place; the separate winner tournament rewards first pick. This preview does not declare final seeds or invent the remaining bracket mechanics.</p></aside>
         </section>
 
         <section className="week-one-section" id="recaps" aria-labelledby="recaps-title">
