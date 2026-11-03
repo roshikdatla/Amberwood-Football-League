@@ -30,8 +30,8 @@ export const seasons: Record<SeasonKey, SeasonConfig> = {
     leagueId: configuredActiveLeagueId || defaultActiveLeagueId,
     status: 'active',
     newsletterBasePath: '/newsletters',
-    latestNewsletterPath: '/newsletters/week7-recap',
-    latestNewsletterLabel: 'Week 7 Recap & Week 8 Preview',
+    latestNewsletterPath: '/newsletters/week8-recap',
+    latestNewsletterLabel: 'Week 8 Recap & Week 9 Preview',
     isLeagueIdConfigured: Boolean(configuredActiveLeagueId || defaultActiveLeagueId),
   },
   '2025': {

@@ -3,6 +3,13 @@ import { activeSeason } from '../config/seasons';
 
 const currentSeasonNewsletters = [
   {
+    slug: 'week8-recap',
+    title: 'Week 8 Recap: The Race Gets Real',
+    date: 'November 3, 2026',
+    description: 'Six recaps, playoff and toilet bowl previews, power rankings and Week 9 picks',
+    status: 'Read Now',
+  },
+  {
     slug: 'week7-recap',
     title: 'Week 7 Recap: Six Pull Away. Only Five Get the Easy Door.',
     date: 'October 27, 2026',

@@ -9,6 +9,7 @@ import Week1RecapNewsletter from './components/Week1RecapNewsletter';
 import Week2RecapNewsletter from './components/Week2RecapNewsletter';
 import Week3RecapNewsletter from './components/Week3RecapNewsletter';
 import Week7RecapNewsletter from './components/Week7RecapNewsletter';
+import Week8RecapNewsletter from './components/Week8RecapNewsletter';
 import Week6RecapNewsletter from './components/Week6RecapNewsletter';
 import Week5RecapNewsletter from './components/Week5RecapNewsletter';
 import Week4RecapNewsletter from './components/Week4RecapNewsletter';
@@ -55,6 +56,7 @@ function AppContent() {
         <Route path="/newsletters/week1-recap" element={<Week1RecapNewsletter />} />
         <Route path="/newsletters/week2-recap" element={<Week2RecapNewsletter />} />
         <Route path="/newsletters/week3-recap" element={<Week3RecapNewsletter />} />
+        <Route path="/newsletters/week8-recap" element={<Week8RecapNewsletter />} />
         <Route path="/newsletters/week7-recap" element={<Week7RecapNewsletter />} />
         <Route path="/newsletters/week6-recap" element={<Week6RecapNewsletter />} />
         <Route path="/newsletters/week5-recap" element={<Week5RecapNewsletter />} />
