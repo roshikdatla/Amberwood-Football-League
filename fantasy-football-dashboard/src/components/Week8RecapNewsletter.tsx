@@ -44,7 +44,7 @@ const Week8RecapNewsletter: React.FC = () => {
           <h2 id="overview-title">{week8Overview.headline}</h2>
           <p className="week-one-lead">{week8Overview.lead}</p>
           <figure className="week-one-overview-image">
-            <img src="/week8-recap-cover.svg" alt="The unbeaten fall and the winless rise: Week 8 recap." decoding="async" />
+            <img src="/week8-recap-cover.webp" alt="The unbeaten fall and the winless rise: Week 8 recap." decoding="async" />
           </figure>
           <aside className="week-three-mickey-card" aria-labelledby="playoff-picture-title">
             <p className="week-one-kicker">The playoff picture / Two different races</p>
