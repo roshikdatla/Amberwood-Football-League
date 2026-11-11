@@ -3,6 +3,13 @@ import { activeSeason } from '../config/seasons';
 
 const currentSeasonNewsletters = [
   {
+    slug: 'week9-recap',
+    title: 'Week 9 Recap: The Contenders Consolidate. The Wildcard Won’t Budge.',
+    date: 'November 11, 2026',
+    description: 'Six recaps, playoff picture, power rankings and Week 10 picks',
+    status: 'Read Now',
+  },
+  {
     slug: 'week8-recap',
     title: 'Week 8 Recap: The Race Gets Real',
     date: 'November 3, 2026',
