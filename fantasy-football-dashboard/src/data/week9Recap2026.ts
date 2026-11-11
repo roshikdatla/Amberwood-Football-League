@@ -333,7 +333,7 @@ export const week9PowerRankings: Ranking[] = [
     "rosterId": 9,
     "previousRank": 11,
     "tier": "Repair work",
-    "outlook": "Aditya’s 121.38 win moves him to 4–5 and officially back into the conversation. The balanced output across Cook, Washington and Collins is exactly the recipe Codex has waited to see from this team. Next up: Roshik — a real test. The biryani is finally hot; the question is whether the chef can keep temperature."
+    "outlook": "Aditya’s 121.38 win moves him to 4–5 and officially back into the conversation. The balanced output across Cook, Washington and Collins is exactly the recipe this team has been missing. Next up: Roshik — a real test. The biryani is finally hot; the question is whether the chef can keep temperature."
   },
   {
     "rosterId": 11,
@@ -441,7 +441,7 @@ export const week10Previews: Preview[] = [
     ],
     "billing": "TAAHA VS SAHIT",
     "story": "The points-wildcard leader meets the hottest 2–7 team in the league. Sahit is trying to make last week’s win against the unbeaten leader look like the first of many.",
-    "key": "Taaha’s 1,270.34 PF is the league’s second-highest. Sahit’s 964.64 is twelfth. But Sahit has won two in a row, including a 149.06 against Roshik. The gap narrows if Taaha runs into another low total.",
+    "key": "Taaha’s 1,270.34 PF is the league’s third-highest, behind only Pranav J and Anudeep. Sahit’s 964.64 is twelfth. But Sahit has won two in a row, including a 149.06 against Roshik. The gap narrows if Taaha runs into another low total.",
     "pickId": 5,
     "pickReason": "The 305.70-point season advantage is massive, and Walker’s 38.30 ceiling is a real weapon. A Sahit upset is on the menu, but the base forecast follows the much stronger scoring résumé.",
     "sources": [
