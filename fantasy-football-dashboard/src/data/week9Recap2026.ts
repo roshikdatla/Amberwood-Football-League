@@ -297,7 +297,7 @@ export const week9PowerRankings: Ranking[] = [
     "rosterId": 1,
     "previousRank": 3,
     "tier": "The standard",
-    "outlook": "The 7–2 record now comes with the league’s second-highest points total at 1,285.36 and a direct win over the other 7–2 team. Golden, Burrow and Javonte supplied the kind of top-heavy explosion that wins marquee matchups. Next assignment is GarVeen, whose 90.36 week suggests a scheduled breather. Jahmyrica is quietly running out of convincing counter-arguments."
+    "outlook": "The 7–2 record now comes with the league’s second-highest points total at 1,285.36 and a direct win over the other 7–2 team. Golden, Burrow and Javonte supplied an 88.34-point top line, but seven other starters also cleared six points — a balanced explosion that wins marquee matchups. Next assignment is GarVeen, whose 90.36 week suggests a scheduled breather. Jahmyrica is quietly running out of convincing counter-arguments."
   },
   {
     "rosterId": 3,
@@ -339,7 +339,7 @@ export const week9PowerRankings: Ranking[] = [
     "rosterId": 11,
     "previousRank": 9,
     "tier": "Repair work",
-    "outlook": "GarVeen got to 3–6 by scoring 90.36 in a weekly battle of two struggling lineups. A win is a win — the Mickey plaque acknowledges that — and the schedule now offers Anudeep. This remains a team with real upside in the Josh Allen slot that just doesn’t fire often enough. Two managers; one playbook; still trying to agree on a game plan."
+    "outlook": "GarVeen got to 3–6 by scoring 90.36 in a weekly battle of two struggling lineups. A win is a win — the Mickey plaque acknowledges that — and the schedule now offers Anudeep. This remains a team where Josh Allen keeps delivering but the surrounding cast rarely shows up alongside him. Two managers; one playbook; still trying to agree on a game plan."
   },
   {
     "rosterId": 2,
