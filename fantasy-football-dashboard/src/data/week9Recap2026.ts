@@ -177,7 +177,7 @@ export const week9Recaps: Recap[] = [
     "summary": "Pranav P entered the week defending the fifth record berth by a 0.36-point margin and left having surrendered it entirely. Aditya’s 121.38–102.86 win moves him to 4–5 and drops Pranav P to 5–4, where he now sits 6.62 points behind Abhiram for the fifth berth. Cook (18.70), Parker Washington (15.60) and Nico Collins (15.50) led Aditya’s balanced output; McCaffrey’s 22.70 and a modest 14.56 from Jayden Daniels was not enough. The biryani was finally served at full temperature. Super O-Marion Bro left the dining room with a new reservation on the outside looking in.",
     "xFactorRosterId": 9,
     "xFactorId": "cook",
-    "xFactor": "Cook’s 18.70 topped Aditya’s board, but the real story was that the kitchen finally cooked across the whole menu — four starters between 10 and 18 points. The Sunday Biryani special came with a side of Pranav P’s playoff positioning.",
+    "xFactor": "Cook’s 18.70 topped Aditya’s board, but the real story was that the kitchen finally cooked across the whole menu — eight starters in double digits with nobody wrecking the plate. The Sunday Biryani special came with a side of Pranav P’s playoff positioning.",
     "lowlight": "Ladd McConkey’s 0.00, Zay Flowers’ 5.30 and single-digit contributions from Nabers, Diggs and Aubrey left Pranav P propped up by McCaffrey alone. For the second week in a row, half the lineup refused to arrive. Super O-Marion Bro is now one bad week away from being the first team pushed out of the record field.",
     "sources": [
       {
@@ -197,7 +197,7 @@ export const week9Recaps: Recap[] = [
       10
     ],
     "billing": "JEANTY MORGAN CHASE & CO. TAKES OVER FOURTH.",
-    "summary": "A direct fight for the fifth record berth ended in Ankith’s favor, 123.46–109.84. Chase (34.00) carried Ankith’s top line while Tetairoa McMillan (15.60) and Rhamondre Stevenson (14.80) added balance. Abhiram countered with Bucky Irving (27.50) and Tee Higgins (20.20), but the rest of the lineup ran cold. Ankith moves to 6–3 and now owns fourth place; Abhiram stays at 5–4 and holds the fifth record berth by 6.62 points. The branch is now the headquarters. The playoff teller window is open; Abhiram should check whether his account is still active.",
+    "summary": "A direct fight for the fifth record berth ended in Ankith’s favor, 123.46–109.84. Chase (34.00) carried Ankith’s top line while Tetairoa McMillan (15.60) and Rhamondre Stevenson (14.80) added balance. Abhiram countered with Bucky Irving (27.50) and Tee Higgins (20.20), but Carson Wentz’s −2.76 at QB kept the rest of the lineup from closing the gap. Ankith moves to 6–3 and now owns fourth place; Abhiram stays at 5–4 and holds the fifth record berth by 6.62 points. The branch is now the headquarters. The playoff teller window is open; Abhiram should check whether his account is still active.",
     "xFactorRosterId": 4,
     "xFactorId": "chase",
     "xFactor": "Chase’s 34.00 was the entire margin by himself, with change left over for the tip. Add McMillan and Stevenson’s combined 30.40 and Ankith had a three-headed scoring attack that Abhiram’s two-man show could not cover.",
@@ -315,7 +315,7 @@ export const week9PowerRankings: Ranking[] = [
     "rosterId": 10,
     "previousRank": 5,
     "tier": "The contenders",
-    "outlook": "Abhiram holds the fifth record berth by 6.62 points over Pranav P. The 109.84 loss to Ankith wasn’t a disaster but Irving and Higgins carried a lineup that had little else to say. Next up is Pranav J — a brutal draw. The 4-Achane Buc-ee’s has the gas; the question is whether it has enough snacks for the long drive."
+    "outlook": "Abhiram holds the fifth record berth by 6.62 points over Pranav P. The 109.84 loss to Ankith wasn’t a disaster but Irving and Higgins supplied 47.70 of it and Wentz actively hurt the cause at −2.76. Next up is Pranav J — a brutal draw. The 4-Achane Buc-ee’s has the gas; the question is whether it has enough snacks for the long drive."
   },
   {
     "rosterId": 4,
