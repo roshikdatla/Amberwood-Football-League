@@ -220,7 +220,7 @@ export const week9Recaps: Recap[] = [
     "xFactorRosterId": 8,
     "xFactorId": "concepcion",
     "xFactor": "Concepcion’s 20.30 led Sahit’s lineup in a week where the top three starters only combined for 53.16. That’s not a blowout, it’s a steady-handed win built on five different double-digit scorers — the kind that suggests the 1–7 start may have been the tail of the bell curve, not the center.",
-    "lowlight": "Abhishek’s lineup never found a true tentpole after Purdy’s 25.28. Odunze had 16.00, the Chiefs had 11.00, and the rest was a long drop-off to single digits. Loveland Island is slowly becoming a destination opponents hoped was closed for the season.",
+    "lowlight": "Abhishek’s lineup never found a true tentpole after Purdy’s 25.28. Odunze had 16.00 and Chase Brown chipped in 10.50, but six of the ten starters finished under ten points. Loveland Island is slowly becoming a destination opponents hoped was closed for the season.",
     "sources": [
       {
         "label": "Sleeper Week 9 lineups and scores",
@@ -291,7 +291,7 @@ export const week9PowerRankings: Ranking[] = [
     "rosterId": 12,
     "previousRank": 1,
     "tier": "The standard",
-    "outlook": "Back-to-back 175-plus weeks and an 8–1 record. Nacua, Love and Lamb combined for 109.18 and the gap to the rest of the record field is a comfortable 53.00 points over 7–2 Anudeep. Next up: Abhiram, a top-six scoring attack but one playing for a record berth, not a bye. The throne isn’t just occupied; the Koopa Troop installed a fence around it."
+    "outlook": "Back-to-back 175-plus weeks and an 8–1 record. Nacua, Love and Lamb combined for 109.18 and the gap to the rest of the record field is a comfortable 53.00 points over 7–2 Anudeep. Next up: Abhiram, a top-five scoring attack but one playing for a record berth, not a bye. The throne isn’t just occupied; the Koopa Troop installed a fence around it."
   },
   {
     "rosterId": 1,
