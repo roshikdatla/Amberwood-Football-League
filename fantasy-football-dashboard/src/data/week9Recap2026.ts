@@ -155,7 +155,7 @@ export const recapSource = {
 };
 export const week9Overview = {
   "headline": "THE CONTENDERS CONSOLIDATE. THE WILDCARD WON’T BUDGE.",
-  "lead": "Amberwood, Week 9 turned a three-way race for the top into a clearer picture: Pranav J (8–1) is now alone at the top, Anudeep knocked Roshik off at 7–2, and the fifth and sixth spots are a photo finish between Abhiram and Pranav P. Meanwhile Taaha put up another 140.98 in a losing effort and still owns the points wildcard with 1,270.34 — third in the league behind only Pranav J and Anudeep. The record column keeps lying about who is dangerous."
+  "lead": "Amberwood, Week 9 turned a three-way race for the top into a clearer picture: Pranav J (8–1) is now alone at the top, Anudeep knocked Roshik off at 7–2, and the fifth record berth is a photo finish between Abhiram and Pranav P. Meanwhile Taaha put up another 140.98 in a losing effort and still owns the points wildcard with 1,270.34 — third in the league behind only Pranav J and Anudeep. The record column keeps lying about who is dangerous."
 };
 export const playoffPicture = {
   "headline": "FIVE RECORD BERTHS. ONE POINTS ESCAPE HATCH.",
@@ -219,7 +219,7 @@ export const week9Recaps: Recap[] = [
     "summary": "A week after knocking Roshik off perfection, Sahit backed it up with a 119.16–104.18 win over Abhishek. KC Concepcion Jr. (20.30), Drake Maye (18.26) and Spencer Shrader (14.60) were the top three contributors. Purdy’s 25.28 gave Abhishek a lift but Rome Odunze’s 16.00 and the Chiefs defense (11.00) could not get him past 105. Sahit moves to 2–7 with a second straight win; Abhishek slides to 3–6 — and both opponents on Sahit’s win streak will remember them. Zero Dark Purdy showed up with a flashlight; Sahit’s island had working streetlights.",
     "xFactorRosterId": 8,
     "xFactorId": "concepcion",
-    "xFactor": "Concepcion’s 20.30 led Sahit’s lineup in a week where the top three finishers only combined for 53.16. That’s not a blowout, it’s a steady-handed win — the kind that suggests the 1–7 start may have been the tail of the bell curve, not the center.",
+    "xFactor": "Concepcion’s 20.30 led Sahit’s lineup in a week where the top three starters only combined for 53.16. That’s not a blowout, it’s a steady-handed win built on five different double-digit scorers — the kind that suggests the 1–7 start may have been the tail of the bell curve, not the center.",
     "lowlight": "Abhishek’s lineup never found a true tentpole after Purdy’s 25.28. Odunze had 16.00, the Chiefs had 11.00, and the rest was a long drop-off to single digits. Loveland Island is slowly becoming a destination opponents hoped was closed for the season.",
     "sources": [
       {
@@ -297,7 +297,7 @@ export const week9PowerRankings: Ranking[] = [
     "rosterId": 1,
     "previousRank": 3,
     "tier": "The standard",
-    "outlook": "The 7–2 record now comes with the league’s second-highest points total at 1,285.36 and a direct win over the other 7–2 team. Golden, Burrow and Javonte supplied an 88.34-point top line, but seven other starters also cleared six points — a balanced explosion that wins marquee matchups. Next assignment is GarVeen, whose 90.36 week suggests a scheduled breather. Jahmyrica is quietly running out of convincing counter-arguments."
+    "outlook": "The 7–2 record now comes with the league’s second-highest points total at 1,285.36 and a direct win over the other 7–2 team. Golden, Burrow and Javonte supplied an 88.34-point top line, and six other starters also cleared six points — a balanced explosion that wins marquee matchups. Next assignment is GarVeen, whose 90.36 week suggests a scheduled breather. Jahmyrica is quietly running out of convincing counter-arguments."
   },
   {
     "rosterId": 3,
@@ -440,7 +440,7 @@ export const week10Previews: Preview[] = [
       8
     ],
     "billing": "TAAHA VS SAHIT",
-    "story": "The points-wildcard leader meets the hottest 2–7 team in the league. Sahit is trying to make last week’s win against the unbeaten leader look like the first of many.",
+    "story": "The points-wildcard leader meets the hottest 2–7 team in the league. Sahit is trying to make his recent Week 8 upset of the then-unbeaten leader look like the first of many.",
     "key": "Taaha’s 1,270.34 PF is the league’s third-highest, behind only Pranav J and Anudeep. Sahit’s 964.64 is twelfth. But Sahit has won two in a row, including a 149.06 against Roshik. The gap narrows if Taaha runs into another low total.",
     "pickId": 5,
     "pickReason": "The 305.70-point season advantage is massive, and Walker’s 38.30 ceiling is a real weapon. A Sahit upset is on the menu, but the base forecast follows the much stronger scoring résumé.",
@@ -458,7 +458,7 @@ export const week10Previews: Preview[] = [
       11
     ],
     "billing": "ANUDEEP VS GARY & NAVEEN",
-    "story": "A 7–2 contender with the week’s highest win rolling into a matchup with the 3–6 Mickey recipient. On paper, the mismatch is clear; GarVeen now has an entire week of highlight reels about teams that got comfortable.",
+    "story": "A 7–2 contender fresh off a 168.94-point win rolling into a matchup with the 3–6 Mickey recipient. On paper, the mismatch is clear; GarVeen now has an entire week of highlight reels about teams that got comfortable.",
     "key": "Anudeep’s Golden-Burrow top end produced 63.94 by itself last week. GarVeen’s Josh Allen slot is a real weapon but rarely gets support. The forecast tracks lineup depth, which Jahmyrica currently has in surplus.",
     "pickId": 1,
     "pickReason": "A 236-point season advantage, a 168.94-point most-recent effort, and the second-best season total in the league. Everything in the numbers leans here. GarVeen’s best-case is a tight loss.",
