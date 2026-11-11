@@ -155,16 +155,16 @@ export const recapSource = {
 };
 export const week9Overview = {
   "headline": "THE CONTENDERS CONSOLIDATE. THE WILDCARD WON’T BUDGE.",
-  "lead": "Amberwood, Week 9 turned a three-way race for the top into a clearer picture: Pranav J (8–1) is now alone at the top, Anudeep knocked Roshik off at 7–2, and the fifth and sixth spots are a photo finish between Abhiram and Pranav P. Meanwhile Taaha put up another 140.98 in a losing effort and still owns the points wildcard with 1,270.34 — more than anyone outside the top three. The record column keeps lying about who is dangerous."
+  "lead": "Amberwood, Week 9 turned a three-way race for the top into a clearer picture: Pranav J (8–1) is now alone at the top, Anudeep knocked Roshik off at 7–2, and the fifth and sixth spots are a photo finish between Abhiram and Pranav P. Meanwhile Taaha put up another 140.98 in a losing effort and still owns the points wildcard with 1,270.34 — third in the league behind only Pranav J and Anudeep. The record column keeps lying about who is dangerous."
 };
 export const playoffPicture = {
   "headline": "FIVE RECORD BERTHS. ONE POINTS ESCAPE HATCH.",
   "paragraphs": [
     "Pranav J is 8–1 and alone at the top. Anudeep and Roshik are 7–2, separated by 34.20 season points after swapping places at the top of the standings. Ankith moved to 6–3 and now sits fourth. The fifth record berth is a two-team race: Abhiram (5–4, 1,207.76 PF) edges Pranav P (5–4, 1,201.14 PF) by 6.62 points — a margin so thin it will be decided by one Thursday night fumble.",
-    "The sixth berth remains Taaha’s points-wildcard property. He is 2–7 but has 1,270.34 season points, more than every team except Pranav J, Anudeep and Roshik. Nobody outside the top five is within 62 points of that number. The wildcard pool shifts whenever the top five shifts; right now the math keeps printing Taaha’s name."
+    "The sixth berth remains Taaha’s points-wildcard property. He is 2–7 but has 1,270.34 season points, more than every team except Pranav J and Anudeep — including the 7–2 Roshik. Nobody outside the top-five record berths is within 69 points of that number. The wildcard pool shifts whenever the top five shifts; right now the math keeps printing Taaha’s name."
   ],
   "topFive": "Pranav J 8–1 (1,338.36 PF); Anudeep 7–2 (1,285.36); Roshik 7–2 (1,251.16); Ankith 6–3 (1,199.66); Abhiram 5–4 (1,207.76).",
-  "wildcard": "Taaha 1,270.34 PF — more than every top-five team except the three above him. 62.58 ahead of Pranav P’s 1,201.14."
+  "wildcard": "Taaha 1,270.34 PF — third in the league behind Pranav J and Anudeep, and 69.20 ahead of Pranav P’s 1,201.14."
 };
 export const week9Recaps: Recap[] = [
   {
@@ -309,7 +309,7 @@ export const week9PowerRankings: Ranking[] = [
     "rosterId": 5,
     "previousRank": 7,
     "tier": "The contenders",
-    "outlook": "This is the clearest gap between record and scoring quality in the league: 2–7 and second in season points at 1,270.34 — more than every record-berth contender except the top three. Walker’s 38.30 and Burden’s 22.20 are not lineup anomalies; they are weekly outputs. Taaha is a contender wearing a toilet-bowl costume, and the points wildcard keeps printing receipts."
+    "outlook": "This is the clearest gap between record and scoring quality in the league: 2–7 and third in season points at 1,270.34 — behind only Pranav J and Anudeep. Walker’s 38.30 and Burden’s 22.20 are not lineup anomalies; they are weekly outputs. Taaha is a contender wearing a toilet-bowl costume, and the points wildcard keeps printing receipts."
   },
   {
     "rosterId": 10,
@@ -389,7 +389,7 @@ export const week10Previews: Preview[] = [
     "story": "Ankith (6–3) is locked into fourth place and climbing; Sahil (2–7) is trying to avoid the toilet-bowl bottom two.",
     "key": "Chase just put up 34.00; Prescott put up 19.50. That is the current ceiling gap between these two. Sahil needs a complete lineup; Ankith needs one more complete lineup to tighten his grip on fourth.",
     "pickId": 4,
-    "pickReason": "A 165.70-point season advantage and the week’s most recent 123.46 both lean here. Sahil has upside but currently lacks the multi-position output to outscore a lineup with Chase at the top.",
+    "pickReason": "An 80.04-point season advantage and the week’s most recent 123.46 both lean here. Sahil has upside but currently lacks the multi-position output to outscore a lineup with Chase at the top.",
     "sources": [
       {
         "label": "Sleeper Week 10 schedule",
@@ -407,7 +407,7 @@ export const week10Previews: Preview[] = [
     "story": "Olave Garden looks for a bounce-back after losing the top-two tiebreaker; Aditya just reasserted that his lineup can produce when the whole menu shows up.",
     "key": "Watson, Bijan and Bowers delivered 84.10 for Roshik even in defeat. Cook, Washington and Collins delivered 49.80 together for Aditya. Roshik’s depth remains the differentiator — but so was Sahit’s depth two weeks ago.",
     "pickId": 3,
-    "pickReason": "Roshik is 7–2 with 1,251.16 PF. Aditya is 4–5 with 886.60 — a 263.76-point season gap. The pick follows the stronger body of work, not any one recent week.",
+    "pickReason": "Roshik is 7–2 with 1,251.16 PF. Aditya is 4–5 with 987.98 — a 263.18-point season gap. The pick follows the stronger body of work, not any one recent week.",
     "sources": [
       {
         "label": "Sleeper Week 10 schedule",
