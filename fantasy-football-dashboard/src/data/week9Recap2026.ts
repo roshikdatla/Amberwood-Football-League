@@ -297,7 +297,7 @@ export const week9PowerRankings: Ranking[] = [
     "rosterId": 1,
     "previousRank": 3,
     "tier": "The standard",
-    "outlook": "The 7–2 record now comes with the league’s second-highest points total at 1,285.36 and a direct win over the other 7–2 team. Golden, Burrow and Javonte supplied an 88.34-point top line, and six other starters also cleared six points — a balanced explosion that wins marquee matchups. Next assignment is GarVeen, whose 90.36 week suggests a scheduled breather. Jahmyrica is quietly running out of convincing counter-arguments."
+    "outlook": "The 7–2 record now comes with the league’s second-highest points total at 1,285.36 and a direct win over the other 7–2 team. Golden, Burrow and Javonte supplied an 88.34-point top line, and eight starters total hit double digits — a balanced explosion that wins marquee matchups. Next assignment is GarVeen, whose 90.36 week suggests a scheduled breather. Jahmyrica is quietly running out of convincing counter-arguments."
   },
   {
     "rosterId": 3,
