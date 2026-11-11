@@ -216,7 +216,7 @@ export const week9Recaps: Recap[] = [
       2
     ],
     "billing": "LOVELAND ISLAND KEEPS THE RECEIPTS FROM LAST WEEK.",
-    "summary": "A week after knocking Roshik off perfection, Sahit backed it up with a 119.16–104.18 win over Abhishek. KC Concepcion Jr. (20.30), Drake Maye (18.26) and Spencer Shrader (14.60) were the top three contributors. Purdy’s 25.28 gave Abhishek a lift but Rome Odunze’s 16.00 and the Chiefs defense (11.00) could not get him past 105. Both teams move to 3–6 and 2–7 respectively, but Sahit now has two straight wins — and both opponents will remember them. Zero Dark Purdy showed up with a flashlight; Sahit’s island had working streetlights.",
+    "summary": "A week after knocking Roshik off perfection, Sahit backed it up with a 119.16–104.18 win over Abhishek. KC Concepcion Jr. (20.30), Drake Maye (18.26) and Spencer Shrader (14.60) were the top three contributors. Purdy’s 25.28 gave Abhishek a lift but Rome Odunze’s 16.00 and the Chiefs defense (11.00) could not get him past 105. Sahit moves to 2–7 with a second straight win; Abhishek slides to 3–6 — and both opponents on Sahit’s win streak will remember them. Zero Dark Purdy showed up with a flashlight; Sahit’s island had working streetlights.",
     "xFactorRosterId": 8,
     "xFactorId": "concepcion",
     "xFactor": "Concepcion’s 20.30 led Sahit’s lineup in a week where the top three finishers only combined for 53.16. That’s not a blowout, it’s a steady-handed win — the kind that suggests the 1–7 start may have been the tail of the bell curve, not the center.",
@@ -254,7 +254,7 @@ export const week9Recaps: Recap[] = [
       3
     ],
     "billing": "JAHMYRICA TAKES THE TOP-TWO TIEBREAKER.",
-    "summary": "The marquee game of the week delivered a clean result: Anudeep 168.94, Roshik 142.74. Matthew Golden (34.40), Joe Burrow (29.54) and Javonte Williams (24.40) supplied Jahmyrica’s top three — 88.34 before anyone else chipped in. Roshik countered with Christian Watson (32.10), Bijan Robinson (27.70) and Brock Bowers (24.30), a top three of 84.10 that matched Jahmyrica but the rest of the lineup did not. Both teams are 7–2; Anudeep now owns the tiebreaker by 34.20 season points and sits second. Olave Garden had a fine meal; Jahmyrica brought the dessert menu.",
+    "summary": "The marquee game of the week delivered a clean result: Anudeep 168.94, Roshik 142.74. Matthew Golden (34.40), Joe Burrow (29.54) and Javonte Williams (24.40) supplied Jahmyrica’s top three — 88.34 before anyone else chipped in. Roshik countered with Christian Watson (32.10), Bijan Robinson (27.70) and Brock Bowers (24.30), a top three of 84.10 that nearly kept pace, but the rest of the lineup did not. Both teams are 7–2; Anudeep now owns the tiebreaker by 34.20 season points and sits second. Olave Garden had a fine meal; Jahmyrica brought the dessert menu.",
     "xFactorRosterId": 1,
     "xFactorId": "golden",
     "xFactor": "Golden’s 34.40 was the single highest contribution in the matchup and the lineup’s top line. Combined with Burrow’s 29.54, this was a 63.94-point one-two punch that Olave Garden could not match at the top of the ticket.",
@@ -291,7 +291,7 @@ export const week9PowerRankings: Ranking[] = [
     "rosterId": 12,
     "previousRank": 1,
     "tier": "The standard",
-    "outlook": "Back-to-back 175-plus weeks and an 8–1 record. Nacua, Love and Lamb combined for 109.18 and the gap to second place has only grown. Next up: Abhiram, a top-six scoring attack but one playing for a record berth, not a bye. The throne isn’t just occupied; the Koopa Troop installed a fence around it."
+    "outlook": "Back-to-back 175-plus weeks and an 8–1 record. Nacua, Love and Lamb combined for 109.18 and the gap to the rest of the record field is a comfortable 53.00 points over 7–2 Anudeep. Next up: Abhiram, a top-six scoring attack but one playing for a record berth, not a bye. The throne isn’t just occupied; the Koopa Troop installed a fence around it."
   },
   {
     "rosterId": 1,
@@ -345,7 +345,7 @@ export const week9PowerRankings: Ranking[] = [
     "rosterId": 2,
     "previousRank": 10,
     "tier": "Repair work",
-    "outlook": "Abhishek drops to 3–6 after Sahit’s revenge. Purdy’s 25.28 kept the lineup afloat for a half but the supporting cast was quiet. 967.14 PF through nine weeks is thin, and the next opponent is Pranav P, who has his own problems. Repair work continues; the receipts aren’t getting shorter."
+    "outlook": "Abhishek drops to 3–6 after running into a Sahit team on a two-game heater. Purdy’s 25.28 kept the lineup afloat for a half but the supporting cast was quiet. 967.14 PF through nine weeks is thin, and the next opponent is Pranav P, who has his own problems. Repair work continues; the receipts aren’t getting shorter."
   },
   {
     "rosterId": 6,
