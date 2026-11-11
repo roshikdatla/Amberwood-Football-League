@@ -178,7 +178,7 @@ export const week9Recaps: Recap[] = [
     "xFactorRosterId": 9,
     "xFactorId": "cook",
     "xFactor": "Cook’s 18.70 topped Aditya’s board, but the real story was that the kitchen finally cooked across the whole menu — four starters between 10 and 18 points. The Sunday Biryani special came with a side of Pranav P’s playoff positioning.",
-    "lowlight": "Pranav P got nothing from Zay Flowers and only modest totals from Henry and Minnesota. For the second week in a row, half the lineup refused to arrive. Super O-Marion Bro is now one bad week away from being the first team pushed out of the record field.",
+    "lowlight": "Ladd McConkey’s 0.00, Zay Flowers’ 5.30 and single-digit contributions from Nabers, Diggs and Aubrey left Pranav P propped up by McCaffrey alone. For the second week in a row, half the lineup refused to arrive. Super O-Marion Bro is now one bad week away from being the first team pushed out of the record field.",
     "sources": [
       {
         "label": "Sleeper Week 9 lineups and scores",
@@ -235,7 +235,7 @@ export const week9Recaps: Recap[] = [
       6
     ],
     "billing": "GARVEEN SNEAKS PAST THE JET PLANE ON A COMMUTER FLIGHT.",
-    "summary": "Both teams were 2–6 entering the week and both scored under 91. GarVeen won 90.36–85.78, the lowest combined total of the week. Amon-Ra St. Brown (16.60), Josh Allen (12.86) and Blake Corum (11.80) were the leading contributors. Sahil got 19.50 from Dak Prescott and 16.30 from Isaiah Likely, but the supporting cast was quiet. GarVeen moves to 3–6; Sahil falls to 2–7 and joins Taaha, Sahit and now himself in the toilet-bowl waiting room. GarVeen booked a window seat on a regional puddle-jumper and still beat J J to the gate.",
+    "summary": "Both teams were 2–6 entering the week and both scored under 91. GarVeen won 90.36–85.78, the lowest combined total of the week. Amon-Ra St. Brown (16.60), Josh Allen (12.86) and Blake Corum (11.80) were the leading contributors. Sahil got 19.50 from Dak Prescott and 16.30 from Isaiah Likely, but the supporting cast was quiet. GarVeen moves to 3–6; Sahil falls to 2–7 and joins Taaha and Sahit in the growing toilet-bowl waiting room. GarVeen booked a window seat on a regional puddle-jumper and still beat J J to the gate.",
     "xFactorRosterId": 11,
     "xFactorId": "stbrown",
     "xFactor": "ARSB’s 16.60 was unspectacular by his standards but it was exactly the kind of steady contribution GarVeen has rarely seen this year. In a 90-point win, every reasonable number counts twice.",
@@ -327,7 +327,7 @@ export const week9PowerRankings: Ranking[] = [
     "rosterId": 7,
     "previousRank": 4,
     "tier": "The contenders",
-    "outlook": "Dropped out of the top five by 6.62 points, Pranav P now needs help. Five wins and 1,201.14 PF are a sturdy foundation, but the recent 102.86 plus last week’s 113.28 shows a lineup that keeps leaving points on the bench. Next up is Abhishek, a schedule gift that the current form absolutely requires. The branch bank needs a deposit."
+    "outlook": "Dropped out of the top five by 6.62 points, Pranav P now needs help. Five wins and 1,201.14 PF are a sturdy foundation, but this week’s 102.86 after Week 8’s 113.28 shows a lineup that keeps leaving points on the bench. Next up is Abhishek, a schedule gift that the current form absolutely requires. The branch bank needs a deposit."
   },
   {
     "rosterId": 9,
