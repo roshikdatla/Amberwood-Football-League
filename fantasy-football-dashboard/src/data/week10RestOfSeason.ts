@@ -432,3 +432,274 @@ export const restOfSeasonPreview = [
     "bottomTwo": "The climb is steep: beat Gary, find multiple upsets, and get help from the teams just above him. Five wins can still lose a points tiebreak; six is the most convincing escape available. Finishing in the bottom two removes the chance to win the toilet bowl and caps the best finish at ninth."
   }
 ];
+
+// Consistent editorial picks underpin the projected records; not displayed as extra prose.
+export const remainingMatchupPicks = [
+  {
+    "week": 11,
+    "teamIds": [
+      6,
+      12
+    ],
+    "winnerId": 12
+  },
+  {
+    "week": 11,
+    "teamIds": [
+      1,
+      4
+    ],
+    "winnerId": 1
+  },
+  {
+    "week": 11,
+    "teamIds": [
+      3,
+      7
+    ],
+    "winnerId": 7
+  },
+  {
+    "week": 11,
+    "teamIds": [
+      8,
+      10
+    ],
+    "winnerId": 10
+  },
+  {
+    "week": 11,
+    "teamIds": [
+      9,
+      11
+    ],
+    "winnerId": 9
+  },
+  {
+    "week": 11,
+    "teamIds": [
+      2,
+      5
+    ],
+    "winnerId": 5
+  },
+  {
+    "week": 12,
+    "teamIds": [
+      7,
+      12
+    ],
+    "winnerId": 12
+  },
+  {
+    "week": 12,
+    "teamIds": [
+      1,
+      6
+    ],
+    "winnerId": 1
+  },
+  {
+    "week": 12,
+    "teamIds": [
+      3,
+      5
+    ],
+    "winnerId": 5
+  },
+  {
+    "week": 12,
+    "teamIds": [
+      4,
+      8
+    ],
+    "winnerId": 4
+  },
+  {
+    "week": 12,
+    "teamIds": [
+      9,
+      10
+    ],
+    "winnerId": 10
+  },
+  {
+    "week": 12,
+    "teamIds": [
+      2,
+      11
+    ],
+    "winnerId": 11
+  },
+  {
+    "week": 13,
+    "teamIds": [
+      4,
+      12
+    ],
+    "winnerId": 12
+  },
+  {
+    "week": 13,
+    "teamIds": [
+      1,
+      10
+    ],
+    "winnerId": 1
+  },
+  {
+    "week": 13,
+    "teamIds": [
+      2,
+      3
+    ],
+    "winnerId": 3
+  },
+  {
+    "week": 13,
+    "teamIds": [
+      6,
+      7
+    ],
+    "winnerId": 7
+  },
+  {
+    "week": 13,
+    "teamIds": [
+      5,
+      9
+    ],
+    "winnerId": 5
+  },
+  {
+    "week": 13,
+    "teamIds": [
+      8,
+      11
+    ],
+    "winnerId": 8
+  },
+  {
+    "week": 14,
+    "teamIds": [
+      8,
+      12
+    ],
+    "winnerId": 8
+  },
+  {
+    "week": 14,
+    "teamIds": [
+      1,
+      7
+    ],
+    "winnerId": 7
+  },
+  {
+    "week": 14,
+    "teamIds": [
+      3,
+      10
+    ],
+    "winnerId": 3
+  },
+  {
+    "week": 14,
+    "teamIds": [
+      2,
+      4
+    ],
+    "winnerId": 4
+  },
+  {
+    "week": 14,
+    "teamIds": [
+      6,
+      9
+    ],
+    "winnerId": 9
+  },
+  {
+    "week": 14,
+    "teamIds": [
+      5,
+      11
+    ],
+    "winnerId": 5
+  }
+];
+
+export const finalStandingsPrediction = [
+  {
+    "rosterId": 12,
+    "wins": 12,
+    "losses": 2,
+    "wildcard": false
+  },
+  {
+    "rosterId": 1,
+    "wins": 11,
+    "losses": 3,
+    "wildcard": false
+  },
+  {
+    "rosterId": 7,
+    "wins": 9,
+    "losses": 5,
+    "wildcard": false
+  },
+  {
+    "rosterId": 3,
+    "wins": 9,
+    "losses": 5,
+    "wildcard": false
+  },
+  {
+    "rosterId": 4,
+    "wins": 8,
+    "losses": 6,
+    "wildcard": false
+  },
+  {
+    "rosterId": 5,
+    "wins": 7,
+    "losses": 7,
+    "wildcard": true
+  },
+  {
+    "rosterId": 10,
+    "wins": 7,
+    "losses": 7,
+    "wildcard": false
+  },
+  {
+    "rosterId": 9,
+    "wins": 7,
+    "losses": 7,
+    "wildcard": false
+  },
+  {
+    "rosterId": 11,
+    "wins": 4,
+    "losses": 10,
+    "wildcard": false
+  },
+  {
+    "rosterId": 8,
+    "wins": 4,
+    "losses": 10,
+    "wildcard": false
+  },
+  {
+    "rosterId": 6,
+    "wins": 3,
+    "losses": 11,
+    "wildcard": false
+  },
+  {
+    "rosterId": 2,
+    "wins": 3,
+    "losses": 11,
+    "wildcard": false
+  }
+];

@@ -116,3 +116,14 @@ test('matchup roadmap replaces the bye list with concise previews and critical m
   expect(container.querySelector('#rest-of-season')).toHaveTextContent('not simulated point projections');
   expect(container.querySelectorAll('#recaps .week-one-recap')).toHaveLength(6);
 });
+
+
+test('final prediction is a compact twelve-team standings list', () => {
+  const {container}=render(<Week10RecapNewsletter />);
+  const call=container.querySelector('.week-ten-final-call')!;
+  expect(call).toHaveTextContent('Amberwood AI’s Prediction');
+  expect(call).toHaveTextContent('Projected final regular-season standings');
+  expect(call.querySelectorAll('li')).toHaveLength(12);
+  expect(call.querySelectorAll('p')).toHaveLength(1);
+  expect(call.querySelectorAll('li')[5]).toHaveTextContent('Taaha — 7–7 · Points wildcard');
+});

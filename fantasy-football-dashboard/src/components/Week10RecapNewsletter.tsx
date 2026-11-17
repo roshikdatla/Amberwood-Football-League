@@ -5,7 +5,7 @@ import {
 } from '../data/week10Recap2026';
 import './Week1RecapNewsletter.css';
 import './Week3RecapNewsletter.css';
-import { restOfSeasonPreview } from '../data/week10RestOfSeason';
+import { restOfSeasonPreview, finalStandingsPrediction } from '../data/week10RestOfSeason';
 import './Week10RecapNewsletter.css';
 
 const InlineSources: React.FC<{ sources?: { label: string; url: string }[] }> = ({ sources }) => sources?.length ? (
@@ -177,6 +177,11 @@ const Week10RecapNewsletter: React.FC = () => {
             </article>;
           })}</div>
           <p className="week-one-team-meta">Schedule and standings: Sleeper, captured November 17. Roster and injury tags refreshed November 17 (evening update), including the latest player moves. NFL bye weeks: Week 11 ATL/CLE/GB/LAR/NE/SEA; Week 12 none; Week 13 BAL/IND/LV/NYJ; Week 14 ARI/DAL. Difficulty labels are editorial lineup-depth judgments, not simulated point projections. PPG uses the ten completed weeks; current Out/IR tags are not predictions of future availability. Week 12 has no scheduled byes. Future roster moves, injuries and stat corrections can change the race. No team is labeled eliminated solely because of its record. Sources: <a href="https://api.sleeper.app/v1/league/1354521952483573760/rosters" target="_blank" rel="noreferrer">current rosters</a> · <a href="https://www.nfl.com/schedules/2026/by-week/week-11" target="_blank" rel="noreferrer">NFL schedule</a>.</p>
+          <aside className="week-three-mickey-card week-ten-final-call" aria-labelledby="week-ten-final-call-title">
+            <h3 id="week-ten-final-call-title">Amberwood AI’s Prediction</h3>
+            <p>Projected final regular-season standings. Ties assume the current points-for order holds.</p>
+            <ol className="week-ten-predicted-standings">{finalStandingsPrediction.map(team => <li key={team.rosterId}><strong>{getRecapTeam(team.rosterId).manager}</strong> — {team.wins}–{team.losses}{team.wildcard && <span> · Points wildcard</span>}</li>)}</ol>
+          </aside>
         </section>
 
         <aside className="week-one-dashboard-callout">

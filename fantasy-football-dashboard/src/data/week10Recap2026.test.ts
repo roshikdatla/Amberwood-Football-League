@@ -1,6 +1,6 @@
 import snapshot from './week10Recap2026Snapshot.json';
 import {recapTeams, week10Recaps, week11Previews, mickeyOfTheWeek, getStarter} from './week10Recap2026';
-import {restOfSeasonPreview} from './week10RestOfSeason';
+import {restOfSeasonPreview, remainingMatchupPicks, finalStandingsPrediction} from './week10RestOfSeason';
 test('scores records and X-factors come from actual final starters',()=>{expect(snapshot.league.completedWeek).toBe(10);for(const t of recapTeams){const row=snapshot.week10.find(r=>r.roster_id===t.rosterId)!;expect(t.score).toBe(row.custom_points??row.points);expect(row.starters_points.reduce((a,b)=>a+b,0)).toBeCloseTo(t.score,2);}for(const recap of week10Recaps){const row=snapshot.week10.find(r=>r.roster_id===recap.xFactorRosterId)!;const i=row.starters.indexOf(recap.xFactorId);expect(i).toBeGreaterThanOrEqual(0);expect(getStarter(row.roster_id,recap.xFactorId).points).toBe(row.starters_points[i]);}});
 test('all recap and next-week pairings match source',()=>{for(const [cards,rows] of [[week10Recaps,snapshot.week10],[week11Previews,snapshot.week11]] as const){expect(cards).toHaveLength(6);for(const c of cards){expect(c.teamIds.slice().sort()).toEqual((rows as {matchup_id:number;roster_id:number}[]).filter(r=>r.matchup_id===c.matchupId).map(r=>r.roster_id).sort());}}});
 test('Mickey is the actual lowest scoring winner',()=>{expect(mickeyOfTheWeek.rosterId).toBe(snapshot.mickeyOfTheWeek.rosterId);expect(mickeyOfTheWeek.scoreRank).toBe(snapshot.mickeyOfTheWeek.scoreRank);expect(mickeyOfTheWeek.allPlayWins).toBe(snapshot.mickeyOfTheWeek.allPlayWins);});
@@ -45,4 +45,26 @@ test('player-specific recap roasts use actual Week 10 starters and verified scor
     expect(recap.lowlight).toContain(x.name);
     expect(recap.lowlight).toContain(x.points.toFixed(2).replace('-','−'));
   }
+});
+
+
+test('projected standings balance against all 24 remaining matchups',()=>{
+  expect(remainingMatchupPicks).toHaveLength(24);
+  expect(finalStandingsPrediction).toHaveLength(12);
+  expect(new Set(finalStandingsPrediction.map(t=>t.rosterId)).size).toBe(12);
+  expect(finalStandingsPrediction.reduce((sum,t)=>sum+t.wins,0)).toBe(84);
+  for(const t of finalStandingsPrediction){
+    const initial=snapshot.teams.find(x=>x.rosterId===t.rosterId)!;
+    const games=remainingMatchupPicks.filter(g=>g.teamIds.includes(t.rosterId));
+    expect(games.map(g=>g.week)).toEqual([11,12,13,14]);
+    expect(t.wins).toBe(initial.wins+games.filter(g=>g.winnerId===t.rosterId).length);
+    expect(t.wins+t.losses).toBe(14);
+    for(const g of games){
+      expect(g.teamIds).toContain(g.winnerId);
+      const opponent=restOfSeasonPreview.find(x=>x.rosterId===t.rosterId)!.schedule.find(x=>x.week===g.week)!.opponentId;
+      expect(g.teamIds).toContain(opponent);
+    }
+  }
+  expect(finalStandingsPrediction.filter(t=>t.wildcard).map(t=>t.rosterId)).toEqual([5]);
+  expect(finalStandingsPrediction.slice(0,5).every(t=>t.wins>=8)).toBe(true);
 });
