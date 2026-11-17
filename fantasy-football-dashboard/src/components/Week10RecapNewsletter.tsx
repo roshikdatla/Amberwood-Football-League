@@ -161,12 +161,13 @@ const Week10RecapNewsletter: React.FC = () => {
             return <article className="week-one-recap week-ten-ros-card" key={item.rosterId}>
               <p className="week-one-kicker">{team.manager} · {team.record}</p><h3>{team.teamName}</h3>
               <ol className="week-ten-schedule">{item.schedule.map(game => <li key={game.week}><strong>W{game.week}</strong><span>{getRecapTeam(game.opponentId).manager}</span></li>)}</ol>
+              <h4>Bye-week pressure points</h4><ul className="week-ten-byes">{item.byes.map(bye => <li key={bye.week}><strong>Week {bye.week}: {bye.absences}</strong><p>{bye.impact}</p></li>)}</ul>
               <h4>Wins needed</h4><p>{item.winsNeeded}</p>
               <h4>The games that matter</h4><p>{item.path}</p>
               <h4>Seeding / bottom-two stakes</h4><p>{item.bottomTwo}</p>
             </article>;
           })}</div>
-          <p className="week-one-team-meta">Schedule and standings: Sleeper, captured November 17. The targets account for record, current points and remaining opponents; future scoring, injuries and stat corrections can change the race. No team is labeled eliminated solely because of its record.</p>
+          <p className="week-one-team-meta">Schedule and standings: Sleeper, captured November 17. Updated November 17 with current roster assignments and verified NFL bye weeks: Week 11 ATL/CLE/GB/LAR/NE/SEA; Week 12 none; Week 13 BAL/IND/LV/NYJ; Week 14 ARI/DAL. Bye impacts are lineup-depth judgments, not simulated point projections. Future roster moves, injuries and stat corrections can change the race. No team is labeled eliminated solely because of its record. Sources: <a href="https://api.sleeper.app/v1/league/1354521952483573760/rosters" target="_blank" rel="noreferrer">current rosters</a> · <a href="https://www.nfl.com/schedules/2026/by-week/week-11" target="_blank" rel="noreferrer">NFL schedule</a>.</p>
         </section>
 
         <aside className="week-one-dashboard-callout">

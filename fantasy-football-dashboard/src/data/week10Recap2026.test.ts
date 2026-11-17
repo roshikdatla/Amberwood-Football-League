@@ -5,3 +5,10 @@ test('scores records and X-factors come from actual final starters',()=>{expect(
 test('all recap and next-week pairings match source',()=>{for(const [cards,rows] of [[week10Recaps,snapshot.week10],[week11Previews,snapshot.week11]] as const){expect(cards).toHaveLength(6);for(const c of cards){expect(c.teamIds.slice().sort()).toEqual((rows as {matchup_id:number;roster_id:number}[]).filter(r=>r.matchup_id===c.matchupId).map(r=>r.roster_id).sort());}}});
 test('Mickey is the actual lowest scoring winner',()=>{expect(mickeyOfTheWeek.rosterId).toBe(snapshot.mickeyOfTheWeek.rosterId);expect(mickeyOfTheWeek.scoreRank).toBe(snapshot.mickeyOfTheWeek.scoreRank);expect(mickeyOfTheWeek.allPlayWins).toBe(snapshot.mickeyOfTheWeek.allPlayWins);});
 test('remaining schedules are reciprocal with twelve unique teams',()=>{expect(new Set(restOfSeasonPreview.map(x=>x.rosterId)).size).toBe(12);for(const t of restOfSeasonPreview){expect(t.schedule.map(g=>g.week)).toEqual([11,12,13,14]);for(const g of t.schedule){expect(restOfSeasonPreview.find(x=>x.rosterId===g.opponentId)!.schedule.find(x=>x.week===g.week)!.opponentId).toBe(t.rosterId);}}});
+
+test('bye overlay covers all weeks and never treats Week 12 as a bye',()=>{
+  for(const t of restOfSeasonPreview){expect(t.byes.map(x=>x.week)).toEqual([11,12,13,14]);expect(t.byes[1].absences).toBe('None: all NFL teams play.');}
+  const ankith=restOfSeasonPreview.find(x=>x.rosterId===4)!;
+  expect(ankith.byes[2].impact).toContain('Stevenson');
+  expect(ankith.byes[2].impact).not.toContain('every non-IR');
+});

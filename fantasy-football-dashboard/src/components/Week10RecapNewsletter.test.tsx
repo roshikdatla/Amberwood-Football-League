@@ -101,3 +101,12 @@ test('restored format retains playoff card and correct Mickey winner without rem
 });
 
  test('ROS gives every team four games and win/survival guidance', () => { const {container}=render(<Week10RecapNewsletter />); expect(container.querySelectorAll('.week-ten-ros-card')).toHaveLength(12); expect(container.querySelectorAll('.week-ten-schedule li')).toHaveLength(48); expect(container.querySelector('#rest-of-season')).toHaveTextContent('best possible finish is ninth'); expect(container.querySelector('#rest-of-season')).toHaveTextContent('practical forecasts, not clinches'); });
+
+test('bye revision keeps each team’s pressure points visible without changing the recap', () => {
+  const {container}=render(<Week10RecapNewsletter />);
+  expect(container.querySelectorAll('.week-ten-byes')).toHaveLength(12);
+  expect(container.querySelectorAll('.week-ten-byes li')).toHaveLength(48);
+  expect(container.querySelector('#rest-of-season')).toHaveTextContent('Week 12 none');
+  expect(container.querySelector('#rest-of-season')).toHaveTextContent('not simulated point projections');
+  expect(container.querySelectorAll('#recaps .week-one-recap')).toHaveLength(6);
+});
