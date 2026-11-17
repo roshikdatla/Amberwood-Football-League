@@ -185,7 +185,7 @@ export const week11Previews = [
     ],
     "billing": "SAHIL VS PRANAV J",
     "story": "The 219.32-point Jet Plane flies straight into the 9–1 leader. Pranav J can clinch a top-five record berth with a win; Sahil needs every point for the wildcard and every win for his fallback seeding.",
-    "key": "Sahil’s only rostered bye loss is bench RB Zach Charbonnet. Pranav J loses Love, Higbee, Seattle DST and Puka, but Puka is already on IR and Stroud/Pittsburgh DST are rostered alternatives. Do not count four missing names as four missing starters.",
+    "key": "Sahil’s only rostered bye loss is bench RB Zach Charbonnet. Pranav J loses Love, Seattle DST and Puka, but Puka is already on IR and Stroud/Pittsburgh DST are rostered alternatives. Do not count three missing names as three missing starters.",
     "pickId": 12,
     "pickReason": "A narrow Pranav J lean on the 9–1 body of work, not an assumption of a full-strength lineup. Sahil retains his Week 10 core by schedule and has a very real upset opening; this is one of the least comfortable picks.",
     "sources": [
@@ -203,7 +203,7 @@ export const week11Previews = [
     ],
     "billing": "ABHISHEK VS TAAHA",
     "story": "Two 3–7 records, two very different seasons. Taaha owns the current points wildcard; Abhishek is trying to escape the bottom-two danger zone. The record column disguises a 331.52-point scoring gap.",
-    "key": "Taaha is without Kyren Williams and Jaxon Smith-Njigba; Kenneth Walker is currently Out, so RB replacement depth needs checking. Abhishek loses only Denzel Boston to a bye, though his own injury tags still matter. The season scoring gap overstates the Week 11 advantage.",
+    "key": "Taaha is without Kyren Williams and Jaxon Smith-Njigba; McGowan and Mason offer RB cover while Walker remains Out/IR. Waller’s departure leaves no TE currently rostered. Abhishek loses only Denzel Boston to a bye, though his own injury tags still matter. The season scoring gap overstates the Week 11 advantage.",
     "pickId": 5,
     "pickReason": "A low-confidence Taaha lean, substantially closer than the original points-based forecast. Lawrence and Deebo remain available by schedule, but losing Kyren and JSN makes Abhishek a credible upset candidate. This is not a safe win to bank.",
     "sources": [
@@ -221,9 +221,9 @@ export const week11Previews = [
     ],
     "billing": "ANUDEEP VS ANKITH",
     "story": "Anudeep is chasing a top-two bye; Ankith is defending one of the final record berths after the Jet Plane hit him at full speed. A win here buys either team breathing room in a schedule with bigger names still to come.",
-    "key": "Anudeep loses Drake London and Matthew Golden, with Coker the only other rostered WR without an Out tag today. Ankith loses Rhamondre Stevenson and Tucker Kraft, with no second TE currently rostered. Both managers must solve actual lineup holes.",
+    "key": "Anudeep loses Drake London and Matthew Golden, with Coker the only other rostered WR without an Out tag today. Ankith loses Rhamondre Stevenson and newly rostered KC Concepcion, but Colston Loveland now covers TE after the roster swap. Anudeep carries the bigger positional shortage.",
     "pickId": 1,
-    "pickReason": "A narrow Anudeep lean because Gibbs and Burrow remain available by schedule, but the missing receivers materially reduce his cushion. Ankith has a genuine upset opening if he solves TE and gets support for Chase.",
+    "pickReason": "A narrow Anudeep lean because Gibbs and Burrow remain available by schedule, but the missing receivers materially reduce his cushion. Ankith has a genuine upset opening with Loveland now filling TE and Chase available by schedule.",
     "sources": [
       {
         "label": "Sleeper Week 11 schedule",
@@ -257,7 +257,7 @@ export const week11Previews = [
     ],
     "billing": "SAHIT VS ABHIRAM",
     "story": "Buckster Batting needs this one before its closing Anudeep–Roshik sequence. Loveland Island needs it because 2–8 with the lowest points total leaves almost no cushion in the bottom-two race.",
-    "key": "Abhiram loses Fannin but has McBride at TE. Sahit loses Maye, A.J. Brown, Concepcion, Mumpfield and Hollins; Young covers QB, but Shakir is his only non-bye WR without an Out/IR tag today. Existing injury tags are not fresh bye losses, yet the depth problem is real.",
+    "key": "Abhiram loses Fannin but has McBride and newly rostered Waller at TE. Sahit loses Maye, A.J. Brown, Kraft, Mumpfield and Hollins; Young/Gesicki cover QB/TE, and newly rostered Egbuka helps Shakir at WR. The swap improves receiver depth without removing the bye disadvantage.",
     "pickId": 10,
     "pickReason": "Abhiram remains the pick, with the bye comparison reinforcing his season scoring advantage. Buckster Batting has a much smaller replacement job; Loveland Island needs receiver reinforcements before plotting another ambush.",
     "sources": [

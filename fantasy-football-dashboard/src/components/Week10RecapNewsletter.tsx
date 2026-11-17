@@ -156,18 +156,27 @@ const Week10RecapNewsletter: React.FC = () => {
           <div className="week-one-section-heading"><p className="week-one-kicker">06 / Four weeks. Every route.</p><h2 id="rest-of-season-title">Rest of Season Preview</h2></div>
           <p>Weeks 11–14 are all that remain before the Week 15 playoffs. Five berths go by record, with points breaking ties; the sixth goes to the highest points total outside that five. The win targets below are practical forecasts, not clinches: nine wins is a strong position, while ten guarantees a top-five record berth. A key game is a priority route, not the only mathematically possible route.</p>
           <aside className="week-three-mickey-card"><h3>The other cut line: stay out of the bottom two.</h3><p>For teams that miss the playoffs, finishing in the bottom two means they cannot win the toilet bowl and their best possible finish is ninth. The other four non-playoff teams retain a shot at winning it and the first pick. A team qualifying through the points wildcard is a playoff team, even if its record is near the bottom.</p></aside>
+          <div className="week-ten-legend"><span><span aria-hidden="true">★</span> Critical game</span><p>Priority wins or direct seeding / survival swings, not mathematical must-wins. Difficulty is relative to each team after byes.</p></div>
+          <nav className="week-ten-team-nav" aria-label="Jump to a team’s remaining schedule">{restOfSeasonPreview.map(item => <a href={`#ros-team-${item.rosterId}`} key={item.rosterId}>{getRecapTeam(item.rosterId).manager}</a>)}</nav>
           <div className="week-one-recaps week-ten-ros-grid">{restOfSeasonPreview.map(item => {
             const team = getRecapTeam(item.rosterId);
-            return <article className="week-one-recap week-ten-ros-card" key={item.rosterId}>
-              <p className="week-one-kicker">{team.manager} · {team.record}</p><h3>{team.teamName}</h3>
-              <ol className="week-ten-schedule">{item.schedule.map(game => <li key={game.week}><strong>W{game.week}</strong><span>{getRecapTeam(game.opponentId).manager}</span></li>)}</ol>
-              <h4>Bye-week pressure points</h4><ul className="week-ten-byes">{item.byes.map(bye => <li key={bye.week}><strong>Week {bye.week}: {bye.absences}</strong><p>{bye.impact}</p></li>)}</ul>
-              <h4>Wins needed</h4><p>{item.winsNeeded}</p>
-              <h4>The games that matter</h4><p>{item.path}</p>
-              <h4>Seeding / bottom-two stakes</h4><p>{item.bottomTwo}</p>
+            return <article className="week-one-recap week-ten-ros-card" id={`ros-team-${item.rosterId}`} key={item.rosterId} aria-labelledby={`ros-name-${item.rosterId}`}>
+              <header className="week-ten-team-header"><div><p className="week-one-kicker">{team.manager} <span className="week-ten-record">{team.record}</span></p><h3 id={`ros-name-${item.rosterId}`}>{team.teamName}</h3></div><div className="week-ten-win-target"><h4>Wins needed</h4><p>{item.winsNeeded}</p></div></header>
+              <ol className="week-ten-schedule" aria-label={`${team.manager} remaining opponents`}>{item.schedule.map(game => <li key={game.week} className={game.critical ? 'is-critical' : ''}><a href={`#ros-${item.rosterId}-week-${game.week}`}><strong>W{game.week}{game.critical && <span aria-label="Critical game"> ★</span>}</strong><span>{getRecapTeam(game.opponentId).manager}</span></a></li>)}</ol>
+              <h4 className="week-ten-weekly-title">Week-by-week matchup preview</h4>
+              <ol className="week-ten-matchups">{item.schedule.map(game => {
+                const opponent = getRecapTeam(game.opponentId);
+                return <li id={`ros-${item.rosterId}-week-${game.week}`} key={game.week} className={game.critical ? 'is-critical' : ''}>
+                  <div className="week-ten-game-top"><span className="week-ten-week">Week {game.week}</span><span className={`week-ten-difficulty difficulty-${game.difficulty.toLowerCase()}`}>{game.difficulty}</span></div>
+                  <h5>vs {opponent.manager} <span className="week-ten-opponent-record">{opponent.record}</span></h5>
+                  {game.critical && <span className="week-ten-critical-label"><span aria-hidden="true">★</span> Critical game</span>}
+                  <p>{game.preview}</p>
+                </li>;
+              })}</ol>
+              <div className="week-ten-bottom-line"><div><h4>The route</h4><p>{item.path}</p></div><div><h4>Seeding / bottom-two stakes</h4><p>{item.bottomTwo}</p></div></div>
             </article>;
           })}</div>
-          <p className="week-one-team-meta">Schedule and standings: Sleeper, captured November 17. Updated November 17 with current roster assignments and verified NFL bye weeks: Week 11 ATL/CLE/GB/LAR/NE/SEA; Week 12 none; Week 13 BAL/IND/LV/NYJ; Week 14 ARI/DAL. Bye impacts are lineup-depth judgments, not simulated point projections. Future roster moves, injuries and stat corrections can change the race. No team is labeled eliminated solely because of its record. Sources: <a href="https://api.sleeper.app/v1/league/1354521952483573760/rosters" target="_blank" rel="noreferrer">current rosters</a> · <a href="https://www.nfl.com/schedules/2026/by-week/week-11" target="_blank" rel="noreferrer">NFL schedule</a>.</p>
+          <p className="week-one-team-meta">Schedule and standings: Sleeper, captured November 17. Roster and injury tags refreshed November 17 (evening update), including the latest player moves. NFL bye weeks: Week 11 ATL/CLE/GB/LAR/NE/SEA; Week 12 none; Week 13 BAL/IND/LV/NYJ; Week 14 ARI/DAL. Difficulty labels are editorial lineup-depth judgments, not simulated point projections. PPG uses the ten completed weeks; current Out/IR tags are not predictions of future availability. Week 12 has no scheduled byes. Future roster moves, injuries and stat corrections can change the race. No team is labeled eliminated solely because of its record. Sources: <a href="https://api.sleeper.app/v1/league/1354521952483573760/rosters" target="_blank" rel="noreferrer">current rosters</a> · <a href="https://www.nfl.com/schedules/2026/by-week/week-11" target="_blank" rel="noreferrer">NFL schedule</a>.</p>
         </section>
 
         <aside className="week-one-dashboard-callout">

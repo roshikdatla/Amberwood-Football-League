@@ -6,9 +6,22 @@ test('all recap and next-week pairings match source',()=>{for(const [cards,rows]
 test('Mickey is the actual lowest scoring winner',()=>{expect(mickeyOfTheWeek.rosterId).toBe(snapshot.mickeyOfTheWeek.rosterId);expect(mickeyOfTheWeek.scoreRank).toBe(snapshot.mickeyOfTheWeek.scoreRank);expect(mickeyOfTheWeek.allPlayWins).toBe(snapshot.mickeyOfTheWeek.allPlayWins);});
 test('remaining schedules are reciprocal with twelve unique teams',()=>{expect(new Set(restOfSeasonPreview.map(x=>x.rosterId)).size).toBe(12);for(const t of restOfSeasonPreview){expect(t.schedule.map(g=>g.week)).toEqual([11,12,13,14]);for(const g of t.schedule){expect(restOfSeasonPreview.find(x=>x.rosterId===g.opponentId)!.schedule.find(x=>x.week===g.week)!.opponentId).toBe(t.rosterId);}}});
 
-test('bye overlay covers all weeks and never treats Week 12 as a bye',()=>{
-  for(const t of restOfSeasonPreview){expect(t.byes.map(x=>x.week)).toEqual([11,12,13,14]);expect(t.byes[1].absences).toBe('None: all NFL teams play.');}
+test('each matchup has a brief forecast and an explicit critical-game decision',()=>{
+  for(const t of restOfSeasonPreview){for(const g of t.schedule){
+    expect(['Favorable','Even','Tough']).toContain(g.difficulty);
+    expect(typeof g.critical).toBe('boolean');
+    expect(g.preview.split(/\s+/).length).toBeGreaterThan(20);
+    expect(g.preview.split(/\s+/).length).toBeLessThanOrEqual(55);
+  }expect(t.schedule[1].preview).toMatch(/No byes/i);}
+});
+test('evening roster moves inform future previews without rewriting historical starters',()=>{
   const ankith=restOfSeasonPreview.find(x=>x.rosterId===4)!;
-  expect(ankith.byes[2].impact).toContain('Stevenson');
-  expect(ankith.byes[2].impact).not.toContain('every non-IR');
+  expect(ankith.schedule[0].preview).toContain('Loveland');
+  expect(ankith.schedule[0].preview).not.toContain('Kraft');
+  expect(ankith.schedule[2].preview).toContain('Stevenson');
+  const pj=restOfSeasonPreview.find(x=>x.rosterId===12)!;
+  expect(pj.schedule[2].preview).toContain('no reserve TE');
+  expect(pj.schedule[2].preview).not.toContain('Higbee');
+  expect(restOfSeasonPreview.find(x=>x.rosterId===8)!.schedule[0].preview).toContain('Egbuka');
+  expect(restOfSeasonPreview.find(x=>x.rosterId===5)!.schedule[0].preview).toContain('no TE');
 });

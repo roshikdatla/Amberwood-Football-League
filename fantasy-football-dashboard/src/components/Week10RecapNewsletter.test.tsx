@@ -102,11 +102,17 @@ test('restored format retains playoff card and correct Mickey winner without rem
 
  test('ROS gives every team four games and win/survival guidance', () => { const {container}=render(<Week10RecapNewsletter />); expect(container.querySelectorAll('.week-ten-ros-card')).toHaveLength(12); expect(container.querySelectorAll('.week-ten-schedule li')).toHaveLength(48); expect(container.querySelector('#rest-of-season')).toHaveTextContent('best possible finish is ninth'); expect(container.querySelector('#rest-of-season')).toHaveTextContent('practical forecasts, not clinches'); });
 
-test('bye revision keeps each team’s pressure points visible without changing the recap', () => {
+test('matchup roadmap replaces the bye list with concise previews and critical markers', () => {
   const {container}=render(<Week10RecapNewsletter />);
-  expect(container.querySelectorAll('.week-ten-byes')).toHaveLength(12);
-  expect(container.querySelectorAll('.week-ten-byes li')).toHaveLength(48);
-  expect(container.querySelector('#rest-of-season')).toHaveTextContent('Week 12 none');
+  expect(container.querySelectorAll('.week-ten-byes')).toHaveLength(0);
+  expect(screen.queryByText('Bye-week pressure points')).not.toBeInTheDocument();
+  expect(container.querySelectorAll('.week-ten-matchups')).toHaveLength(12);
+  expect(container.querySelectorAll('.week-ten-matchups > li')).toHaveLength(48);
+  expect(container.querySelectorAll('.week-ten-difficulty')).toHaveLength(48);
+  expect(container.querySelectorAll('.week-ten-critical-label').length).toBeGreaterThan(15);
+  expect(container.querySelectorAll('.week-ten-critical-label').length).toBeLessThan(36);
+  expect(container.querySelectorAll('.week-ten-team-nav a')).toHaveLength(12);
+  expect(container.querySelector('#rest-of-season')).toHaveTextContent('Week 12 has no scheduled byes');
   expect(container.querySelector('#rest-of-season')).toHaveTextContent('not simulated point projections');
   expect(container.querySelectorAll('#recaps .week-one-recap')).toHaveLength(6);
 });
