@@ -25,3 +25,24 @@ test('evening roster moves inform future previews without rewriting historical s
   expect(restOfSeasonPreview.find(x=>x.rosterId===8)!.schedule[0].preview).toContain('Egbuka');
   expect(restOfSeasonPreview.find(x=>x.rosterId===5)!.schedule[0].preview).toContain('no TE');
 });
+
+test('player-specific recap roasts use actual Week 10 starters and verified scores',()=>{
+  const lowlights = [
+    {matchup:1, roster:2, player:'10859', name:'LaPorta', points:2.60},
+    {matchup:2, roster:4, player:'9484', name:'Kraft', points:2.90},
+    {matchup:3, roster:3, player:'9502', name:'Tank Dell', points:5.10},
+    {matchup:3, roster:9, player:'11624', name:'Worthy', points:0},
+    {matchup:4, roster:10, player:'9511', name:'Mitchell', points:-0.60},
+    {matchup:5, roster:8, player:'11564', name:'Maye', points:3.02},
+    {matchup:6, roster:11, player:'12491', name:'Kiner', points:2.50},
+    {matchup:6, roster:1, player:'11646', name:'Coker', points:0.30},
+  ];
+  for(const x of lowlights){
+    const row=snapshot.week10.find(t=>t.roster_id===x.roster)!;
+    expect(row.starters).toContain(x.player);
+    expect(row.starters_points[row.starters.indexOf(x.player)]).toBeCloseTo(x.points,2);
+    const recap=week10Recaps.find(t=>t.matchupId===x.matchup)!;
+    expect(recap.lowlight).toContain(x.name);
+    expect(recap.lowlight).toContain(x.points.toFixed(2).replace('-','−'));
+  }
+});

@@ -296,12 +296,12 @@ export const week10Recaps = [
       2,
       7
     ],
-    "billing": "SUPER O-MARION FINDS THE STAR. ZERO DARK PURDY FINDS THE EXIT.",
-    "summary": "Thursday gave Pranav P 48.46 from Jayden Daniels, Stefon Diggs and Malik Nabers, while Abhishek opened with Rachaad White’s 6.20. Sunday turned a promising start into a full Mario Kart weapons inventory: Chuba Hubbard delivered 34.20, Minnesota’s defense added 18.00, and Christian McCaffrey detonated for 51.30. Abhishek got 31.66 from Brock Purdy and 28.30 from Chase Brown, but two good performances were not a rescue mission. Zay Flowers added 11.40 on Monday to finish a 190.36–113.66 demolition. Pranav P climbed to 6–4 and passed Ankith into fourth on points; Abhishek fell to 3–7. Super O-Marion Bro grabbed an invincibility star. Zero Dark Purdy spent the entire level trying to find the brightness settings.",
+    "billing": "MCCAFFREY HITS 51.30. LAPORTA NEVER OPENS.",
+    "summary": "Thursday, Pranav P gets the broadcast off to a flying start: Daniels, Diggs and Nabers combine for 48.46, while Rachaad White answers with 6.20 for Abhishek. Then Sunday belongs to Christian McCaffrey. Fifty-one point three. Put that number on the screen and leave it there. Chuba Hubbard piles on 34.20, Minnesota adds 18.00, and Super O-Marion Bro is accelerating away. Brock Purdy fights back with 31.66 and Chase Brown brings 28.30, but Sam LaPorta’s 2.60 and Denzel Boston’s 2.60 leave the rescue party awfully small. Monday’s 11.40 from Zay Flowers supplies the closing credits: Pranav P 190.36, Abhishek 113.66. Pranav P reaches 6–4 and fourth on points; Abhishek falls to 3–7. Purdy played like the leading man. The rest of Zero Dark Purdy apparently thought this was a silent film.",
     "xFactorRosterId": 7,
     "xFactorId": "4034",
-    "xFactor": "McCaffrey’s 51.30 was the biggest individual starter score anywhere in Amberwood this week. Pair it with Hubbard’s 34.20 and Pranav P’s two running backs alone supplied 85.50, or three quarters of Abhishek’s entire team total. This was not a clever shortcut through the level. It was driving straight through the wall.",
-    "lowlight": "Denzel Boston, Sam LaPorta and Germie Bernard combined for 6.20. Purdy and Brown supplied 59.96, more than half of Abhishek’s 113.66, and the other eight starters managed 53.70 between them. Even the starring actor in Zero Dark Purdy could not locate that supporting cast.",
+    "xFactor": "McCaffrey’s 51.30 led every starter in Amberwood. Add Hubbard and that backfield reaches 85.50, three quarters of Abhishek’s entire score. Roll the replay on that pairing: Pranav P got two running backs; Abhishek got a two-hour warning siren. Super O-Marion did not need to find a shortcut with that engine.",
+    "lowlight": "Sam LaPorta: 2.60. The door was closed, locked, and apparently had furniture stacked behind it. Denzel Boston matched him at 2.60; Germie Bernard added 1.00. That is 6.20 across three slots while Purdy and Brown did 59.96 worth of heavy lifting. Zero Dark Purdy found its quarterback. Still searching for the supporting cast.",
     "sources": [
       {
         "label": "Sleeper finalized Week 10 scores and lineups",
@@ -319,12 +319,12 @@ export const week10Recaps = [
       4,
       6
     ],
-    "billing": "THE JET PLANE HITS 219.32. ANKITH GETS LEFT ON THE TARMAC.",
-    "summary": "Isaiah Likely put 30.20 on Sahil’s board Thursday. Sunday brought the full air show: Dak Prescott’s 34.42 and George Pickens’ 45.50 combined for 79.92, with Emmett Johnson supplying another 36.10. Ankith’s Ja’Marr Chase answered with 37.10 on Sunday night, but this was a firefight against a runway full of engines. Monday added Derrick Henry’s 19.00 for Sahil and Baltimore’s 4.00 for Ankith, completing a 219.32–113.12 blowout. Sahil’s league-high week moved him to 3–7 and turned him into a much more credible points-wildcard challenger. Ankith dropped to 6–4 and fifth in the record race. J J the Jet Plane finally took off, and apparently the flight plan went directly through Jeanty Morgan Chase & Co.’s headquarters.",
+    "billing": "PICKENS GOES SUPERSONIC. KRAFT BRINGS A SINGLE.",
+    "summary": "Thursday’s opening signal comes from Isaiah Likely: 30.20 for Sahil. On Sunday, the Jet Plane hits full throttle. Dak Prescott posts 34.42, George Pickens erupts for 45.50, and Emmett Johnson adds 36.10. Four starters over 30 when you include Likely. Ankith gets 37.10 from Ja’Marr Chase on Sunday night, a terrific response on an afternoon when terrific is nowhere near enough. Rhamondre Stevenson’s 1.50 and Tucker Kraft’s 2.90 have already left two seats conspicuously empty. Monday brings Henry’s 19.00 for Sahil and Baltimore’s 4.00 for Ankith, and the final graphic is brutal: 219.32–113.12. Sahil rises to 3–7 and makes a serious noise in the points-wildcard chase; Ankith slips to 6–4 and fifth by record. Chase gave Jeanty Morgan Chase & Co. a superstar performance. Unfortunately, Sahil brought an entire air force.",
     "xFactorRosterId": 6,
     "xFactorId": "8137",
-    "xFactor": "Pickens’ 45.50 led a lineup with four starters above 30 points. Prescott, Pickens, Likely and Emmett Johnson combined for 146.22, already 33.10 more than Ankith’s full lineup. The Jet Plane did not need a favorable connection. It had four functioning engines and absolutely no interest in economy class.",
-    "lowlight": "Rhamondre Stevenson’s 1.50 and Tucker Kraft’s 2.90 left Ankith with 4.40 across two starting slots. Chase delivered 37.10 and Jared Goff 20.42, but the final margin was 106.20. Sahil scored 133.54 more than his own Week 9 total. Ankith got the unlucky week to discover that the supposedly grounded aircraft was actually a bomber.",
+    "xFactor": "George Pickens, 45.50. Nothing slim about those Pickens. Prescott, Pickens, Likely and Emmett Johnson totaled 146.22, enough to beat Ankith by 33.10 before Sahil’s other six starters were counted. That is the replay package: four different players taking turns making the scoreboard operator work overtime.",
+    "lowlight": "Tucker Kraft supplied 2.90, one Kraft Single with the wrapper still on. Stevenson added 1.50. Together: 4.40 from two starting slots, while Chase delivered 37.10 and Goff 20.42 trying to keep the broadcast respectable. The final margin was 106.20. Even repairing those two seats would not have stopped this flight.",
     "sources": [
       {
         "label": "Sleeper finalized Week 10 scores and lineups",
@@ -342,12 +342,12 @@ export const week10Recaps = [
       3,
       9
     ],
-    "billing": "BIRYANI 168.22. BREADSTICKS 67.78. HEALTH INSPECTOR REQUESTED.",
-    "summary": "This restaurant war was settled by Sunday’s service. Patrick Mahomes supplied 35.42, Parker Washington 30.20, James Cook 25.20 and Nico Collins 24.40 for Aditya. Roshik countered with Bijan Robinson’s 17.70 and Kirk Cousins’ 15.38, then watched every other starter finish below seven points. Chris Boswell’s 4.50 on Sunday night closed Roshik’s scoring; neither team had a Monday starter. The final was 168.22–67.78, a 100.44-point rout that took Aditya to 5–5 and handed Roshik his third straight loss after a 7–0 start. Cookin Sutton Biryani served a four-course feast. Olave Garden served the complimentary water and asked everyone to leave.",
+    "billing": "COOK SERVES. TANK RUNS DRY. WORTHY GETS AWAY WITH ZERO.",
+    "summary": "Sunday’s feature presentation is a restaurant rivalry that turns into a cooking demonstration. Patrick Mahomes delivers 35.42, Parker Washington 30.20, James Cook 25.20 and Nico Collins 24.40 for Aditya. Every cut back to that lineup reveals another full plate. Roshik gets 17.70 from Bijan and 15.38 from Cousins; every other starter finishes below seven. Chris Olave manages 6.00, Tank Dell 5.10, and DeMario Douglas 1.40. Olave Garden has the sign lit, but nobody is bringing food. Boswell’s 4.50 on Sunday night closes Roshik’s scoring, and neither side has a Monday starter. Final: Aditya 168.22, Roshik 67.78, a 100.44-point demolition. Aditya reaches 5–5; Roshik has lost three straight since 7–0. The kicker? Aditya did all this while Xavier Worthy contributed 0.00. The kitchen won with one burner completely off.",
     "xFactorRosterId": 9,
     "xFactorId": "9487",
-    "xFactor": "Washington’s 30.20 was the extra helping that made Aditya’s top end so overwhelming. Mahomes, Washington, Cook and Collins combined for 115.22, beating Roshik’s entire team by 47.44 before Aditya’s other six slots were counted. The kitchen is no longer merely warm. Someone should check the smoke alarm.",
-    "lowlight": "Olave, Watson, Bowers and Dell combined for 21.60. Roshik’s eight starters outside Bijan and Cousins totaled 34.70, and 67.78 was the league’s lowest score. This was not losing a close one on a bad table assignment. Olave Garden’s unlimited offer apparently applied to empty plates.",
+    "xFactor": "Parker Washington’s 30.20 gives Aditya a second 30-point scorer alongside Mahomes. Those two plus Cook and Collins combine for 115.22, beating Roshik’s entire lineup by 47.44. Washington delivered the extra course that turned a strong Sunday into a banquet. Roshik was still waiting for someone to take his order.",
+    "lowlight": "Tank Dell had 5.10: the Tank was running on fumes. Olave’s 6.00, Watson’s 6.70 and Bowers’ 3.80 made that four-player group worth just 21.60; Douglas added another 1.40 of disappointment. Across the aisle, Xavier Worthy’s 0.00 was worthy of its own lowlight, but his teammates buried it under 168.22. Roshik had no such hiding place.",
     "sources": [
       {
         "label": "Sleeper finalized Week 10 scores and lineups",
@@ -365,12 +365,12 @@ export const week10Recaps = [
       10,
       12
     ],
-    "billing": "KOOPA TROOPA SURVIVES. BUCKSTER BATTING STRIKES OUT.",
-    "summary": "Thursday’s Giants game gave Pranav J 27.20 from Cam Skattebo against Abhiram’s 17.12 from J.J. McCarthy. On Sunday, Tony Pollard added 23.90 for Pranav J, with C.J. Stroud’s 20.44 and CeeDee Lamb’s 20.20 keeping the lineup moving. Abhiram stayed within range through Jordyn Tyson’s 19.00, Harold Fannin Jr.’s 16.10 and Ollie Gordon II’s 15.50; Tee Higgins added 11.60 Sunday night. Then Keaton Mitchell’s −0.60 on Monday finished a 124.44–106.62 result. Pranav J advanced to 9–1 despite scoring below the league median, while Abhiram slipped to 5–5. The newly named Buckster Batting stepped up with a chance to hit the league leader. The box score says looking, looking, swinging.",
+    "billing": "SKATTEBO SKATES THROUGH. MITCHELL GOES BACKWARD.",
+    "summary": "Thursday sets the ground-game theme: Cam Skattebo gives Pranav J 27.20 while J.J. McCarthy posts 17.12 for Abhiram. Sunday adds Pollard’s 23.90, Stroud’s 20.44 and Lamb’s 20.20 for the leader, but this is no flawless procession. Reggie Virgil puts up 0.00 and Tyler Warren just 2.40. The door is open. Abhiram answers with Tyson’s 19.00, Fannin’s 16.10 and Gordon’s 15.50, then Higgins adds 11.60 Sunday night. Good contributions, but nobody gets to 20. Monday’s last entry goes the wrong way: Keaton Mitchell, minus 0.60. The final is 124.44–106.62, and Pranav J escapes to 9–1 with the week’s Mickey while Abhiram drops to 5–5. Buckster Batting got a hittable pitch from the league leader. Mitchell’s closing contribution went straight back toward the dugout.",
     "xFactorRosterId": 12,
     "xFactorId": "12481",
-    "xFactor": "Skattebo’s Thursday 27.20 was Pranav J’s largest contribution, and his combination with Pollard produced 51.10 from the two running-back slots. Abhiram’s Gordon–Mitchell pairing finished at 14.90. That 36.20 positional advantage more than covered the final 17.82 margin. The Koopa Troop won this one with its ground game, not a fireworks show.",
-    "lowlight": "Abhiram had no starter reach 20, and Mitchell’s negative score made Monday a final out rather than a comeback. Pranav J was hardly flawless either: Reggie Virgil, Tyler Warren and Chimere Dike combined for 6.50. Buckster Batting got the leader on an off day and still could not put the ball in play.",
+    "xFactor": "Skattebo’s 27.20 and Pollard’s 23.90 produce 51.10 from Pranav J’s two RB slots. Gordon and Mitchell combine for 14.90 across the same positions for Abhiram. That 36.20-point advantage is more than twice the final 17.82 margin. Cam gave the Koopa Troop enough traction to skate past a very untidy supporting performance.",
+    "lowlight": "Keaton Mitchell finished at −0.60: the only player in this matchup who needed the minus sign on his nameplate. That did not single-handedly cause a 17.82-point loss, but it made a quiet lineup quieter. Pranav J had passengers too: Virgil’s 0.00, Warren’s 2.40 and Dike’s 4.10 combined for 6.50. A first-place record, with economy-class support.",
     "sources": [
       {
         "label": "Sleeper finalized Week 10 scores and lineups",
@@ -388,12 +388,12 @@ export const week10Recaps = [
       5,
       8
     ],
-    "billing": "BURDEN OF PROOF RESTS ITS CASE. THE ISLAND LOSES POWER.",
-    "summary": "Sunday finally gave Taaha a verdict his scoring deserved. Trevor Lawrence’s 26.78 and Jaxon Smith-Njigba’s 34.60 set the pace, then Deebo Samuel added 27.40 in the late afternoon. Sahit had Bhayshul Tuten’s 20.30 and double digits from KC Concepcion Jr. and Konata Mumpfield, but Drake Maye’s 3.02 and A.J. Brown’s 4.70 left the island short of supplies. Mike Gesicki’s 1.90 on Sunday night did not change the picture; Cameron Dicker added Taaha’s final 9.70 on Monday. Burden of Proof won 141.98–72.32, improving to 3–7 while Sahit fell to 2–8. After two straight wins, loveland island discovered that the complimentary honeymoon lasts exactly two weeks.",
+    "billing": "MAYE-DAY ON LOVELAND ISLAND. JSN TAKES OVER.",
+    "summary": "Sunday, Taaha finally gets a scoreboard that agrees with his season-long scoring. Trevor Lawrence opens the case with 26.78, Jaxon Smith-Njigba drops 34.60, and Deebo Samuel supplies 27.40 in the late afternoon. Sahit gets a genuine response from Bhayshul Tuten at 20.30, plus 11.70 from Concepcion and 11.10 from Mumpfield. Then the camera finds the other slots: Maye 3.02, Brown 4.70, Rodriguez 0.50. That is the distress signal. Gesicki adds 1.90 Sunday night; Dicker’s 9.70 on Monday completes Taaha’s 141.98–72.32 win. Both streaks change direction: Taaha gets to 3–7, Sahit’s two-game winning run ends at 2–8. Burden of Proof had three compelling witnesses. Loveland Island had Tuten waving from the beach while the rest of the rescue crew checked the weather.",
     "xFactorRosterId": 5,
     "xFactorId": "9488",
-    "xFactor": "Smith-Njigba’s 34.60 led Taaha’s lineup. Add Lawrence and Deebo and the trio supplied 88.78, more than Sahit’s entire 72.32. After repeatedly presenting a strong case to an unhelpful schedule, Burden of Proof finally got a jury that could read the evidence.",
-    "lowlight": "Maye, Chris Rodriguez Jr., Gesicki and Brown combined for 10.12 across four starting spots. Tuten’s 20.30 was nearly twice that total by himself. Sahit’s two-game winning streak ended with the week’s second-lowest score, leaving loveland island alone at the bottom of the record standings. The resort’s five-star review was apparently written by the owner.",
+    "xFactor": "Smith-Njigba’s 34.60 leads the way, and the Lawrence–JSN–Deebo trio totals 88.78, comfortably beyond Sahit’s whole 72.32. That production also covers a quiet Taaha backfield: Kyren Williams and Jordan Mason combined for only 11.10. Three big voices carried the case while several teammates were allowed to remain silent.",
+    "lowlight": "Drake Maye’s 3.02 gave the broadcast its Maye-day call, but this lowlight had company: A.J. Brown 4.70, Mike Gesicki 1.90, Chris Rodriguez 0.50. Four starters, 10.12 total. Gesicki’s slot was effectively a “Gone Fishin’” sign; Rodriguez supplied half a point, not half a rescue. Tuten’s 20.30 nearly doubled that entire group.",
     "sources": [
       {
         "label": "Sleeper finalized Week 10 scores and lineups",
@@ -411,12 +411,12 @@ export const week10Recaps = [
       1,
       11
     ],
-    "billing": "JAHMYRICA WINS BY 9.82. GARVEEN NEEDS A THIRD MANAGER.",
-    "summary": "Sunday’s early Detroit game delivered the first heavyweight exchange: Jahmyr Gibbs exploded for 46.20 while GarVeen answered with Amon-Ra St. Brown’s 27.30. Josh Allen’s 22.34, DJ Moore’s 19.90 and Blake Corum’s 22.90 kept Gary and Naveen competitive through the afternoon, while Anudeep collected 18.90 from Drake London and 17.00 from Cam Little. Sunday night supplied Joe Burrow’s 35.16 and Rico Dowdle’s 5.40 for Anudeep against DK Metcalf’s 15.40 for GarVeen. Neither side had a Monday starter; the final stood at 153.66–143.84. Anudeep moved to 8–2 and GarVeen to 3–7. Made in Jahmyrica exported two premium products. GarVeen brought two managers and still could not negotiate a 9.82-point discount.",
+    "billing": "GIBBS AND BURROW DELIVER. COKER SNEAKS OUT WITH 0.30.",
+    "summary": "Sunday’s early Detroit game gives us the heavyweight exchange: Gibbs explodes for 46.20, and GarVeen answers through St. Brown’s 27.30. Allen’s 22.34, Moore’s 19.90 and Corum’s 22.90 keep Gary and Naveen swinging through the afternoon. Anudeep gets London’s 18.90 and a decidedly un-Little 17.00 from Cam Little, which is useful because Jalen Coker contributes 0.30. Yes, the decimal is in the right place. Sunday night brings Burrow’s 35.16 and Dowdle’s 5.40 for Anudeep against Metcalf’s 15.40 for GarVeen. No Monday players, no extra act: Made in Jahmyrica wins 153.66–143.84. Anudeep climbs to 8–2; GarVeen falls to 3–7 despite the fifth-highest score of the week. Two managers brought a perfectly good 143.84. Gibbs and Burrow brought the closing argument.",
     "xFactorRosterId": 1,
     "xFactorId": "9221",
-    "xFactor": "Gibbs’ 46.20 was the second-highest individual starter score of the week, behind only McCaffrey. He and Burrow combined for 81.36, more than half of Anudeep’s 153.66. When the team is called Made in Jahmyrica, this is the week the name stops being branding and becomes the actual manufacturing process.",
-    "lowlight": "GarVeen’s 143.84 ranked fifth and would have beaten seven of the other eleven teams. A week after winning with 90.36, they scored 53.48 more and lost. Corey Kiner’s 2.50 hurt, but this was mostly the schedule returning last week’s Mickey favor. Two managers, two very different weeks, one deeply confused complaint to customer service.",
+    "xFactor": "Gibbs’ 46.20 ranks second among every starter this week, behind McCaffrey. Pair it with Burrow’s 35.16 and you get 81.36, more than half of Anudeep’s total. Burrow helped dig Jahmyrica out of a supporting-cast hole that included Coker’s 0.30 and Kelce’s 5.00. That two-man production line earned its overtime.",
+    "lowlight": "Corey Kiner’s 2.50 was a decidedly Minor contribution in a game decided by 9.82. But spare GarVeen the blanket flop label: 143.84 would have beaten seven other teams. Anudeep had the more spectacular passenger, Jalen Coker at 0.30. Cam Little scored 17.00; Coker made Little look enormous. Sometimes the weakest individual score still gets to leave with the win.",
     "sources": [
       {
         "label": "Sleeper finalized Week 10 scores and lineups",
