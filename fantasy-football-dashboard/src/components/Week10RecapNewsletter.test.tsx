@@ -127,3 +127,11 @@ test('final prediction is a compact twelve-team standings list', () => {
   expect(call.querySelectorAll('p')).toHaveLength(1);
   expect(call.querySelectorAll('li')[5]).toHaveTextContent('Taaha — 7–7 · Points wildcard');
 });
+
+test('uses the supplied photo as the uncropped Week 10 cover', () => {
+  render(<Week10RecapNewsletter />);
+  const cover = screen.getByRole('img', { name: /Saaho movie poster/ });
+  expect(cover).toHaveAttribute('src', '/week10-recap-cover.jpg');
+  expect(cover).toHaveAttribute('width', '1122');
+  expect(cover).toHaveAttribute('height', '1402');
+});

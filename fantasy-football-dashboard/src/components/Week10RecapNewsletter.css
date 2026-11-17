@@ -16,3 +16,5 @@
 @media(max-width:760px){.week-ten-team-header{grid-template-columns:1fr;gap:16px}.week-ten-team-header h3{font-size:1.45rem}.week-ten-matchups{grid-template-columns:1fr}.week-ten-bottom-line{grid-template-columns:1fr;gap:16px}.week-ten-legend{align-items:flex-start;flex-direction:column;gap:6px}.week-ten-ros-card{padding:18px!important}.week-ten-matchups p,.week-ten-bottom-line p,.week-ten-win-target p{font-size:16px}.week-ten-matchups>li{padding:16px}.week-ten-team-nav a{font-size:.8rem}}
 @media(max-width:440px){.week-ten-schedule{grid-template-columns:repeat(2,minmax(0,1fr))}.week-ten-ros-card{padding:14px!important}.week-ten-matchups>li{padding:14px}.week-ten-team-header h3{font-size:1.35rem}}
 .week-ten-predicted-standings{padding-left:24px;margin:12px 0 0}.week-ten-predicted-standings li{padding:4px 0;line-height:1.5;font-variant-numeric:tabular-nums}.week-ten-predicted-standings li::marker{color:#745017;font-weight:700}.week-ten-predicted-standings span{font-size:.85em;color:#745017;font-weight:700}
+
+.week-one-overview-image.week-ten-cover { max-width: 560px; }

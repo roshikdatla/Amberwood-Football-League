@@ -46,8 +46,8 @@ const Week10RecapNewsletter: React.FC = () => {
           <p className="week-one-kicker">01 / Overview</p>
           <h2 id="overview-title">{week10Overview.headline}</h2>
           <p className="week-one-lead">{week10Overview.lead}</p>
-          <figure className="week-one-overview-image">
-            <img src="/week10-recap-cover.svg" alt="Week 10 recap cover." decoding="async" />
+          <figure className="week-one-overview-image week-ten-cover">
+            <img src="/week10-recap-cover.jpg" alt="Saaho movie poster with a motorcycle rider amid an explosive action scene." width="1122" height="1402" decoding="async" />
           </figure>
           <aside className="week-three-mickey-card" aria-labelledby="playoff-picture-title">
             <p className="week-one-kicker">The playoff picture / Two different races</p>
