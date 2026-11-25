@@ -2,6 +2,7 @@ import React from 'react';
 import { activeSeason } from '../config/seasons';
 
 const currentSeasonNewsletters = [
+  { slug: 'week11-recap', title: 'Week 11 Recap: The Jet Shakes the Throne. Now Run It Back.', date: 'November 25, 2026', description: 'The wildcard changes hands, six recaps, Mickey, season outlooks and six opening-week rematches', status: 'Read Now' },
   { slug: 'week10-recap', title: 'Week 10 Recap: The Jet Takes Off. The Garden Goes Dark.', date: 'November 17, 2026', description: 'Six recaps, Mickey, rankings, Week 11 picks and every team’s Rest of Season Preview', status: 'Read Now' },
   {
     slug: 'week9-recap',
