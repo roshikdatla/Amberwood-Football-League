@@ -1,0 +1,9 @@
+.afl-week12 .afl-critical { border-inline-start: 4px solid #a94218; }
+.afl-week12 .afl-roadmap { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .7rem; list-style: none; padding: 0; }
+.afl-week12 .afl-roadmap li { padding: .7rem .9rem; background: rgba(136,89,44,.08); }
+.afl-week12 .afl-roadmap p { margin: .35rem 0 0; }
+.afl-week12 .afl-week14-heading { margin-top: 2rem; }
+.afl-week12 .afl-prediction { padding-inline-start: 1.5rem; max-width: 34rem; }
+.afl-week12 .afl-prediction li { padding: .35rem .2rem; border-bottom: 1px solid rgba(102,68,36,.25); }
+.afl-week12 .afl-prediction li strong { float: right; font-variant-numeric: tabular-nums; }
+@media (max-width: 580px) { .afl-week12 .afl-roadmap { grid-template-columns: 1fr; } }
